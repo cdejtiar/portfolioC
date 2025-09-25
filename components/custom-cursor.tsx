@@ -18,6 +18,9 @@ export function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [isClicking, setIsClicking] = useState(false)
+  const [isOverImage, setIsOverImage] = useState(false)
+  const [isOverContact, setIsOverContact] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   const particlesRef = useRef<Particle[]>([])
   const particleIdRef = useRef(0)
@@ -25,12 +28,22 @@ export function CustomCursor() {
   const animationFrameRef = useRef<number>()
 
   const throttledMouseMove = useCallback((e: MouseEvent) => {
+    if (!mounted) return
+    
     const now = Date.now()
     if (now - lastMouseMoveRef.current < 16) return // ~60fps throttling
 
     lastMouseMoveRef.current = now
     setMousePosition({ x: e.clientX, y: e.clientY })
     setIsVisible(true)
+
+    // Check if cursor is over contact section
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      const rect = contactSection.getBoundingClientRect()
+      const isInContact = e.clientY >= rect.top && e.clientY <= rect.bottom
+      setIsOverContact(isInContact)
+    }
 
     if (Math.random() > 0.95) {
       // Much less frequent particle creation
@@ -54,7 +67,7 @@ export function CustomCursor() {
         particlesRef.current.shift()
       }
     }
-  }, [])
+  }, [mounted])
 
   const handleMouseDown = useCallback(() => {
     setIsClicking(true)
@@ -98,13 +111,35 @@ export function CustomCursor() {
     animationFrameRef.current = requestAnimationFrame(animateParticles)
   }, [])
 
+  // Mount detection useEffect
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+
     const handleMouseEnter = (e: Event) => {
       setIsHovering(true)
     }
 
     const handleMouseLeave = (e: Event) => {
       setIsHovering(false)
+    }
+
+    const handleImageMouseEnter = (e: Event) => {
+      const target = e.target as HTMLImageElement
+      // Detectar si es la foto de perfil o el logo
+      if (target.alt?.includes("Camila Dejtiar") || 
+          target.alt?.includes("Logo") || 
+          target.src?.includes("profileCami") || 
+          target.src?.includes("logo")) {
+        setIsOverImage(true)
+      }
+    }
+
+    const handleImageMouseLeave = (e: Event) => {
+      setIsOverImage(false)
     }
 
     const handleDocumentMouseEnter = () => setIsVisible(true)
@@ -115,9 +150,16 @@ export function CustomCursor() {
         'a, button, [role="button"], .cursor-pointer, input, textarea',
       )
 
+      const imageElements = document.querySelectorAll('img')
+
       interactiveElements.forEach((el) => {
         el.addEventListener("mouseenter", handleMouseEnter, { passive: true })
         el.addEventListener("mouseleave", handleMouseLeave, { passive: true })
+      })
+
+      imageElements.forEach((el) => {
+        el.addEventListener("mouseenter", handleImageMouseEnter, { passive: true })
+        el.addEventListener("mouseleave", handleImageMouseLeave, { passive: true })
       })
     }
 
@@ -145,37 +187,47 @@ export function CustomCursor() {
 
       particlesRef.current = []
     }
-  }, [throttledMouseMove, handleMouseDown, handleMouseUp, animateParticles])
+  }, [throttledMouseMove, handleMouseDown, handleMouseUp, animateParticles, mounted])
 
-  if (!isVisible) return null
+  // Don't render until mounted
+  if (!mounted || !isVisible) return null
 
   return (
     <>
       <div
-        className="fixed pointer-events-none z-[9999] mix-blend-difference"
+        className={`fixed pointer-events-none ${isOverImage || isOverContact ? '' : 'mix-blend-difference'}`}
         style={{
           left: mousePosition.x,
           top: mousePosition.y,
           transform: "translate(-50%, -50%)",
+          zIndex: 2147483647, // Valor máximo de z-index
         }}
       >
         <div
           className={`
-            w-6 h-6 rounded-full border border-white
+            w-6 h-6 rounded-full backdrop-blur-sm
             transition-transform duration-200 ease-out
-            ${isHovering ? "scale-150" : "scale-100"}
+            ${isOverImage 
+              ? 'border-2 border-primary bg-primary/20' 
+              : isOverContact
+              ? 'border border-black dark:border-2 dark:border-white bg-transparent dark:bg-white/20'
+              : 'border border-black dark:border-white'
+            }
+            ${isHovering ? "scale-150 bg-black/10 dark:bg-white/10" : "scale-100 bg-transparent"}
             ${isClicking ? "scale-75" : ""}
           `}
-          style={{
-            backdropFilter: "blur(8px)",
-            background: isHovering ? "rgba(255,255,255,0.1)" : "transparent",
-          }}
         />
 
         <div
           className={`
-            absolute top-1/2 left-1/2 w-1 h-1 bg-white rounded-full
+            absolute top-1/2 left-1/2 w-1 h-1 rounded-full
             transition-all duration-200 ease-out
+            ${isOverImage 
+              ? 'bg-primary scale-100' 
+              : isOverContact
+              ? 'bg-black dark:bg-white scale-100'
+              : 'bg-black dark:bg-white'
+            }
             ${isHovering ? "scale-0" : "scale-100"}
           `}
           style={{ transform: "translate(-50%, -50%)" }}
@@ -185,7 +237,7 @@ export function CustomCursor() {
       {particlesRef.current.map((particle) => (
         <div
           key={particle.id}
-          className="fixed pointer-events-none z-[9998] rounded-full"
+          className="fixed pointer-events-none rounded-full"
           style={{
             left: particle.x,
             top: particle.y,
@@ -195,13 +247,14 @@ export function CustomCursor() {
             height: `${particle.scale * 4}px`,
             backgroundColor: particle.color,
             boxShadow: `0 0 8px ${particle.color}60`,
+            zIndex: 2147483646, // Un nivel debajo del cursor principal
           }}
         />
       ))}
 
       {isHovering && (
         <div
-          className="fixed pointer-events-none z-[9997] rounded-full"
+          className="fixed pointer-events-none rounded-full"
           style={{
             left: mousePosition.x,
             top: mousePosition.y,
@@ -210,6 +263,7 @@ export function CustomCursor() {
             height: "40px",
             background: "radial-gradient(circle, rgba(180,212,238,0.3) 0%, transparent 70%)",
             filter: "blur(10px)",
+            zIndex: 2147483645, // Un nivel debajo de las partículas
           }}
         />
       )}

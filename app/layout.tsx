@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { ThemeProvider } from "@/components/theme-provider"
+import { BackgroundEffects } from "@/components/background-effects"
 import "./globals.css"
 
 // Custom fonts as requested
@@ -32,8 +34,17 @@ export default function RootLayout({
         <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet" />
         <link href="https://fonts.cdnfonts.com/css/superlobster" rel="stylesheet" />
       </head>
-      <body className={`font-barlow ${inter.variable} antialiased`}>
-        <Suspense fallback={null}>{children}</Suspense>
+      <body className={`font-barlow ${inter.variable} antialiased`} suppressHydrationWarning={true}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange={false}
+          storageKey="modern-portfolio-theme"
+        >
+          <BackgroundEffects />
+          <Suspense fallback={null}>{children}</Suspense>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

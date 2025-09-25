@@ -1,49 +1,52 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowDown, Mail, Eye } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Mail, Eye } from "lucide-react";
 
 interface HeroSectionProps {
-  language: "es" | "en"
+  language: "es" | "en";
 }
 
 const translations = {
   es: {
     greeting: "Hola, soy",
-    name: "Tu Nombre",
-    title: "Diseñador",
-    subtitle: "Digital",
+    name: "Camila Dejtiar",
+    title: "Diseñadora",
+    subtitle: "UX/UI",
     description:
-      "Un creativo apasionado especializado en crear experiencias digitales hermosas e intuitivas. Transformo problemas complejos en diseños elegantes y fáciles de usar.",
+      "Soy una creativa digital apasionada por el diseño, la investigación y la innovación. Busco generar experiencias intuitivas que hagan más fácil y significativa la relación entre las personas y la tecnología.",
     contactMe: "Contáctame",
     seeMore: "Ver más",
   },
   en: {
     greeting: "Hello, I'm",
-    name: "Your Name",
-    title: "Designer",
-    subtitle: "Digital",
+    name: "Camila Dejtiar",
+    title: "UX/UI",
+    subtitle: "Designer",
     description:
-      "A passionate creative specializing in crafting beautiful and intuitive digital experiences. I transform complex problems into elegant, user-friendly designs.",
+      "I'm a passionate digital creative with a focus on design, research, and innovation. I seek to create intuitive experiences that make the relationship between people and technology easier and more meaningful.",
     contactMe: "Contact Me",
     seeMore: "See More",
   },
-}
+};
 
 export function HeroSection({ language }: HeroSectionProps) {
-  const t = translations[language]
+  const t = translations[language];
 
   const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-  }
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
-  }
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <section id="home" className="h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Elements */}
+    <section
+      id="home"
+      className="h-screen flex items-center justify-center relative overflow-hidden"
+    >
+      {/* Minimal background elements specific to hero */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" />
@@ -52,7 +55,9 @@ export function HeroSection({ language }: HeroSectionProps) {
       <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center">
         <div className="max-w-3xl mx-auto text-center">
           {/* Greeting */}
-          <p className="text-lg font-barlow text-muted-foreground mb-4 animate-fade-in">{t.greeting}</p>
+          <p className="text-lg font-barlow text-muted-foreground mb-4 animate-fade-in">
+            {t.greeting}
+          </p>
 
           {/* Name */}
           <h1 className="font-superlobster text-5xl md:text-6xl font-bold mb-4 gradient-text animate-fade-in-up">
@@ -103,5 +108,5 @@ export function HeroSection({ language }: HeroSectionProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }

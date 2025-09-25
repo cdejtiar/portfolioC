@@ -1,15 +1,14 @@
 "use client"
 import { Home, User, Briefcase, Mail, Download, Globe, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
 
 interface SidebarNavigationProps {
   activeSection: string
   onSectionChange: (section: string) => void
   language: "es" | "en"
-  onLanguageChange: (lang: "es" | "en") => void
-  theme: "light" | "dark"
-  onThemeChange: (theme: "light" | "dark") => void
+  onLanguageChange: (language: "es" | "en") => void
 }
 
 const translations = {
@@ -34,10 +33,11 @@ export function SidebarNavigation({
   onSectionChange,
   language,
   onLanguageChange,
-  theme,
-  onThemeChange,
 }: SidebarNavigationProps) {
   const [isHovered, setIsHovered] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
   const t = translations[language]
 
   const navItems = [
@@ -48,6 +48,7 @@ export function SidebarNavigation({
   ]
 
   const scrollToSection = (sectionId: string) => {
+    if (!mounted) return
     console.log("[v0] Scrolling to section:", sectionId)
     const element = document.getElementById(sectionId)
     if (element) {
@@ -64,6 +65,7 @@ export function SidebarNavigation({
   }
 
   const downloadCV = () => {
+    if (!mounted) return
     // Placeholder for CV download
     const link = document.createElement("a")
     link.href = "/cv.pdf" // You'll need to add your CV file
@@ -71,88 +73,154 @@ export function SidebarNavigation({
     link.click()
   }
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
   return (
-    <nav
-      className={`fixed left-6 z-50 transition-all duration-300 ${
-        isHovered ? "top-6 bottom-6" : "top-1/2 -translate-y-1/2"
-      }`}
-    >
-      <div
-        className={`glass-effect rounded-2xl transition-all duration-300 ${
-          isHovered ? "w-52 h-full flex flex-col p-6" : "w-16 p-3"
+    <>
+      {/* Desktop Sidebar - 1024px+ */}
+      <nav
+        className={`hidden lg:block fixed z-50 transition-all duration-300 left-6 ${
+          isHovered ? "top-6 bottom-6" : "top-1/2 -translate-y-1/2"
         }`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Logo/Initials */}
-        <div className="text-center mb-6">
-          <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-superlobster text-sm font-bold mx-auto">
-            TN
+        <div
+          className={`glass-effect rounded-2xl transition-all duration-300 ${
+            isHovered ? "w-52 h-full flex flex-col p-6" : "w-16 p-3"
+          }`}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+        {/* Logo/Avatar */}
+        <div className="text-center mb-4 md:mb-6">
+          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full overflow-hidden mx-auto border-2 border-primary/20">
+            <img 
+              src="/profileCami.jpg" 
+              alt="Logo" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
         {/* Navigation Items */}
-        <div className={`${isHovered ? "flex-1 flex flex-col justify-center" : ""} space-y-3`}>
+        <div className={`${isHovered ? "flex-1 flex flex-col justify-center" : ""} space-y-2 md:space-y-3`}>
           {navItems.map((item, index) => (
             <Button
               key={item.id}
               variant={activeSection === item.id ? "default" : "ghost"}
               size="sm"
               onClick={() => scrollToSection(item.id)}
-              className={`${isHovered ? "w-full justify-start px-4 py-3" : "w-10 h-10 p-0 justify-center"} gap-3 transition-all duration-300 ${
+              className={`${
+                isHovered 
+                  ? "w-full justify-start px-3 md:px-4 py-2 md:py-3" 
+                  : "w-8 h-8 md:w-10 md:h-10 p-0 justify-center"
+              } gap-2 md:gap-3 transition-all duration-300 ${
                 activeSection === item.id ? "bg-primary text-primary-foreground shadow-lg" : "hover:bg-secondary/20"
-              } ${item.id === "contact" ? "mb-4" : ""}`}
+              } ${item.id === "contact" ? "mb-3 md:mb-4" : ""}`}
             >
-              <item.icon className="w-4 h-4 flex-shrink-0" />
-              {isHovered && <span className="text-sm font-medium whitespace-nowrap">{item.label}</span>}
+              <item.icon className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+              {isHovered && <span className="text-xs md:text-sm font-medium whitespace-nowrap">{item.label}</span>}
             </Button>
           ))}
         </div>
 
         {/* Divider - only show when hovered */}
-        {isHovered && <div className="border-t border-border my-4" />}
+        {isHovered && <div className="border-t border-border my-3 md:my-4" />}
 
         {/* Download CV */}
         <Button
           onClick={downloadCV}
           variant="outline"
           size="sm"
-          className={`${isHovered ? "w-full justify-start px-4 py-3" : "w-10 h-10 p-0 justify-center"} gap-3 hover:bg-secondary/20 bg-transparent transition-all duration-300`}
+          className={`${
+            isHovered 
+              ? "w-full justify-start px-3 md:px-4 py-2 md:py-3" 
+              : "w-8 h-8 md:w-10 md:h-10 p-0 justify-center"
+          } gap-2 md:gap-3 hover:bg-secondary/20 bg-transparent transition-all duration-300`}
         >
-          <Download className="w-4 h-4 flex-shrink-0" />
-          {isHovered && <span className="text-sm font-medium whitespace-nowrap">{t.downloadCV}</span>}
+          <Download className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+          {isHovered && <span className="text-xs md:text-sm font-medium whitespace-nowrap">{t.downloadCV}</span>}
         </Button>
 
         {/* Controls - only show when hovered */}
         {isHovered && (
-          <div className="space-y-2 mt-4">
+          <div className="space-y-2 mt-3 md:mt-4">
             {/* Language Toggle */}
             <Button
               onClick={() => onLanguageChange(language === "es" ? "en" : "es")}
               variant="ghost"
               size="sm"
-              className="w-full justify-start gap-3 hover:bg-secondary/20 px-4 py-3"
+              className="w-full justify-start gap-2 md:gap-3 hover:bg-secondary/20 px-3 md:px-4 py-2 md:py-3"
             >
-              <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">{language.toUpperCase()}</span>
+              <Globe className="w-3 h-3 md:w-4 md:h-4" />
+              <span className="text-xs md:text-sm font-medium">{language.toUpperCase()}</span>
             </Button>
 
             {/* Theme Toggle */}
             <Button
-              onClick={() => onThemeChange(theme === "light" ? "dark" : "light")}
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               variant="ghost"
               size="sm"
-              className="w-full justify-start gap-3 hover:bg-secondary/20 px-4 py-3"
+              className="w-full justify-start gap-2 md:gap-3 hover:bg-secondary/20 px-3 md:px-4 py-2 md:py-3"
             >
-              {theme === "light" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-              <span className="text-sm font-medium">{theme === "light" ? "Oscuro" : "Claro"}</span>
+              {theme === "light" ? <Moon className="w-3 h-3 md:w-4 md:h-4" /> : <Sun className="w-3 h-3 md:w-4 md:h-4" />}
+              <span className="text-xs md:text-sm font-medium">{theme === "light" ? "Oscuro" : "Claro"}</span>
             </Button>
           </div>
         )}
 
         {/* Copyright - only show when hovered */}
         {isHovered && <div className="text-xs text-muted-foreground text-center mt-auto pt-4">© 2025</div>}
-      </div>
-    </nav>
+        </div>
+      </nav>
+
+      {/* Mobile Bottom Navigation - under 1024px */}
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe">
+        <div className="glass-effect mx-4 mb-4 rounded-2xl p-3">
+          <div className="flex items-center justify-center gap-4">
+            {navItems.map((item) => (
+              <Button
+                key={item.id}
+                variant={activeSection === item.id ? "default" : "ghost"}
+                size="sm"
+                onClick={() => scrollToSection(item.id)}
+                className={`w-12 h-12 p-0 rounded-xl transition-all duration-300 ${
+                  activeSection === item.id 
+                    ? "bg-primary text-primary-foreground shadow-lg scale-110" 
+                    : "hover:bg-secondary/20 hover:scale-105"
+                }`}
+              >
+                <item.icon className="w-5 h-5" />
+              </Button>
+            ))}
+            
+            {/* Language Toggle for Mobile */}
+            <Button
+              onClick={() => onLanguageChange(language === "es" ? "en" : "es")}
+              variant="ghost"
+              size="sm"
+              className="w-12 h-12 p-0 rounded-xl hover:bg-secondary/20 hover:scale-105 transition-all duration-300"
+            >
+              <Globe className="w-4 h-4" />
+            </Button>
+            
+            {/* Theme Toggle for Mobile */}
+            <Button
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              variant="ghost"
+              size="sm"
+              className="w-12 h-12 p-0 rounded-xl hover:bg-secondary/20 hover:scale-105 transition-all duration-300"
+            >
+              {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+            </Button>
+          </div>
+        </div>
+      </nav>
+    </>
   )
 }
