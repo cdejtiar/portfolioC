@@ -44,7 +44,7 @@ export function HeroSection({ language }: HeroSectionProps) {
   return (
     <section
       id="home"
-      className="h-screen flex items-center justify-center relative overflow-hidden"
+      className="h-screen min-h-screen-safe sm:h-screen lg:h-screen flex items-center justify-center relative overflow-hidden pt-safe-top pb-safe-bottom"
     >
       {/* Minimal background elements specific to hero */}
       <div className="absolute inset-0 overflow-hidden">

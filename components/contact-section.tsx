@@ -104,7 +104,7 @@ export function ContactSection({ language }: ContactSectionProps) {
 
   return (
     <section id="contact" className="py-16 min-h-screen flex items-center relative bg-gradient-to-b from-transparent from-5% via-violet-50/10 via-30% to-violet-200 to-100% dark:from-transparent dark:from-5% dark:via-violet-950/5 dark:via-30% dark:to-violet-950 dark:to-100%">
-      <div className="container mx-auto px-6 ml-0 lg:ml-24">
+      <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">

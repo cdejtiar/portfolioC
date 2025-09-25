@@ -59,7 +59,7 @@ export default function Home() {
 
       {/* About Section - Full width like Hero and Contact */}
       <section id="about" className="py-16 min-h-screen flex items-center">
-        <div className="container mx-auto px-6 ml-0 lg:ml-24">
+        <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-superlobster text-3xl md:text-4xl font-bold text-primary mb-10 text-center">
               {language === "es" ? "Sobre Mí" : "About Me"}

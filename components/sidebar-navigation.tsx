@@ -83,9 +83,9 @@ export function SidebarNavigation({
 
   return (
     <>
-      {/* Desktop Sidebar - 1024px+ */}
+      {/* Desktop Sidebar - 1165px+ */}
       <nav
-        className={`hidden lg:block fixed z-50 transition-all duration-300 left-6 ${
+        className={`desktop-nav fixed z-50 transition-all duration-300 left-6 ${
           isHovered ? "top-6 bottom-6" : "top-1/2 -translate-y-1/2"
         }`}
       >
@@ -179,44 +179,69 @@ export function SidebarNavigation({
         </div>
       </nav>
 
-      {/* Mobile Bottom Navigation - under 1024px */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe">
-        <div className="glass-effect mx-4 mb-4 rounded-2xl p-3">
-          <div className="flex items-center justify-center gap-4">
-            {navItems.map((item) => (
+      {/* Mobile Bottom Navigation - under 1165px */}
+      <nav className="mobile-nav fixed bottom-0 left-0 right-0 z-50 pb-safe">
+        <div className="glass-effect mx-1 sm:mx-4 mb-2 sm:mb-4 rounded-2xl p-1.5 sm:p-3">
+          <div className="flex items-center justify-between">
+            {/* Left side - Main navigation icons */}
+            <div className="flex items-center justify-center gap-1 sm:gap-3">
+              {navItems.map((item) => (
+                <Button
+                  key={item.id}
+                  variant={activeSection === item.id ? "default" : "ghost"}
+                  size="sm"
+                  onClick={() => scrollToSection(item.id)}
+                  className={`w-9 h-9 sm:w-12 sm:h-12 p-0 rounded-lg sm:rounded-xl transition-all duration-300 ${
+                    activeSection === item.id 
+                      ? "bg-primary text-primary-foreground shadow-lg scale-110" 
+                      : "hover:bg-secondary/20 hover:scale-105"
+                  }`}
+                >
+                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                </Button>
+              ))}
+              
+              {/* Separator */}
+              <div className="w-px h-6 sm:h-8 bg-muted-foreground/30 mx-0.5 sm:mx-1"></div>
+              
+              {/* Language Toggle */}
               <Button
-                key={item.id}
-                variant={activeSection === item.id ? "default" : "ghost"}
+                onClick={() => onLanguageChange(language === "es" ? "en" : "es")}
+                variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection(item.id)}
-                className={`w-12 h-12 p-0 rounded-xl transition-all duration-300 ${
-                  activeSection === item.id 
-                    ? "bg-primary text-primary-foreground shadow-lg scale-110" 
-                    : "hover:bg-secondary/20 hover:scale-105"
-                }`}
+                className="w-9 h-9 sm:w-12 sm:h-12 p-0 rounded-lg sm:rounded-xl hover:bg-secondary/20 hover:scale-105 transition-all duration-300"
+                title={language === "es" ? "Cambiar idioma" : "Change language"}
               >
-                <item.icon className="w-5 h-5" />
+                <Globe className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
               </Button>
-            ))}
+              
+              {/* Theme Toggle */}
+              <Button
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                variant="ghost"
+                size="sm"
+                className="w-9 h-9 sm:w-12 sm:h-12 p-0 rounded-lg sm:rounded-xl hover:bg-secondary/20 hover:scale-105 transition-all duration-300"
+                title={theme === "light" ? 
+                  (language === "es" ? "Modo oscuro" : "Dark mode") : 
+                  (language === "es" ? "Modo claro" : "Light mode")
+                }
+              >
+                {theme === "light" ? 
+                  <Moon className="w-4.5 h-4.5 sm:w-5 sm:h-5" /> : 
+                  <Sun className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
+                }
+              </Button>
+            </div>
             
-            {/* Language Toggle for Mobile */}
+            {/* Right side - Download CV button with text */}
             <Button
-              onClick={() => onLanguageChange(language === "es" ? "en" : "es")}
-              variant="ghost"
+              onClick={downloadCV}
+              variant="secondary"
               size="sm"
-              className="w-12 h-12 p-0 rounded-xl hover:bg-secondary/20 hover:scale-105 transition-all duration-300"
+              className="px-2 sm:px-3 py-1.5 sm:py-2 h-auto rounded-lg sm:rounded-xl hover:bg-secondary/90 hover:scale-105 transition-all duration-300 text-xs sm:text-sm font-medium"
             >
-              <Globe className="w-4 h-4" />
-            </Button>
-            
-            {/* Theme Toggle for Mobile */}
-            <Button
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              variant="ghost"
-              size="sm"
-              className="w-12 h-12 p-0 rounded-xl hover:bg-secondary/20 hover:scale-105 transition-all duration-300"
-            >
-              {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+              <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5" />
+              {language === "es" ? "Descargar CV" : "Download CV"}
             </Button>
           </div>
         </div>

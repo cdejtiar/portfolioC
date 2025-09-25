@@ -3,6 +3,23 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Local Font Declarations */
+@font-face {
+  font-family: 'Superlobster';
+  src: url('/fonts/Super Lobster.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('/fonts/Coolvetica.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Custom color palette as requested */
   --background: #ebe8d8; /* Beige background */
@@ -39,10 +56,10 @@
   --sidebar-border: #d1c7d8;
   --sidebar-ring: #402940;
 
-  /* Custom font variables */
-  --font-superlobster: "Superlobster", cursive;
-  --font-coolvetica: "Coolvetica", sans-serif;
-  --font-barlow: "Barlow", sans-serif;
+  /* Custom font variables with robust fallbacks */
+  --font-superlobster: "Superlobster", "Dancing Script", "Brush Script MT", "Lucida Handwriting", cursive, fantasy;
+  --font-coolvetica: "Coolvetica", "Oswald", "Helvetica Neue", "Arial Black", "Impact", sans-serif;
+  --font-barlow: "Barlow", "Roboto", "Helvetica Neue", "Arial", sans-serif;
 }
 
 .dark {
@@ -452,4 +469,32 @@
 
 .pr-safe {
   padding-right: env(safe-area-inset-right, 0);
+}
+
+/* Custom breakpoint at 1165px */
+.desktop-nav {
+  display: none;
+}
+
+.mobile-nav {
+  display: block;
+}
+
+@media (min-width: 1165px) {
+  .desktop-nav {
+    display: block;
+  }
+  
+  .mobile-nav {
+    display: none;
+  }
+}
+
+/* Safe area utilities */
+.h-screen-safe {
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+}
+
+.min-h-screen-safe {
+  min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
 }

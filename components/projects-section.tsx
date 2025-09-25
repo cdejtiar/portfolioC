@@ -135,7 +135,7 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
 
   return (
     <section id="projects" className="py-16 min-h-screen flex items-center relative">
-      <div className="container mx-auto px-6 ml-0 lg:ml-24">
+      <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">

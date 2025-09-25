@@ -21,11 +21,18 @@ export function CustomCursor() {
   const [isOverImage, setIsOverImage] = useState(false)
   const [isOverContact, setIsOverContact] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [isTouchDevice, setIsTouchDevice] = useState(false)
 
   const particlesRef = useRef<Particle[]>([])
   const particleIdRef = useRef(0)
   const lastMouseMoveRef = useRef(0)
   const animationFrameRef = useRef<number>()
+
+  // Check if device supports touch (mobile/tablet)
+  const checkTouchDevice = useCallback(() => {
+    return ('ontouchstart' in window) || 
+           (navigator.maxTouchPoints > 0)
+  }, [])
 
   const throttledMouseMove = useCallback((e: MouseEvent) => {
     if (!mounted) return
@@ -114,10 +121,11 @@ export function CustomCursor() {
   // Mount detection useEffect
   useEffect(() => {
     setMounted(true)
-  }, [])
+    setIsTouchDevice(checkTouchDevice())
+  }, [checkTouchDevice])
 
   useEffect(() => {
-    if (!mounted) return
+    if (!mounted || isTouchDevice) return
 
     const handleMouseEnter = (e: Event) => {
       setIsHovering(true)
@@ -189,8 +197,8 @@ export function CustomCursor() {
     }
   }, [throttledMouseMove, handleMouseDown, handleMouseUp, animateParticles, mounted])
 
-  // Don't render until mounted
-  if (!mounted || !isVisible) return null
+  // Don't render until mounted or on touch devices
+  if (!mounted || !isVisible || isTouchDevice) return null
 
   return (
     <>
