@@ -94,7 +94,7 @@ export function HeroSection({ language }: HeroSectionProps) {
               onClick={scrollToProjects}
               variant="outline"
               size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 py-4 text-base font-semibold rounded-2xl glass-effect transition-all duration-300 hover:scale-105 bg-transparent"
+              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-4 text-base font-semibold rounded-2xl glass-effect transition-all duration-300 hover:scale-105"
             >
               <Eye className="w-4 h-4 mr-2" />
               {t.seeMore}
