@@ -42,7 +42,8 @@ const projectsData: { [key: string]: Project[] } = {
     {
       id: "1",
       title: "eXerparK",
-      description: "Plataforma digital para motivar la actividad física y conectar personas a través del movimiento.",
+      description:
+        "Plataforma digital para motivar la actividad física y conectar personas a través del movimiento",
       fullDescription:
         "eXerparK nació en 2021, en el contexto pospandemia, con el objetivo de recuperar la motivación por el ejercicio y fomentar el encuentro en espacios públicos como parques y plazas. \n El proyecto combina bienestar, comunidad y tecnología: propone un espacio donde las personas pueden descubrir actividades gratuitas al aire libre, agendarlas, conocer gente nueva y mantenerse activas. \n Durante la investigación inicial se realizó un Desk Research y un Social Listening sobre los hábitos de ejercicio en Argentina, lo que permitió detectar una pérdida generalizada de motivación. \n A partir de esa problemática, el proceso de Ideación se centró en la pregunta “¿Cómo podríamos crear un espacio donde las personas desmotivadas puedan motivarse?”, definiendo la motivación como el eje central del diseño. \n Con herramientas como Customer Journey, User Flow y Benchmark, se consolidó una propuesta con valor agregado y se desarrolló un prototipo funcional en Adobe XD.",
       image: "/placeholder.jpg",
@@ -53,196 +54,306 @@ const projectsData: { [key: string]: Project[] } = {
       features: [
         "Agenda personal para planificar actividades",
         "Sistema de reservas gratuito en espacios públicos",
-        "Enfoque en la motivación y la comunidad"
+        "Enfoque en la motivación y la comunidad",
       ],
     },
     {
-      id: "2", 
+      id: "2",
       title: "Y Ahora Qué?",
-      description: "Aplicación interactiva para toma de decisiones y orientación personal",
-      fullDescription:
-        "Una aplicación innovadora que ayuda a los usuarios a tomar decisiones importantes en su vida mediante herramientas interactivas, consejos personalizados y seguimiento de objetivos.",
+      description:
+        "Solución digital para descubrir qué ver después de terminar una serie o película",
+      fullDescription: `Y Ahora Qué? nació en 2021 durante una Hackathon de la Universidad Maimónides, mi primera experiencia en el concurso. Durante dos semanas intensas de workshops y trabajo en equipo, desarrollamos un prototipo funcional que presentamos frente a un jurado.
+El proyecto surge de una situación común: terminar una serie o película y no saber qué ver a continuación.
+Durante la fase de Research, realizamos una lluvia de ideas sobre el mundo de las series y el entretenimiento, identificando una problemática clara: la saturación de opciones y el poco tiempo para decidir.
+Luego de encuestas y entrevistas descubrimos que el verdadero problema no era la falta de contenido, sino la dificultad de encontrar algo que se ajuste realmente a los gustos del usuario.
+A partir de esta redefinición, creamos una User Persona y su User Journey, y avanzamos hacia las etapas de Definición, User Flow y desarrollo del MVP.
+La solución final fue una plataforma que permite:
+- Conectar tus plataformas de streaming favoritas.
+- Recibir recomendaciones personalizadas con filtros empáticos basados en emociones y gustos.
+- Redirigirte directamente a la plataforma donde se reproduce el contenido elegido.
+
+Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y propusimos ideas para un futuro Y Ahora Qué? 2.0, que incluiría funciones como foros informales, chats, indicadores de contenido visto, y opciones colaborativas según con quién mires.`,
       image: "/placeholder.jpg",
-      technologies: ["React Native", "Firebase", "TypeScript", "Expo"],
+      technologies: [
+        "Figma",
+        "Adobe XD",
+        "Miro",
+        "User Research",
+        "Design Thinking",
+      ],
+      //links a prototipo y a presentación de google
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Herramientas de toma de decisiones",
-        "Consejos personalizados por IA",
-        "Seguimiento de objetivos",
-        "Interfaz intuitiva y amigable",
+        "Filtros empáticos personalizados",
+        "Vinculación directa con plataformas de streaming",
+        "Sistema de recomendaciones basado en emociones y gustos",
+        "Espacios de interacción futura entre usuarios",
       ],
     },
     {
       id: "3",
       title: "enHUELLA2",
-      description: "Sistema de seguimiento de huella de carbono y sostenibilidad",
-      fullDescription:
-        "Plataforma web para el cálculo y seguimiento de la huella de carbono personal y empresarial, con recomendaciones para reducir el impacto ambiental.",
+      description:
+        "Aplicación digital para centralizar y agilizar el proceso de adopción de animales",
+      fullDescription: `enHUELLA2 fue creado en 2022 durante una Hackathon de la Universidad Maimónides, en mi segunda participación en el concurso. Durante dos semanas de workshops y trabajo en equipo, desarrollamos un prototipo funcional, con el que obtuvimos el premio a Mejor Scrum Master.
+    El proyecto aborda la problemática de la adopción de animales y el desafío de encontrar información clara, accesible y centralizada sobre refugios, organizaciones y procesos de adopción.
+    Nuestra propuesta fue una aplicación que permita a los refugios y organizaciones publicar animales en adopción o tránsito, y que los usuarios puedan encontrar a su compañero ideal mediante filtros personalizados.
+    En la fase de Research, realizamos un Benchmark que evidenció la falta de soluciones adaptadas a iOS y la dispersión de la información entre múltiples sitios.
+    También llevamos a cabo una encuesta con 84 participantes, donde descubrimos que más del 50 % adoptó a través de redes sociales o rescatando directamente, y que la mayoría prefería una app centralizada.
+    Complementamos este análisis con entrevistas cualitativas que nos aportaron nuevas perspectivas sobre la experiencia del proceso de adopción.
+    Durante la Definición, nos guiamos por la pregunta:
+    ¿Cómo podríamos facilitar la búsqueda de un animal en adopción y su proceso para que la experiencia sea más agradable y centralizada?
+    Con esta base, definimos un MVP centrado en una aplicación que:
+    - Centraliza la información de animales disponibles.
+    - Permite completar un único formulario inicial para simplificar el proceso.
+    - Facilita la comunicación con refugios y organizaciones.
+
+    Tras el testeo con 5 usuarios, iteramos el diseño desde baja hasta alta fidelidad, mejorando usabilidad y flujo.
+    Finalmente, proyectamos ideas para una versión futura de enHUELLA2, con funciones como:
+    - Flujo y diseño para cuidadores.
+    - Información postadopción y cuidados básicos.
+    - Seguimiento de documentación médica.
+    - Búsqueda de veterinarias por zona.`,
       image: "/placeholder.jpg",
-      technologies: ["Vue.js", "Python", "Django", "PostgreSQL"],
+      technologies: [
+        "Figma",
+        "Miro",
+        "Design Thinking",
+        "User Research",
+        "Scrum",
+      ],
+      //links a prototipo y a presentación de google
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Cálculo automático de huella de carbono",
-        "Reportes detallados y visualizaciones",
-        "Recomendaciones personalizadas",
-        "Comparativas y métricas",
+        "Centralización de información sobre adopciones",
+        "Filtros personalizados por tipo de mascota y necesidades",
+        "Formulario único y simplificado",
+        "Comunicación directa con refugios y organizaciones",
       ],
     },
     {
       id: "4",
       title: "NFTBunnies",
-      description: "Marketplace y colección de NFTs con temática de conejos digitales",
-      fullDescription:
-        "Proyecto blockchain que combina arte digital y tecnología NFT, featuring una colección única de conejos digitales con diferentes raridades y características especiales.",
+      description:
+        "Colección digital de NFTs generativos creada con Procreate y Web3",
+      fullDescription: `NFTBunnies fue desarrollado en 2022 en el marco de la materia Programación Multimedial III.
+El desafío consistía en diseñar una colección de 50 NFTs con una temática libre, programar una web funcional para mintearlos y experimentar con Smart Contracts y Ethereum de prueba, explorando el potencial del ecosistema Web3.
+Para la creación visual utilicé Procreate, organizando los elementos en carpetas por categorías: fondos, clima, color de cuerpo, manos, accesorios y decoraciones.
+Cada combinación generaba variaciones únicas, y mediante un script automatizado logré producir múltiples versiones de forma dinámica.
+Además de la programación del backend, me encargué del diseño del frontend y del logo, buscando transmitir una estética divertida, tierna y juguetona, alineada con el universo visual de los personajes.`,
       image: "/placeholder.jpg",
-      technologies: ["React", "Solidity", "Web3.js", "IPFS"],
+      technologies: ["Procreate", "JavaScript", "Web3.js", "HTML", "CSS"],
+      //links a github y vercel
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Smart contracts en Ethereum",
-        "Marketplace integrado",
-        "Sistema de raridades",
-        "Comunidad y rewards",
+        "Colección generativa de 50 NFTs",
+        "Implementación de Smart Contracts en red de prueba Ethereum",
+        "Web funcional para minteo de NFTs",
+        "Diseño integral de identidad visual y frontend",
       ],
     },
     {
       id: "5",
       title: "Dino",
-      description: "Juego arcade retro inspirado en el dinosaurio de Chrome",
-      fullDescription:
-        "Recreación moderna del clásico juego del dinosaurio de Google Chrome con gráficos mejorados, power-ups y sistema de puntuaciones online.",
+      description:
+        "Videojuego inspirado en el clásico juego del dinosaurio de Chrome",
+      fullDescription: `Dino fue creado en 2023 como proyecto final de la materia Programación Multimedial IV.
+El objetivo era recrear el icónico juego del dinosaurio de Google Chrome, donde el personaje debe esquivar obstáculos mientras corre indefinidamente, combinando jugabilidad simple con un diseño visual atractivo.
+El desarrollo se realizó utilizando C#, Unity y SQLite, comprendiendo los fundamentos del lenguaje, el motor de juego y la gestión de datos.
+A través de scripts personalizados y las herramientas del editor, logré un resultado funcional, fluido y divertido, que destaca por su interfaz amigable y facilidad de uso.`,
       image: "/placeholder.jpg",
-      technologies: ["JavaScript", "HTML5 Canvas", "CSS3", "LocalStorage"],
+      technologies: [
+        "Unity",
+        "C#",
+        "SQLite",
+        "LocalStorage",
+        "Visual Studio Code",
+      ],
+      //link a github
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Gráficos pixelart mejorados",
-        "Sistema de power-ups",
-        "Leaderboard online",
-        "Controles responsivos",
+        "Jugabilidad infinita con detección de colisiones",
+        "Interfaz visual dinámica y atractiva",
+        "Scripts personalizados en C#",
+        "Sistema de registro de puntajes con SQLite y LocalStorage",
       ],
     },
-    
+
     {
       id: "7",
       title: "GameReads",
-      description: "Plataforma social para reseñas y recomendaciones de videojuegos",
-      fullDescription:
-        "Red social dedicada a gamers donde pueden escribir reseñas, descubrir nuevos juegos y conectar con otros jugadores con gustos similares.",
+      description: "Aplicación gamificada para motivar la lectura",
+      fullDescription: `GameReads fue desarrollado en 2023 dentro de la materia Sistemas Gamificados, con el objetivo de aplicar estrategias de gamificación a un entorno digital.
+ La propuesta consiste en una app móvil que permite a los usuarios registrar sus lecturas, descubrir nuevos libros, compartir opiniones y conectarse con otros lectores, todo dentro de un sistema diseñado para motivar el hábito de leer más.
+ El proyecto se enmarca en un sistema de cambio de comportamiento, cuyo propósito es generar un impacto positivo en los usuarios a través del juego y la interacción social.
+ Las principales funcionalidades permiten:
+  - Llevar un registro personal de lecturas.
+  - Recibir recomendaciones basadas en gustos e intereses.
+  - Calificar y compartir opiniones con otros usuarios.
+  - Conectarse con personas afines y descubrir nuevas lecturas.
+
+Durante el desarrollo realicé un análisis comparativo de plataformas existentes, diseñé un Gamification Canvas para estructurar la estrategia lúdica, y creé tanto el User Flow como el prototipo funcional del sistema.`,
       image: "/placeholder.jpg",
-      technologies: ["React", "Node.js", "GraphQL", "MongoDB"],
+      technologies: [
+        "Figma",
+        "Gamification Canvas",
+        "User Flow",
+        "UX Research",
+      ],
+      //links a prototipo y a presentación de google
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
         "Sistema de reseñas y calificaciones",
-        "Recomendaciones personalizadas",
-        "Comunidad de gamers",
-        "API de juegos integrada",
+        "Registro y seguimiento de lecturas",
+        "Recomendaciones personalizadas según intereses",
+        "Comunidad de lectores y sistema de puntuaciones",
       ],
     },
     {
       id: "8",
-      title: "Organizador",
-      description: "Aplicación de productividad para gestión de tareas y proyectos",
-      fullDescription:
-        "Herramienta completa de productividad que combina gestión de tareas, calendario, notas y colaboración en equipo en una interfaz limpia y eficiente.",
+      title: "Webapp Universitaria",
+      description:
+        "Diseño de una aplicación para la organización académica de estudiantes universitarios",
+      fullDescription: `Este proyecto grupal fue desarrollado en 2023 dentro de la materia Proyecto Senior, con el objetivo de crear una webapp que ayudara a los estudiantes de la Universidad Maimónides (UMAI) a organizar su vida universitaria de forma más efectiva.
+El MVP del prototipo contempla funcionalidades clave como:
+- Creación y visualización de un calendario personalizado.
+- Recordatorios y alertas configurables.
+- Gestión de tareas, notas y apuntes en un solo lugar.
+- Los objetivos del proyecto fueron: diseñar una aplicación funcional y accesible, investigar las necesidades reales del público objetivo, y validar el diseño mediante pruebas de usabilidad para asegurar que la solución respondiera a sus demandas cotidianas.
+Durante el proceso realizamos un Acta de Proyecto para definir el rumbo del trabajo, organizamos las tareas en Trello y establecimos sprints semanales para coordinar avances en equipo.
+ Tras la fase de investigación, desarrollamos el informe de resultados y avanzamos hacia la etapa de prototipado en Adobe XD, consolidando la experiencia del usuario en un entorno claro, intuitivo y funcional.`,
       image: "/placeholder.jpg",
-      technologies: ["React", "TypeScript", "Supabase", "Tailwind"],
+      technologies: [
+        "Adobe XD",
+        "Trello",
+        "Design Thinking",
+        "UX Research",
+        "Scrum",
+      ],
+      //links a imk
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Gestión avanzada de tareas",
-        "Calendario integrado",
-        "Colaboración en tiempo real",
-        "Sincronización multiplataforma",
+        "Calendario y recordatorios personalizables",
+        "Sistema integral para tareas, notas y apuntes",
+        "Diseño centrado en la experiencia universitaria",
+        "Proceso guiado por metodologías ágiles",
       ],
     },
     {
       id: "9",
       title: "intoximate",
-      description: "Aplicación de salud para seguimiento de hábitos y bienestar",
-      fullDescription:
-        "App centrada en el bienestar personal que ayuda a usuarios a identificar y reducir hábitos tóxicos mientras promueve un estilo de vida saludable.",
+      description: "Aplicación móvil para descubrir y aprender sobre tragos",
+      fullDescription: `intoximate fue un proyecto desarrollado en 2023 como trabajo final de la materia Proyecto Senior, en conjunto con un compañero de la facultad.
+ El desafío era explorar una tecnología completamente nueva y llevar adelante el proyecto como si se tratara de un encargo freelance, registrando tiempos, planificando etapas y validando el producto con usuarios reales.
+La aplicación propone un buscador de tragos alcohólicos con distintos filtros para encontrar el trago ideal, además de funcionalidades complementarias como juegos y un aleatorizador de tragos para descubrir nuevas combinaciones.
+Durante el desarrollo aplicamos metodologías ágiles y realizamos dos checkpoints clave: uno de Diseño y otro de Desarrollo, que marcaron los avances principales del proyecto.`,
       image: "/placeholder.jpg",
-      technologies: ["Flutter", "Dart", "Firebase", "HealthKit"],
+      technologies: [
+        "React Native",
+        "Expo",
+        "Jira",
+        "Google Docs",
+        "Google Sheets",
+        "GitHub",
+        "UX Research",
+        "Scrum",
+      ],
+      //links a prototipo, presentación de google, acta de proyecto e informe de investigación
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Seguimiento de hábitos",
-        "Análisis de patrones",
-        "Recordatorios inteligentes",
-        "Integración con dispositivos de salud",
+        "Buscador de tragos con filtros personalizados",
+        "Juegos y aleatorizador para descubrir nuevas combinaciones",
+        "Proceso guiado por Design Thinking",
+        "Validación con usuarios y versión beta funcional",
       ],
     },
     {
       id: "10",
-      title: "Bingo",
-      description: "Juego de bingo online multijugador con salas privadas",
-      fullDescription:
-        "Plataforma de bingo online que permite crear salas privadas, jugar con amigos y disfrutar de diferentes variantes del clásico juego de bingo.",
+      title: "Bingo familiar de Dorja",
+      description:
+        "Juego web interactivo para sorteos de bingo comunitarios y familiares",
+      fullDescription: `Bingo Familiar de Dorja fue un proyecto creado en el 2025 para traer un poco de magia, emoción y estética a las partidas de bingo con familia, amig@s o janijim. Diseñado con una interfaz cálida y simple, el objetivo fue hacer que cualquier persona pueda usarlo fácilmente en actividades recreativas o comunitarias.
+El objetivo del proyecto fue crear una herramienta accesible, funcional y estéticamente cuidada que pueda usarse sin conexión a Internet, ideal para actividades comunitarias, reuniones familiares o peulot. Además, busca aportar una identidad visual propia de Dorja, combinando lo lúdico con lo institucional.`,
       image: "/placeholder.jpg",
-      technologies: ["Socket.io", "React", "Node.js", "Redis"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      technologies: ["Stitch de Google", "JavaScript", "HTML", "CSS"],
+      liveUrl: "https://bingo-dorja.vercel.app",
+      githubUrl: "https://github.com/cdejtiar/bingoDorja/tree/main",
       features: [
-        "Multijugador en tiempo real",
-        "Salas privadas y públicas",
-        "Diferentes modalidades de juego",
-        "Chat integrado",
+        "Generador de números aleatorios del 1 al 90",
+        "Resaltado visual en la grilla de los números sorteados",
+        "Visualización grande de la bolilla actual",
+        "Botón de reinicio para volver a empezar la partida",
+        "Interfaz colorida, cálida y con estética Dorja",
       ],
     },
-    
     {
       id: "12",
       title: "Sala de escape IVO 2025",
-      description: "Experiencia interactiva de escape room digital inmersiva",
-      fullDescription:
-        "Juego de escape room digital desarrollado para el evento IVO 2025, combinando puzzles interactivos, narrativa inmersiva y tecnología web moderna.",
+      description:
+        "Aplicación web interactiva para jornadas de orientación escolar",
+      fullDescription: `Sala de Escape IVO fue un proyecto desarrollado en 2025 en la Escuela ORT, con el objetivo de mostrar de forma divertida e interactiva las orientaciones de estudio a estudiantes de 2do año. La experiencia fue diseñada para que los participantes aprendieran mientras jugaban, recorriendo cinco subsalas, cada una representando un pilar de la orientación de Informática.
+El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo conductor que uniera todas las salas y guiara a los estudiantes a través de desafíos interactivos y puzzles educativos.`,
       image: "/placeholder.jpg",
-      technologies: ["Three.js", "React", "WebGL", "CSS3"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      technologies: ["Stitch de Google", "v0", "TypeScript", "Next.js", "Tailwind CSS", "GitHub Projects"],
+      liveUrl: "https://ivo-sala-de-escape.vercel.app",
+      githubUrl: "https://https://github.com/informaticaort/IVO-2025",
       features: [
-        "Gráficos 3D interactivos",
-        "Puzzles complejos",
-        "Narrativa inmersiva",
-        "Experiencia multisensorial",
+        "Consola interactiva en la sala de Diseño: arrastrar campos y resolver puzzles sobre conceptos de diseño",
+        "Hilo conductor que conecta todas las subsalas y mantiene la narrativa coherente",
+        "Pruebas de usabilidad con estudiantes de distintos años para validar tiempos, comprensión y atractividad",
+        "Iteración de errores y mejoras para garantizar que los estudiantes puedan completar la sala sin inconvenientes",
       ],
     },
+    //me quedé acá
     {
       id: "13",
       title: "inFlow",
-      description: "Proyecto de tesis: Sistema inteligente de gestión de flujo de trabajo",
+      description:
+        "Proyecto de tesis: Aplicación móvil para optimizar UX/UI y reducir la procrastinación académica en universitarios",
       fullDescription:
-        "Proyecto de tesis en desarrollo que utiliza inteligencia artificial para optimizar flujos de trabajo empresariales, automatizar procesos y mejorar la productividad organizacional.",
+      `Durante los últimos años vengo desarrollando mi proyecto de tesis para recibirme de Licenciatura en Tecnología Multimedial. Si bien es un trabajo en progreso, la idea principal es proponer una solución tecnológica que contribuya a reducir la procrastinación académica en estudiantes universitarios argentinos de 18 a 23 años.
+      El proyecto se enfoca en dos patrones de procrastinación clave: la Ansiedad de Evaluación (ligada a emociones negativas) y el Optimista Socialmente Enfocado (asociado a emociones positivas).
+      La solución se basa en la implementación de estrategias de Diseño Centrado en el Usuario y sistemas gamificados para abordar la motivación.
+      El proceso de desarrollo siguió las etapas de Design Thinking: Empatizar, Definir, Idear, Prototipar y Testear.
+      El MVP (Mínimo Producto Viable) definido incluye un cuestionario inicial de personalización, un plan de acción diario/semanal, un sistema de XP y Badges, un diario emocional y feedback visual del progreso.
+      El estudio de Investigación incluyó benchmarking de herramientas (como Focusmate, Forest y Structured) y encuestas a 157 personas, con un 82,8% que admitió procrastinar.
+      `,
       image: "/placeholder.jpg",
-      technologies: ["Python", "TensorFlow", "React", "FastAPI", "PostgreSQL"],
+      technologies: ["Design Thinking", "UX Research", "Benchmarking", "MoSCoW (Matriz de Priorización)"],
+      //poner que está en proceso.
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Inteligencia artificial integrada",
-        "Automatización de procesos",
-        "Análisis predictivo",
-        "Dashboard analítico avanzado",
+        "Personalización según el tipo de procrastinador (cuestionario inicial)",
+        "Gamificación con sistema de XP y Badges para fomentar la motivación",
+        "Diario emocional para la autocomprensión y gestión de sentimientos",
+        "Plan de acción que desglosa tareas en pasos pequeños y alcanzables",
       ],
     },
     {
       id: "14",
-      title: "Portfolio Moderno",
-      description: "Portfolio personal interactivo con navegación fluida y efectos de vidrio",
+      title: "Portfolio",
+      description:
+        "Portfolio personal",
       fullDescription:
-        "Portfolio personal desarrollado con Next.js 14, featuring navegación móvil innovadora, efectos de vidrio líquido, sistema de temas, y optimizaciones para dispositivos táctiles. Incluye safe areas para móviles modernos.",
+      `Portfolio personal desarrollado con Next.js 14, con decisiones propias de navegación móvil innovadora, efectos de vidrio líquido, sistema de temas, y optimizaciones para dispositivos táctiles.
+       La idea principal fue mía, pasando luego por un proceso de diseño en Stitch de Google para perfeccionarlo con elementos modernos e ideas más genéricas que un portfolio tiene que tener, para más tarde lanzarme a realizarlo mediante las implementaciones de v0.
+       Realicé un proceso de internalización en cuánto a qué elementos suelen definirme como persona y cómo poder mostrarlo de forma `,
       image: "/modern-portfolio-website.png",
-      technologies: ["Next.js 14", "TypeScript", "Tailwind CSS", "Shadcn/ui"],
+      technologies: ["Figma", "Stitch de Google", "Next.js 14", "TypeScript", "Tailwind CSS"],
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Navegación móvil flotante innovadora",
+        "Navegación móvil flotante",
         "Efectos de vidrio líquido (glassmorphism)",
-        "Breakpoints personalizados (1165px)",
-        "Safe areas para dispositivos modernos",
+        "Forma simplificada de demostración de proyectos"
       ],
     },
   ],
@@ -250,207 +361,338 @@ const projectsData: { [key: string]: Project[] } = {
     {
       id: "1",
       title: "eXerparK",
-      description: "Digital platform for entertainment space management and booking",
+      description:
+        "Digital platform to motivate physical activity and connect people through movement",
       fullDescription:
-        "eXerparK is a comprehensive platform for managing and booking entertainment spaces like parks, recreational centers, and sports areas. Includes booking system, online payments, and user management.",
+        "eXerparK was founded in 2021, in the post-pandemic context, with the goal of rekindling motivation for exercise and promoting meetings in public spaces like parks and plazas. \n The project combines well-being, community, and technology: it offers a space where people can discover free outdoor activities, schedule them, meet new people, and stay active. \n During the initial research, we conducted Desk Research and Social Listening on exercise habits in Argentina, which revealed a widespread loss of motivation. \n Based on this problem, the Ideation process focused on the question “How could we create a space where demotivated people could get motivated?”, defining motivation as the central axis of the design. \n Using tools like Customer Journey, User Flow, and Benchmark, we consolidated a value-added proposal and developed a functional prototype in Adobe XD.",
       image: "/placeholder.jpg",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      technologies: ["Adobe XD", "Figma", "Desk Research", "Benchmarking"],
+      //links to prototype and Google presentation
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Real-time booking system",
-        "Integrated payment management",
-        "Complete administrative panel",
-        "Automatic notifications",
+        "Personal agenda to plan activities",
+        "Free booking system for public spaces",
+        "Focus on motivation and community",
       ],
     },
     {
       id: "2",
       title: "Y Ahora Qué?",
-      description: "Interactive application for decision making and personal guidance",
-      fullDescription:
-        "An innovative application that helps users make important life decisions through interactive tools, personalized advice, and goal tracking.",
+      description:
+        "Digital solution to discover what to watch after finishing a series or movie",
+      fullDescription: `Y Ahora Qué? was created in 2021 during a Hackathon at Maimónides University, my first experience in the competition. During two intense weeks of workshops and teamwork, we developed a functional prototype that we presented to a jury.  
+The project arises from a common situation: finishing a series or movie and not knowing what to watch next.  
+During the Research phase, we brainstormed about the world of series and entertainment, identifying a clear problem: saturation of options and limited time to decide.  
+After surveys and interviews, we discovered that the real problem wasn't the lack of content, but rather the difficulty of finding something that truly matches the user's preferences.  
+From this new understanding, we created a User Persona and their User Journey, then moved on to the Definition, User Flow, and MVP development stages.  
+The final solution was a platform that allows:
+- Connecting your favorite streaming platforms.
+- Receiving personalized recommendations with empathy-based filters on emotions and tastes.
+- Redirecting directly to the platform where the chosen content is available.
+
+After testing, we created a high-fidelity prototype and proposed ideas for a future Y Ahora Qué? 2.0, which would include features such as informal forums, chats, seen-content indicators, and collaborative options based on who you’re watching with.`,
       image: "/placeholder.jpg",
-      technologies: ["React Native", "Firebase", "TypeScript", "Expo"],
+      technologies: [
+        "Figma",
+        "Adobe XD",
+        "Miro",
+        "User Research",
+        "Design Thinking",
+      ],
+      //links to prototype and Google presentation
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Decision-making tools",
-        "AI-powered personalized advice",
-        "Goal tracking",
-        "Intuitive and friendly interface",
+        "Personalized empathy-based filters",
+        "Direct connection to streaming platforms",
+        "Emotion- and taste-based recommendation system",
+        "Future user interaction spaces",
       ],
     },
     {
       id: "3",
       title: "enHUELLA2",
-      description: "Carbon footprint tracking and sustainability system",
-      fullDescription:
-        "Web platform for calculating and tracking personal and corporate carbon footprint, with recommendations to reduce environmental impact.",
+      description:
+        "Digital app to centralize and streamline the animal adoption process",
+      fullDescription: `enHUELLA2 was created in 2022 during a Hackathon at Maimónides University, in my second participation in the competition. During two weeks of workshops and teamwork, we developed a functional prototype, which earned us the Best Scrum Master award.  
+The project addresses the issue of animal adoption and the challenge of finding clear, accessible, and centralized information about shelters, organizations, and adoption processes.  
+Our proposal was an app that allows shelters and organizations to post animals for adoption or foster care, and lets users find their ideal companion through personalized filters.  
+In the Research phase, we conducted a Benchmark that showed a lack of solutions adapted to iOS and the dispersal of information across multiple websites.  
+We also conducted a survey with 84 participants, where we discovered that more than 50% of people adopted via social media or direct rescue, and most preferred a centralized app.  
+We supplemented this analysis with qualitative interviews, which provided new insights into the adoption process experience.  
+During Definition, we guided ourselves with the question:  
+How could we make the process of finding and adopting an animal easier, more enjoyable, and centralized?  
+Based on this, we defined an MVP centered on an app that:
+- Centralizes information about available animals.
+- Allows a single initial form to streamline the process.
+- Facilitates communication with shelters and organizations.
+
+After testing with 5 users, we iterated the design from low to high fidelity, improving usability and flow.  
+Finally, we projected ideas for a future version of enHUELLA2, including features like:
+- Flow and design for pet caregivers.
+- Post-adoption information and basic care tips.
+- Medical document tracking.
+- Vet search by location.`,
       image: "/placeholder.jpg",
-      technologies: ["Vue.js", "Python", "Django", "PostgreSQL"],
+      technologies: [
+        "Figma",
+        "Miro",
+        "Design Thinking",
+        "User Research",
+        "Scrum",
+      ],
+      //links to prototype and Google presentation
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Automatic carbon footprint calculation",
-        "Detailed reports and visualizations",
-        "Personalized recommendations",
-        "Comparisons and metrics",
+        "Centralized adoption information",
+        "Personalized filters by pet type and needs",
+        "Simplified single-form process",
+        "Direct communication with shelters and organizations",
       ],
     },
     {
       id: "4",
       title: "NFTBunnies",
-      description: "NFT marketplace and collection featuring digital bunnies",
-      fullDescription:
-        "Blockchain project combining digital art and NFT technology, featuring a unique collection of digital bunnies with different rarities and special characteristics.",
+      description:
+        "Generative NFT digital collection created with Procreate and Web3",
+      fullDescription: `NFTBunnies was developed in 2022 as part of the Multimedia Programming III course.  
+The challenge was to design a collection of 50 NFTs with a free theme, create a functional website to mint them, and experiment with Smart Contracts and test Ethereum, exploring the potential of the Web3 ecosystem.  
+For the visual creation, I used Procreate, organizing elements into folders by categories: backgrounds, weather, body color, hands, accessories, and decorations.  
+Each combination generated unique variations, and through an automated script, I produced multiple versions dynamically.  
+In addition to backend programming, I designed the frontend and the logo, aiming to convey a fun, cute, and playful aesthetic aligned with the characters' visual universe.`,
       image: "/placeholder.jpg",
-      technologies: ["React", "Solidity", "Web3.js", "IPFS"],
+      technologies: ["Procreate", "JavaScript", "Web3.js", "HTML", "CSS"],
+      //links to GitHub and Vercel
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Smart contracts on Ethereum",
-        "Integrated marketplace",
-        "Rarity system",
-        "Community and rewards",
+        "Generative collection of 50 NFTs",
+        "Implementation of Smart Contracts on Ethereum test network",
+        "Functional website for NFT minting",
+        "Complete visual identity and frontend design",
       ],
     },
     {
       id: "5",
       title: "Dino",
-      description: "Retro arcade game inspired by Chrome's dinosaur",
-      fullDescription:
-        "Modern recreation of Google Chrome's classic dinosaur game with improved graphics, power-ups, and online scoring system.",
+      description:
+        "Video game inspired by the classic Chrome Dinosaur game",
+      fullDescription: `Dino was created in 2023 as a final project for the Multimedia Programming IV course.  
+The goal was to recreate the iconic Google Chrome Dinosaur game, where the character must dodge obstacles while running indefinitely, combining simple gameplay with an attractive visual design.  
+The development was carried out using C#, Unity, and SQLite, covering the fundamentals of the language, game engine, and data management.  
+Using custom scripts and editor tools, I achieved a functional, smooth, and fun result, which stands out for its user-friendly interface and ease of use.`,
       image: "/placeholder.jpg",
-      technologies: ["JavaScript", "HTML5 Canvas", "CSS3", "LocalStorage"],
+      technologies: [
+        "Unity",
+        "C#",
+        "SQLite",
+        "LocalStorage",
+        "Visual Studio Code",
+      ],
+      //link to GitHub
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Enhanced pixel art graphics",
-        "Power-up system",
-        "Online leaderboard",
-        "Responsive controls",
+        "Endless gameplay with collision detection",
+        "Dynamic and attractive visual interface",
+        "Custom C# scripts",
+        "Score tracking system with SQLite and LocalStorage",
       ],
     },
-    
     {
       id: "7",
       title: "GameReads",
-      description: "Social platform for video game reviews and recommendations",
-      fullDescription:
-        "Social network dedicated to gamers where they can write reviews, discover new games, and connect with other players with similar tastes.",
+      description: "Gamified app designed to motivate reading habits",
+      fullDescription: `GameReads was developed in 2023 for the Gamified Systems course, with the objective of applying gamification strategies to a digital environment.  
+The proposal is a mobile app that allows users to log their readings, discover new books, share opinions, and connect with other readers — all within a system built to encourage the habit of reading more.  
+The project is part of a behavioral change framework, aiming to create a positive impact on users through play and social interaction.  
+Main features include:
+- Keeping a personal record of readings.
+- Receiving recommendations based on interests and preferences.
+- Rating and sharing opinions with other users.
+- Connecting with like-minded people and discovering new readings.
+
+During development, I carried out a comparative analysis of existing platforms, designed a Gamification Canvas to structure the playful strategy, and created both the User Flow and a functional system prototype.`,
       image: "/placeholder.jpg",
-      technologies: ["React", "Node.js", "GraphQL", "MongoDB"],
+      technologies: [
+        "Figma",
+        "Gamification Canvas",
+        "User Flow",
+        "UX Research",
+      ],
+      //links to prototype and Google presentation
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
         "Review and rating system",
-        "Personalized recommendations",
-        "Gamer community",
-        "Integrated game API",
+        "Reading tracking and progress logs",
+        "Personalized book recommendations",
+        "Reader community and scoring system",
       ],
     },
     {
       id: "8",
-      title: "Organizer",
-      description: "Productivity application for task and project management",
-      fullDescription:
-        "Complete productivity tool that combines task management, calendar, notes, and team collaboration in a clean and efficient interface.",
+      title: "University Webapp",
+      description:
+        "Web application design for university students’ academic organization",
+      fullDescription: `This group project was developed in 2023 for the Senior Project course, with the goal of creating a web app to help Universidad Maimónides (UMAI) students organize their academic life more effectively.  
+The MVP prototype includes key features such as:
+- Creation and visualization of a personalized calendar.
+- Configurable reminders and alerts.
+- Task, notes, and documents management in one place.  
+
+The project’s objectives were: to design a functional and accessible application, to research the real needs of the target audience, and to validate the design through usability testing to ensure the solution met students’ daily demands.  
+Throughout the process, we created a Project Charter to define our direction, organized tasks on Trello, and set weekly sprints to coordinate team progress.  
+After the research phase, we developed a results report and moved on to the prototyping stage in Adobe XD, consolidating a clear, intuitive, and functional user experience.`,
       image: "/placeholder.jpg",
-      technologies: ["React", "TypeScript", "Supabase", "Tailwind"],
+      technologies: [
+        "Adobe XD",
+        "Trello",
+        "Design Thinking",
+        "UX Research",
+        "Scrum",
+      ],
+      //links to prototype
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Advanced task management",
-        "Integrated calendar",
-        "Real-time collaboration",
-        "Cross-platform synchronization",
+        "Customizable calendar and reminders",
+        "Integrated task, notes, and document system",
+        "User experience focused on university life",
+        "Development guided by agile methodologies",
       ],
     },
     {
       id: "9",
       title: "intoximate",
-      description: "Health application for habit tracking and wellness",
-      fullDescription:
-        "Personal wellness-focused app that helps users identify and reduce toxic habits while promoting a healthy lifestyle.",
+      description: "Mobile app to discover and learn about cocktails",
+      fullDescription: `intoximate was a 2023 final project for the Senior Project course, developed together with a classmate.  
+The challenge was to explore a completely new technology and carry out the project as if it were a freelance assignment — tracking time, planning stages, and validating the product with real users.  
+The app offers a cocktail search engine with multiple filters to find the ideal drink, along with complementary features such as mini-games and a randomizer to discover new combinations.  
+During development, we applied agile methodologies and conducted two main checkpoints: one for Design and one for Development, which marked the project’s key milestones.`,
       image: "/placeholder.jpg",
-      technologies: ["Flutter", "Dart", "Firebase", "HealthKit"],
+      technologies: [
+        "React Native",
+        "Expo",
+        "Jira",
+        "Google Docs",
+        "Google Sheets",
+        "GitHub",
+        "UX Research",
+        "Scrum",
+      ],
+      //links to prototype, Google presentation, project charter, and research report
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Habit tracking",
-        "Pattern analysis",
-        "Smart reminders",
-        "Health device integration",
+        "Cocktail search with personalized filters",
+        "Games and randomizer for discovering new drinks",
+        "Design Thinking-driven process",
+        "User validation and functional beta version",
       ],
     },
     {
       id: "10",
-      title: "Bingo",
-      description: "Online multiplayer bingo game with private rooms",
-      fullDescription:
-        "Online bingo platform that allows creating private rooms, playing with friends, and enjoying different variants of the classic bingo game.",
+      title: "Dorja Family Bingo",
+      description:
+        "Interactive web game for community and family bingo sessions",
+      fullDescription: `Dorja Family Bingo was a 2025 project created to bring magic, excitement, and aesthetics to bingo games with family, friends, or youth groups.  
+Designed with a warm and simple interface, the goal was to make it accessible for anyone to use during recreational or community activities.  
+The project aimed to create an accessible, functional, and visually appealing tool that could even be used offline — ideal for community events, family gatherings, or peulot.  
+It also sought to reflect Dorja’s unique visual identity, blending playfulness with institutional style.`,
       image: "/placeholder.jpg",
-      technologies: ["Socket.io", "React", "Node.js", "Redis"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      technologies: ["Google Stitch", "JavaScript", "HTML", "CSS"],
+      liveUrl: "https://bingo-dorja.vercel.app",
+      githubUrl: "https://github.com/cdejtiar/bingoDorja/tree/main",
       features: [
-        "Real-time multiplayer",
-        "Private and public rooms",
-        "Different game modes",
-        "Integrated chat",
+        "Random number generator from 1 to 90",
+        "Visual highlight on the grid for drawn numbers",
+        "Large display of the current ball",
+        "Reset button to start a new game",
+        "Colorful, warm, and Dorja-themed interface",
       ],
     },
-    
     {
       id: "12",
       title: "IVO 2025 Escape Room",
-      description: "Immersive digital escape room interactive experience",
-      fullDescription:
-        "Digital escape room game developed for the IVO 2025 event, combining interactive puzzles, immersive narrative, and modern web technology.",
+      description:
+        "Interactive web app for school orientation events",
+      fullDescription: `IVO Escape Room was a 2025 project developed at ORT School to showcase study orientations to 2nd-year students in a fun and interactive way.  
+The experience was designed so participants could learn through play, exploring five subrooms, each representing one of the pillars of the Informatics orientation.  
+The project aimed to combine fun, learning, and design aesthetics, creating a narrative thread that connected all rooms and guided students through interactive challenges and educational puzzles.`,
       image: "/placeholder.jpg",
-      technologies: ["Three.js", "React", "WebGL", "CSS3"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      technologies: [
+        "Google Stitch",
+        "v0",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "GitHub Projects",
+      ],
+      liveUrl: "https://ivo-sala-de-escape.vercel.app",
+      githubUrl: "https://github.com/informaticaort/IVO-2025",
       features: [
-        "Interactive 3D graphics",
-        "Complex puzzles",
-        "Immersive narrative",
-        "Multisensory experience",
+        "Interactive console in the Design room: drag-and-drop fields and solve design puzzles",
+        "Narrative thread connecting all subrooms for cohesive storytelling",
+        "Usability tests with students from different grades to validate timing, understanding, and engagement",
+        "Error iteration and improvements to ensure all students can complete the experience smoothly",
       ],
     },
     {
       id: "13",
       title: "inFlow",
-      description: "Thesis project: Intelligent workflow management system",
+      description:
+        "Thesis project: mobile app to optimize UX/UI and reduce academic procrastination in university students",
       fullDescription:
-        "Thesis project in development that uses artificial intelligence to optimize business workflows, automate processes, and improve organizational productivity.",
+        `Over the past few years, I’ve been developing my thesis project to earn my degree in Multimedia Technology.  
+Although still in progress, the main idea is to propose a technological solution that helps reduce academic procrastination among Argentine university students aged 18–23.  
+The project focuses on two key procrastination patterns: Evaluation Anxiety (linked to negative emotions) and Socially Optimistic (linked to positive emotions).  
+The solution is based on implementing User-Centered Design strategies and gamified systems to address motivation.  
+The development process followed the Design Thinking stages: Empathize, Define, Ideate, Prototype, and Test.  
+The defined MVP includes an initial personalization questionnaire, a daily/weekly action plan, an XP and Badges system, an emotional journal, and visual progress feedback.  
+The research phase included benchmarking tools such as Focusmate, Forest, and Structured, as well as surveys of 157 people — 82.8% of whom admitted to procrastinating.`,
       image: "/placeholder.jpg",
-      technologies: ["Python", "TensorFlow", "React", "FastAPI", "PostgreSQL"],
+      technologies: [
+        "Design Thinking",
+        "UX Research",
+        "Benchmarking",
+        "MoSCoW Prioritization Matrix",
+      ],
+      //work in progress
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Integrated artificial intelligence",
-        "Process automation",
-        "Predictive analytics",
-        "Advanced analytical dashboard",
+        "Personalization based on procrastination type (initial questionnaire)",
+        "Gamification with XP and Badges to foster motivation",
+        "Emotional journal for self-awareness and emotional management",
+        "Action plan that breaks tasks into smaller, achievable steps",
       ],
     },
     {
       id: "14",
-      title: "Modern Portfolio",
-      description: "Interactive personal portfolio with fluid navigation and glass effects",
+      title: "Portfolio",
+      description: "Personal portfolio website",
       fullDescription:
-        "Personal portfolio developed with Next.js 14, featuring innovative mobile navigation, liquid glass effects, theme system, and touch device optimizations. Includes safe areas for modern mobile devices.",
+        `Personal portfolio developed with Next.js 14, featuring custom mobile navigation, glassmorphism effects, theme system, and touch-device optimizations.  
+The main concept was mine, later refined through a design process in Google Stitch to include modern UI elements and general features expected in a portfolio.  
+Finally, I implemented it using v0 components.  
+The project also included a personal reflection on which design elements best represent me and how to express them visually.`,
       image: "/modern-portfolio-website.png",
-      technologies: ["Next.js 14", "TypeScript", "Tailwind CSS", "Shadcn/ui"],
+      technologies: [
+        "Figma",
+        "Google Stitch",
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+      ],
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Innovative floating mobile navigation",
-        "Liquid glass effects (glassmorphism)",
-        "Custom breakpoints (1165px)",
-        "Safe areas for modern devices",
+        "Floating mobile navigation",
+        "Glassmorphism visual effects",
+        "Simplified project showcase layout",
       ],
     },
   ],
