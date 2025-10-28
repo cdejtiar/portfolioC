@@ -42,18 +42,18 @@ const projectsData: { [key: string]: Project[] } = {
     {
       id: "1",
       title: "eXerparK",
-      description: "Plataforma digital para gestión y reserva de espacios de entretenimiento",
+      description: "Plataforma digital para motivar la actividad física y conectar personas a través del movimiento.",
       fullDescription:
-        "eXerparK es una plataforma integral para la gestión y reserva de espacios de entretenimiento como parques, centros recreativos y áreas deportivas. Incluye sistema de reservas, pagos en línea y gestión de usuarios.",
+        "eXerparK nació en 2021, en el contexto pospandemia, con el objetivo de recuperar la motivación por el ejercicio y fomentar el encuentro en espacios públicos como parques y plazas. \n El proyecto combina bienestar, comunidad y tecnología: propone un espacio donde las personas pueden descubrir actividades gratuitas al aire libre, agendarlas, conocer gente nueva y mantenerse activas. \n Durante la investigación inicial se realizó un Desk Research y un Social Listening sobre los hábitos de ejercicio en Argentina, lo que permitió detectar una pérdida generalizada de motivación. \n A partir de esa problemática, el proceso de Ideación se centró en la pregunta “¿Cómo podríamos crear un espacio donde las personas desmotivadas puedan motivarse?”, definiendo la motivación como el eje central del diseño. \n Con herramientas como Customer Journey, User Flow y Benchmark, se consolidó una propuesta con valor agregado y se desarrolló un prototipo funcional en Adobe XD.",
       image: "/placeholder.jpg",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      technologies: ["Adobe XD", "Figma", "Desk Research", "Benchmarking"],
+      //links a prototipo y a presentación de google
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Sistema de reservas en tiempo real",
-        "Gestión de pagos integrada",
-        "Panel administrativo completo",
-        "Notificaciones automáticas",
+        "Agenda personal para planificar actividades",
+        "Sistema de reservas gratuito en espacios públicos",
+        "Enfoque en la motivación y la comunidad"
       ],
     },
     {
@@ -124,23 +124,7 @@ const projectsData: { [key: string]: Project[] } = {
         "Controles responsivos",
       ],
     },
-    {
-      id: "6",
-      title: "ContentChecker",
-      description: "Herramienta de verificación y análisis de contenido digital",
-      fullDescription:
-        "Aplicación web que analiza y verifica la originalidad del contenido, detecta plagio y proporciona métricas de calidad para escritores y creadores.",
-      image: "/placeholder.jpg",
-      technologies: ["Python", "Flask", "NLP", "SQLite"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-      features: [
-        "Detección de plagio avanzada",
-        "Análisis de legibilidad",
-        "Métricas de SEO",
-        "Reportes detallados",
-      ],
-    },
+    
     {
       id: "7",
       title: "GameReads",
@@ -209,23 +193,7 @@ const projectsData: { [key: string]: Project[] } = {
         "Chat integrado",
       ],
     },
-    {
-      id: "11",
-      title: "MajonApp",
-      description: "Aplicación móvil para gestión de eventos y experiencias gastronómicas",
-      fullDescription:
-        "Plataforma que conecta chef privados con clientes, permitiendo reservar experiencias gastronómicas únicas y personalizadas en casa o eventos especiales.",
-      image: "/placeholder.jpg",
-      technologies: ["React Native", "Firebase", "Stripe", "Google Maps"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-      features: [
-        "Marketplace de chefs",
-        "Sistema de reservas",
-        "Pagos seguros integrados",
-        "Geolocalización",
-      ],
-    },
+    
     {
       id: "12",
       title: "Sala de escape IVO 2025",
@@ -364,23 +332,7 @@ const projectsData: { [key: string]: Project[] } = {
         "Responsive controls",
       ],
     },
-    {
-      id: "6",
-      title: "ContentChecker",
-      description: "Digital content verification and analysis tool",
-      fullDescription:
-        "Web application that analyzes and verifies content originality, detects plagiarism, and provides quality metrics for writers and creators.",
-      image: "/placeholder.jpg",
-      technologies: ["Python", "Flask", "NLP", "SQLite"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-      features: [
-        "Advanced plagiarism detection",
-        "Readability analysis",
-        "SEO metrics",
-        "Detailed reports",
-      ],
-    },
+    
     {
       id: "7",
       title: "GameReads",
@@ -449,23 +401,7 @@ const projectsData: { [key: string]: Project[] } = {
         "Integrated chat",
       ],
     },
-    {
-      id: "11",
-      title: "MajonApp",
-      description: "Mobile app for event management and gastronomic experiences",
-      fullDescription:
-        "Platform that connects private chefs with clients, allowing booking of unique and personalized gastronomic experiences at home or special events.",
-      image: "/placeholder.jpg",
-      technologies: ["React Native", "Firebase", "Stripe", "Google Maps"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-      features: [
-        "Chef marketplace",
-        "Booking system",
-        "Secure integrated payments",
-        "Geolocation",
-      ],
-    },
+    
     {
       id: "12",
       title: "IVO 2025 Escape Room",
