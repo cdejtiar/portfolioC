@@ -215,75 +215,102 @@ Durante el desarrollo realicé un análisis comparativo de plataformas existente
     },
     {
       id: "8",
-      title: "Organizador", //me quedé acá
+      title: "Webapp Universitaria",
       description:
-        "Aplicación de productividad para gestión de tareas y proyectos",
-      fullDescription:
-        "Herramienta completa de productividad que combina gestión de tareas, calendario, notas y colaboración en equipo en una interfaz limpia y eficiente.",
+        "Diseño de una aplicación para la organización académica de estudiantes universitarios",
+      fullDescription: `Este proyecto grupal fue desarrollado en 2023 dentro de la materia Proyecto Senior, con el objetivo de crear una webapp que ayudara a los estudiantes de la Universidad Maimónides (UMAI) a organizar su vida universitaria de forma más efectiva.
+El MVP del prototipo contempla funcionalidades clave como:
+- Creación y visualización de un calendario personalizado.
+- Recordatorios y alertas configurables.
+- Gestión de tareas, notas y apuntes en un solo lugar.
+- Los objetivos del proyecto fueron: diseñar una aplicación funcional y accesible, investigar las necesidades reales del público objetivo, y validar el diseño mediante pruebas de usabilidad para asegurar que la solución respondiera a sus demandas cotidianas.
+Durante el proceso realizamos un Acta de Proyecto para definir el rumbo del trabajo, organizamos las tareas en Trello y establecimos sprints semanales para coordinar avances en equipo.
+ Tras la fase de investigación, desarrollamos el informe de resultados y avanzamos hacia la etapa de prototipado en Adobe XD, consolidando la experiencia del usuario en un entorno claro, intuitivo y funcional.`,
       image: "/placeholder.jpg",
-      technologies: ["React", "TypeScript", "Supabase", "Tailwind"],
+      technologies: [
+        "Adobe XD",
+        "Trello",
+        "Design Thinking",
+        "UX Research",
+        "Scrum",
+      ],
+      //links a imk
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Gestión avanzada de tareas",
-        "Calendario integrado",
-        "Colaboración en tiempo real",
-        "Sincronización multiplataforma",
+        "Calendario y recordatorios personalizables",
+        "Sistema integral para tareas, notas y apuntes",
+        "Diseño centrado en la experiencia universitaria",
+        "Proceso guiado por metodologías ágiles",
       ],
     },
     {
       id: "9",
       title: "intoximate",
-      description:
-        "Aplicación de salud para seguimiento de hábitos y bienestar",
-      fullDescription:
-        "App centrada en el bienestar personal que ayuda a usuarios a identificar y reducir hábitos tóxicos mientras promueve un estilo de vida saludable.",
+      description: "Aplicación móvil para descubrir y aprender sobre tragos",
+      fullDescription: `intoximate fue un proyecto desarrollado en 2023 como trabajo final de la materia Proyecto Senior, en conjunto con un compañero de la facultad.
+ El desafío era explorar una tecnología completamente nueva y llevar adelante el proyecto como si se tratara de un encargo freelance, registrando tiempos, planificando etapas y validando el producto con usuarios reales.
+La aplicación propone un buscador de tragos alcohólicos con distintos filtros para encontrar el trago ideal, además de funcionalidades complementarias como juegos y un aleatorizador de tragos para descubrir nuevas combinaciones.
+Durante el desarrollo aplicamos metodologías ágiles y realizamos dos checkpoints clave: uno de Diseño y otro de Desarrollo, que marcaron los avances principales del proyecto.`,
       image: "/placeholder.jpg",
-      technologies: ["Flutter", "Dart", "Firebase", "HealthKit"],
+      technologies: [
+        "React Native",
+        "Expo",
+        "Jira",
+        "Google Docs",
+        "Google Sheets",
+        "GitHub",
+        "UX Research",
+        "Scrum",
+      ],
+      //links a prototipo, presentación de google, acta de proyecto e informe de investigación
       liveUrl: "https://example.com",
       githubUrl: "https://github.com",
       features: [
-        "Seguimiento de hábitos",
-        "Análisis de patrones",
-        "Recordatorios inteligentes",
-        "Integración con dispositivos de salud",
+        "Buscador de tragos con filtros personalizados",
+        "Juegos y aleatorizador para descubrir nuevas combinaciones",
+        "Proceso guiado por Design Thinking",
+        "Validación con usuarios y versión beta funcional",
       ],
     },
     {
       id: "10",
-      title: "Bingo",
-      description: "Juego de bingo online multijugador con salas privadas",
-      fullDescription:
-        "Plataforma de bingo online que permite crear salas privadas, jugar con amigos y disfrutar de diferentes variantes del clásico juego de bingo.",
+      title: "Bingo familiar de Dorja",
+      description:
+        "Juego web interactivo para sorteos de bingo comunitarios y familiares",
+      fullDescription: `Bingo Familiar de Dorja fue un proyecto creado en el 2025 para traer un poco de magia, emoción y estética a las partidas de bingo con familia, amig@s o janijim. Diseñado con una interfaz cálida y simple, el objetivo fue hacer que cualquier persona pueda usarlo fácilmente en actividades recreativas o comunitarias.
+El objetivo del proyecto fue crear una herramienta accesible, funcional y estéticamente cuidada que pueda usarse sin conexión a Internet, ideal para actividades comunitarias, reuniones familiares o peulot. Además, busca aportar una identidad visual propia de Dorja, combinando lo lúdico con lo institucional.`,
       image: "/placeholder.jpg",
-      technologies: ["Socket.io", "React", "Node.js", "Redis"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      technologies: ["Stitch de Google", "JavaScript", "HTML", "CSS"],
+      liveUrl: "https://bingo-dorja.vercel.app",
+      githubUrl: "https://github.com/cdejtiar/bingoDorja/tree/main",
       features: [
-        "Multijugador en tiempo real",
-        "Salas privadas y públicas",
-        "Diferentes modalidades de juego",
-        "Chat integrado",
+        "Generador de números aleatorios del 1 al 90",
+        "Resaltado visual en la grilla de los números sorteados",
+        "Visualización grande de la bolilla actual",
+        "Botón de reinicio para volver a empezar la partida",
+        "Interfaz colorida, cálida y con estética Dorja",
       ],
     },
-    //falta intoximate
     {
       id: "12",
       title: "Sala de escape IVO 2025",
-      description: "Experiencia interactiva de escape room digital inmersiva",
-      fullDescription:
-        "Juego de escape room digital desarrollado para el evento IVO 2025, combinando puzzles interactivos, narrativa inmersiva y tecnología web moderna.",
+      description:
+        "Aplicación web interactiva para jornadas de orientación escolar",
+      fullDescription: `Sala de Escape IVO fue un proyecto desarrollado en 2025 en la Escuela ORT, con el objetivo de mostrar de forma divertida e interactiva las orientaciones de estudio a estudiantes de 2do año. La experiencia fue diseñada para que los participantes aprendieran mientras jugaban, recorriendo cinco subsalas, cada una representando un pilar de la orientación de Informática.
+El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo conductor que uniera todas las salas y guiara a los estudiantes a través de desafíos interactivos y puzzles educativos.`,
       image: "/placeholder.jpg",
-      technologies: ["Three.js", "React", "WebGL", "CSS3"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      technologies: ["Stitch de Google", "v0", "TypeScript", "Next.js", "Tailwind CSS", "GitHub Projects"],
+      liveUrl: "https://ivo-sala-de-escape.vercel.app",
+      githubUrl: "https://https://github.com/informaticaort/IVO-2025",
       features: [
-        "Gráficos 3D interactivos",
-        "Puzzles complejos",
-        "Narrativa inmersiva",
-        "Experiencia multisensorial",
+        "Consola interactiva en la sala de Diseño: arrastrar campos y resolver puzzles sobre conceptos de diseño",
+        "Hilo conductor que conecta todas las subsalas y mantiene la narrativa coherente",
+        "Pruebas de usabilidad con estudiantes de distintos años para validar tiempos, comprensión y atractividad",
+        "Iteración de errores y mejoras para garantizar que los estudiantes puedan completar la sala sin inconvenientes",
       ],
     },
+    //me quedé acá
     {
       id: "13",
       title: "inFlow",
