@@ -48,8 +48,8 @@ const projectsData: { [key: string]: Project[] } = {
       image: "/placeholder.jpg",
       technologies: ["Adobe XD", "Figma", "Desk Research", "Benchmarking"],
       //links a prototipo y a presentación de google
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://xd.adobe.com/view/93ef9a3a-35e9-4876-8b6c-b58ab1793bae-c6bc/", 
+      githubUrl: "https://github.com", //https://docs.google.com/presentation/d/e/2PACX-1vSAsOmQqq3JRLnf2y3Df0dgmNNXX7xNOwpqxHDfXTIp7nhrzrz0y2a1RDBg1Xvbfp9n6FtYtkmzNCzG/pub?start=false&loop=false&delayms=3000
       features: [
         "Agenda personal para planificar actividades",
         "Sistema de reservas gratuito en espacios públicos",
@@ -81,8 +81,8 @@ Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y prop
         "Design Thinking",
       ],
       //links a prototipo y a presentación de google
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://xd.adobe.com/view/cafee497-f1a3-4851-9c55-bde2c0c063b1-9fad/?fullscreen&hints=off", 
+      githubUrl: "https://github.com", //https://docs.google.com/presentation/d/e/2PACX-1vSzVxM3nCiFcMTCbywJg1-1yquVbCe6fNhwe7vNlpj4JaZL8FekVVCVpEgs1FBkvDKpNS6WFyeB0AI3/pub?start=false&loop=false&delayms=3000
       features: [
         "Filtros empáticos personalizados",
         "Vinculación directa con plataformas de streaming",
