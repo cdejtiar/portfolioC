@@ -13,6 +13,9 @@ interface Project {
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
+  slidesUrl?: string;
+  docsUrl?: string;
+  docsUrl2?: string;
   features: string[];
 }
 
@@ -47,9 +50,8 @@ const projectsData: { [key: string]: Project[] } = {
         "eXerparK nació en 2021, en el contexto pospandemia, con el objetivo de recuperar la motivación por el ejercicio y fomentar el encuentro en espacios públicos como parques y plazas. \n El proyecto combina bienestar, comunidad y tecnología: propone un espacio donde las personas pueden descubrir actividades gratuitas al aire libre, agendarlas, conocer gente nueva y mantenerse activas. \n Durante la investigación inicial se realizó un Desk Research y un Social Listening sobre los hábitos de ejercicio en Argentina, lo que permitió detectar una pérdida generalizada de motivación. \n A partir de esa problemática, el proceso de Ideación se centró en la pregunta “¿Cómo podríamos crear un espacio donde las personas desmotivadas puedan motivarse?”, definiendo la motivación como el eje central del diseño. \n Con herramientas como Customer Journey, User Flow y Benchmark, se consolidó una propuesta con valor agregado y se desarrolló un prototipo funcional en Adobe XD.",
       image: "/placeholder.jpg",
       technologies: ["Adobe XD", "Figma", "Desk Research", "Benchmarking"],
-      //links a prototipo y a presentación de google
       liveUrl: "https://xd.adobe.com/view/93ef9a3a-35e9-4876-8b6c-b58ab1793bae-c6bc/", 
-      githubUrl: "https://github.com", //https://docs.google.com/presentation/d/e/2PACX-1vSAsOmQqq3JRLnf2y3Df0dgmNNXX7xNOwpqxHDfXTIp7nhrzrz0y2a1RDBg1Xvbfp9n6FtYtkmzNCzG/pub?start=false&loop=false&delayms=3000
+      slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSAsOmQqq3JRLnf2y3Df0dgmNNXX7xNOwpqxHDfXTIp7nhrzrz0y2a1RDBg1Xvbfp9n6FtYtkmzNCzG/pub?start=false&loop=false&delayms=3000",
       features: [
         "Agenda personal para planificar actividades",
         "Sistema de reservas gratuito en espacios públicos",
@@ -80,9 +82,8 @@ Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y prop
         "User Research",
         "Design Thinking",
       ],
-      //links a prototipo y a presentación de google
       liveUrl: "https://xd.adobe.com/view/cafee497-f1a3-4851-9c55-bde2c0c063b1-9fad/?fullscreen&hints=off", 
-      githubUrl: "https://github.com", //https://docs.google.com/presentation/d/e/2PACX-1vSzVxM3nCiFcMTCbywJg1-1yquVbCe6fNhwe7vNlpj4JaZL8FekVVCVpEgs1FBkvDKpNS6WFyeB0AI3/pub?start=false&loop=false&delayms=3000
+      slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSzVxM3nCiFcMTCbywJg1-1yquVbCe6fNhwe7vNlpj4JaZL8FekVVCVpEgs1FBkvDKpNS6WFyeB0AI3/pub?start=false&loop=false&delayms=3000",
       features: [
         "Filtros empáticos personalizados",
         "Vinculación directa con plataformas de streaming",
@@ -122,9 +123,7 @@ Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y prop
         "User Research",
         "Scrum",
       ],
-      //links a prototipo y a presentación de google
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vQ_RioD6I1C1CE0QrMd-RJ_LJt0lAbKRd3DuXfrBKk0tB763PsYt4DXREJxYbqH6qRdZyk5NikdjY3k/pub?start=false&loop=false&delayms=3000",
       features: [
         "Centralización de información sobre adopciones",
         "Filtros personalizados por tipo de mascota y necesidades",
@@ -144,9 +143,8 @@ Cada combinación generaba variaciones únicas, y mediante un script automatizad
 Además de la programación del backend, me encargué del diseño del frontend y del logo, buscando transmitir una estética divertida, tierna y juguetona, alineada con el universo visual de los personajes.`,
       image: "/placeholder.jpg",
       technologies: ["Procreate", "JavaScript", "Web3.js", "HTML", "CSS"],
-      //links a github y vercel
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://nft-bunnies-pi.vercel.app/",
+      githubUrl: "https://github.com/cdejtiar/NFTBunnies",
       features: [
         "Colección generativa de 50 NFTs",
         "Implementación de Smart Contracts en red de prueba Ethereum",
@@ -171,9 +169,7 @@ A través de scripts personalizados y las herramientas del editor, logré un res
         "LocalStorage",
         "Visual Studio Code",
       ],
-      //link a github
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/cdejtiar/runnerDinoUnity",
       features: [
         "Jugabilidad infinita con detección de colisiones",
         "Interfaz visual dinámica y atractiva",
@@ -204,8 +200,8 @@ Durante el desarrollo realicé un análisis comparativo de plataformas existente
         "UX Research",
       ],
       //links a prototipo y a presentación de google
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://www.figma.com/proto/yC0bmMEKCiMuoRuMe5b4OK/Prototipo?type=design&node-id=8-7655&scaling=scale-down&page-id=0%3A1&starting-point-node-id=8%3A7655",
+      slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vScQV3JVsoK9Re7RwZahwAUW2Y2SbJBeBkS1VHh6FHW2701S_0itNbMs_ejNr0HVlNDrIWt6jskbsAg/pub?start=false&loop=false&delayms=3000",
       features: [
         "Sistema de reseñas y calificaciones",
         "Registro y seguimiento de lecturas",
@@ -234,9 +230,9 @@ Durante el proceso realizamos un Acta de Proyecto para definir el rumbo del trab
         "UX Research",
         "Scrum",
       ],
-      //links a imk
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://xd.adobe.com/view/0b6853cd-d82f-41a7-a3c6-789d997dc0a8-5e3b/",
+      docsUrl: "https://docs.google.com/document/d/e/2PACX-1vQ-2QqK2y7696S3_3iK5Hx37C0POcGiArDGYpxWFTksqzbdwPcrz3aCN85Tt8cBTpAAXCb_unXti0iF/pub",
+      docsUrl2: "https://docs.google.com/document/d/e/2PACX-1vRZhIlOjWVD69SZ44z6BsqiMnzg6iVSg4SFaEfw2Pn8cN5q7dMb3Yw9u6rxETmO7k53cOkQQmGbuWQJ/pub",
       features: [
         "Calendario y recordatorios personalizables",
         "Sistema integral para tareas, notas y apuntes",
@@ -263,9 +259,10 @@ Durante el desarrollo aplicamos metodologías ágiles y realizamos dos checkpoin
         "UX Research",
         "Scrum",
       ],
-      //links a prototipo, presentación de google, acta de proyecto e informe de investigación
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/MaxiCo1/Intoximate",
+      slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vS_bdTv9mO6uZ9tX0ZJhW33XYOaeK6trvX5CE8sq4yre7k1SbiPxmEnZHk7FMyAovB0fjMYWc7tAFCn/pub?start=false&loop=false&delayms=3000",
+      docsUrl: "https://docs.google.com/document/d/e/2PACX-1vRsIONlDFzMJozvMiIGNMInYicakcIkmKghVAHzR6saeYvDeSE3vcj5qcwwmwvI-I96u7Is9dWK80So/pub",
+      docsUrl2: "https://docs.google.com/document/d/e/2PACX-1vTGEo-XTqtnxQq7uvh_E4sHULWDFy1xJF657GzmYIPE69x1AenOs0K-H474a7Uu-ZVPfIhR_LYgueWj/pub",
       features: [
         "Buscador de tragos con filtros personalizados",
         "Juegos y aleatorizador para descubrir nuevas combinaciones",
@@ -310,7 +307,6 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
         "Iteración de errores y mejoras para garantizar que los estudiantes puedan completar la sala sin inconvenientes",
       ],
     },
-    //me quedé acá
     {
       id: "13",
       title: "inFlow",
@@ -347,8 +343,6 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
        Realicé un proceso de internalización en cuánto a qué elementos suelen definirme como persona y cómo poder mostrarlo de forma `,
       image: "/modern-portfolio-website.png",
       technologies: ["Figma", "Stitch de Google", "Next.js 14", "TypeScript", "Tailwind CSS"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
       features: [
         "Navegación móvil flotante",
         "Efectos de vidrio líquido (glassmorphism)",
@@ -366,9 +360,9 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
         "eXerparK was founded in 2021, in the post-pandemic context, with the goal of rekindling motivation for exercise and promoting meetings in public spaces like parks and plazas. \n The project combines well-being, community, and technology: it offers a space where people can discover free outdoor activities, schedule them, meet new people, and stay active. \n During the initial research, we conducted Desk Research and Social Listening on exercise habits in Argentina, which revealed a widespread loss of motivation. \n Based on this problem, the Ideation process focused on the question “How could we create a space where demotivated people could get motivated?”, defining motivation as the central axis of the design. \n Using tools like Customer Journey, User Flow, and Benchmark, we consolidated a value-added proposal and developed a functional prototype in Adobe XD.",
       image: "/placeholder.jpg",
       technologies: ["Adobe XD", "Figma", "Desk Research", "Benchmarking"],
-      //links to prototype and Google presentation
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+  liveUrl: "https://xd.adobe.com/view/93ef9a3a-35e9-4876-8b6c-b58ab1793bae-c6bc/",
+  slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSAsOmQqq3JRLnf2y3Df0dgmNNXX7xNOwpqxHDfXTIp7nhrzrz0y2a1RDBg1Xvbfp9n6FtYtkmzNCzG/pub?start=false&loop=false&delayms=3000",
+  githubUrl: "https://github.com",
       features: [
         "Personal agenda to plan activities",
         "Free booking system for public spaces",
@@ -399,9 +393,9 @@ After testing, we created a high-fidelity prototype and proposed ideas for a fut
         "User Research",
         "Design Thinking",
       ],
-      //links to prototype and Google presentation
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+  liveUrl: "https://xd.adobe.com/view/cafee497-f1a3-4851-9c55-bde2c0c063b1-9fad/?fullscreen&hints=off",
+  slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSzVxM3nCiFcMTCbywJg1-1yquVbCe6fNhwe7vNlpj4JaZL8FekVVCVpEgs1FBkvDKpNS6WFyeB0AI3/pub?start=false&loop=false&delayms=3000",
+  githubUrl: "https://github.com",
       features: [
         "Personalized empathy-based filters",
         "Direct connection to streaming platforms",
@@ -441,9 +435,9 @@ Finally, we projected ideas for a future version of enHUELLA2, including feature
         "User Research",
         "Scrum",
       ],
-      //links to prototype and Google presentation
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+  slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vQ_RioD6I1C1CE0QrMd-RJ_LJt0lAbKRd3DuXfrBKk0tB763PsYt4DXREJxYbqH6qRdZyk5NikdjY3k/pub?start=false&loop=false&delayms=3000",
+  liveUrl: "https://example.com",
+  githubUrl: "https://github.com",
       features: [
         "Centralized adoption information",
         "Personalized filters by pet type and needs",
@@ -463,9 +457,8 @@ Each combination generated unique variations, and through an automated script, I
 In addition to backend programming, I designed the frontend and the logo, aiming to convey a fun, cute, and playful aesthetic aligned with the characters' visual universe.`,
       image: "/placeholder.jpg",
       technologies: ["Procreate", "JavaScript", "Web3.js", "HTML", "CSS"],
-      //links to GitHub and Vercel
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+  liveUrl: "https://nft-bunnies-pi.vercel.app/",
+  githubUrl: "https://github.com/cdejtiar/NFTBunnies",
       features: [
         "Generative collection of 50 NFTs",
         "Implementation of Smart Contracts on Ethereum test network",
@@ -490,9 +483,9 @@ Using custom scripts and editor tools, I achieved a functional, smooth, and fun 
         "LocalStorage",
         "Visual Studio Code",
       ],
-      //link to GitHub
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+  //link to GitHub (copied from ES)
+  liveUrl: "https://example.com",
+  githubUrl: "https://github.com/cdejtiar/runnerDinoUnity",
       features: [
         "Endless gameplay with collision detection",
         "Dynamic and attractive visual interface",
@@ -521,9 +514,9 @@ During development, I carried out a comparative analysis of existing platforms, 
         "User Flow",
         "UX Research",
       ],
-      //links to prototype and Google presentation
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+  liveUrl: "https://www.figma.com/proto/yC0bmMEKCiMuoRuMe5b4OK/Prototipo?type=design&node-id=8-7655&scaling=scale-down&page-id=0%3A1&starting-point-node-id=8%3A7655",
+  slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vScQV3JVsoK9Re7RwZahwAUW2Y2SbJBeBkS1VHh6FHW2701S_0itNbMs_ejNr0HVlNDrIWt6jskbsAg/pub?start=false&loop=false&delayms=3000",
+  githubUrl: "https://github.com",
       features: [
         "Review and rating system",
         "Reading tracking and progress logs",
@@ -553,9 +546,10 @@ After the research phase, we developed a results report and moved on to the prot
         "UX Research",
         "Scrum",
       ],
-      //links to prototype
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+  liveUrl: "https://xd.adobe.com/view/0b6853cd-d82f-41a7-a3c6-789d997dc0a8-5e3b/",
+  docsUrl: "https://docs.google.com/document/d/e/2PACX-1vQ-2QqK2y7696S3_3iK5Hx37C0POcGiArDGYpxWFTksqzbdwPcrz3aCN85Tt8cBTpAAXCb_unXti0iF/pub",
+  docsUrl2: "https://docs.google.com/document/d/e/2PACX-1vRZhIlOjWVD69SZ44z6BsqiMnzg6iVSg4SFaEfw2Pn8cN5q7dMb3Yw9u6rxETmO7k53cOkQQmGbuWQJ/pub",
+  githubUrl: "https://github.com",
       features: [
         "Customizable calendar and reminders",
         "Integrated task, notes, and document system",
@@ -582,9 +576,10 @@ During development, we applied agile methodologies and conducted two main checkp
         "UX Research",
         "Scrum",
       ],
-      //links to prototype, Google presentation, project charter, and research report
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+  slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vS_bdTv9mO6uZ9tX0ZJhW33XYOaeK6trvX5CE8sq4yre7k1SbiPxmEnZHk7FMyAovB0fjMYWc7tAFCn/pub?start=false&loop=false&delayms=3000",
+  docsUrl: "https://docs.google.com/document/d/e/2PACX-1vRsIONlDFzMJozvMiIGNMInYicakcIkmKghVAHzR6saeYvDeSE3vcj5qcwwmwvI-I96u7Is9dWK80So/pub",
+  docsUrl2: "https://docs.google.com/document/d/e/2PACX-1vTGEo-XTqtnxQq7uvh_E4sHULWDFy1xJF657GzmYIPE69x1AenOs0K-H474a7Uu-ZVPfIhR_LYgueWj/pub",
+  githubUrl: "https://github.com/MaxiCo1/Intoximate",
       features: [
         "Cocktail search with personalized filters",
         "Games and randomizer for discovering new drinks",
