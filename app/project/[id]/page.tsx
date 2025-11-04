@@ -737,7 +737,7 @@ export default function ProjectPage() {
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-6 max-w-4xl">
         {/* Back Button */}
-        <Button onClick={() => router.push("/")} variant="ghost" className="mb-8 hover:bg-secondary/20">
+        <Button onClick={() => router.push("/#projects")} variant="ghost" className="mb-8 hover:bg-secondary/20">
           <ArrowLeft className="w-4 h-4 mr-2" />
           {t.backToProjects}
         </Button>

@@ -24,9 +24,9 @@ const translations = {
     sending: "Enviando...",
     success: "¡Mensaje enviado con éxito!",
     error: "Error al enviar el mensaje",
-    phone: "+1 (555) 123-4567",
-    location: "Ciudad, País",
-    emailAddress: "tu@email.com",
+    phone: "+54 9 11 6246-4060",
+    location: "Buenos Aires, Argentina",
+    emailAddress: "cdejtiar14@gmail.com",
   },
   en: {
     title: "Contact",
@@ -38,9 +38,9 @@ const translations = {
     sending: "Sending...",
     success: "Message sent successfully!",
     error: "Error sending message",
-    phone: "+1 (555) 123-4567",
-    location: "City, Country",
-    emailAddress: "your@email.com",
+    phone: "+54 9 11 6246-4060",
+    location: "Buenos Aires, Argentina",
+    emailAddress: "cdejtiar14@gmail.com",
   },
 }
 
@@ -58,15 +58,43 @@ export function ContactSection({ language }: ContactSectionProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    try {
+      // Build a mailto link so the user's mail client opens prefilled
+      const subject = encodeURIComponent(`Contacto desde portfolio: ${formData.name}`)
+      const body = encodeURIComponent(
+        `Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`
+      )
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+      const mailto = `mailto:${t.emailAddress}?subject=${subject}&body=${body}`
+
+      // Try to open the user's mail client. Prefer window.open, then fallback to a programmatic anchor click.
+      let opened = false
+      try {
+        const newWindow = window.open(mailto)
+        opened = !!newWindow
+      } catch (e) {
+        // ignore
+      }
+
+      if (!opened) {
+        // Fallback: create an invisible anchor and click it
+        const a = document.createElement("a")
+        a.href = mailto
+        a.style.display = "none"
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+      }
+
       setSubmitStatus("success")
       setFormData({ name: "", email: "", message: "" })
-
+    } catch (err) {
+      console.error("Contact form error:", err)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
       setTimeout(() => setSubmitStatus("idle"), 3000)
-    }, 2000)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -98,8 +126,8 @@ export function ContactSection({ language }: ContactSectionProps) {
   ]
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/camila-dejtiar-56a38b214/", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/cdejtiar", label: "GitHub" },
   ]
 
   return (
@@ -217,11 +245,11 @@ export function ContactSection({ language }: ContactSectionProps) {
             <Card className="glass-card border-0">
               <CardContent className="p-4">
                 <h3 className="font-superlobster text-base text-primary mb-2">
-                  {language === "es" ? "¿Tienes un proyecto en mente?" : "Have a project in mind?"}
+                  {language === "es" ? "¿Tenés un proyecto en mente?" : "Have a project in mind?"}
                 </h3>
                 <p className="font-barlow text-muted-foreground text-xs leading-relaxed">
                   {language === "es"
-                    ? "Estoy siempre abierto a discutir nuevas oportunidades y proyectos interesantes. No dudes en contactarme."
+                    ? "Estoy siempre abierta a discutir nuevas oportunidades y proyectos interesantes. No dudes en contactarme."
                     : "I'm always open to discussing new opportunities and interesting projects. Don't hesitate to reach out."}
                 </p>
               </CardContent>
