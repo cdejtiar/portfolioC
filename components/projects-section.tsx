@@ -754,7 +754,7 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent text-xs"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-transparent dark:hover:bg-transparent dark:hover:text-sky-400 dark:hover:border-sky-400 bg-transparent text-xs"
                   >
                     {t.viewProject}
                   </Button>

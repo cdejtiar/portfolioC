@@ -59,6 +59,24 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Force dark mode on first paint so the site always starts in dark theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                // Force the theme key and class so pages always start in dark mode
+                if (typeof window !== 'undefined' && window.localStorage) {
+                  window.localStorage.setItem('modern-portfolio-theme', 'dark');
+                }
+                if (typeof document !== 'undefined' && document.documentElement) {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (e) {
+                /* ignore */
+              }
+            `,
+          }}
+        />
         {/* Preload critical fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -71,7 +89,7 @@ export default function RootLayout({
       <body className={`font-barlow ${inter.variable} antialiased`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange={false}
           storageKey="modern-portfolio-theme"
