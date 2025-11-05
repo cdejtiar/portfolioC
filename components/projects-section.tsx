@@ -700,7 +700,7 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
 
   return (
     <section
-      id="projects"
+      id="projects" key="projects-section"
       className="py-16 min-h-screen flex items-center relative"
     >
       <div className="container mx-auto px-6">
