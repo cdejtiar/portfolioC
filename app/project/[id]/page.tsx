@@ -761,7 +761,7 @@ export default function ProjectPage() {
           <p className="text-xl text-muted-foreground font-barlow mb-6">{project.description}</p>
 
           {/* Action Buttons */}
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             {project.liveUrl && (
               <Button
                 onClick={() => window.open(project.liveUrl, "_blank")}
@@ -818,10 +818,14 @@ export default function ProjectPage() {
           <img
             src={resolveImage(project.image)}
             alt={project.title}
+            // Use object-contain on small screens to avoid awkward crops and
+            // switch to object-cover on md+ for a tighter layout. Also keep
+            // height auto on mobile and limit max-height so images don't grow
+            // too large.
             className={
-              ["NFTBunnies", "GameReads", "intoximate"].includes(project.title)
-                ? "w-full h-96 object-contain rounded-lg"
-                : "w-full h-96 object-cover rounded-lg"
+              (["NFTBunnies", "GameReads", "intoximate"].includes(project.title)
+                ? "w-full object-contain h-auto max-h-[60vh] rounded-lg"
+                : "w-full object-contain md:object-cover h-auto md:h-96 max-h-[60vh] rounded-lg")
             }
           />
         </div>
