@@ -66,10 +66,9 @@ export function SidebarNavigation({
 
   const downloadCV = () => {
     if (!mounted) return
-    // Placeholder for CV download
     const link = document.createElement("a")
-    link.href = "/cv.pdf" // You'll need to add your CV file
-    link.download = "CV.pdf"
+    link.href = "/CVDejtiar.pdf"
+    link.download = "CVDejtiar.pdf"
     link.click()
   }
 

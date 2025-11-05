@@ -55,7 +55,7 @@ const projectsData: { [key: string]: Project[] } = {
         "Plataforma digital para motivar la actividad física y conectar personas a través del movimiento",
       fullDescription:
         "eXerparK nació en 2021, en el contexto pospandemia, con el objetivo de recuperar la motivación por el ejercicio y fomentar el encuentro en espacios públicos como parques y plazas. \n El proyecto combina bienestar, comunidad y tecnología: propone un espacio donde las personas pueden descubrir actividades gratuitas al aire libre, agendarlas, conocer gente nueva y mantenerse activas. \n Durante la investigación inicial se realizó un Desk Research y un Social Listening sobre los hábitos de ejercicio en Argentina, lo que permitió detectar una pérdida generalizada de motivación. \n A partir de esa problemática, el proceso de Ideación se centró en la pregunta “¿Cómo podríamos crear un espacio donde las personas desmotivadas puedan motivarse?”, definiendo la motivación como el eje central del diseño. \n Con herramientas como Customer Journey, User Flow y Benchmark, se consolidó una propuesta con valor agregado y se desarrolló un prototipo funcional en Adobe XD.",
-      image: "/placeholder.jpg",
+      image: "../../../public/images/eXerparK.png",
       technologies: ["Adobe XD", "Figma", "Desk Research", "Benchmarking"],
       liveUrl: "https://xd.adobe.com/view/93ef9a3a-35e9-4876-8b6c-b58ab1793bae-c6bc/", 
       slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSAsOmQqq3JRLnf2y3Df0dgmNNXX7xNOwpqxHDfXTIp7nhrzrz0y2a1RDBg1Xvbfp9n6FtYtkmzNCzG/pub?start=false&loop=false&delayms=3000",
@@ -81,7 +81,7 @@ La solución final fue una plataforma que permite:
 - Redirigirte directamente a la plataforma donde se reproduce el contenido elegido.
 
 Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y propusimos ideas para un futuro Y Ahora Qué? 2.0, que incluiría funciones como foros informales, chats, indicadores de contenido visto, y opciones colaborativas según con quién mires.`,
-      image: "/placeholder.jpg",
+      image: "../../../public/images/yAhoraQue.png",
       technologies: [
         "Figma",
         "Adobe XD",
@@ -122,7 +122,7 @@ Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y prop
     - Información postadopción y cuidados básicos.
     - Seguimiento de documentación médica.
     - Búsqueda de veterinarias por zona.`,
-      image: "/placeholder.jpg",
+      image: "../../../public/images/enHUELLA2.png",
       technologies: [
         "Figma",
         "Miro",
@@ -148,7 +148,7 @@ El desafío consistía en diseñar una colección de 50 NFTs con una temática l
 Para la creación visual utilicé Procreate, organizando los elementos en carpetas por categorías: fondos, clima, color de cuerpo, manos, accesorios y decoraciones.
 Cada combinación generaba variaciones únicas, y mediante un script automatizado logré producir múltiples versiones de forma dinámica.
 Además de la programación del backend, me encargué del diseño del frontend y del logo, buscando transmitir una estética divertida, tierna y juguetona, alineada con el universo visual de los personajes.`,
-      image: "/placeholder.jpg",
+      image: "../../../public/images/NFTBunnies.png",
       technologies: ["Procreate", "JavaScript", "Web3.js", "HTML", "CSS"],
       liveUrl: "https://nft-bunnies-pi.vercel.app/",
       githubUrl: "https://github.com/cdejtiar/NFTBunnies",
@@ -168,7 +168,7 @@ Además de la programación del backend, me encargué del diseño del frontend y
 El objetivo era recrear el icónico juego del dinosaurio de Google Chrome, donde el personaje debe esquivar obstáculos mientras corre indefinidamente, combinando jugabilidad simple con un diseño visual atractivo.
 El desarrollo se realizó utilizando C#, Unity y SQLite, comprendiendo los fundamentos del lenguaje, el motor de juego y la gestión de datos.
 A través de scripts personalizados y las herramientas del editor, logré un resultado funcional, fluido y divertido, que destaca por su interfaz amigable y facilidad de uso.`,
-      image: "/placeholder.jpg",
+      image: "../../../public/images/runnerDino.png",
       technologies: [
         "Unity",
         "C#",
@@ -199,14 +199,13 @@ A través de scripts personalizados y las herramientas del editor, logré un res
   - Conectarse con personas afines y descubrir nuevas lecturas.
 
 Durante el desarrollo realicé un análisis comparativo de plataformas existentes, diseñé un Gamification Canvas para estructurar la estrategia lúdica, y creé tanto el User Flow como el prototipo funcional del sistema.`,
-      image: "/placeholder.jpg",
+      image: ".../../../public/images/GameReads.png",
       technologies: [
         "Figma",
         "Gamification Canvas",
         "User Flow",
         "UX Research",
       ],
-      //links a prototipo y a presentación de google
       liveUrl: "https://www.figma.com/proto/yC0bmMEKCiMuoRuMe5b4OK/Prototipo?type=design&node-id=8-7655&scaling=scale-down&page-id=0%3A1&starting-point-node-id=8%3A7655",
       slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vScQV3JVsoK9Re7RwZahwAUW2Y2SbJBeBkS1VHh6FHW2701S_0itNbMs_ejNr0HVlNDrIWt6jskbsAg/pub?start=false&loop=false&delayms=3000",
       features: [
@@ -229,7 +228,7 @@ El MVP del prototipo contempla funcionalidades clave como:
 - Los objetivos del proyecto fueron: diseñar una aplicación funcional y accesible, investigar las necesidades reales del público objetivo, y validar el diseño mediante pruebas de usabilidad para asegurar que la solución respondiera a sus demandas cotidianas.
 Durante el proceso realizamos un Acta de Proyecto para definir el rumbo del trabajo, organizamos las tareas en Trello y establecimos sprints semanales para coordinar avances en equipo.
  Tras la fase de investigación, desarrollamos el informe de resultados y avanzamos hacia la etapa de prototipado en Adobe XD, consolidando la experiencia del usuario en un entorno claro, intuitivo y funcional.`,
-      image: "/placeholder.jpg",
+      image: "../../../public/images/webapp.png",
       technologies: [
         "Adobe XD",
         "Trello",
@@ -255,7 +254,7 @@ Durante el proceso realizamos un Acta de Proyecto para definir el rumbo del trab
  El desafío era explorar una tecnología completamente nueva y llevar adelante el proyecto como si se tratara de un encargo freelance, registrando tiempos, planificando etapas y validando el producto con usuarios reales.
 La aplicación propone un buscador de tragos alcohólicos con distintos filtros para encontrar el trago ideal, además de funcionalidades complementarias como juegos y un aleatorizador de tragos para descubrir nuevas combinaciones.
 Durante el desarrollo aplicamos metodologías ágiles y realizamos dos checkpoints clave: uno de Diseño y otro de Desarrollo, que marcaron los avances principales del proyecto.`,
-      image: "/placeholder.jpg",
+      image: "../../../public/images/intoximate.png",
       technologies: [
         "React Native",
         "Expo",
@@ -284,7 +283,7 @@ Durante el desarrollo aplicamos metodologías ágiles y realizamos dos checkpoin
         "Juego web interactivo para sorteos de bingo comunitarios y familiares",
       fullDescription: `Bingo Familiar de Dorja fue un proyecto creado en el 2025 para traer un poco de magia, emoción y estética a las partidas de bingo con familia, amig@s o janijim. Diseñado con una interfaz cálida y simple, el objetivo fue hacer que cualquier persona pueda usarlo fácilmente en actividades recreativas o comunitarias.
 El objetivo del proyecto fue crear una herramienta accesible, funcional y estéticamente cuidada que pueda usarse sin conexión a Internet, ideal para actividades comunitarias, reuniones familiares o peulot. Además, busca aportar una identidad visual propia de Dorja, combinando lo lúdico con lo institucional.`,
-      image: "/placeholder.jpg",
+      image: "../../../public/images/bingo.png",
       technologies: ["Stitch de Google", "JavaScript", "HTML", "CSS"],
       liveUrl: "https://bingo-dorja.vercel.app",
       githubUrl: "https://github.com/cdejtiar/bingoDorja/tree/main",
@@ -303,7 +302,7 @@ El objetivo del proyecto fue crear una herramienta accesible, funcional y estét
         "Aplicación web interactiva para jornadas de orientación escolar",
       fullDescription: `Sala de Escape IVO fue un proyecto desarrollado en 2025 en la Escuela ORT, con el objetivo de mostrar de forma divertida e interactiva las orientaciones de estudio a estudiantes de 2do año. La experiencia fue diseñada para que los participantes aprendieran mientras jugaban, recorriendo cinco subsalas, cada una representando un pilar de la orientación de Informática.
 El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo conductor que uniera todas las salas y guiara a los estudiantes a través de desafíos interactivos y puzzles educativos.`,
-      image: "/placeholder.jpg",
+      image: "../../../public/images/IVO.png",
       technologies: ["Stitch de Google", "v0", "TypeScript", "Next.js", "Tailwind CSS", "GitHub Projects"],
       liveUrl: "https://ivo-sala-de-escape.vercel.app",
       githubUrl: "https://https://github.com/informaticaort/IVO-2025",
@@ -327,11 +326,8 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
       El MVP (Mínimo Producto Viable) definido incluye un cuestionario inicial de personalización, un plan de acción diario/semanal, un sistema de XP y Badges, un diario emocional y feedback visual del progreso.
       El estudio de Investigación incluyó benchmarking de herramientas (como Focusmate, Forest y Structured) y encuestas a 157 personas, con un 82,8% que admitió procrastinar.
       `,
-      image: "/placeholder.jpg",
+      image: "../../../public/images/comingsoon.png",
       technologies: ["Design Thinking", "UX Research", "Benchmarking", "MoSCoW (Matriz de Priorización)"],
-      //poner que está en proceso.
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
       features: [
         "Personalización según el tipo de procrastinador (cuestionario inicial)",
         "Gamificación con sistema de XP y Badges para fomentar la motivación",
@@ -348,7 +344,7 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
       `Portfolio personal desarrollado con Next.js 14, con decisiones propias de navegación móvil innovadora, efectos de vidrio líquido, sistema de temas, y optimizaciones para dispositivos táctiles.
        La idea principal fue mía, pasando luego por un proceso de diseño en Stitch de Google para perfeccionarlo con elementos modernos e ideas más genéricas que un portfolio tiene que tener, para más tarde lanzarme a realizarlo mediante las implementaciones de v0.
        Realicé un proceso de internalización en cuánto a qué elementos suelen definirme como persona y cómo poder mostrarlo de forma `,
-      image: "/modern-portfolio-website.png",
+      image: "../../../public/images/portfolio.png",
       technologies: ["Figma", "Stitch de Google", "Next.js 14", "TypeScript", "Tailwind CSS"],
       features: [
         "Navegación móvil flotante",
@@ -365,7 +361,7 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
         "Digital platform to motivate physical activity and connect people through movement",
       fullDescription:
         "eXerparK was founded in 2021, in the post-pandemic context, with the goal of rekindling motivation for exercise and promoting meetings in public spaces like parks and plazas. \n The project combines well-being, community, and technology: it offers a space where people can discover free outdoor activities, schedule them, meet new people, and stay active. \n During the initial research, we conducted Desk Research and Social Listening on exercise habits in Argentina, which revealed a widespread loss of motivation. \n Based on this problem, the Ideation process focused on the question “How could we create a space where demotivated people could get motivated?”, defining motivation as the central axis of the design. \n Using tools like Customer Journey, User Flow, and Benchmark, we consolidated a value-added proposal and developed a functional prototype in Adobe XD.",
-      image: "/placeholder.jpg",
+  image: "/images/eXerparK.png",
       technologies: ["Adobe XD", "Figma", "Desk Research", "Benchmarking"],
   liveUrl: "https://xd.adobe.com/view/93ef9a3a-35e9-4876-8b6c-b58ab1793bae-c6bc/",
   slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSAsOmQqq3JRLnf2y3Df0dgmNNXX7xNOwpqxHDfXTIp7nhrzrz0y2a1RDBg1Xvbfp9n6FtYtkmzNCzG/pub?start=false&loop=false&delayms=3000",
@@ -392,7 +388,7 @@ The final solution was a platform that allows:
 - Redirecting directly to the platform where the chosen content is available.
 
 After testing, we created a high-fidelity prototype and proposed ideas for a future Y Ahora Qué? 2.0, which would include features such as informal forums, chats, seen-content indicators, and collaborative options based on who you’re watching with.`,
-      image: "/placeholder.jpg",
+  image: "/images/yAhoraQue.png",
       technologies: [
         "Figma",
         "Adobe XD",
@@ -434,7 +430,7 @@ Finally, we projected ideas for a future version of enHUELLA2, including feature
 - Post-adoption information and basic care tips.
 - Medical document tracking.
 - Vet search by location.`,
-      image: "/placeholder.jpg",
+  image: "/images/enHUELLA2.png",
       technologies: [
         "Figma",
         "Miro",
@@ -462,7 +458,7 @@ The challenge was to design a collection of 50 NFTs with a free theme, create a 
 For the visual creation, I used Procreate, organizing elements into folders by categories: backgrounds, weather, body color, hands, accessories, and decorations.  
 Each combination generated unique variations, and through an automated script, I produced multiple versions dynamically.  
 In addition to backend programming, I designed the frontend and the logo, aiming to convey a fun, cute, and playful aesthetic aligned with the characters' visual universe.`,
-      image: "/placeholder.jpg",
+  image: "/images/NFTBunnies.png",
       technologies: ["Procreate", "JavaScript", "Web3.js", "HTML", "CSS"],
   liveUrl: "https://nft-bunnies-pi.vercel.app/",
   githubUrl: "https://github.com/cdejtiar/NFTBunnies",
@@ -482,7 +478,7 @@ In addition to backend programming, I designed the frontend and the logo, aiming
 The goal was to recreate the iconic Google Chrome Dinosaur game, where the character must dodge obstacles while running indefinitely, combining simple gameplay with an attractive visual design.  
 The development was carried out using C#, Unity, and SQLite, covering the fundamentals of the language, game engine, and data management.  
 Using custom scripts and editor tools, I achieved a functional, smooth, and fun result, which stands out for its user-friendly interface and ease of use.`,
-      image: "/placeholder.jpg",
+  image: "/images/runnerDino.jpg",
       technologies: [
         "Unity",
         "C#",
@@ -514,7 +510,7 @@ Main features include:
 - Connecting with like-minded people and discovering new readings.
 
 During development, I carried out a comparative analysis of existing platforms, designed a Gamification Canvas to structure the playful strategy, and created both the User Flow and a functional system prototype.`,
-      image: "/placeholder.jpg",
+  image: "/images/GameReads.png",
       technologies: [
         "Figma",
         "Gamification Canvas",
@@ -545,7 +541,7 @@ The MVP prototype includes key features such as:
 The project’s objectives were: to design a functional and accessible application, to research the real needs of the target audience, and to validate the design through usability testing to ensure the solution met students’ daily demands.  
 Throughout the process, we created a Project Charter to define our direction, organized tasks on Trello, and set weekly sprints to coordinate team progress.  
 After the research phase, we developed a results report and moved on to the prototyping stage in Adobe XD, consolidating a clear, intuitive, and functional user experience.`,
-      image: "/placeholder.jpg",
+  image: "/images/webapp.png",
       technologies: [
         "Adobe XD",
         "Trello",
@@ -572,7 +568,7 @@ After the research phase, we developed a results report and moved on to the prot
 The challenge was to explore a completely new technology and carry out the project as if it were a freelance assignment — tracking time, planning stages, and validating the product with real users.  
 The app offers a cocktail search engine with multiple filters to find the ideal drink, along with complementary features such as mini-games and a randomizer to discover new combinations.  
 During development, we applied agile methodologies and conducted two main checkpoints: one for Design and one for Development, which marked the project’s key milestones.`,
-      image: "/placeholder.jpg",
+  image: "/images/intoximate.png",
       technologies: [
         "React Native",
         "Expo",
@@ -603,7 +599,7 @@ During development, we applied agile methodologies and conducted two main checkp
 Designed with a warm and simple interface, the goal was to make it accessible for anyone to use during recreational or community activities.  
 The project aimed to create an accessible, functional, and visually appealing tool that could even be used offline — ideal for community events, family gatherings, or peulot.  
 It also sought to reflect Dorja’s unique visual identity, blending playfulness with institutional style.`,
-      image: "/placeholder.jpg",
+  image: "/images/bingo.png",
       technologies: ["Google Stitch", "JavaScript", "HTML", "CSS"],
       liveUrl: "https://bingo-dorja.vercel.app",
       githubUrl: "https://github.com/cdejtiar/bingoDorja/tree/main",
@@ -623,7 +619,7 @@ It also sought to reflect Dorja’s unique visual identity, blending playfulness
       fullDescription: `IVO Escape Room was a 2025 project developed at ORT School to showcase study orientations to 2nd-year students in a fun and interactive way.  
 The experience was designed so participants could learn through play, exploring five subrooms, each representing one of the pillars of the Informatics orientation.  
 The project aimed to combine fun, learning, and design aesthetics, creating a narrative thread that connected all rooms and guided students through interactive challenges and educational puzzles.`,
-      image: "/placeholder.jpg",
+  image: "/images/IVO.png",
       technologies: [
         "Google Stitch",
         "v0",
@@ -654,7 +650,7 @@ The solution is based on implementing User-Centered Design strategies and gamifi
 The development process followed the Design Thinking stages: Empathize, Define, Ideate, Prototype, and Test.  
 The defined MVP includes an initial personalization questionnaire, a daily/weekly action plan, an XP and Badges system, an emotional journal, and visual progress feedback.  
 The research phase included benchmarking tools such as Focusmate, Forest, and Structured, as well as surveys of 157 people — 82.8% of whom admitted to procrastinating.`,
-      image: "/placeholder.jpg",
+  image: "/images/comingsoon.png",
       technologies: [
         "Design Thinking",
         "UX Research",
@@ -680,7 +676,7 @@ The research phase included benchmarking tools such as Focusmate, Forest, and St
 The main concept was mine, later refined through a design process in Google Stitch to include modern UI elements and general features expected in a portfolio.  
 Finally, I implemented it using v0 components.  
 The project also included a personal reflection on which design elements best represent me and how to express them visually.`,
-      image: "/modern-portfolio-website.png",
+  image: "/images/portfolio.png",
       technologies: [
         "Figma",
         "Google Stitch",
@@ -719,12 +715,29 @@ export default function ProjectPage() {
     setProject(foundProject || null)
   }, [params.id])
 
+  // Normalize image paths coming from project data.
+  // Some entries reference files with a relative path into the `public` folder
+  // (for example: "../../../public/images/..."), so map those to the
+  // correct absolute public path ("/images/...") before rendering.
+  const resolveImage = (img?: string) => {
+    if (!img) return "/placeholder.svg"
+    // If it contains '/public/' (common when saved as relative), strip up to public
+    if (img.includes('/public/')) return img.substring(img.indexOf('/public/') + 7)
+    // If it starts with ../ or similar, remove leading ../ segments and try to find 'public'
+    if (img.startsWith('..')) {
+      const stripped = img.replace(/^(?:\.\.\/)+/, '/')
+      // if leftover contains 'public', remove it
+      return stripped.replace('/public', '')
+    }
+    return img
+  }
+
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-superlobster text-primary mb-4">{t.projectNotFound}</h1>
-          <Button onClick={() => router.push("/")} variant="outline">
+          <Button onClick={() => router.push("/#projects")} variant="outline">
             <ArrowLeft className="w-4 h-4 mr-2" />
             {t.backToProjects}
           </Button>
@@ -803,9 +816,13 @@ export default function ProjectPage() {
         {/* Project Image */}
         <div className="glass-card rounded-2xl p-4 mb-8">
           <img
-            src={project.image || "/placeholder.svg"}
+            src={resolveImage(project.image)}
             alt={project.title}
-            className="w-full h-96 object-cover rounded-lg"
+            className={
+              ["NFTBunnies", "GameReads", "intoximate"].includes(project.title)
+                ? "w-full h-96 object-contain rounded-lg"
+                : "w-full h-96 object-cover rounded-lg"
+            }
           />
         </div>
 
