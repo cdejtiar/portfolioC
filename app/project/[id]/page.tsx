@@ -168,7 +168,7 @@ Además de la programación del backend, me encargué del diseño del frontend y
 El objetivo era recrear el icónico juego del dinosaurio de Google Chrome, donde el personaje debe esquivar obstáculos mientras corre indefinidamente, combinando jugabilidad simple con un diseño visual atractivo.
 El desarrollo se realizó utilizando C#, Unity y SQLite, comprendiendo los fundamentos del lenguaje, el motor de juego y la gestión de datos.
 A través de scripts personalizados y las herramientas del editor, logré un resultado funcional, fluido y divertido, que destaca por su interfaz amigable y facilidad de uso.`,
-      image: "../../../public/images/runnerDino.png",
+      image: "../../../public/images/runnerDino.jpg",
       technologies: [
         "Unity",
         "C#",
@@ -478,7 +478,7 @@ In addition to backend programming, I designed the frontend and the logo, aiming
 The goal was to recreate the iconic Google Chrome Dinosaur game, where the character must dodge obstacles while running indefinitely, combining simple gameplay with an attractive visual design.  
 The development was carried out using C#, Unity, and SQLite, covering the fundamentals of the language, game engine, and data management.  
 Using custom scripts and editor tools, I achieved a functional, smooth, and fun result, which stands out for its user-friendly interface and ease of use.`,
-  image: "/images/runnerDino.jpg",
+  image: "../../public/images/runnerDino.jpg",
       technologies: [
         "Unity",
         "C#",
