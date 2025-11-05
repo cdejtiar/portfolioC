@@ -720,16 +720,31 @@ export default function ProjectPage() {
   // (for example: "../../../public/images/..."), so map those to the
   // correct absolute public path ("/images/...") before rendering.
   const resolveImage = (img?: string) => {
+    // Robustly normalize image paths coming from project data so they
+    // always reference the `public` folder via an absolute path like
+    // `/images/...`. This prevents broken relative paths (e.g. ".../../../public/images/..")
+    // that can work sometimes but break on back-navigation or different base paths.
     if (!img) return "/placeholder.svg"
-    // If it contains '/public/' (common when saved as relative), strip up to public
-    if (img.includes('/public/')) return img.substring(img.indexOf('/public/') + 7)
-    // If it starts with ../ or similar, remove leading ../ segments and try to find 'public'
-    if (img.startsWith('..')) {
-      const stripped = img.replace(/^(?:\.\.\/)+/, '/')
-      // if leftover contains 'public', remove it
-      return stripped.replace('/public', '')
+
+    let s = img.replace(/\\/g, "/")
+
+    // If the string contains '/public/', drop everything up to and including '/public'
+    if (s.includes("/public/")) {
+      s = s.substring(s.indexOf("/public/") + "/public/".length)
     }
-    return img
+
+    // If it contains 'images/' anywhere, use that as the root under public
+    const imagesIdx = s.indexOf("images/")
+    if (imagesIdx !== -1) {
+      s = "/" + s.substring(imagesIdx)
+      return s
+    }
+
+    // Remove leading dot-segments like '../../' or './' and ensure leading '/'
+    s = s.replace(/^(?:\.+\/)+/, "")
+    if (!s.startsWith("/")) s = "/" + s
+
+    return s
   }
 
   if (!project) {
