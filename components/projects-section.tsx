@@ -729,7 +729,17 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
                     // to avoid pixelation / bad crops. Others keep the cover + hover zoom.
                   }
                   <img
-                    src={project.image || "/placeholder.svg"}
+                    src={
+                      // Ensure an absolute path so the browser doesn't resolve
+                      // it relative to the current route (which breaks after
+                      // navigating to /project/[id] and back). If the image
+                      // already starts with '/' or is an external URL, keep it.
+                      project.image
+                        ? (project.image.startsWith("/") || project.image.startsWith("http")
+                            ? project.image
+                            : "/" + project.image.replace(/^\/+/, ""))
+                        : "/placeholder.svg"
+                    }
                     alt={project.title}
                     className={
                       ["NFTBunnies", "GameReads", "intoximate"].includes(project.title)
