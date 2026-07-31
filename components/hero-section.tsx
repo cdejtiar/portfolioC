@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { getCvDownload } from "@/lib/cv"
 import { ArrowDown } from "lucide-react"
+import { motion } from "framer-motion"
 
 interface HeroSectionProps {
   language: "es" | "en"
@@ -34,6 +35,11 @@ export function HeroSection({ language }: HeroSectionProps) {
   }
 
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+    >
     <section id="home" className="relative min-h-screen pt-safe-top pb-safe-bottom flex items-center justify-center">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-16 left-10 w-44 h-44 rounded-full bg-primary/10 blur-3xl" />
@@ -74,5 +80,6 @@ export function HeroSection({ language }: HeroSectionProps) {
         <ArrowDown className="h-6 w-6 text-muted-foreground animate-bounce" />
       </div>
     </section>
+    </motion.div>
   )
 }
