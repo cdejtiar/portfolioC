@@ -34,25 +34,25 @@ export function HeroSection({ language }: HeroSectionProps) {
   }
 
   return (
-    <section id="home" className="min-h-screen pt-safe-top pb-safe-bottom flex items-center">
+    <section id="home" className="relative min-h-screen pt-safe-top pb-safe-bottom flex items-center justify-center">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-16 left-10 w-44 h-44 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-16 right-10 w-72 h-72 rounded-full bg-secondary/10 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="max-w-2xl">
+        <div className="flex justify-center">
+          <div className="w-full max-w-3xl text-center lg:text-left">
             <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-5">Portfolio</p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight text-foreground">
+            <h1 className="font-superlobster text-5xl md:text-8xl font-bold mb-4 gradient-text animate-fade-in-up">
               Camila Dejtiar
             </h1>
             <p className="mt-4 text-lg font-semibold text-primary/80">{t.titleLine}</p>
-            <p className="mt-8 max-w-2xl text-base leading-8 text-muted-foreground">
+            <p className="mt-8 max-w-2xl mx-auto text-base leading-8 text-muted-foreground lg:mx-0">
               {t.description}
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center justify-center lg:justify-start">
               <Button
                 onClick={scrollToProjects}
                 size="lg"
@@ -65,18 +65,6 @@ export function HeroSection({ language }: HeroSectionProps) {
                   {t.downloadCV}
                 </a>
               </Button>
-            </div>
-          </div>
-
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/10">
-            <img
-              src="/images/comingsoon.png"
-              alt="inFLOW product preview"
-              className="h-[520px] w-full object-cover"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent px-6 py-5">
-              <p className="text-xs uppercase tracking-[0.32em] text-white/70">inFLOW</p>
-              <p className="mt-2 text-sm text-white/90">Proyecto principal con enfoque en UX, UI y frontend.</p>
             </div>
           </div>
         </div>
