@@ -1,112 +1,86 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail, Eye } from "lucide-react";
+import { Button } from "@/components/ui/button"
+import { ArrowDown } from "lucide-react"
 
 interface HeroSectionProps {
-  language: "es" | "en";
+  language: "es" | "en"
 }
 
 const translations = {
   es: {
-    greeting: "Hola, soy",
-    name: "Camila Dejtiar",
-    title: "Diseñadora",
-    subtitle: "UX/UI",
+    titleLine: "Product Designer • UX/UI Designer • Frontend Developer",
     description:
-      "Soy una creativa digital apasionada por el diseño, la investigación y la innovación. Busco generar experiencias intuitivas que hagan más fácil y significativa la relación entre las personas y la tecnología.",
-    contactMe: "Contáctame",
-    seeMore: "Ver más",
+      "Diseño productos digitales centrados en las personas, combinando UX Research, Product Design y desarrollo frontend para transformar problemas complejos en experiencias intuitivas.",
+    viewProjects: "View Projects",
+    downloadCV: "Download CV",
   },
   en: {
-    greeting: "Hello, I'm",
-    name: "Camila Dejtiar",
-    title: "UX/UI",
-    subtitle: "Designer",
+    titleLine: "Product Designer • UX/UI Designer • Frontend Developer",
     description:
-      "I'm a passionate digital creative with a focus on design, research, and innovation. I seek to create intuitive experiences that make the relationship between people and technology easier and more meaningful.",
-    contactMe: "Contact Me",
-    seeMore: "See More",
+      "I design people-centered digital products by combining UX research, product design, and frontend development to turn complex problems into intuitive experiences.",
+    viewProjects: "View Projects",
+    downloadCV: "Download CV",
   },
-};
+}
 
 export function HeroSection({ language }: HeroSectionProps) {
-  const t = translations[language];
-
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const t = translations[language]
 
   const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-  };
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+  }
 
   return (
-    <section
-      id="home"
-      className="h-screen min-h-screen-safe sm:h-screen lg:h-screen flex items-center justify-center relative overflow-hidden pt-safe-top pb-safe-bottom"
-    >
-      {/* Minimal background elements specific to hero */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" />
+    <section id="home" className="min-h-screen pt-safe-top pb-safe-bottom flex items-center">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-16 left-10 w-44 h-44 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute bottom-16 right-10 w-72 h-72 rounded-full bg-secondary/10 blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center">
-        <div className="max-w-3xl mx-auto text-center">
-          {/* Greeting */}
-          <p className="text-lg font-barlow text-muted-foreground mb-4 animate-fade-in">
-            {t.greeting}
-          </p>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="max-w-2xl">
+            <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-5">Portfolio</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight text-foreground">
+              Camila Dejtiar
+            </h1>
+            <p className="mt-4 text-lg font-semibold text-primary/80">{t.titleLine}</p>
+            <p className="mt-8 max-w-2xl text-base leading-8 text-muted-foreground">
+              {t.description}
+            </p>
 
-          {/* Name */}
-          <h1 className="font-superlobster text-5xl md:text-6xl font-bold mb-4 gradient-text animate-fade-in-up">
-            {t.name}
-          </h1>
-
-          {/* Title - Large Typography as requested */}
-          <div className="mb-6">
-            <h2 className="font-coolvetica text-6xl md:text-7xl lg:text-8xl font-bold leading-none text-primary/20 select-none">
-              {t.title}
-            </h2>
-            <h3 className="font-coolvetica text-4xl md:text-5xl font-bold -mt-4 md:-mt-6 gradient-text">
-              {t.subtitle}
-            </h3>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Button
+                onClick={scrollToProjects}
+                size="lg"
+                className="rounded-2xl bg-primary text-primary-foreground px-8 py-4 shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all duration-300"
+              >
+                {t.viewProjects}
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-2xl px-8 py-4 text-base font-semibold transition-all duration-300">
+                <a href="/CVDejtiar.pdf" download>{t.downloadCV}</a>
+              </Button>
+            </div>
           </div>
 
-          {/* Description */}
-          <p className="text-base md:text-lg font-barlow text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up">
-            {t.description}
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up mb-12">
-            <Button
-              onClick={scrollToContact}
-              size="lg"
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-4 text-base font-semibold rounded-2xl glass-effect transition-all duration-300 hover:scale-105"
-            >
-              <Mail className="w-4 h-4 mr-2" />
-              {t.contactMe}
-            </Button>
-
-            <Button
-              onClick={scrollToProjects}
-              variant="outline"
-              size="lg"
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-4 text-base font-semibold rounded-2xl glass-effect transition-all duration-300 hover:scale-105"
-            >
-              <Eye className="w-4 h-4 mr-2" />
-              {t.seeMore}
-            </Button>
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className="animate-bounce">
-            <ArrowDown className="w-5 h-5 text-muted-foreground mx-auto" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/10">
+            <img
+              src="/images/comingsoon.png"
+              alt="inFLOW product preview"
+              className="h-[520px] w-full object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent px-6 py-5">
+              <p className="text-xs uppercase tracking-[0.32em] text-white/70">inFLOW</p>
+              <p className="mt-2 text-sm text-white/90">Proyecto principal con enfoque en UX, UI y frontend.</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <ArrowDown className="h-6 w-6 text-muted-foreground animate-bounce" />
+      </div>
     </section>
-  );
+  )
 }
