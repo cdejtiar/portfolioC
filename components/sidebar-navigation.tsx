@@ -1,6 +1,7 @@
 "use client"
 import { Home, User, Briefcase, Mail, Download, Globe, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { getCvDownload } from "@/lib/cv"
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
 
@@ -39,6 +40,7 @@ export function SidebarNavigation({
   const { theme, setTheme } = useTheme()
 
   const t = translations[language]
+  const cv = getCvDownload(language)
 
   const navItems = [
     { id: "home", icon: Home, label: t.home },
@@ -67,8 +69,8 @@ export function SidebarNavigation({
   const downloadCV = () => {
     if (!mounted) return
     const link = document.createElement("a")
-    link.href = "/CVDejtiar.pdf"
-    link.download = "CVDejtiar.pdf"
+    link.href = cv.href
+    link.download = cv.fileName
     link.click()
   }
 

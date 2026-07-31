@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { getCvDownload } from "@/lib/cv"
 import { Mail, Linkedin, Github } from "lucide-react"
 
 interface ContactSectionProps {
@@ -32,6 +33,7 @@ const contactText = {
 
 export function ContactSection({ language }: ContactSectionProps) {
   const t = contactText[language]
+  const cv = getCvDownload(language)
 
   return (
     <section id="contact" className="py-24">
@@ -81,7 +83,9 @@ export function ContactSection({ language }: ContactSectionProps) {
 
             <div className="mt-10">
               <Button asChild variant="secondary" size="lg" className="rounded-2xl px-8 py-4 shadow-lg shadow-primary/10 hover:bg-secondary/90 transition-all duration-300">
-                <a href="/CVDejtiar.pdf" download>{t.downloadCV}</a>
+                <a href={cv.href} download={cv.fileName}>
+                  {t.downloadCV}
+                </a>
               </Button>
             </div>
           </div>

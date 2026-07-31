@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { getCvDownload } from "@/lib/cv"
 import { ArrowDown } from "lucide-react"
 
 interface HeroSectionProps {
@@ -9,14 +10,14 @@ interface HeroSectionProps {
 
 const translations = {
   es: {
-    titleLine: "Product Designer • UX/UI Designer • Frontend Developer",
+    titleLine: "Diseñadora Multimedial • UX/UI Designer • Product Designer • Frontend Developer",
     description:
       "Diseño productos digitales centrados en las personas, combinando UX Research, Product Design y desarrollo frontend para transformar problemas complejos en experiencias intuitivas.",
-    viewProjects: "View Projects",
-    downloadCV: "Download CV",
+    viewProjects: "Ver Proyectos",
+    downloadCV: "Descargar CV",
   },
   en: {
-    titleLine: "Product Designer • UX/UI Designer • Frontend Developer",
+    titleLine: "Multimedia Designer • UX/UI Designer • Product Designer • Frontend Developer",
     description:
       "I design people-centered digital products by combining UX research, product design, and frontend development to turn complex problems into intuitive experiences.",
     viewProjects: "View Projects",
@@ -26,6 +27,7 @@ const translations = {
 
 export function HeroSection({ language }: HeroSectionProps) {
   const t = translations[language]
+  const cv = getCvDownload(language)
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
@@ -59,7 +61,9 @@ export function HeroSection({ language }: HeroSectionProps) {
                 {t.viewProjects}
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-2xl px-8 py-4 text-base font-semibold transition-all duration-300">
-                <a href="/CVDejtiar.pdf" download>{t.downloadCV}</a>
+                <a href={cv.href} download={cv.fileName}>
+                  {t.downloadCV}
+                </a>
               </Button>
             </div>
           </div>
