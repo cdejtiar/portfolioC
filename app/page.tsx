@@ -228,9 +228,9 @@ export default function Home() {
       />
 
       <HeroSection language={language} />
-      <FeaturedProjectSection language={language} />
       <AboutSection language={language} t={t} />
       <ProcessSection language={language} />
+      <FeaturedProjectSection language={language} />
       <ProjectsSection language={language} />
       <SkillsSection language={language} />
       <ExperienceSection t={t} />
