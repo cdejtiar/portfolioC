@@ -166,11 +166,11 @@
 
 /* Liquid Glass Effect */
 .glass-effect {
-  background: rgba(180, 212, 238, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(180, 212, 238, 0.2);
-  box-shadow: 0 8px 32px rgba(64, 41, 64, 0.1);
+  background: rgba(180, 212, 238, 0.12);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(180, 212, 238, 0.24);
+  box-shadow: 0 10px 36px rgba(64, 41, 64, 0.14);
 }
 
 .glass-card {

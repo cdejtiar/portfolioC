@@ -7,33 +7,35 @@ interface FeaturedProjectSectionProps {
 const translations = {
   es: {
     label: "Proyecto Destacado",
-    heading: "inFLOW — caso de estudio principal",
+    heading: "inFLOW • Tesis",
     description:
-      "Mi proyecto más importante combina investigación con diseño estratégico y frontend, orientado a ayudar a universitarios a reducir la procrastinación con una experiencia clara y motivadora.",
+      "inFLOW nació para abordar un problema que afecta a millones de estudiantes: la procrastinación académica. A través de UX Research, diseño estratégico y desarrollo frontend, diseñé una plataforma que acompaña a los estudiantes con herramientas personalizadas para planificar, mantener el foco y construir hábitos de estudio más saludables.",
     productTagline: "Proyecto de tesis y experiencia híbrida UX / UI / Frontend.",
-    viewCaseStudy: "Ver Case Study",
+    viewCaseStudy: "Ver Caso de Estudio",
     metrics: [
-      "157 participantes",
+      "+150 participantes",
       "UX Research",
+      "Product Design",
+      "Design System",
       "React + TypeScript",
       "AI Integration",
-      "Design System",
       "User Testing",
     ],
   },
   en: {
     label: "Featured Project",
-    heading: "inFLOW — main case study",
+    heading: "inFLOW • Thesis",
     description:
       "My most important project combines research with strategic design and frontend delivery, focused on helping university students reduce procrastination through a clear, motivating experience.",
     productTagline: "Thesis project and hybrid UX / UI / Frontend work.",
     viewCaseStudy: "View Case Study",
     metrics: [
-      "157 participants",
+      "+150 participants",
       "UX Research",
+      "Product Design",
+      "Design System",
       "React + TypeScript",
       "AI Integration",
-      "Design System",
       "User Testing",
     ],
   },
@@ -49,7 +51,7 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
           <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4">
             {t.label}
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-foreground">
+          <h2 className="font-superlobster text-5xl md:text-6xl font-bold mb-4 gradient-text animate-fade-in-up">
             {t.heading}
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">
@@ -57,7 +59,7 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
           <div className="space-y-8">
             <div className="flex flex-wrap gap-3">
               {t.metrics.map((metric) => (
@@ -74,13 +76,13 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
                 <p className="text-sm uppercase tracking-[0.32em] text-primary mb-3">Impacto</p>
                 <p className="text-sm leading-6 text-muted-foreground">
-                  157 personas participaron en la investigación y ayudaron a validar el enfoque del producto.
+                  Investigación con +150 estudiantes que permitió validar el problema y definir la propuesta de valor del producto.
                 </p>
               </div>
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
                 <p className="text-sm uppercase tracking-[0.32em] text-primary mb-3">Alcance</p>
                 <p className="text-sm leading-6 text-muted-foreground">
-                  Un proceso híbrido que atraviesa UX Research, diseño de interfaz y desarrollo frontend.
+                  Proyecto end-to-end que abarcó investigación, definición del MVP, UX/UI, desarrollo frontend e integración de IA.
                 </p>
               </div>
             </div>
