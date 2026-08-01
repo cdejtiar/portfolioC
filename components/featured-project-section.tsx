@@ -21,12 +21,14 @@ const translations = {
       "AI Integration",
       "User Testing",
     ],
+    impact: "Investigación con +150 estudiantes que permitió validar el problema y definir la propuesta de valor del producto.",
+    scope: "Proyecto end-to-end que abarcó investigación, definición del MVP, UX/UI, desarrollo frontend e integración de IA.",
   },
   en: {
     label: "Featured Project",
     heading: "inFLOW • Thesis",
     description:
-      "My most important project combines research with strategic design and frontend delivery, focused on helping university students reduce procrastination through a clear, motivating experience.",
+      "inFLOW was created to address a challenge faced by millions of students: academic procrastination. Through UX research, strategic design, and front-end development, I designed and built a platform that supports students with personalized tools to plan their work, stay focused, and build healthier study habits.",
     productTagline: "Thesis project and hybrid UX / UI / Frontend work.",
     viewCaseStudy: "View Case Study",
     metrics: [
@@ -38,6 +40,8 @@ const translations = {
       "AI Integration",
       "User Testing",
     ],
+    impact: "Research with +150 students that allowed validating the problem and defining the product's value proposition.",
+    scope: "End-to-end project covering research, MVP definition, UX/UI, frontend development, and AI integration.",
   },
 }
 
@@ -74,15 +78,15 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                <p className="text-sm uppercase tracking-[0.32em] text-primary mb-3">Impacto</p>
+                <p className="text-sm uppercase tracking-[0.32em] text-primary mb-3">{language === "es" ? "Impacto" : "Impact"}</p>
                 <p className="text-sm leading-6 text-muted-foreground">
-                  Investigación con +150 estudiantes que permitió validar el problema y definir la propuesta de valor del producto.
+                  {t.impact}
                 </p>
               </div>
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                <p className="text-sm uppercase tracking-[0.32em] text-primary mb-3">Alcance</p>
+                <p className="text-sm uppercase tracking-[0.32em] text-primary mb-3">{language === "es" ? "Alcance" : "Scope"}</p>
                 <p className="text-sm leading-6 text-muted-foreground">
-                  Proyecto end-to-end que abarcó investigación, definición del MVP, UX/UI, desarrollo frontend e integración de IA.
+                  {t.scope}
                 </p>
               </div>
             </div>

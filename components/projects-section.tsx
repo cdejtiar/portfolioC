@@ -32,8 +32,8 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-14">
           <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4">{t.title}</p>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">{t.title}</h2>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-muted-foreground">{t.subtitle}</p>
+          <h2 className="font-superlobster text-5xl md:text-6xl font-bold mb-4 gradient-text animate-fade-in-up">{t.title}</h2>
+          <p className="mt-4 text-base leading-8 text-muted-foreground">{t.subtitle}</p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
