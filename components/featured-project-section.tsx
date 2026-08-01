@@ -59,8 +59,8 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
           </p>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
-          <div className="space-y-8">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+          <div className="space-y-8 lg:pt-4">
             <div className="flex flex-wrap gap-3">
               {t.metrics.map((metric) => (
                 <span
@@ -92,15 +92,17 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
             </Button>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/10">
-            <img
-              src="/images/comingsoon.png"
-              alt="inFLOW product preview"
-              className="h-[520px] w-full object-cover"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent px-6 py-5">
-              <p className="text-sm uppercase tracking-[0.32em] text-white/70">inFLOW</p>
-              <p className="mt-2 text-base font-semibold text-white">{t.productTagline}</p>
+          <div className="flex items-center lg:min-h-[420px] md:flex xl:hidden">
+            <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/10">
+              <img
+                src="/images/inflow.png"
+                alt="inFLOW product"
+                className="w-full h-[280px] sm:h-[360px] object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent px-6 py-5">
+                <p className="text-sm uppercase tracking-[0.32em] text-white/70">inFLOW</p>
+                <p className="mt-2 text-base font-semibold text-white">{t.productTagline}</p>
+              </div>
             </div>
           </div>
         </div>

@@ -480,7 +480,23 @@
   display: block;
 }
 
-@media (min-width: 1165px) {
+#projects {
+  min-height: 100vh;
+  background-image: url('/images/featuredproject-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+@media (max-width: 1279px) {
+  #projects {
+    background-image: none;
+    min-height: auto;
+  }
+}
+
+@media (min-width: 1280px) {
   .desktop-nav {
     display: block;
   }
