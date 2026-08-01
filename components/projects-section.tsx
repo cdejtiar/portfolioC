@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import { projectsByLocale } from "@/lib/projects";
 
 interface ProjectsSectionProps {
@@ -28,8 +29,14 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
   const featuredProjects = projects.filter((project) => project.featured && project.id !== "13").slice(0, 3)
 
   return (
-    <section id="work" className="py-24">
-      <div className="container mx-auto px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.7 }}
+    >
+      <section id="work" className="py-24">
+        <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-14">
           <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4">{t.title}</p>
           <h2 className="font-superlobster text-5xl md:text-6xl font-bold mb-4 gradient-text animate-fade-in-up">{t.title}</h2>
@@ -95,11 +102,12 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
         </div>
 
         <div className="mt-16 text-center">
-          <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-4">
+          <Button asChild variant="default" size="lg" className="rounded-2xl bg-primary text-primary-foreground px-8 py-4 shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all duration-300">
             <a href="/projects">{language === "es" ? "Ver más proyectos" : "View more projects"}</a>
           </Button>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </motion.div>
   )
 }

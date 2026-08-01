@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { getCvDownload } from "@/lib/cv"
+import { motion } from "framer-motion"
 import { Mail, Linkedin, Github } from "lucide-react"
 
 interface ContactSectionProps {
@@ -36,8 +37,8 @@ export function ContactSection({ language }: ContactSectionProps) {
   const cv = getCvDownload(language)
 
   return (
-    <section id="contact" className="py-24">
-      <div className="container mx-auto px-6">
+      <section id="contact" className="py-24">
+        <div className="container mx-auto px-6">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <div>
             <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4">Contact</p>
