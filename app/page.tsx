@@ -263,7 +263,6 @@ export default function Home() {
       <FeaturedProjectSection language={language} />
       <ProjectsSection language={language} />
       <SkillsSection language={language} t={t} />
-      <ExperienceSection t={t} />
       <ContactSection language={language} />
     </main>
   );
@@ -462,56 +461,6 @@ function SkillsSection({ language, t }: { language: "es" | "en"; t: (typeof cont
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </section>
-    </motion.div>
-  );
-}
-
-function ExperienceSection({ t }: { t: (typeof content)["es"] }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.7 }}
-    >
-      <section id="experience" className="py-24 bg-slate-950/5 dark:bg-white/5">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl">
-            <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4">
-              {t.experienceTitle}
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground mb-4">
-              {t.experienceTitle}
-            </h2>
-            <p className="max-w-2xl text-base leading-8 text-muted-foreground">
-              {t.experienceDescription}
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {t.experienceHighlights.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-sm shadow-black/5"
-              >
-                <h3 className="text-xl font-semibold text-foreground">
-                  {item.title}
-                </h3>
-                <ul className="mt-6 space-y-4 text-sm leading-7 text-muted-foreground">
-                  {item.points.map((point) => (
-                    <li
-                      key={point}
-                      className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-primary"
-                    >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </motion.div>
