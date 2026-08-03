@@ -23,6 +23,22 @@ export interface Project {
   features: string[]
   problem?: string
   solution?: string
+  // Optional case-study fields for narrative pages
+  context?: string
+  roleSummary?: string
+  team?: string
+  duration?: string
+  outcome?: string
+  // Structured fields for rich case studies
+  processSteps?: Array<{ label: string; title: string; description: string }>
+  researchHighlights?: Array<{ title: string; detail: string }>
+  designDecisions?: Array<{ title: string; problem: string; decision: string; impact: string }>
+  finalSolution?: string
+  outcomes?: string[]
+  learnings?: string[]
+  // Technical / implementation notes for dev-only projects
+  architecture?: string
+  repoHighlights?: string[]
 }
 
 export const projectsByLocale = {

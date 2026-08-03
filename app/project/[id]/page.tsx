@@ -80,7 +80,7 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow: string; titl
 
 function InfoCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[1.2rem] border border-white/20 bg-white/40 p-4 shadow-sm shadow-black/5 backdrop-blur-sm">
+    <div className="rounded-[1rem] border border-white/10 bg-white/5 p-5 shadow-inner shadow-black/5 backdrop-blur-sm">
       <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{label}</p>
       <p className="mt-2 text-sm leading-7 text-foreground">{value}</p>
     </div>
@@ -131,7 +131,7 @@ export default function ProjectPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-superlobster text-primary mb-4">{t.projectNotFound}</h1>
-          <Button onClick={() => router.push("/#projects")} variant="outline">
+          <Button onClick={() => router.push("/projects")} variant="outline">
             <ArrowLeft className="w-4 h-4 mr-2" />
             {t.backToProjects}
           </Button>
@@ -139,6 +139,15 @@ export default function ProjectPage() {
       </div>
     )
   }
+
+  // Determine project type so we can render narrative or technical flows
+  const isDesignProject = project.roles?.some((r) =>
+    ["Product Design", "UX Research", "Design Systems", "Research"].includes(r)
+  )
+
+  const isDevOnly = project.roles?.every((r) =>
+    ["Frontend Development", "AI Integration"].includes(r)
+  )
 
   const overviewItems = [
     { label: t.context, value: project.context || project.description },
@@ -210,68 +219,48 @@ export default function ProjectPage() {
   return (
     <div className="min-h-screen py-16 md:py-24">
       <div className="container mx-auto px-6 max-w-6xl">
-        <Button onClick={() => router.push("/#projects")} variant="ghost" className="mb-8 hover:bg-secondary/20">
+        {/*<Button onClick={() => router.push("/projects")} variant="ghost" className="mb-8 hover:bg-secondary/20">
           <ArrowLeft className="w-4 h-4 mr-2" />
           {t.backToProjects}
-        </Button>
+        </Button>*/}
 
         <motion.header
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/40 p-8 shadow-[0_20px_70px_rgba(64,41,64,0.08)] backdrop-blur-xl md:p-10 lg:p-12"
+          className="relative overflow-hidden rounded-[2rem] border border-white/6 bg-transparent p-8 md:p-10 lg:p-12"
         >
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="space-y-6">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] uppercase tracking-[0.32em] text-primary">
-                  {t.caseStudy}
-                </span>
-                {project.roles.map((role) => (
-                  <span key={role} className="rounded-full border border-white/20 bg-white/50 px-3 py-1 text-sm text-muted-foreground">
-                    {role}
-                  </span>
-                ))}
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div className="pt-6 lg:pt-10">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-[11px] uppercase tracking-[0.32em] text-primary/80">{t.caseStudy}</span>
               </div>
 
-              <div className="space-y-4">
-                <h1 className="font-superlobster text-4xl sm:text-5xl lg:text-6xl text-foreground">{project.title}</h1>
-                <p className="max-w-2xl text-lg leading-8 text-muted-foreground">{project.description}</p>
-              </div>
+              <h1 className="font-superlobster text-6xl md:text-8xl lg:text-[96px] leading-tight text-foreground -tracking-tight mb-6">
+                {project.title}
+              </h1>
 
-              <div className="grid gap-4 sm:grid-cols-2 max-w-2xl">
-                <InfoCard label={t.role} value={project.roleSummary || project.roles.join(" · ")} />
-                <InfoCard label={t.duration} value={project.duration || (language === "es" ? "6 semanas" : "6 weeks")} />
-                <InfoCard label={t.tools} value={project.technologies.join(" · ")} />
-                <InfoCard label={t.outcome} value={project.outcome || (language === "es" ? "Propuesta de producto y prototipo funcional" : "Product concept and functional prototype")} />
-              </div>
+              <p className="max-w-3xl text-lg md:text-xl leading-8 text-muted-foreground mb-8">{project.description}</p>
 
-              <div className="flex flex-wrap gap-3">
-                {project.liveUrl && (
-                  <Button onClick={() => window.open(project.liveUrl, "_blank")} className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    {t.viewLive}
-                  </Button>
-                )}
-                {project.slidesUrl && (
-                  <Button onClick={() => window.open(project.slidesUrl, "_blank")} className="bg-secondary/10 text-secondary hover:bg-secondary/20">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    {t.viewPresentation}
-                  </Button>
-                )}
-                {project.githubUrl && (
-                  <Button onClick={() => window.open(project.githubUrl, "_blank")} variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                    <Github className="w-4 h-4 mr-2" />
-                    {t.viewCode}
-                  </Button>
-                )}
+              <div className="flex flex-wrap gap-4 items-center text-sm text-muted-foreground">
+                <div className="flex items-center gap-3">
+                  <span className="font-semibold text-foreground mr-2">{t.role}:</span>
+                  <span>{project.roleSummary || project.roles.join(" · ")}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="font-semibold text-foreground mr-2">{t.tools}:</span>
+                  <span>{project.technologies.join(" · ")}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="font-semibold text-foreground mr-2">{t.duration}:</span>
+                  <span>{project.duration || (language === "es" ? "6 semanas" : "6 weeks")}</span>
+                </div>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary/20 via-transparent to-secondary/20 blur-3xl" />
-              <div className="relative rounded-[2rem] border border-white/20 bg-white/50 p-3 shadow-2xl shadow-primary/10 backdrop-blur">
-                <img src={resolveImage(project.image)} alt={project.title} className="h-[420px] w-full rounded-[1.35rem] object-cover" />
+            <div className="relative flex justify-end items-start">
+              <div className="w-full max-w-lg rounded-[1.8rem] overflow-hidden shadow-2xl shadow-primary/10">
+                <img src={resolveImage(project.image)} alt={project.title} className="w-full h-[520px] object-cover" />
               </div>
             </div>
           </div>
@@ -300,110 +289,165 @@ export default function ProjectPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.6 }}
-          className="mt-8 grid gap-8 rounded-[2rem] border border-white/10 bg-white/30 p-8 backdrop-blur-xl md:grid-cols-[0.85fr_1.15fr] md:p-10"
+          className="mt-8 grid gap-8 rounded-[2rem] p-8 md:grid-cols-[0.7fr_0.3fr] md:p-10"
         >
-          <SectionHeading
-            eyebrow={t.problemOpportunity}
-            title={language === "es" ? "Una necesidad real, una oportunidad clara" : "A real need, a clear opportunity"}
-            description={project.problemStatement || project.problem || (language === "es" ? "El trabajo comenzó con una pregunta concreta: cómo transformar una necesidad cotidiana en una experiencia más amable, útil y memorable." : "The work began with a concrete question: how to turn a daily need into a more thoughtful, useful, and memorable experience.")}
-          />
-          <div className="space-y-4">
-            <div className="rounded-[1.3rem] border border-white/20 bg-white/50 p-5">
-              <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{t.context}</p>
-              <p className="mt-2 text-base leading-8 text-foreground">{project.fullDescription}</p>
-            </div>
+          <div>
+            <h2 className="text-3xl md:text-4xl font-superlobster mb-4">{language === "es" ? "El Exceso de Caminos como Parálisis." : "Too many paths can feel paralyzing."}</h2>
+            <p className="text-lg text-muted-foreground mb-6">{project.problemStatement || project.fullDescription}</p>
+
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.3rem] border border-white/20 bg-white/50 p-5">
+              <div className="rounded-[1rem] border border-white/10 bg-white/5 p-5">
+                <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{t.context}</p>
+                <p className="mt-2 text-sm leading-7 text-foreground">{project.context || project.description}</p>
+              </div>
+              <div className="rounded-[1rem] border border-white/10 bg-white/5 p-5">
                 <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{t.whatIFound}</p>
-                <p className="mt-2 text-sm leading-7 text-foreground">{project.need || project.solution || (language === "es" ? "La fricción no estaba en la intención, sino en la dificultad de empezar." : "The friction was not in the intention, but in the difficulty of getting started.")}</p>
+                <p className="mt-2 text-sm leading-7 text-foreground">{project.need || project.solution}</p>
               </div>
-              <div className="rounded-[1.3rem] border border-white/20 bg-white/50 p-5">
-                <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{t.whatIChanged}</p>
-                <p className="mt-2 text-sm leading-7 text-foreground">{project.opportunity || (language === "es" ? "Diseñé una experiencia que invitara a actuar con menos presión y más claridad." : "I designed an experience that invited action with less pressure and more clarity.")}</p>
+            </div>
+          </div>
+
+          <div className="flex items-start justify-center">
+            <div className="rounded-[1rem] border border-white/10 bg-white/6 p-6 w-full max-w-sm text-center">
+              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 mx-auto mb-3">
+                <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 9v4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 17h.01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </div>
+              <h3 className="font-semibold text-lg mb-2">{language === "es" ? "El Botón de Crisis" : "The Crisis Button"}</h3>
+              <p className="text-sm text-muted-foreground">{language === "es" ? "Una propuesta de emergencia para momentos de bloqueo cognitivo severo." : "An emergency quick-action for moments of severe cognitive blocks."}</p>
             </div>
           </div>
         </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6 }}
-          className="mt-8 rounded-[2rem] border border-white/10 bg-white/30 p-8 backdrop-blur-xl md:p-10"
-        >
-          <SectionHeading
-            eyebrow={t.process}
-            title={language === "es" ? "Un proceso que acompaña la decisión" : "A process that supports decision-making"}
-            description={language === "es" ? "Cada etapa ayudó a convertir el problema en una propuesta más precisa, humana y útil." : "Each phase helped turn the problem into a more precise, human, and useful proposal."}
-          />
-          <div className="mt-8 grid gap-4 lg:grid-cols-3">
-            {processSteps.map((step) => (
-              <div key={step.title} className="rounded-[1.4rem] border border-white/20 bg-white/50 p-5">
-                <p className="text-[11px] uppercase tracking-[0.3em] text-primary/80">{step.label}</p>
-                <h3 className="mt-3 text-lg font-semibold text-foreground">{step.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-muted-foreground">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </motion.section>
-
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6 }}
-          className="mt-8 grid gap-8 rounded-[2rem] border border-white/10 bg-white/30 p-8 backdrop-blur-xl md:grid-cols-[0.85fr_1.15fr] md:p-10"
-        >
-          <SectionHeading
-            eyebrow={t.research}
-            title={language === "es" ? "Descubrimientos que dieron forma al diseño" : "Discoveries that shaped the design"}
-            description={language === "es" ? "La investigación permitió traducir conversaciones, comportamientos y necesidades en decisiones de producto." : "Research helped translate conversations, behaviors, and needs into product decisions."}
-          />
-          <div className="space-y-4">
-            {researchHighlights.map((item) => (
-              <div key={item.title} className="rounded-[1.3rem] border border-white/20 bg-white/50 p-5">
-                <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.detail}</p>
-              </div>
-            ))}
-          </div>
-        </motion.section>
-
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6 }}
-          className="mt-8 rounded-[2rem] border border-white/10 bg-white/30 p-8 backdrop-blur-xl md:p-10"
-        >
-          <SectionHeading
-            eyebrow={t.decisions}
-            title={language === "es" ? "Decisiones que explican el diseño" : "Decisions that explain the design"}
-            description={language === "es" ? "Cada elección fue pensada para reducir la fricción, reforzar la claridad y sostener una identidad propia." : "Each choice was made to reduce friction, strengthen clarity, and support a distinct identity."}
-          />
-          <div className="mt-8 grid gap-4 lg:grid-cols-2">
-            {designDecisions.map((decision) => (
-              <div key={decision.title} className="rounded-[1.4rem] border border-white/20 bg-white/50 p-6">
-                <h3 className="text-lg font-semibold text-foreground">{decision.title}</h3>
-                <div className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
-                  <div>
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-primary/80">{language === "es" ? "Problema" : "Problem"}</p>
-                    <p className="mt-1">{decision.problem}</p>
-                  </div>
-                  <div>
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-primary/80">{language === "es" ? "Decisión" : "Decision"}</p>
-                    <p className="mt-1">{decision.decision}</p>
-                  </div>
-                  <div>
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-primary/80">{language === "es" ? "Impacto" : "Impact"}</p>
-                    <p className="mt-1">{decision.impact}</p>
+        {/** Design-led narrative: process timeline + research + decisions */}
+        {isDesignProject && (
+          <>
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.6 }}
+              className="mt-8 rounded-[2rem] p-8 md:p-10"
+            >
+              <div className="max-w-4xl mx-auto">
+                <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-6">{t.process}</p>
+                <div className="relative">
+                  <div className="absolute left-4 right-4 top-6 h-px bg-divider/30" />
+                  <div className="flex items-center justify-between gap-6 overflow-x-auto py-6">
+                    {processSteps.map((step, idx) => (
+                      <div key={step.title} className="flex-shrink-0 w-48 text-center">
+                        <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-white/6 flex items-center justify-center border border-white/8 text-primary font-semibold">{idx + 1}</div>
+                        <h4 className="text-sm font-semibold text-foreground">{step.title}</h4>
+                        <p className="mt-2 text-xs text-muted-foreground">{step.description}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </motion.section>
+            </motion.section>
+
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.6 }}
+              className="mt-8 grid gap-8 rounded-[2rem] border border-white/10 bg-white/30 p-8 backdrop-blur-xl md:grid-cols-[0.85fr_1.15fr] md:p-10"
+            >
+              <SectionHeading
+                eyebrow={t.research}
+                title={language === "es" ? "Descubrimientos que dieron forma al diseño" : "Discoveries that shaped the design"}
+                description={language === "es" ? "La investigación permitió traducir conversaciones, comportamientos y necesidades en decisiones de producto." : "Research helped translate conversations, behaviors, and needs into product decisions."}
+              />
+              <div className="space-y-4">
+                {researchHighlights.map((item) => (
+                  <div key={item.title} className="rounded-[1.3rem] border border-white/20 bg-white/50 p-5">
+                    <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.6 }}
+              className="mt-8 rounded-[2rem] border border-white/10 bg-white/30 p-8 backdrop-blur-xl md:p-10"
+            >
+              <SectionHeading
+                eyebrow={t.decisions}
+                title={language === "es" ? "Decisiones que explican el diseño" : "Decisions that explain the design"}
+                description={language === "es" ? "Cada elección fue pensada para reducir la fricción, reforzar la claridad y sostener una identidad propia." : "Each choice was made to reduce friction, strengthen clarity, and support a distinct identity."}
+              />
+              <div className="mt-8 grid gap-4 lg:grid-cols-2">
+                {designDecisions.map((decision) => (
+                  <div key={decision.title} className="rounded-[1.4rem] border border-white/20 bg-white/50 p-6">
+                    <h3 className="text-lg font-semibold text-foreground">{decision.title}</h3>
+                    <div className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-primary/80">{language === "es" ? "Problema" : "Problem"}</p>
+                        <p className="mt-1">{decision.problem}</p>
+                      </div>
+                      <div>
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-primary/80">{language === "es" ? "Decisión" : "Decision"}</p>
+                        <p className="mt-1">{decision.decision}</p>
+                      </div>
+                      <div>
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-primary/80">{language === "es" ? "Impacto" : "Impact"}</p>
+                        <p className="mt-1">{decision.impact}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+          </>
+        )}
+
+        {/** Technical implementation - render for dev-only or when technical metadata exists */}
+        {(isDevOnly || project.architecture || project.githubUrl) && (
+          <motion.section
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6 }}
+            className="mt-8 rounded-[2rem] border border-white/10 bg-white/30 p-8 backdrop-blur-xl md:p-10"
+          >
+            <SectionHeading
+              eyebrow={language === "es" ? "Implementación técnica" : "Technical implementation"}
+              title={language === "es" ? "Notas de arquitectura y código" : "Architecture & code notes"}
+              description={language === "es" ? "Detalles técnicos relevantes, decisiones de implementación y recursos." : "Relevant technical details, implementation decisions, and resources."}
+            />
+            <div className="mt-6 space-y-4">
+              {project.architecture && (
+                <div className="rounded-[1.3rem] border border-white/20 bg-white/50 p-5">
+                  <h3 className="text-lg font-semibold text-foreground">{language === "es" ? "Arquitectura" : "Architecture"}</h3>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">{project.architecture}</p>
+                </div>
+              )}
+
+              {project.repoHighlights && (
+                <div className="rounded-[1.3rem] border border-white/20 bg-white/50 p-5">
+                  <h3 className="text-lg font-semibold text-foreground">{language === "es" ? "Puntos claves del repositorio" : "Repo highlights"}</h3>
+                  <ul className="mt-2 space-y-2 text-sm leading-7 text-muted-foreground">
+                    {project.repoHighlights.map((r) => (
+                      <li key={r}>• {r}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.githubUrl && (
+                <div className="rounded-[1.3rem] border border-white/20 bg-white/50 p-5">
+                  <p className="text-sm text-muted-foreground">{language === "es" ? "Código disponible en:" : "Source code:"}</p>
+                  <a href={project.githubUrl} target="_blank" rel="noreferrer" className="mt-2 inline-block text-primary underline">
+                    {project.githubUrl}
+                  </a>
+                </div>
+              )}
+            </div>
+          </motion.section>
+        )}
 
         <motion.section
           initial={{ opacity: 0, y: 24 }}
