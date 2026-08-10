@@ -2,7 +2,7 @@ import type { CaseStudySectionConfig } from "@/lib/case-study/types"
 
 export type ProjectRole =
   | "Product Design"
-  | "UX Research"
+  | "UX/UI Design"
   | "Frontend Development"
   | "AI Integration"
   | "Design Systems"
@@ -75,7 +75,7 @@ Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y prop
         "User Research",
         "Design Thinking",
       ],
-      roles: ["UX Research", "Product Design", "Frontend Development"],
+      roles: ["UX/UI Design", "Product Design"],
       featured: false,
       liveUrl: "https://xd.adobe.com/view/cafee497-f1a3-4851-9c55-bde2c0c063b1-9fad/?fullscreen&hints=off", 
       slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSzVxM3nCiFcMTCbywJg1-1yquVbCe6fNhwe7vNlpj4JaZL8FekVVCVpEgs1FBkvDKpNS6WFyeB0AI3/pub?start=false&loop=false&delayms=3000",
@@ -118,7 +118,7 @@ Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y prop
         "User Research",
         "Scrum",
       ],
-      roles: ["UX Research", "Product Design"],
+      roles: ["UX/UI Design", "Product Design"],
       featured: true,
       slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vQ_RioD6I1C1CE0QrMd-RJ_LJt0lAbKRd3DuXfrBKk0tB763PsYt4DXREJxYbqH6qRdZyk5NikdjY3k/pub?start=false&loop=false&delayms=3000",
       features: [
@@ -196,9 +196,9 @@ Durante el desarrollo realicé un análisis comparativo de plataformas existente
         "Figma",
         "Gamification Canvas",
         "User Flow",
-        "UX Research",
+        "UX/UI Design",
       ],
-      roles: ["Product Design", "UX Research"],
+      roles: ["Product Design", "UX/UI Design"],
       liveUrl: "https://www.figma.com/proto/yC0bmMEKCiMuoRuMe5b4OK/Prototipo?type=design&node-id=8-7655&scaling=scale-down&page-id=0%3A1&starting-point-node-id=8%3A7655",
       slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vScQV3JVsoK9Re7RwZahwAUW2Y2SbJBeBkS1VHh6FHW2701S_0itNbMs_ejNr0HVlNDrIWt6jskbsAg/pub?start=false&loop=false&delayms=3000",
       features: [
@@ -224,10 +224,10 @@ Durante el desarrollo aplicamos metodologías ágiles y realizamos dos checkpoin
         "Google Docs",
         "Google Sheets",
         "GitHub",
-        "UX Research",
+        "UX/UI Design",
         "Scrum",
       ],
-      roles: ["Product Design", "UX Research", "Frontend Development"],
+      roles: ["Product Design", "UX/UI Design", "Frontend Development"],
       githubUrl: "https://github.com/MaxiCo1/Intoximate",
       slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vS_bdTv9mO6uZ9tX0ZJhW33XYOaeK6trvX5CE8sq4yre7k1SbiPxmEnZHk7FMyAovB0fjMYWc7tAFCn/pub?start=false&loop=false&delayms=3000",
       docsUrl: "https://docs.google.com/document/d/e/2PACX-1vRsIONlDFzMJozvMiIGNMInYicakcIkmKghVAHzR6saeYvDeSE3vcj5qcwwmwvI-I96u7Is9dWK80So/pub",
@@ -269,7 +269,7 @@ El objetivo del proyecto fue crear una herramienta accesible, funcional y estét
 El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo conductor que uniera todas las salas y guiara a los estudiantes a través de desafíos interactivos y puzzles educativos.`,
       image: "/images/IVO.png",
       technologies: ["Stitch de Google", "v0", "TypeScript", "Next.js", "Tailwind CSS", "GitHub Projects"],
-      roles: ["Product Design", "UX Research", "Frontend Development"],
+      roles: ["Product Design", "UX/UI Design", "Frontend Development"],
       liveUrl: "https://ivo-sala-de-escape.vercel.app",
       githubUrl: "https://github.com/informaticaort/IVO-2025",
       features: [
@@ -294,8 +294,8 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
       El estudio de Investigación incluyó benchmarking de herramientas (como Focusmate, Forest y Structured) y encuestas a 157 personas, con un 82,8% que admitió procrastinar.
       `,
       image: "/images/comingsoon.png",
-      technologies: ["Design Thinking", "UX Research", "Benchmarking", "MoSCoW (Matriz de Priorización)"],
-      roles: ["Product Design", "UX Research", "Frontend Development"],
+      technologies: ["Design Thinking", "UX/UI Design", "Benchmarking", "MoSCoW (Matriz de Priorización)"],
+      roles: ["Product Design", "UX/UI Design", "Frontend Development"],
       featured: true,
       features: [
         "Personalización según el tipo de procrastinador (cuestionario inicial)",
@@ -354,7 +354,7 @@ After testing, we created a high-fidelity prototype and proposed ideas for a fut
         "User Research",
         "Design Thinking",
       ],
-  roles: ["UX Research", "Product Design", "Frontend Development"],
+  roles: ["UX/UI Design", "Product Design"],
   liveUrl: "https://xd.adobe.com/view/cafee497-f1a3-4851-9c55-bde2c0c063b1-9fad/?fullscreen&hints=off",
   slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSzVxM3nCiFcMTCbywJg1-1yquVbCe6fNhwe7vNlpj4JaZL8FekVVCVpEgs1FBkvDKpNS6WFyeB0AI3/pub?start=false&loop=false&delayms=3000",
   githubUrl: "https://github.com",
@@ -397,7 +397,7 @@ Finally, we projected ideas for a future version of enHUELLA2, including feature
         "User Research",
         "Scrum",
       ],
-  roles: ["UX Research", "Product Design"],
+  roles: ["UX/UI Design", "Product Design"],
   featured: true,
   slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vQ_RioD6I1C1CE0QrMd-RJ_LJt0lAbKRd3DuXfrBKk0tB763PsYt4DXREJxYbqH6qRdZyk5NikdjY3k/pub?start=false&loop=false&delayms=3000",
   liveUrl: "https://example.com",
@@ -478,9 +478,9 @@ During development, I carried out a comparative analysis of existing platforms, 
         "Figma",
         "Gamification Canvas",
         "User Flow",
-        "UX Research",
+        "UX/UI Design",
       ],
-  roles: ["Product Design", "UX Research"],
+  roles: ["Product Design", "UX/UI Design"],
   liveUrl: "https://www.figma.com/proto/yC0bmMEKCiMuoRuMe5b4OK/Prototipo?type=design&node-id=8-7655&scaling=scale-down&page-id=0%3A1&starting-point-node-id=8%3A7655",
   slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vScQV3JVsoK9Re7RwZahwAUW2Y2SbJBeBkS1VHh6FHW2701S_0itNbMs_ejNr0HVlNDrIWt6jskbsAg/pub?start=false&loop=false&delayms=3000",
   githubUrl: "https://github.com",
@@ -507,10 +507,10 @@ During development, we applied agile methodologies and conducted two main checkp
         "Google Docs",
         "Google Sheets",
         "GitHub",
-        "UX Research",
+        "UX/UI Design",
         "Scrum",
       ],
-  roles: ["Product Design", "UX Research", "Frontend Development"],
+  roles: ["Product Design", "UX/UI Design", "Frontend Development"],
   featured: true,
   slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vS_bdTv9mO6uZ9tX0ZJhW33XYOaeK6trvX5CE8sq4yre7k1SbiPxmEnZHk7FMyAovB0fjMYWc7tAFCn/pub?start=false&loop=false&delayms=3000",
   docsUrl: "https://docs.google.com/document/d/e/2PACX-1vRsIONlDFzMJozvMiIGNMInYicakcIkmKghVAHzR6saeYvDeSE3vcj5qcwwmwvI-I96u7Is9dWK80So/pub",
@@ -562,7 +562,7 @@ The project aimed to combine fun, learning, and design aesthetics, creating a na
         "Tailwind CSS",
         "GitHub Projects",
       ],
-      roles: ["Product Design", "UX Research", "Frontend Development"],
+      roles: ["Product Design", "UX/UI Design", "Frontend Development"],
       featured: true,
       liveUrl: "https://ivo-sala-de-escape.vercel.app",
       githubUrl: "https://github.com/informaticaort/IVO-2025",
@@ -589,11 +589,11 @@ The research phase included benchmarking tools such as Focusmate, Forest, and St
   image: "/images/comingsoon.png",
       technologies: [
         "Design Thinking",
-        "UX Research",
+        "UX/UI Design",
         "Benchmarking",
         "MoSCoW Prioritization Matrix",
       ],
-      roles: ["Product Design", "UX Research", "Frontend Development"],
+      roles: ["Product Design", "UX/UI Design", "Frontend Development"],
       featured: true,
       //work in progress
       liveUrl: "https://example.com",
