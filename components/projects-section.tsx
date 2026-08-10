@@ -35,7 +35,7 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7 }}
     >
-      <section id="work" className="py-24">
+      <section id="projects" className="py-24">
         <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-14">
           <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4">{t.title}</p>

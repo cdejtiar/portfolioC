@@ -480,7 +480,7 @@
   display: block;
 }
 
-#projects {
+#featured-project {
   min-height: 100vh;
   background-image: url('/images/featuredproject-bg.png');
   background-repeat: no-repeat;

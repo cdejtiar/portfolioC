@@ -23,6 +23,8 @@ export interface Project {
   features: string[]
   problem?: string
   solution?: string
+  problemStatement?: string
+  need?: string
   // Optional case-study fields for narrative pages
   context?: string
   roleSummary?: string
@@ -41,7 +43,7 @@ export interface Project {
   repoHighlights?: string[]
 }
 
-export const projectsByLocale = {
+export const projectsByLocale: Record<"es" | "en", Project[]> = {
   es: [
     {
       id: "1",
