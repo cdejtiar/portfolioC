@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { projectsByLocale, featuredProjectIds } from "@/lib/projects";
@@ -118,7 +119,7 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
                     size="sm"
                     className="mt-6 rounded-full px-5 py-3"
                   >
-                    <a href={`/project/${project.id}`}>{t.viewProject}</a>
+                    <Link href={`/project/${project.id}`}>{t.viewProject}</Link>
                   </Button>
                 </div>
               </article>
@@ -132,9 +133,9 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
               size="lg"
               className="rounded-2xl bg-primary text-primary-foreground px-8 py-4 shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all duration-300"
             >
-              <a href="/projects">
+              <Link href="/projects">
                 {language === "es" ? "Ver más proyectos" : "View more projects"}
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

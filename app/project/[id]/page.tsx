@@ -3,10 +3,12 @@
 import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { useState, useEffect } from "react";
-import { projectsByLocale, type Project } from "@/lib/projects";
+import { useMemo } from "react";
+import { projectsByLocale } from "@/lib/projects";
 import { caseStudyTranslations } from "@/lib/case-study/translations";
 import { CaseStudyRenderer } from "@/components/case-study";
+import { SidebarNavigation } from "@/components/sidebar-navigation";
+import { useLanguage } from "@/components/language-provider";
 
 function resolveImage(img?: string) {
   if (!img) return "/placeholder.svg";
@@ -32,25 +34,18 @@ function resolveImage(img?: string) {
 export default function ProjectPage() {
   const params = useParams();
   const router = useRouter();
-  const [language, setLanguage] = useState<"es" | "en">("es");
-  const [project, setProject] = useState<Project | null>(null);
-
+  const { language } = useLanguage();
   const t = caseStudyTranslations[language];
 
-  useEffect(() => {
-    const savedLanguage =
-      (localStorage.getItem("language") as "es" | "en") || "es";
-    setLanguage(savedLanguage);
-
+  const project = useMemo(() => {
     const projectId = params.id as string;
-    const projects = projectsByLocale[savedLanguage];
-    const foundProject = projects.find((p) => p.id === projectId);
-    setProject(foundProject || null);
-  }, [params.id]);
+    return projectsByLocale[language].find((p) => p.id === projectId) ?? null;
+  }, [params.id, language]);
 
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
+        <SidebarNavigation />
         <div className="text-center">
           <h1 className="text-2xl font-superlobster text-primary mb-4">
             {t.projectNotFound}
@@ -65,7 +60,9 @@ export default function ProjectPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#100c19] text-foreground overflow-hidden">
+    <div className="min-h-screen bg-[#100c19] text-foreground overflow-hidden lg:pb-16">
+      <SidebarNavigation />
+
       <CaseStudyRenderer
         project={project}
         language={language}

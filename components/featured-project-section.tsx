@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 
@@ -99,7 +100,7 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
             </div>
 
             <Button asChild size="lg" variant="secondary" className="rounded-2xl px-8 py-4 text-base font-semibold">
-              <a href="/project/9">{t.viewCaseStudy}</a>
+              <Link href="/project/9">{t.viewCaseStudy}</Link>
             </Button>
           </div>
 

@@ -1,8 +1,10 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { SidebarNavigation } from "@/components/sidebar-navigation"
+import { useLanguage } from "@/components/language-provider"
 import { projectsByLocale } from "@/lib/projects"
 
 const translations = {
@@ -14,7 +16,6 @@ const translations = {
     allRole: "Todos",
     viewCaseStudy: "Ver Case Study",
     backHome: "Volver al inicio",
-    languageToggle: "EN",
   },
   en: {
     title: "All projects",
@@ -24,12 +25,11 @@ const translations = {
     allRole: "All",
     viewCaseStudy: "View Case Study",
     backHome: "Back to home",
-    languageToggle: "ES",
   },
 }
 
 export default function ProjectsPage() {
-  const [language, setLanguage] = useState<"es" | "en">("es")
+  const { language } = useLanguage()
   const t = translations[language]
   const projects = projectsByLocale[language]
   const allRoles = useMemo(
@@ -40,6 +40,11 @@ export default function ProjectsPage() {
     [projects, t.allRole],
   )
   const [selectedRole, setSelectedRole] = useState<string>(t.allRole)
+
+  // Role names are localized, so reset the filter whenever the language changes.
+  useEffect(() => {
+    setSelectedRole(t.allRole)
+  }, [t.allRole])
   const filteredProjects = useMemo(
     () =>
       selectedRole === t.allRole
@@ -49,21 +54,12 @@ export default function ProjectsPage() {
   )
 
   return (
-    <main className="relative z-10 py-24">
+    <main className="relative z-10 py-24 lg:pb-16">
+      <SidebarNavigation />
+
       <div className="container mx-auto px-6">
         <div className="mb-14 max-w-4xl">
-          <div className="inline-flex items-center gap-3 rounded-full border border-border bg-card/80 px-4 py-2 text-sm text-muted-foreground shadow-sm shadow-black/5">
-            <span className="font-semibold text-foreground">{language === "es" ? "ES" : "EN"}</span>
-            <Button
-              onClick={() => setLanguage(language === "es" ? "en" : "es")}
-              variant="outline"
-              size="sm"
-              className="rounded-full px-3 py-2"
-            >
-              {t.languageToggle}
-            </Button>
-          </div>
-          <h1 className="mt-6 text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
             {t.title}
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-8 text-muted-foreground">

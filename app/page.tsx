@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/components/language-provider";
 import { SidebarNavigation } from "@/components/sidebar-navigation";
 import { HeroSection } from "@/components/hero-section";
 import { FeaturedProjectSection } from "@/components/featured-project-section";
@@ -216,7 +217,7 @@ const stagger: Variants = {
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
-  const [language, setLanguage] = useState<"es" | "en">("es");
+  const { language } = useLanguage();
   const t = content[language];
 
   useEffect(() => {
@@ -253,8 +254,6 @@ export default function Home() {
       <SidebarNavigation
         activeSection={activeSection}
         onSectionChange={setActiveSection}
-        language={language}
-        onLanguageChange={setLanguage}
       />
 
       <HeroSection language={language} />

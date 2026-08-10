@@ -3,13 +3,14 @@ import { Home, User, Briefcase, Mail, Download, Globe, Sun, Moon } from "lucide-
 import { Button } from "@/components/ui/button"
 import { getCvDownload } from "@/lib/cv"
 import { useState, useEffect } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import { useTheme } from "next-themes"
+import { useLanguage } from "@/components/language-provider"
 
 interface SidebarNavigationProps {
-  activeSection: string
-  onSectionChange: (section: string) => void
-  language: "es" | "en"
-  onLanguageChange: (language: "es" | "en") => void
+  /** Only provided on the home page, where sections live in the same document. */
+  activeSection?: string
+  onSectionChange?: (section: string) => void
 }
 
 const translations = {
@@ -32,12 +33,14 @@ const translations = {
 export function SidebarNavigation({
   activeSection,
   onSectionChange,
-  language,
-  onLanguageChange,
 }: SidebarNavigationProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const { language, toggleLanguage } = useLanguage()
+  const router = useRouter()
+  const pathname = usePathname()
+  const isHome = pathname === "/"
 
   const t = translations[language]
   const cv = getCvDownload(language)
@@ -51,7 +54,11 @@ export function SidebarNavigation({
 
   const scrollToSection = (sectionId: string) => {
     if (!mounted) return
-    console.log("[v0] Scrolling to section:", sectionId)
+    if (!isHome) {
+      // Outside the home page the sections don't exist: navigate to them instead.
+      router.push(sectionId === "home" ? "/" : `/#${sectionId}`)
+      return
+    }
     const element = document.getElementById(sectionId)
     if (element) {
       const offsetTop = element.offsetTop - 80 // Account for any fixed headers
@@ -59,10 +66,7 @@ export function SidebarNavigation({
         top: offsetTop,
         behavior: "smooth",
       })
-      onSectionChange(sectionId)
-      console.log("[v0] Scroll initiated to:", sectionId)
-    } else {
-      console.log("[v0] Element not found:", sectionId)
+      onSectionChange?.(sectionId)
     }
   }
 
@@ -153,7 +157,7 @@ export function SidebarNavigation({
           <div className="space-y-2 mt-3 md:mt-4">
             {/* Language Toggle */}
             <Button
-              onClick={() => onLanguageChange(language === "es" ? "en" : "es")}
+              onClick={toggleLanguage}
               variant="ghost"
               size="sm"
               className="w-full justify-start gap-2 md:gap-3 hover:bg-secondary/20 px-3 md:px-4 py-2 md:py-3"
@@ -176,7 +180,7 @@ export function SidebarNavigation({
         )}
 
         {/* Copyright - only show when hovered */}
-        {isHovered && <div className="text-xs text-muted-foreground text-center mt-auto pt-4">© 2025</div>}
+        {isHovered && <div className="text-xs text-muted-foreground text-center mt-auto pt-4">© 2026</div>}
         </div>
       </nav>
 
@@ -208,7 +212,7 @@ export function SidebarNavigation({
               
               {/* Language Toggle with visual indicator */}
               <Button
-                onClick={() => onLanguageChange(language === "es" ? "en" : "es")}
+                onClick={toggleLanguage}
                 variant="ghost"
                 size="sm"
                 className="w-auto h-8 sm:h-10 px-2 sm:px-3 rounded-lg hover:bg-secondary/20 hover:scale-105 transition-all duration-300"
