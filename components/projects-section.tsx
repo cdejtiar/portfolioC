@@ -10,12 +10,14 @@ interface ProjectsSectionProps {
 
 const translations = {
   es: {
+    subsubtitle: "Proyectos Seleccionados",
     title: "Mis Proyectos",
     subtitle:
       "Una selección de trabajos que muestran mi pasión por el diseño y desarrollo",
     viewProject: "Ver Proyecto",
   },
   en: {
+    subsubtitle: "Selected Projects",
     title: "My Projects",
     subtitle:
       "A selection of work that showcases my passion for design and development",
@@ -38,7 +40,7 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
       <section id="projects" className="py-24">
         <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-14">
-          <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4">{t.title}</p>
+          <p className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4">{t.subsubtitle}</p>
           <h2 className="font-superlobster text-5xl md:text-6xl font-bold mb-4 gradient-text animate-fade-in-up">{t.title}</h2>
           <p className="mt-4 text-base leading-8 text-muted-foreground">{t.subtitle}</p>
         </div>

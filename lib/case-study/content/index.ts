@@ -18,16 +18,16 @@ import sipSketchStories from "./sip-sketch-stories"
  * Cada archivo define la misma secuencia de bloques en ES y EN.
  */
 export const caseStudyContentByProjectId: Record<string, CaseStudyContent> = {
-  "2": yAhoraQue,
-  "3": enhuella2,
-  "4": nftbunnies,
-  "5": runnerDino,
-  "7": gamereads,
-  "9": intoximate,
-  "10": bingoDorja,
-  "12": ivoEscapeRoom,
-  "13": inflow,
-  "15": sipSketchStories,
+  "1": yAhoraQue,
+  "2": enhuella2,
+  "3": nftbunnies,
+  "4": runnerDino,
+  "5": gamereads,
+  "6": intoximate,
+  "7": bingoDorja,
+  "8": ivoEscapeRoom,
+  "9": inflow,
+  "10": sipSketchStories,
 }
 
 /** Devuelve los bloques del caso de estudio para un proyecto y un idioma. */

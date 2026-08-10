@@ -99,7 +99,7 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
             </div>
 
             <Button asChild size="lg" variant="secondary" className="rounded-2xl px-8 py-4 text-base font-semibold">
-              <a href="/project/13">{t.viewCaseStudy}</a>
+              <a href="/project/9">{t.viewCaseStudy}</a>
             </Button>
           </div>
 

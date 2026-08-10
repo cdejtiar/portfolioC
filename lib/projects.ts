@@ -52,7 +52,7 @@ export interface Project {
 export const projectsByLocale: Record<"es" | "en", Project[]> = {
   es: [
     {
-      id: "2",
+      id: "1",
       title: "Y Ahora Qué?",
       description:
         "Solución digital para descubrir qué ver después de terminar una serie o película",
@@ -76,7 +76,7 @@ Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y prop
         "Design Thinking",
       ],
       roles: ["UX Research", "Product Design", "Frontend Development"],
-      featured: true,
+      featured: false,
       liveUrl: "https://xd.adobe.com/view/cafee497-f1a3-4851-9c55-bde2c0c063b1-9fad/?fullscreen&hints=off", 
       slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSzVxM3nCiFcMTCbywJg1-1yquVbCe6fNhwe7vNlpj4JaZL8FekVVCVpEgs1FBkvDKpNS6WFyeB0AI3/pub?start=false&loop=false&delayms=3000",
       features: [
@@ -87,7 +87,7 @@ Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y prop
       ],
     },
     {
-      id: "3",
+      id: "2",
       title: "enHUELLA2",
       description:
         "Aplicación digital para centralizar y agilizar el proceso de adopción de animales",
@@ -129,7 +129,7 @@ Después de un proceso de testeo, creamos un prototipo en alta fidelidad, y prop
       ],
     },
     {
-      id: "4",
+      id: "3",
       title: "NFTBunnies",
       description:
         "Colección digital de NFTs generativos creada con Procreate y Web3",
@@ -151,7 +151,7 @@ Además de la programación del backend, me encargué del diseño del frontend y
       ],
     },
     {
-      id: "5",
+      id: "4",
       title: "Dino",
       description:
         "Videojuego inspirado en el clásico juego del dinosaurio de Chrome",
@@ -178,7 +178,7 @@ A través de scripts personalizados y las herramientas del editor, logré un res
     },
 
     {
-      id: "7",
+      id: "5",
       title: "GameReads",
       description: "Aplicación gamificada para motivar la lectura",
       fullDescription: `GameReads fue desarrollado en 2023 dentro de la materia Sistemas Gamificados, con el objetivo de aplicar estrategias de gamificación a un entorno digital.
@@ -209,7 +209,7 @@ Durante el desarrollo realicé un análisis comparativo de plataformas existente
       ],
     },
     {
-      id: "9",
+      id: "6",
       title: "intoximate",
       description: "Aplicación móvil para descubrir y aprender sobre tragos",
       fullDescription: `intoximate fue un proyecto desarrollado en 2023 como trabajo final de la materia Proyecto Senior, en conjunto con un compañero de la facultad.
@@ -238,9 +238,10 @@ Durante el desarrollo aplicamos metodologías ágiles y realizamos dos checkpoin
         "Proceso guiado por Design Thinking",
         "Validación con usuarios y versión beta funcional",
       ],
+      featured: true,
     },
     {
-      id: "10",
+      id: "7",
       title: "Bingo familiar de Dorja",
       description:
         "Juego web interactivo para sorteos de bingo comunitarios y familiares",
@@ -260,7 +261,7 @@ El objetivo del proyecto fue crear una herramienta accesible, funcional y estét
       ],
     },
     {
-      id: "12",
+      id: "8",
       title: "Sala de escape IVO 2025",
       description:
         "Aplicación web interactiva para jornadas de orientación escolar",
@@ -277,9 +278,10 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
         "Pruebas de usabilidad con estudiantes de distintos años para validar tiempos, comprensión y atractividad",
         "Iteración de errores y mejoras para garantizar que los estudiantes puedan completar la sala sin inconvenientes",
       ],
+      featured: true,
     },
     {
-      id: "13",
+      id: "9",
       title: "inFlow",
       description:
         "Proyecto de tesis: Aplicación móvil para optimizar UX/UI y reducir la procrastinación académica en universitarios",
@@ -303,7 +305,7 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
       ],
     },
     {
-      id: "15",
+      id: "10",
       title: "Sip, Sketch & Stories",
       description:
         "Experiencia web interactiva para animar reuniones y cumpleaños a través del dibujo, la conversación y el juego",
@@ -325,29 +327,11 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
         "Sistema que evita repetir cartas hasta completar la ronda",
         "Modo pantalla completa para proyectar en una TV",
       ],
-    },
-    {
-      id: "14",
-      title: "Portfolio",
-      description:
-        "Portfolio personal",
-      fullDescription:
-      `Portfolio personal desarrollado con Next.js 14, con decisiones propias de navegación móvil innovadora, efectos de vidrio líquido, sistema de temas, y optimizaciones para dispositivos táctiles.
-       La idea principal fue mía, pasando luego por un proceso de diseño en Stitch de Google para perfeccionarlo con elementos modernos e ideas más genéricas que un portfolio tiene que tener, para más tarde lanzarme a realizarlo mediante las implementaciones de v0.
-       Realicé un proceso de internalización en cuánto a qué elementos suelen definirme como persona y cómo poder mostrarlo de forma `,
-      image: "/images/portfolio.png",
-      technologies: ["Figma", "Stitch de Google", "Next.js 14", "TypeScript", "Tailwind CSS"],
-      roles: ["Frontend Development", "Product Design"],
-      features: [
-        "Navegación móvil flotante",
-        "Efectos de vidrio líquido (glassmorphism)",
-        "Forma simplificada de demostración de proyectos"
-      ],
-    },
+    }
   ],
   en: [
     {
-      id: "2",
+      id: "1",
       title: "Y Ahora Qué?",
       description:
         "Digital solution to discover what to watch after finishing a series or movie",
@@ -371,7 +355,6 @@ After testing, we created a high-fidelity prototype and proposed ideas for a fut
         "Design Thinking",
       ],
   roles: ["UX Research", "Product Design", "Frontend Development"],
-  featured: true,
   liveUrl: "https://xd.adobe.com/view/cafee497-f1a3-4851-9c55-bde2c0c063b1-9fad/?fullscreen&hints=off",
   slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSzVxM3nCiFcMTCbywJg1-1yquVbCe6fNhwe7vNlpj4JaZL8FekVVCVpEgs1FBkvDKpNS6WFyeB0AI3/pub?start=false&loop=false&delayms=3000",
   githubUrl: "https://github.com",
@@ -383,7 +366,7 @@ After testing, we created a high-fidelity prototype and proposed ideas for a fut
       ],
     },
     {
-      id: "3",
+      id: "2",
       title: "enHUELLA2",
       description:
         "Digital app to centralize and streamline the animal adoption process",
@@ -427,7 +410,7 @@ Finally, we projected ideas for a future version of enHUELLA2, including feature
       ],
     },
     {
-      id: "4",
+      id: "3",
       title: "NFTBunnies",
       description:
         "Generative NFT digital collection created with Procreate and Web3",
@@ -449,7 +432,7 @@ In addition to backend programming, I designed the frontend and the logo, aiming
       ],
     },
     {
-      id: "5",
+      id: "4",
       title: "Dino",
       description:
         "Video game inspired by the classic Chrome Dinosaur game",
@@ -477,7 +460,7 @@ Using custom scripts and editor tools, I achieved a functional, smooth, and fun 
       ],
     },
     {
-      id: "7",
+      id: "5",
       title: "GameReads",
       description: "Gamified app designed to motivate reading habits",
       fullDescription: `GameReads was developed in 2023 for the Gamified Systems course, with the objective of applying gamification strategies to a digital environment.  
@@ -509,7 +492,7 @@ During development, I carried out a comparative analysis of existing platforms, 
       ],
     },
     {
-      id: "9",
+      id: "6",
       title: "intoximate",
       description: "Mobile app to discover and learn about cocktails",
       fullDescription: `intoximate was a 2023 final project for the Senior Project course, developed together with a classmate.  
@@ -528,6 +511,7 @@ During development, we applied agile methodologies and conducted two main checkp
         "Scrum",
       ],
   roles: ["Product Design", "UX Research", "Frontend Development"],
+  featured: true,
   slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vS_bdTv9mO6uZ9tX0ZJhW33XYOaeK6trvX5CE8sq4yre7k1SbiPxmEnZHk7FMyAovB0fjMYWc7tAFCn/pub?start=false&loop=false&delayms=3000",
   docsUrl: "https://docs.google.com/document/d/e/2PACX-1vRsIONlDFzMJozvMiIGNMInYicakcIkmKghVAHzR6saeYvDeSE3vcj5qcwwmwvI-I96u7Is9dWK80So/pub",
   docsUrl2: "https://docs.google.com/document/d/e/2PACX-1vTGEo-XTqtnxQq7uvh_E4sHULWDFy1xJF657GzmYIPE69x1AenOs0K-H474a7Uu-ZVPfIhR_LYgueWj/pub",
@@ -540,7 +524,7 @@ During development, we applied agile methodologies and conducted two main checkp
       ],
     },
     {
-      id: "10",
+      id: "7",
       title: "Dorja Family Bingo",
       description:
         "Interactive web game for community and family bingo sessions",
@@ -562,7 +546,7 @@ It also sought to reflect Dorja’s unique visual identity, blending playfulness
       ],
     },
     {
-      id: "12",
+      id: "8",
       title: "IVO 2025 Escape Room",
       description:
         "Interactive web app for school orientation events",
@@ -579,6 +563,7 @@ The project aimed to combine fun, learning, and design aesthetics, creating a na
         "GitHub Projects",
       ],
       roles: ["Product Design", "UX Research", "Frontend Development"],
+      featured: true,
       liveUrl: "https://ivo-sala-de-escape.vercel.app",
       githubUrl: "https://github.com/informaticaort/IVO-2025",
       features: [
@@ -589,7 +574,7 @@ The project aimed to combine fun, learning, and design aesthetics, creating a na
       ],
     },
     {
-      id: "13",
+      id: "9",
       title: "inFlow",
       description:
         "Thesis project: mobile app to optimize UX/UI and reduce academic procrastination in university students",
@@ -621,7 +606,7 @@ The research phase included benchmarking tools such as Focusmate, Forest, and St
       ],
     },
     {
-      id: "15",
+      id: "10",
       title: "Sip, Sketch & Stories",
       description:
         "An interactive web experience to liven up gatherings and birthdays through drawing, conversation, and play",
@@ -643,34 +628,8 @@ The research phase included benchmarking tools such as Focusmate, Forest, and St
         "System that avoids repeats until a full round is complete",
         "Fullscreen mode for projecting on a TV",
       ],
-    },
-    {
-      id: "14",
-      title: "Portfolio",
-      description: "Personal portfolio website",
-      fullDescription:
-        `Personal portfolio developed with Next.js 14, featuring custom mobile navigation, glassmorphism effects, theme system, and touch-device optimizations.  
-The main concept was mine, later refined through a design process in Google Stitch to include modern UI elements and general features expected in a portfolio.  
-Finally, I implemented it using v0 components.  
-The project also included a personal reflection on which design elements best represent me and how to express them visually.`,
-  image: "/images/portfolio.png",
-      technologies: [
-        "Figma",
-        "Google Stitch",
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-      ],
-      roles: ["Frontend Development", "Product Design"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-      features: [
-        "Floating mobile navigation",
-        "Glassmorphism visual effects",
-        "Simplified project showcase layout",
-      ],
-    },
+    }
   ],
 }
 
-export const featuredProjectIds = ["13", "15", "3", "2"]
+export const featuredProjectIds = ["2", "6", "8"]
