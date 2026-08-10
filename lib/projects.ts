@@ -1,3 +1,5 @@
+import type { CaseStudySectionConfig } from "@/lib/case-study/types"
+
 export type ProjectRole =
   | "Product Design"
   | "UX Research"
@@ -30,6 +32,8 @@ export interface Project {
   roleSummary?: string
   team?: string
   duration?: string
+  year?: string
+  type?: string
   outcome?: string
   // Structured fields for rich case studies
   processSteps?: Array<{ label: string; title: string; description: string }>
@@ -41,6 +45,8 @@ export interface Project {
   // Technical / implementation notes for dev-only projects
   architecture?: string
   repoHighlights?: string[]
+  /** Ordered list of case study blocks. Falls back to role-based defaults when omitted. */
+  sections?: CaseStudySectionConfig[]
 }
 
 export const projectsByLocale: Record<"es" | "en", Project[]> = {
