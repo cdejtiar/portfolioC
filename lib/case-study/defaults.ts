@@ -1,3 +1,4 @@
+import { getCaseStudyContent } from "./content"
 import type { Project } from "@/lib/projects"
 import type {
   CaseStudyBlockType,
@@ -198,9 +199,15 @@ export function getDefaultCaseStudySections(
 
 export function resolveProjectSections(
   project: Project,
+  language: CaseStudyLocale = "es",
 ): CaseStudySectionConfig[] {
   if (project.sections?.length) {
     return project.sections.filter((section) => !section.hidden)
+  }
+
+  const content = getCaseStudyContent(project.id, language)
+  if (content?.length) {
+    return content.filter((section) => !section.hidden)
   }
 
   return getDefaultCaseStudySections(project)

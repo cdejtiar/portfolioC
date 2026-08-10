@@ -1,0 +1,188 @@
+import { defineCaseStudy } from "./define"
+
+export default defineCaseStudy({
+  es: [
+    { type: "hero" },
+    {
+      type: "overview",
+      cards: [
+        {
+          title: "Contexto",
+          description:
+            "Materia Programación Multimedial III: una exploración del ecosistema Web3.",
+        },
+        { title: "Equipo", description: "Proyecto individual: diseño y desarrollo." },
+        {
+          title: "Resultado",
+          description:
+            "Colección generativa de 50 NFTs con una web funcional de minting.",
+        },
+      ],
+    },
+    {
+      type: "metadata",
+      cards: [
+        { title: "Rol", description: "Diseño generativo · Frontend · Backend · Web3" },
+        { title: "Año", description: "2022" },
+        {
+          title: "Herramientas",
+          description: "Procreate · JavaScript · Web3.js · HTML · CSS",
+        },
+      ],
+    },
+    {
+      type: "context",
+      title: "El proyecto",
+      body: "NFTBunnies fue desarrollado durante la materia Programación Multimedial III como una exploración del ecosistema Web3.\nEl desafío consistía en crear una colección de 50 NFTs, diseñar una identidad visual propia y desarrollar una web funcional que permitiera realizar el minting utilizando Ethereum de prueba.",
+    },
+    {
+      type: "challenge",
+      title: "Una identidad coherente generada por un sistema.",
+      body: "El proyecto combinaba dos áreas diferentes: crear una identidad visual consistente y construir un sistema capaz de generar múltiples variaciones automáticamente.",
+      description:
+        "La colección debía mantener una estética coherente aunque cada NFT tuviera una combinación diferente de atributos.",
+      sideHighlight: {
+        title: "Diseñar reglas, no piezas",
+        description:
+          "En lugar de dibujar 50 personajes, diseñé las categorías que los componen.",
+      },
+    },
+    {
+      type: "design-system",
+      title: "Diseño generativo",
+      body: "La identidad visual fue creada en Procreate y los elementos se organizaron en categorías combinables mediante un script.\nDe esta manera, un mismo sistema podía generar múltiples versiones de los personajes sin tener que diseñar cada NFT individualmente.",
+      items: [
+        "Fondos.",
+        "Clima.",
+        "Color del cuerpo.",
+        "Manos.",
+        "Accesorios.",
+        "Decoraciones.",
+      ],
+    },
+    {
+      type: "development",
+      title: "Desarrollo y Web3",
+      description:
+        "Además de la generación de la colección, desarrollé la experiencia web completa de punta a punta.",
+      body: "La web utilizaba Ethereum de prueba para experimentar con el funcionamiento de Smart Contracts y el proceso de creación de NFTs.",
+      items: [
+        "Frontend.",
+        "Backend.",
+        "Logo e identidad visual.",
+        "Integración con Web3.",
+        "Sistema de minting.",
+      ],
+    },
+    {
+      type: "final-solution",
+      title: "50 NFTs y una web funcional",
+      description:
+        "El proyecto terminó en una colección generativa de 50 NFTs acompañada por una experiencia web funcional.",
+      body: "Más allá del resultado visual, el proyecto permitió explorar la relación entre diseño de sistemas, generación procedural y desarrollo web.",
+    },
+    {
+      type: "result",
+      title: "Resultados y aprendizajes",
+      description:
+        "Una colección completa generada por un sistema propio, con minting funcional sobre una testnet.",
+      items: [
+        "Colección generativa de 50 piezas a partir de atributos combinables.",
+        "Primer contacto real con Smart Contracts y minting.",
+        "Diseñar un sistema es más escalable que diseñar cada pieza.",
+      ],
+    },
+  ],
+  en: [
+    { type: "hero" },
+    {
+      type: "overview",
+      cards: [
+        {
+          title: "Context",
+          description:
+            "Programación Multimedial III course: an exploration of the Web3 ecosystem.",
+        },
+        { title: "Team", description: "Solo project: design and development." },
+        {
+          title: "Outcome",
+          description:
+            "A generative collection of 50 NFTs with a working minting site.",
+        },
+      ],
+    },
+    {
+      type: "metadata",
+      cards: [
+        { title: "Role", description: "Generative design · Frontend · Backend · Web3" },
+        { title: "Year", description: "2022" },
+        {
+          title: "Tools",
+          description: "Procreate · JavaScript · Web3.js · HTML · CSS",
+        },
+      ],
+    },
+    {
+      type: "context",
+      title: "The project",
+      body: "NFTBunnies was built during the Programación Multimedial III course as an exploration of the Web3 ecosystem.\nThe challenge was to create a collection of 50 NFTs, design its own visual identity, and build a working site that allowed minting using test Ethereum.",
+    },
+    {
+      type: "challenge",
+      title: "A coherent identity generated by a system.",
+      body: "The project combined two different areas: creating a consistent visual identity and building a system able to generate many variations automatically.",
+      description:
+        "The collection had to keep a coherent aesthetic even though every NFT had a different combination of attributes.",
+      sideHighlight: {
+        title: "Design rules, not pieces",
+        description:
+          "Instead of drawing 50 characters, I designed the categories they're made of.",
+      },
+    },
+    {
+      type: "design-system",
+      title: "Generative design",
+      body: "The visual identity was created in Procreate and the elements were organized into categories that a script could combine.\nThat way a single system could generate many versions of the characters without designing each NFT individually.",
+      items: [
+        "Backgrounds.",
+        "Weather.",
+        "Body color.",
+        "Hands.",
+        "Accessories.",
+        "Decorations.",
+      ],
+    },
+    {
+      type: "development",
+      title: "Development and Web3",
+      description:
+        "Beyond generating the collection, I built the whole web experience end to end.",
+      body: "The site used test Ethereum to experiment with how Smart Contracts work and with the NFT creation process.",
+      items: [
+        "Frontend.",
+        "Backend.",
+        "Logo and visual identity.",
+        "Web3 integration.",
+        "Minting system.",
+      ],
+    },
+    {
+      type: "final-solution",
+      title: "50 NFTs and a working site",
+      description:
+        "The project ended in a generative collection of 50 NFTs alongside a working web experience.",
+      body: "Beyond the visual outcome, it let me explore the relationship between systems design, procedural generation, and web development.",
+    },
+    {
+      type: "result",
+      title: "Results & learnings",
+      description:
+        "A full collection generated by a custom system, with working minting on a testnet.",
+      items: [
+        "Generative collection of 50 pieces built from combinable attributes.",
+        "First hands-on experience with Smart Contracts and minting.",
+        "Designing a system scales better than designing every piece.",
+      ],
+    },
+  ],
+})

@@ -52,25 +52,6 @@ export interface Project {
 export const projectsByLocale: Record<"es" | "en", Project[]> = {
   es: [
     {
-      id: "1",
-      title: "eXerparK",
-      description:
-        "Plataforma digital para motivar la actividad física y conectar personas a través del movimiento",
-      fullDescription:
-        "eXerparK nació en 2021, en el contexto pospandemia, con el objetivo de recuperar la motivación por el ejercicio y fomentar el encuentro en espacios públicos como parques y plazas. \n El proyecto combina bienestar, comunidad y tecnología: propone un espacio donde las personas pueden descubrir actividades gratuitas al aire libre, agendarlas, conocer gente nueva y mantenerse activas. \n Durante la investigación inicial se realizó un Desk Research y un Social Listening sobre los hábitos de ejercicio en Argentina, lo que permitió detectar una pérdida generalizada de motivación. \n A partir de esa problemática, el proceso de Ideación se centró en la pregunta “¿Cómo podríamos crear un espacio donde las personas desmotivadas puedan motivarse?”, definiendo la motivación como el eje central del diseño. \n Con herramientas como Customer Journey, User Flow y Benchmark, se consolidó una propuesta con valor agregado y se desarrolló un prototipo funcional en Adobe XD.",
-      image: "/images/eXerparK.png",
-      technologies: ["Adobe XD", "Figma", "Desk Research", "Benchmarking"],
-      roles: ["UX Research", "Product Design"],
-      featured: true,
-      liveUrl: "https://xd.adobe.com/view/93ef9a3a-35e9-4876-8b6c-b58ab1793bae-c6bc/", 
-      slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSAsOmQqq3JRLnf2y3Df0dgmNNXX7xNOwpqxHDfXTIp7nhrzrz0y2a1RDBg1Xvbfp9n6FtYtkmzNCzG/pub?start=false&loop=false&delayms=3000",
-      features: [
-        "Agenda personal para planificar actividades",
-        "Sistema de reservas gratuito en espacios públicos",
-        "Enfoque en la motivación y la comunidad",
-      ],
-    },
-    {
       id: "2",
       title: "Y Ahora Qué?",
       description:
@@ -228,38 +209,6 @@ Durante el desarrollo realicé un análisis comparativo de plataformas existente
       ],
     },
     {
-      id: "8",
-      title: "Webapp Universitaria",
-      description:
-        "Diseño de una aplicación para la organización académica de estudiantes universitarios",
-      fullDescription: `Este proyecto grupal fue desarrollado en 2023 dentro de la materia Proyecto Senior, con el objetivo de crear una webapp que ayudara a los estudiantes de la Universidad Maimónides (UMAI) a organizar su vida universitaria de forma más efectiva.
-El MVP del prototipo contempla funcionalidades clave como:
-- Creación y visualización de un calendario personalizado.
-- Recordatorios y alertas configurables.
-- Gestión de tareas, notas y apuntes en un solo lugar.
-- Los objetivos del proyecto fueron: diseñar una aplicación funcional y accesible, investigar las necesidades reales del público objetivo, y validar el diseño mediante pruebas de usabilidad para asegurar que la solución respondiera a sus demandas cotidianas.
-Durante el proceso realizamos un Acta de Proyecto para definir el rumbo del trabajo, organizamos las tareas en Trello y establecimos sprints semanales para coordinar avances en equipo.
- Tras la fase de investigación, desarrollamos el informe de resultados y avanzamos hacia la etapa de prototipado en Adobe XD, consolidando la experiencia del usuario en un entorno claro, intuitivo y funcional.`,
-      image: "/images/webapp.png",
-      technologies: [
-        "Adobe XD",
-        "Trello",
-        "Design Thinking",
-        "UX Research",
-        "Scrum",
-      ],
-      roles: ["Product Design", "UX Research", "Frontend Development"],
-      liveUrl: "https://xd.adobe.com/view/0b6853cd-d82f-41a7-a3c6-789d997dc0a8-5e3b/",
-      docsUrl: "https://docs.google.com/document/d/e/2PACX-1vQ-2QqK2y7696S3_3iK5Hx37C0POcGiArDGYpxWFTksqzbdwPcrz3aCN85Tt8cBTpAAXCb_unXti0iF/pub",
-      docsUrl2: "https://docs.google.com/document/d/e/2PACX-1vRZhIlOjWVD69SZ44z6BsqiMnzg6iVSg4SFaEfw2Pn8cN5q7dMb3Yw9u6rxETmO7k53cOkQQmGbuWQJ/pub",
-      features: [
-        "Calendario y recordatorios personalizables",
-        "Sistema integral para tareas, notas y apuntes",
-        "Diseño centrado en la experiencia universitaria",
-        "Proceso guiado por metodologías ágiles",
-      ],
-    },
-    {
       id: "9",
       title: "intoximate",
       description: "Aplicación móvil para descubrir y aprender sobre tragos",
@@ -354,6 +303,30 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
       ],
     },
     {
+      id: "15",
+      title: "Sip, Sketch & Stories",
+      description:
+        "Experiencia web interactiva para animar reuniones y cumpleaños a través del dibujo, la conversación y el juego",
+      fullDescription:
+        "Sip, Sketch & Stories es una experiencia web interactiva creada para acompañar reuniones y cumpleaños de una manera simple, espontánea y social. La propuesta reemplaza el clásico mazo físico de cartas por una versión digital que combina consignas para conversar, dibujar, interactuar y brindar. \n Mientras cada persona dibuja libremente sobre una hoja, la aplicación funciona como un disparador de conversaciones y pequeñas dinámicas grupales.",
+      image: "/images/comingsoon.png",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide Icons"],
+      roles: ["Frontend Development"],
+      context:
+        "Proyecto personal nacido de un cumpleaños cuyo plan original se canceló.",
+      roleSummary: "Frontend Development",
+      team: "Proyecto individual.",
+      year: "2026",
+      outcome:
+        "Aplicación web interactiva que transforma un mazo físico de cartas en una experiencia digital reutilizable.",
+      features: [
+        "Mazo digital con cinco categorías de cartas",
+        "Animación de carta que sale del mazo y se revela",
+        "Sistema que evita repetir cartas hasta completar la ronda",
+        "Modo pantalla completa para proyectar en una TV",
+      ],
+    },
+    {
       id: "14",
       title: "Portfolio",
       description:
@@ -373,26 +346,6 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
     },
   ],
   en: [
-    {
-      id: "1",
-      title: "eXerparK",
-      description:
-        "Digital platform to motivate physical activity and connect people through movement",
-      fullDescription:
-        "eXerparK was founded in 2021, in the post-pandemic context, with the goal of rekindling motivation for exercise and promoting meetings in public spaces like parks and plazas. \n The project combines well-being, community, and technology: it offers a space where people can discover free outdoor activities, schedule them, meet new people, and stay active. \n During the initial research, we conducted Desk Research and Social Listening on exercise habits in Argentina, which revealed a widespread loss of motivation. \n Based on this problem, the Ideation process focused on the question “How could we create a space where demotivated people could get motivated?”, defining motivation as the central axis of the design. \n Using tools like Customer Journey, User Flow, and Benchmark, we consolidated a value-added proposal and developed a functional prototype in Adobe XD.",
-  image: "/images/eXerparK.png",
-      technologies: ["Adobe XD", "Figma", "Desk Research", "Benchmarking"],
-  roles: ["UX Research", "Product Design"],
-  featured: true,
-  liveUrl: "https://xd.adobe.com/view/93ef9a3a-35e9-4876-8b6c-b58ab1793bae-c6bc/",
-  slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSAsOmQqq3JRLnf2y3Df0dgmNNXX7xNOwpqxHDfXTIp7nhrzrz0y2a1RDBg1Xvbfp9n6FtYtkmzNCzG/pub?start=false&loop=false&delayms=3000",
-  githubUrl: "https://github.com",
-      features: [
-        "Personal agenda to plan activities",
-        "Free booking system for public spaces",
-        "Focus on motivation and community",
-      ],
-    },
     {
       id: "2",
       title: "Y Ahora Qué?",
@@ -556,40 +509,6 @@ During development, I carried out a comparative analysis of existing platforms, 
       ],
     },
     {
-      id: "8",
-      title: "University Webapp",
-      description:
-        "Web application design for university students’ academic organization",
-      fullDescription: `This group project was developed in 2023 for the Senior Project course, with the goal of creating a web app to help Universidad Maimónides (UMAI) students organize their academic life more effectively.  
-The MVP prototype includes key features such as:
-- Creation and visualization of a personalized calendar.
-- Configurable reminders and alerts.
-- Task, notes, and documents management in one place.  
-
-The project’s objectives were: to design a functional and accessible application, to research the real needs of the target audience, and to validate the design through usability testing to ensure the solution met students’ daily demands.  
-Throughout the process, we created a Project Charter to define our direction, organized tasks on Trello, and set weekly sprints to coordinate team progress.  
-After the research phase, we developed a results report and moved on to the prototyping stage in Adobe XD, consolidating a clear, intuitive, and functional user experience.`,
-  image: "/images/webapp.png",
-      technologies: [
-        "Adobe XD",
-        "Trello",
-        "Design Thinking",
-        "UX Research",
-        "Scrum",
-      ],
-  roles: ["Product Design", "UX Research", "Frontend Development"],
-  liveUrl: "https://xd.adobe.com/view/0b6853cd-d82f-41a7-a3c6-789d997dc0a8-5e3b/",
-  docsUrl: "https://docs.google.com/document/d/e/2PACX-1vQ-2QqK2y7696S3_3iK5Hx37C0POcGiArDGYpxWFTksqzbdwPcrz3aCN85Tt8cBTpAAXCb_unXti0iF/pub",
-  docsUrl2: "https://docs.google.com/document/d/e/2PACX-1vRZhIlOjWVD69SZ44z6BsqiMnzg6iVSg4SFaEfw2Pn8cN5q7dMb3Yw9u6rxETmO7k53cOkQQmGbuWQJ/pub",
-  githubUrl: "https://github.com",
-      features: [
-        "Customizable calendar and reminders",
-        "Integrated task, notes, and document system",
-        "User experience focused on university life",
-        "Development guided by agile methodologies",
-      ],
-    },
-    {
       id: "9",
       title: "intoximate",
       description: "Mobile app to discover and learn about cocktails",
@@ -702,6 +621,30 @@ The research phase included benchmarking tools such as Focusmate, Forest, and St
       ],
     },
     {
+      id: "15",
+      title: "Sip, Sketch & Stories",
+      description:
+        "An interactive web experience to liven up gatherings and birthdays through drawing, conversation, and play",
+      fullDescription:
+        "Sip, Sketch & Stories is an interactive web experience created to accompany gatherings and birthdays in a simple, spontaneous, social way. It replaces the classic physical card deck with a digital version that mixes prompts to talk, draw, interact, and toast. \n While everyone draws freely on a sheet of paper, the app works as a trigger for conversations and small group dynamics.",
+      image: "/images/comingsoon.png",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide Icons"],
+      roles: ["Frontend Development"],
+      context:
+        "Personal project born from a birthday whose original plan got cancelled.",
+      roleSummary: "Frontend Development",
+      team: "Solo project.",
+      year: "2026",
+      outcome:
+        "An interactive web app that turns a physical card deck into a reusable digital experience.",
+      features: [
+        "Digital deck with five card categories",
+        "Card animation that leaves the deck and flips to reveal the prompt",
+        "System that avoids repeats until a full round is complete",
+        "Fullscreen mode for projecting on a TV",
+      ],
+    },
+    {
       id: "14",
       title: "Portfolio",
       description: "Personal portfolio website",
@@ -730,4 +673,4 @@ The project also included a personal reflection on which design elements best re
   ],
 }
 
-export const featuredProjectIds = ["1", "2", "3", "13"]
+export const featuredProjectIds = ["13", "15", "3", "2"]

@@ -116,7 +116,7 @@ export function CaseStudyRenderer({
   language,
   resolveImage,
 }: CaseStudyRendererProps) {
-  const sectionConfigs = resolveProjectSections(project)
+  const sectionConfigs = resolveProjectSections(project, language)
   const sections = resolveCaseStudySections(
     sectionConfigs,
     project,
