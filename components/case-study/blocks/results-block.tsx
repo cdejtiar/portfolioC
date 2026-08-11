@@ -16,9 +16,9 @@ export function ResultsBlock({ section, language }: ResultsBlockProps) {
   return (
     <SectionWrapper>
       <SectionContainer className="container mx-auto max-w-6xl px-6 pb-28 pt-8 md:pb-36">
-        <div className="rounded-xl border border-white/[0.06] bg-[#211c2d] p-7 md:p-10">
+        <div className="rounded-xl border border-cs-hairline bg-cs-card p-7 md:p-10">
           <div className="grid items-center gap-8 md:grid-cols-[0.35fr_0.65fr]">
-            <div className="md:border-r md:border-white/[0.08] md:pr-8">
+            <div className="md:border-r md:border-cs-hairline md:pr-8">
               <p className="font-superlobster text-4xl text-primary md:text-5xl">
                 {section.description ? "✓" : "+40%"}
               </p>
@@ -50,13 +50,13 @@ export function ResultsBlock({ section, language }: ResultsBlockProps) {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                <span className="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-[9px] uppercase tracking-[0.15em] text-muted-foreground">
+                <span className="rounded-full border border-cs-hairline bg-cs-card px-3 py-1.5 text-[9px] uppercase tracking-[0.15em] text-muted-foreground">
                   {t.learnings}
                 </span>
-                <span className="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-[9px] uppercase tracking-[0.15em] text-muted-foreground">
+                <span className="rounded-full border border-cs-hairline bg-cs-card px-3 py-1.5 text-[9px] uppercase tracking-[0.15em] text-muted-foreground">
                   {t.impact}
                 </span>
-                <span className="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-[9px] uppercase tracking-[0.15em] text-muted-foreground">
+                <span className="rounded-full border border-cs-hairline bg-cs-card px-3 py-1.5 text-[9px] uppercase tracking-[0.15em] text-muted-foreground">
                   {t.nextSteps}
                 </span>
               </div>

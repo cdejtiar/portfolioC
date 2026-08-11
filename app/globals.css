@@ -56,6 +56,13 @@
   --sidebar-border: #d1c7d8;
   --sidebar-ring: #402940;
 
+  /* Case study surfaces */
+  --cs-surface: #ebe8d8;
+  --cs-surface-alt: #e2ded0;
+  --cs-surface-accent: #ded8e4;
+  --cs-card: #f5f3ea;
+  --cs-hairline: rgba(64, 41, 64, 0.14);
+
   /* Custom font variables with robust fallbacks */
   --font-superlobster: "Superlobster", "Dancing Script", "Brush Script MT", "Lucida Handwriting", cursive, fantasy;
   --font-coolvetica: "Coolvetica", "Oswald", "Helvetica Neue", "Arial Black", "Impact", sans-serif;
@@ -95,6 +102,13 @@
   --sidebar-accent-foreground: #ebe8d8;
   --sidebar-border: #4a3f4a;
   --sidebar-ring: #b4d4ee;
+
+  /* Case study surfaces */
+  --cs-surface: #100c19;
+  --cs-surface-alt: #1b1727;
+  --cs-surface-accent: #292534;
+  --cs-card: #211c2d;
+  --cs-hairline: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
@@ -136,6 +150,11 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-cs-surface: var(--cs-surface);
+  --color-cs-surface-alt: var(--cs-surface-alt);
+  --color-cs-surface-accent: var(--cs-surface-accent);
+  --color-cs-card: var(--cs-card);
+  --color-cs-hairline: var(--cs-hairline);
 }
 
 @layer base {

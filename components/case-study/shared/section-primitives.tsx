@@ -16,7 +16,7 @@ interface SectionWrapperProps {
 
 export function SectionWrapper({
   children,
-  className = "bg-[#100c19]",
+  className = "bg-cs-surface",
   delay = 0,
 }: SectionWrapperProps) {
   return (
@@ -86,7 +86,7 @@ export function InfoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className="min-h-[150px] rounded-xl border border-white/[0.06] bg-white/[0.045] p-6"
+      className="min-h-[150px] rounded-xl border border-cs-hairline bg-cs-card p-6"
     >
       <p className="text-[9px] uppercase tracking-[0.28em] text-muted-foreground">
         {label}

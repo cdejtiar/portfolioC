@@ -70,7 +70,7 @@ export function ProcessBlock({ section }: ProcessBlockProps) {
 
         <div className="relative overflow-x-auto pb-6">
           <div className="relative min-w-[760px]">
-            <div className="absolute left-8 right-8 top-6 h-px bg-white/15" />
+            <div className="absolute left-8 right-8 top-6 h-px bg-cs-hairline" />
 
             <div className="relative grid grid-cols-6 gap-4">
               {steps.map((step, idx) => {
@@ -96,10 +96,10 @@ export function ProcessBlock({ section }: ProcessBlockProps) {
                         scale: isActive ? 1.12 : 1,
                         backgroundColor: isDone
                           ? "var(--primary)"
-                          : "rgba(255,255,255,0.06)",
+                          : "var(--cs-card)",
                         borderColor: isDone
                           ? "var(--primary)"
-                          : "rgba(255,255,255,0.12)",
+                          : "var(--cs-hairline)",
                       }}
                       transition={{ duration: 0.3 }}
                       className="relative z-10 mx-auto flex h-12 w-12 items-center justify-center rounded-full border"

@@ -19,10 +19,10 @@ interface TextBlockProps {
 export function TextBlock({ section }: TextBlockProps) {
   const bgClass =
     section.variant === "muted"
-      ? "bg-[#1b1727]"
+      ? "bg-cs-surface-alt"
       : section.variant === "accent"
-        ? "bg-[#292534]"
-        : "bg-[#100c19]"
+        ? "bg-cs-surface-accent"
+        : "bg-cs-surface"
 
   return (
     <SectionWrapper className={bgClass}>
@@ -84,7 +84,7 @@ export function CardsBlock({ section }: CardsBlockProps) {
   })) ?? []
 
   return (
-    <SectionWrapper className={section.variant === "accent" ? "bg-[#292534]" : "bg-[#100c19]"}>
+    <SectionWrapper className={section.variant === "accent" ? "bg-cs-surface-accent" : "bg-cs-surface"}>
       <SectionContainer>
         <div className="mb-10 max-w-2xl">
           {section.eyebrow && <SectionEyebrow>{section.eyebrow}</SectionEyebrow>}
@@ -102,7 +102,7 @@ export function CardsBlock({ section }: CardsBlockProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.06 }}
-              className="rounded-xl border border-white/[0.06] bg-[#211c2d] p-6"
+              className="rounded-xl border border-cs-hairline bg-cs-card p-6"
             >
               <h3 className="text-sm font-semibold text-foreground">
                 {card.title}
@@ -142,7 +142,7 @@ export function BeforeAfterBlock({
           {[beforeAfter.before, beforeAfter.after].map((side, index) => (
             <div
               key={index}
-              className="rounded-xl border border-white/[0.06] bg-[#211c2d] p-6"
+              className="rounded-xl border border-cs-hairline bg-cs-card p-6"
             >
               {side.label && (
                 <p className="text-[9px] uppercase tracking-[0.28em] text-primary">

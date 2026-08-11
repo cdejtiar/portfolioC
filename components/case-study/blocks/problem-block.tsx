@@ -48,7 +48,7 @@ export function ProblemBlock({ section, language }: ProblemBlockProps) {
             <motion.div
               whileHover={{ y: -5 }}
               transition={{ type: "spring", stiffness: 250, damping: 20 }}
-              className="rounded-xl border border-white/[0.06] bg-[#211c2d] p-7 text-center"
+              className="rounded-xl border border-cs-hairline bg-cs-card p-7 text-center"
             >
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                 <svg

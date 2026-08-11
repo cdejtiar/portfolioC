@@ -9,29 +9,27 @@ export default defineCaseStudy({
         {
           title: "Contexto",
           description:
-            "Jornadas IVO en la Escuela ORT: presentar la orientación de Informática a estudiantes de segundo año.",
+            "Jornadas IVO en la Escuela ORT: estudiantes de segundo año recorren las orientaciones para conocerlas.",
         },
         {
-          title: "Equipo",
-          description: "Proyecto colaborativo con mi equipo de trabajo en ORT.",
+          title: "Mi participación",
+          description:
+            "Diseño y desarrollo de la sala de Diseño, narrativa general y pruebas de usabilidad.",
         },
         {
           title: "Resultado",
           description:
-            "Sala de escape digital de cinco subsalas, testeada e iterada antes de las jornadas.",
+            "Sala de escape digital de cinco subsalas usada en las jornadas, iterada hasta completarse sin inconvenientes.",
         },
       ],
     },
     {
       type: "metadata",
       cards: [
-        {
-          title: "Rol",
-          description: "Diseño de la sala de Diseño · Desarrollo · Narrativa · UX Testing",
-        },
+        { title: "Tipo de proyecto", description: "Proyecto colaborativo · UX/UI + Desarrollo" },
         { title: "Año", description: "2025" },
         {
-          title: "Herramientas",
+          title: "Tecnologías",
           description: "Stitch · v0 · TypeScript · Next.js · Tailwind CSS · GitHub Projects",
         },
       ],
@@ -44,35 +42,24 @@ export default defineCaseStudy({
     {
       type: "challenge",
       title: "¿Cómo podemos enseñar mientras los estudiantes juegan?",
-      body: "A partir del feedback de ediciones anteriores decidimos transformar la experiencia en algo interactivo.\nLa respuesta fue una sala de escape digital dividida en cinco subsalas, cada una asociada a uno de los pilares de la orientación.",
+      body: "A partir del feedback de ediciones anteriores decidimos transformar la experiencia en algo interactivo.",
       description:
-        "El contenido no debía aparecer como una explicación aislada, sino como parte del desafío.",
-      sideHighlight: {
-        title: "Jugar para entender",
-        description:
-          "Cada puzzle está construido sobre un contenido real de la orientación.",
-      },
+        "La respuesta fue una sala de escape digital dividida en cinco subsalas, cada una asociada a uno de los pilares de la orientación.",
     },
     {
       type: "concept",
-      title: "La experiencia",
-      body: "La experiencia utiliza una historia como hilo conductor que conecta todas las salas.\nCada subsala propone desafíos y puzzles relacionados con diferentes áreas de la orientación.\nMi responsabilidad principal fue desarrollar la sala de Diseño.",
+      title: "Cinco subsalas, una historia",
+      body: "La experiencia utiliza una historia como hilo conductor que conecta todas las salas.\nCada subsala propone desafíos y puzzles relacionados con diferentes áreas de la orientación.\nTrabajé sobre esa narrativa, que permitió convertir los desafíos individuales en una experiencia coherente.",
     },
     {
       type: "interaction-design",
-      title: "Sala de Diseño",
-      body: "Para esta sala diseñé una especie de consola interactiva.\nLos estudiantes deben arrastrar diferentes campos hasta conseguir que los diseños coincidan y luego resolver un puzzle relacionado con conceptos de diseño que se trabajan durante la orientación.",
-    },
-    {
-      type: "concept",
-      id: "narrativa",
-      title: "Narrativa",
-      body: "Además del desarrollo de la sala, trabajé sobre la historia que funciona como hilo conductor de toda la experiencia.\nLa narrativa permitió conectar las diferentes subsalas y convertir los desafíos individuales en una experiencia coherente.",
+      title: "La sala de Diseño",
+      body: "Para esta sala diseñé una especie de consola interactiva.\nLos estudiantes deben arrastrar diferentes campos hasta conseguir que los diseños coincidan y luego resolver un puzzle relacionado con conceptos de diseño que se trabajan durante la orientación.\nEl objetivo era que el contenido no apareciera como una explicación aislada, sino como parte del desafío.",
     },
     {
       type: "testing",
-      title: "Testing e iteración",
-      body: "Conduje pruebas de usabilidad con estudiantes de tercero, cuarto y quinto año.\nLas pruebas permitieron detectar errores y problemas de comprensión que fueron iterados durante las semanas previas a las jornadas. Las últimas pruebas lograron que los estudiantes pudieran completar las salas sin inconvenientes.",
+      title: "Testing con estudiantes",
+      body: "Conduje pruebas de usabilidad con estudiantes de tercero, cuarto y quinto año.",
       items: [
         "Tiempo necesario para completar las salas.",
         "Comprensión de los desafíos.",
@@ -81,21 +68,22 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "final-solution",
-      title: "Aprendizaje, narrativa e interacción",
-      description:
-        "La Sala de Escape IVO presenta una orientación académica desde una experiencia práctica y entretenida.",
-      body: "Cinco subsalas conectadas por una historia, con desafíos que traducen los pilares de la orientación en interacción.",
+      type: "iterations",
+      title: "Iteración previa a las jornadas",
+      body: "Las pruebas permitieron detectar errores y problemas de comprensión que fueron iterados durante las semanas previas a las jornadas.\nLas últimas pruebas lograron que los estudiantes pudieran completar las salas sin inconvenientes.",
     },
     {
       type: "result",
-      title: "Resultados y aprendizajes",
+      title: "Resultado",
       description:
-        "Las últimas rondas de testing lograron que los estudiantes completaran las salas sin bloqueos.",
+        "La Sala de Escape IVO combinó aprendizaje, narrativa e interacción para presentar una orientación académica desde una experiencia práctica y entretenida.",
+    },
+    {
+      type: "learnings",
+      title: "Aprendizajes",
       items: [
-        "Trabajar en un contexto real con usuarios jóvenes.",
+        "Trabajar en un contexto real con usuarios jóvenes cambia la forma de validar: lo que no se entiende, se ve en la primera prueba.",
         "La narrativa y la interacción pueden transformar contenido educativo en una experiencia que invita a participar.",
-        "El testing iterativo fue lo que hizo la experiencia comprensible.",
       ],
     },
   ],
@@ -107,29 +95,27 @@ export default defineCaseStudy({
         {
           title: "Context",
           description:
-            "IVO days at ORT School: introducing the Computer Science track to second-year students.",
+            "IVO days at ORT School: second-year students visit the specializations they're interested in.",
         },
         {
-          title: "Team",
-          description: "Collaborative project with my team at ORT.",
+          title: "My role",
+          description:
+            "Design and development of the Design room, overall narrative, and usability testing.",
         },
         {
           title: "Outcome",
           description:
-            "A digital escape room with five sub-rooms, tested and iterated before the event.",
+            "A five-room digital escape room used during the event, iterated until students completed it smoothly.",
         },
       ],
     },
     {
       type: "metadata",
       cards: [
-        {
-          title: "Role",
-          description: "Design room design · Development · Narrative · UX Testing",
-        },
+        { title: "Project type", description: "Collaborative project · UX/UI + Development" },
         { title: "Year", description: "2025" },
         {
-          title: "Tools",
+          title: "Technologies",
           description: "Stitch · v0 · TypeScript · Next.js · Tailwind CSS · GitHub Projects",
         },
       ],
@@ -137,63 +123,53 @@ export default defineCaseStudy({
     {
       type: "context",
       title: "The project",
-      body: "Sala de Escape IVO was built in 2025 with my team at ORT School for the IVO days.\nDuring those days, second-year students visit the tracks they're interested in to learn more about them.\nOur challenge was to show the potential of the Computer Science track in a way that wasn't purely expository.",
+      body: "Sala de Escape IVO was built in 2025 with my team at ORT School for the IVO days.\nDuring those days, second-year students explore the specializations they're interested in to understand them better.\nOur challenge was to show the potential of the Computer Science track in a way that wasn't purely expository.",
     },
     {
       type: "challenge",
       title: "How can we teach while students play?",
-      body: "Based on feedback from previous editions we decided to turn the experience into something interactive.\nThe answer was a digital escape room split into five sub-rooms, each tied to one of the track's pillars.",
+      body: "Based on feedback from previous editions we decided to turn the experience into something interactive.",
       description:
-        "The content shouldn't show up as a separate explanation, but as part of the challenge.",
-      sideHighlight: {
-        title: "Play to understand",
-        description:
-          "Every puzzle is built on real content from the track.",
-      },
+        "The answer was a digital escape room split into five sub-rooms, each tied to one of the pillars of the specialization.",
     },
     {
       type: "concept",
-      title: "The experience",
-      body: "The experience uses a story as the thread that connects all the rooms.\nEach sub-room poses challenges and puzzles related to different areas of the track.\nMy main responsibility was building the Design room.",
+      title: "Five rooms, one story",
+      body: "The experience uses a story as the thread that connects every room.\nEach sub-room poses challenges and puzzles related to different areas of the track.\nI worked on that narrative, which turned individual challenges into a coherent experience.",
     },
     {
       type: "interaction-design",
       title: "The Design room",
-      body: "For this room I designed a kind of interactive console.\nStudents drag different fields until the designs match, then solve a puzzle based on design concepts covered during the track.",
-    },
-    {
-      type: "concept",
-      id: "narrative",
-      title: "Narrative",
-      body: "Beyond building the room, I worked on the story that ties the whole experience together.\nThe narrative connected the different sub-rooms and turned individual challenges into a coherent experience.",
+      body: "For this room I designed a kind of interactive console.\nStudents drag different fields until the designs match, then solve a puzzle about design concepts covered during the specialization.\nThe goal was for the content to appear as part of the challenge, not as an isolated explanation.",
     },
     {
       type: "testing",
-      title: "Testing and iteration",
-      body: "I ran usability tests with third-, fourth-, and fifth-year students.\nThe tests surfaced bugs and comprehension issues that we iterated on in the weeks before the event. In the final rounds students completed the rooms without trouble.",
+      title: "Testing with students",
+      body: "I ran usability tests with third-, fourth-, and fifth-year students.",
       items: [
         "Time needed to complete the rooms.",
         "Understanding of the challenges.",
         "Appeal of the experience.",
-        "Connection between the content and the track.",
+        "Connection between content and the specialization.",
       ],
     },
     {
-      type: "final-solution",
-      title: "Learning, narrative, and interaction",
-      description:
-        "Sala de Escape IVO presents an academic track through a hands-on, entertaining experience.",
-      body: "Five sub-rooms connected by a story, with challenges that translate the track's pillars into interaction.",
+      type: "iterations",
+      title: "Iteration before the event",
+      body: "The tests surfaced bugs and comprehension issues that we iterated on during the weeks before the event.\nIn the final tests students completed the rooms without trouble.",
     },
     {
       type: "result",
-      title: "Results & learnings",
+      title: "Result",
       description:
-        "The final testing rounds got students through every room without blockers.",
+        "Sala de Escape IVO combined learning, narrative, and interaction to present an academic track through a hands-on, entertaining experience.",
+    },
+    {
+      type: "learnings",
+      title: "Learnings",
       items: [
-        "Working in a real context with young users.",
-        "Narrative and interaction can turn educational content into an experience people want to join.",
-        "Iterative testing is what made the experience understandable.",
+        "Working in a real context with young users changes how you validate: whatever isn't clear shows up in the first test.",
+        "Narrative and interaction can turn educational content into an experience that invites participation.",
       ],
     },
   ],

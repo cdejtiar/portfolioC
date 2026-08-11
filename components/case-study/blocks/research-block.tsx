@@ -55,7 +55,7 @@ export function ResearchBlock({ section }: ResearchBlockProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="rounded-xl border border-white/[0.06] bg-[#211c2d] p-6"
+                className="rounded-xl border border-cs-hairline bg-cs-card p-6"
               >
                 <span className="font-serif text-xl text-primary/70">“</span>
                 <p className="mt-2 text-sm leading-7 text-foreground/90">

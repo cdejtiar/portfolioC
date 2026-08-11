@@ -9,116 +9,98 @@ export default defineCaseStudy({
         {
           title: "Contexto",
           description:
-            "Proyecto personal: reemplazar un mazo físico de cartas por una experiencia web para reuniones y cumpleaños.",
+            "Proyecto personal nacido de un cumpleaños que perdió su plan original.",
         },
-        { title: "Equipo", description: "Proyecto individual." },
+        {
+          title: "Mi participación",
+          description:
+            "Proyecto individual: estructura de la interfaz, componentes, interacciones, animaciones y lógica del mazo.",
+        },
         {
           title: "Resultado",
           description:
-            "App web interactiva reutilizable, pensada para acompañar la conversación sin ser el centro de la reunión.",
+            "Experiencia web reutilizable centrada en una única acción: sacar una carta.",
         },
       ],
     },
     {
       type: "metadata",
       cards: [
-        { title: "Rol", description: "Frontend Development" },
+        { title: "Tipo de proyecto", description: "Proyecto personal · Frontend Development" },
         { title: "Año", description: "2026" },
-        {
-          title: "Herramientas",
-          description: "Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Lucide Icons",
-        },
+        { title: "Equipo", description: "Proyecto individual" },
       ],
     },
     {
       type: "context",
       title: "El proyecto",
-      body: "Sip, Sketch & Stories es una experiencia web interactiva creada para acompañar reuniones y cumpleaños de una manera simple, espontánea y social.\nLa propuesta reemplaza el clásico mazo físico de cartas por una versión digital que combina consignas para conversar, dibujar, interactuar y brindar.\nEl proyecto nació a partir de una situación personal: el karaoke que había planeado para mi cumpleaños fue cancelado. En lugar de abandonar la idea, transformé la actividad en una experiencia para compartir en casa con amigos, manteniendo tres elementos del plan original: estar juntos, hacer algo creativo y pasarla bien.",
+      body: "Sip, Sketch & Stories es una experiencia web interactiva creada para acompañar reuniones y cumpleaños de una manera simple, espontánea y social.\nLa propuesta reemplaza el clásico mazo físico de cartas por una versión digital que combina consignas para conversar, dibujar, interactuar y brindar.\nEl proyecto nació a partir de una situación personal: el karaoke que había planeado para mi cumpleaños fue cancelado, y en lugar de abandonar la idea decidí transformar la actividad en una experiencia para compartir en casa.\nLa intención era mantener tres elementos del plan original: estar juntos, hacer algo creativo y pasarla bien.",
     },
     {
       type: "challenge",
-      title: "Conservar lo mejor de un juego físico.",
-      body: "Los juegos de cartas para reuniones cumplen una función muy simple: generar una excusa para hablar, reírse y participar.\nPero las cartas físicas deben prepararse previamente, pueden repetirse y muchas dinámicas terminan dependiendo únicamente de preguntas o de beber. Además, cuando una actividad se convierte en una competencia, puede generar presión en personas que simplemente quieren participar de manera relajada.",
+      title: "Diseñar para una reunión de 20 personas",
+      body: "La experiencia fue pensada para grupos de aproximadamente 20 personas, lo que hacía necesario evitar que todas las cartas dependieran de una única persona respondiendo una pregunta.",
       description:
-        "La oportunidad estaba en conservar la sorpresa de no saber qué viene después, la espontaneidad de las consignas y la posibilidad de compartirlas, usando las ventajas de una interfaz digital.",
-      sideHighlight: {
-        title: "Sin puntaje",
-        description:
-          "Nada de competencia: la experiencia no premia dibujar bien.",
-      },
-    },
-    {
-      type: "concept",
-      title: "No importa qué dibujes. Lo importante es lo que pasa mientras lo hacés.",
-      body: "Cada participante recibe una hoja y marcadores y puede dibujar libremente. No hay una consigna artística inicial, no hay una forma correcta de hacerlo y tampoco existe una puntuación.\nEl dibujo funciona como una actividad paralela que permite que las personas tengan algo que hacer mientras conversan. En determinados momentos, alguien saca una carta desde la aplicación y aparece una nueva consigna.",
+        "El mazo combina distintos niveles de participación para que el ritmo pueda cambiar constantemente sin convertirse en una ronda estructurada de preguntas y respuestas.",
       items: [
-        "💬 Charlar: preguntas, recuerdos y situaciones hipotéticas.",
-        "🥂 Tomar: brindis y pequeñas dinámicas relacionadas con beber.",
-        "🖍️ Dibujar: intervenciones simples y absurdas sobre los dibujos.",
-        "💛 Caos: reglas temporales y pequeños desafíos grupales.",
-        "✨ Especiales: momentos colectivos, fotografías, música y dinámicas de cumpleaños.",
+        "Cartas individuales.",
+        "Cartas para pequeños grupos.",
+        "Cartas donde participa toda la mesa.",
+        "Desafíos que modifican temporalmente las reglas.",
+        "Dinámicas que permiten intervenir el dibujo de otra persona.",
       ],
     },
     {
       type: "design-decisions",
-      title: "Decisiones de diseño",
+      title: "Decisiones de diseño e interacción",
       decisions: [
         {
-          title: "Diseñar para 20 personas",
+          title: "Una actividad sin presión",
           problem:
-            "Si cada carta depende de una sola persona respondiendo, el resto del grupo queda mirando.",
+            "No todas las personas saben dibujar, y el dibujo podía sentirse como una competencia.",
           decision:
-            "Combinar cartas individuales, para pequeños grupos, para toda la mesa, desafíos que modifican las reglas y dinámicas para intervenir el dibujo de otra persona.",
+            "Consignas de dibujo deliberadamente simples y absurdas: “agregá un pato”, “dibujá con la mano no dominante”, “escondé una estrella”, “convertí un garabato en algo”.",
           impact:
-            "El ritmo de la actividad cambia constantemente sin convertirse en una ronda estructurada de preguntas.",
+            "El objetivo deja de ser crear una obra de arte y pasa a ser intervenir el dibujo y generar situaciones inesperadas.",
         },
         {
-          title: "Dibujar sin presión",
+          title: "Hacer que lo digital se sintiera físico",
           problem:
-            "No todas las personas saben dibujar y una consigna artística puede generar presión.",
-          decision:
-            "Usar consignas deliberadamente simples y absurdas: “agregá un pato”, “dibujá con la mano no dominante”, “escondé una estrella”, “convertí un garabato en algo”.",
-          impact:
-            "El foco pasa de la calidad del dibujo a las situaciones inesperadas que genera.",
-        },
-        {
-          title: "Que lo digital se sienta físico",
-          problem:
-            "Mostrar una consigna en pantalla pierde el gesto de sacar una carta de un mazo real.",
+            "Trasladar la sensación de sacar una carta de un mazo físico a una pantalla.",
           decision:
             "Al presionar “Sacar carta”, la carta sale visualmente del mazo, gira y revela la consigna.",
           impact:
-            "La animación sostiene la metáfora del objeto físico en lugar de ser decoración.",
+            "La animación refuerza la metáfora del objeto físico en lugar de funcionar solo como decoración.",
         },
         {
-          title: "El mazo como sistema de datos",
+          title: "El mazo como sistema",
           problem:
-            "Ampliar el contenido implicaba modificar componentes de interfaz.",
+            "El contenido tenía que poder crecer sin romper la interfaz ni repetir cartas.",
           decision:
-            "Separar las cartas de la lógica visual y estructurarlas como datos independientes, evitando repetir una carta hasta completar la ronda y volviendo a barajar.",
+            "Separar las cartas de la lógica visual y estructurarlas como datos independientes, evitando repetir una carta hasta completar una ronda y volviendo a barajar después.",
           impact:
-            "El contenido puede crecer o reorganizarse sin alterar la experiencia principal.",
+            "El contenido puede modificarse, ampliarse o reorganizarse sin tocar los componentes de la interfaz.",
         },
         {
-          title: "Modo pantalla completa",
+          title: "Diseñada para compartir pantalla",
           problem:
-            "En un grupo grande, un mazo visible solo desde un celular deja a la mayoría afuera.",
+            "El mazo tenía que ser visible para todo el grupo, no solo para quien sostiene el celular.",
           decision:
-            "Incorporar un modo de pantalla completa para proyectar la app en una televisión o monitor.",
+            "Incorporar un modo de pantalla completa para proyectar la aplicación en una televisión o monitor.",
           impact:
-            "La tecnología queda en segundo plano y la atención sigue en las personas alrededor de la mesa.",
+            "La tecnología queda en segundo plano y la atención sigue estando en las personas alrededor de la mesa.",
         },
       ],
     },
     {
       type: "final-solution",
-      title: "Una sola acción principal: sacar una carta",
+      title: "La solución final",
       description:
-        "La interfaz presenta el mazo y permite descubrir progresivamente nuevas consignas mientras la reunión avanza.",
-      body: "Las animaciones, los estados de las cartas, el sistema de categorías y el modo pantalla completa trabajan alrededor de esa interacción principal. La experiencia no intenta convertirse en un juego competitivo: su función es facilitar momentos que probablemente sucederían de todos modos.",
+        "Una experiencia web centrada en una única acción principal: sacar una carta.",
+      body: "La interfaz presenta el mazo y permite descubrir progresivamente nuevas consignas mientras la reunión avanza. Las animaciones, los estados de las cartas, el sistema de categorías y el modo pantalla completa trabajan alrededor de esa interacción principal.\nLa experiencia no intenta convertirse en un juego competitivo: su función es facilitar momentos que probablemente sucederían de todos modos —hablar, reírse, dibujar, brindar y compartir.",
     },
     {
-      type: "features",
+      type: "iterations",
       title: "Un sistema que puede crecer",
       body: "La separación entre contenido e interfaz permite pensar en futuras versiones sin modificar la estructura principal del producto.",
       items: [
@@ -132,14 +114,17 @@ export default defineCaseStudy({
     },
     {
       type: "result",
-      title: "Resultados y aprendizajes",
+      title: "Resultado",
       description:
-        "Empezó como una solución para un cumpleaños que había perdido su plan original y terminó convirtiéndose en una pequeña experiencia digital reutilizable.",
+        "Sip, Sketch & Stories comenzó como una solución para un cumpleaños que había perdido su plan original y terminó convirtiéndose en una pequeña experiencia digital reutilizable.",
+    },
+    {
+      type: "learnings",
+      title: "Aprendizajes",
       items: [
-        "Explorar la relación entre contenido, interacción y movimiento.",
-        "Cada decisión de desarrollo debía tener un propósito dentro de la experiencia.",
-        "Una interfaz no siempre tiene que ser la protagonista: a veces su función es crear el espacio para que algo suceda.",
-        "El objetivo nunca fue jugar con la aplicación, sino tener una excusa para compartir.",
+        "Explorar la relación entre contenido, interacción y movimiento: cada decisión de desarrollo tenía que tener un propósito dentro de la experiencia.",
+        "Una interfaz no siempre tiene que ser la protagonista: a veces su función es crear el espacio y las condiciones para que algo suceda.",
+        "La tecnología reemplaza un mazo de cartas, pero la experiencia realmente ocurre fuera de la pantalla.",
       ],
     },
   ],
@@ -151,115 +136,98 @@ export default defineCaseStudy({
         {
           title: "Context",
           description:
-            "Personal project: replacing a physical card deck with a web experience for gatherings and birthdays.",
+            "Personal project born from a birthday that lost its original plan.",
         },
-        { title: "Team", description: "Solo project." },
+        {
+          title: "My role",
+          description:
+            "Solo project: interface structure, components, interactions, animations, and deck logic.",
+        },
         {
           title: "Outcome",
           description:
-            "A reusable interactive web app meant to support conversation without becoming the center of the party.",
+            "A reusable web experience built around a single action: draw a card.",
         },
       ],
     },
     {
       type: "metadata",
       cards: [
-        { title: "Role", description: "Frontend Development" },
+        { title: "Project type", description: "Personal project · Frontend Development" },
         { title: "Year", description: "2026" },
-        {
-          title: "Tools",
-          description: "Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Lucide Icons",
-        },
+        { title: "Team", description: "Solo project" },
       ],
     },
     {
       type: "context",
       title: "The project",
-      body: "Sip, Sketch & Stories is an interactive web experience created to accompany gatherings and birthdays in a simple, spontaneous, social way.\nIt replaces the classic physical card deck with a digital version that mixes prompts to talk, draw, interact, and toast.\nThe project came out of a personal situation: the karaoke I had planned for my birthday got cancelled. Instead of dropping the idea, I turned the activity into an experience to share at home with friends, keeping three things from the original plan: being together, doing something creative, and having fun.",
+      body: "Sip, Sketch & Stories is an interactive web experience made to liven up gatherings and birthdays in a simple, spontaneous, social way.\nIt replaces the classic physical card deck with a digital version that mixes prompts to talk, draw, interact, and toast.\nThe project came out of a personal situation: the karaoke I had planned for my birthday was cancelled, and instead of dropping the idea I turned the activity into an experience to share at home.\nThe intention was to keep three things from the original plan: being together, doing something creative, and having a good time.",
     },
     {
       type: "challenge",
-      title: "Keeping the best of a physical game.",
-      body: "Party card games do something very simple: they create an excuse to talk, laugh, and take part.\nBut physical cards have to be prepared in advance, they repeat, and many dynamics end up relying only on questions or on drinking. And when an activity turns into a competition, it puts pressure on people who just want to join in a relaxed way.",
+      title: "Designing for a group of 20",
+      body: "The experience was designed for groups of around 20 people, which meant no card could depend on a single person answering a question.",
       description:
-        "The opportunity was to keep the surprise of not knowing what comes next, the spontaneity of the prompts, and the ability to share them — using the advantages of a digital interface.",
-      sideHighlight: {
-        title: "No score",
-        description:
-          "No competition: the experience never rewards drawing well.",
-      },
-    },
-    {
-      type: "concept",
-      title: "It doesn't matter what you draw. What matters is what happens while you do.",
-      body: "Everyone gets a sheet of paper and markers and can draw freely. There's no initial artistic prompt, no right way to do it, and no score.\nDrawing works as a parallel activity that gives people something to do while they talk. At certain moments, someone draws a card in the app and a new prompt appears.",
+        "The deck mixes different levels of participation so the pace keeps shifting instead of turning into a structured Q&A round.",
       items: [
-        "💬 Talk: questions, memories, and hypothetical situations.",
-        "🥂 Drink: toasts and small drinking dynamics.",
-        "🖍️ Draw: simple, absurd interventions on the drawings.",
-        "💛 Chaos: temporary rules and small group challenges.",
-        "✨ Specials: collective moments, photos, music, and birthday dynamics.",
+        "Individual cards.",
+        "Cards for small groups.",
+        "Cards where the whole table plays.",
+        "Challenges that temporarily change the rules.",
+        "Dynamics that let you draw on someone else's sheet.",
       ],
     },
     {
       type: "design-decisions",
-      title: "Design decisions",
+      title: "Design and interaction decisions",
       decisions: [
         {
-          title: "Designing for 20 people",
+          title: "An activity without pressure",
           problem:
-            "If every card depends on one person answering, the rest of the group just watches.",
+            "Not everyone can draw, and drawing risked feeling like a competition.",
           decision:
-            "Mix individual cards, small-group cards, whole-table cards, challenges that change the rules, and dynamics where you intervene in someone else's drawing.",
+            "Deliberately simple, absurd drawing prompts: “add a duck”, “draw with your non-dominant hand”, “hide a star”, “turn a scribble into something”.",
           impact:
-            "The pace keeps shifting instead of becoming a structured round of questions.",
+            "The goal stops being making art and becomes intervening in the drawing and creating unexpected situations.",
         },
         {
-          title: "Drawing without pressure",
+          title: "Making digital feel physical",
           problem:
-            "Not everyone can draw, and an artistic prompt can create pressure.",
+            "Translating the feeling of pulling a card from a physical deck onto a screen.",
           decision:
-            "Use deliberately simple, absurd prompts: “add a duck”, “draw with your non-dominant hand”, “hide a star”, “turn a scribble into something”.",
+            "When you press “Draw card”, the card visually leaves the deck, flips, and reveals the prompt.",
           impact:
-            "The focus moves from drawing quality to the unexpected situations it creates.",
+            "The animation reinforces the physical-object metaphor instead of working as mere decoration.",
         },
         {
-          title: "Making the digital feel physical",
+          title: "The deck as a system",
           problem:
-            "Showing a prompt on screen loses the gesture of pulling a card from a real deck.",
+            "Content had to grow without breaking the interface or repeating cards.",
           decision:
-            "Pressing “Draw a card” makes the card leave the deck, flip, and reveal the prompt.",
+            "Separate the cards from the visual logic as independent data, avoiding repeats until a round is complete and then reshuffling.",
           impact:
-            "The animation sustains the physical-object metaphor instead of being decoration.",
+            "Content can be edited, expanded, or reorganized without touching interface components.",
         },
         {
-          title: "The deck as a data system",
-          problem: "Expanding the content meant editing interface components.",
-          decision:
-            "Separate cards from the visual logic as independent data, avoiding repeats until a round is complete and then reshuffling.",
-          impact:
-            "Content can grow or be reorganized without altering the main experience.",
-        },
-        {
-          title: "Fullscreen mode",
+          title: "Designed for screen sharing",
           problem:
-            "In a large group, a deck visible only on one phone leaves most people out.",
+            "The deck had to be visible to the whole group, not just whoever holds the phone.",
           decision:
             "Add a fullscreen mode so the app can be projected on a TV or monitor.",
           impact:
-            "The technology stays in the background and attention stays on the people around the table.",
+            "Technology stays in the background and attention stays on the people around the table.",
         },
       ],
     },
     {
       type: "final-solution",
-      title: "One single main action: draw a card",
+      title: "The final solution",
       description:
-        "The interface presents the deck and lets people progressively discover new prompts as the gathering unfolds.",
-      body: "Animations, card states, the category system, and fullscreen mode all revolve around that one interaction. The experience doesn't try to be a competitive game: its job is to enable moments that would probably happen anyway.",
+        "A web experience centred on a single main action: draw a card.",
+      body: "The interface presents the deck and reveals new prompts progressively as the gathering unfolds. Animations, card states, the category system, and fullscreen mode all work around that main interaction.\nIt isn't trying to be a competitive game: its purpose is to make room for things that would probably happen anyway — talking, laughing, drawing, toasting, sharing.",
     },
     {
-      type: "features",
+      type: "iterations",
       title: "A system that can grow",
       body: "Separating content from interface makes future versions possible without changing the product's main structure.",
       items: [
@@ -273,14 +241,17 @@ export default defineCaseStudy({
     },
     {
       type: "result",
-      title: "Results & learnings",
+      title: "Result",
       description:
-        "It started as a fix for a birthday that had lost its original plan and became a small reusable digital experience.",
+        "Sip, Sketch & Stories started as a fix for a birthday that had lost its original plan and ended up becoming a small, reusable digital experience.",
+    },
+    {
+      type: "learnings",
+      title: "Learnings",
       items: [
-        "Exploring the relationship between content, interaction, and motion.",
-        "Every development decision had to serve a purpose inside the experience.",
-        "An interface doesn't always have to be the protagonist: sometimes its job is to create space for something to happen.",
-        "The goal was never to play with the app, but to have an excuse to share.",
+        "Exploring the relationship between content, interaction, and motion: every development decision had to serve the experience.",
+        "An interface doesn't always have to be the protagonist: sometimes its job is to create the space and conditions for something to happen.",
+        "Technology replaces a deck of cards, but the experience really happens off-screen.",
       ],
     },
   ],

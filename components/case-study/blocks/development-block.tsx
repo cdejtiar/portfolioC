@@ -36,7 +36,7 @@ export function DevelopmentBlock({
 
         <div className="grid gap-4 md:grid-cols-2">
           {section.body && (
-            <div className="rounded-xl border border-white/[0.06] bg-[#211c2d] p-6">
+            <div className="rounded-xl border border-cs-hairline bg-cs-card p-6">
               <p className="text-[9px] uppercase tracking-[0.28em] text-primary">
                 {language === "es" ? "Arquitectura" : "Architecture"}
               </p>
@@ -47,7 +47,7 @@ export function DevelopmentBlock({
           )}
 
           {repoHighlights.length > 0 && (
-            <div className="rounded-xl border border-white/[0.06] bg-[#211c2d] p-6">
+            <div className="rounded-xl border border-cs-hairline bg-cs-card p-6">
               <p className="text-[9px] uppercase tracking-[0.28em] text-primary">
                 {language === "es"
                   ? "Puntos claves del repositorio"
@@ -62,7 +62,7 @@ export function DevelopmentBlock({
           )}
 
           {project.githubUrl && (
-            <div className="rounded-xl border border-white/[0.06] bg-[#211c2d] p-6 md:col-span-2">
+            <div className="rounded-xl border border-cs-hairline bg-cs-card p-6 md:col-span-2">
               <p className="text-[9px] uppercase tracking-[0.28em] text-primary">
                 GitHub
               </p>
@@ -80,7 +80,7 @@ export function DevelopmentBlock({
           {!section.body &&
             repoHighlights.length === 0 &&
             project.technologies.length > 0 && (
-              <div className="rounded-xl border border-white/[0.06] bg-[#211c2d] p-6 md:col-span-2">
+              <div className="rounded-xl border border-cs-hairline bg-cs-card p-6 md:col-span-2">
                 <p className="text-[9px] uppercase tracking-[0.28em] text-primary">
                   {language === "es" ? "Tecnologías" : "Technologies"}
                 </p>

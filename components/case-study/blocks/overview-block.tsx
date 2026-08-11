@@ -16,7 +16,7 @@ export function OverviewBlock({ section }: OverviewBlockProps) {
   const cards = section.cards ?? []
 
   return (
-    <SectionWrapper className="bg-[#1b1727]">
+    <SectionWrapper className="bg-cs-surface-alt">
       <SectionContainer className="container mx-auto max-w-6xl px-6 py-16 md:py-20">
         <CardGrid>
           {cards.map((card, index) => (

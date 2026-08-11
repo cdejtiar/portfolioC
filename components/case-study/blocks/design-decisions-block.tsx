@@ -21,7 +21,7 @@ export function DesignDecisionsBlock({
   const decisions = section.decisions ?? []
 
   return (
-    <SectionWrapper className="bg-[#292534]">
+    <SectionWrapper className="bg-cs-surface-accent">
       <SectionContainer>
         <div className="mb-12">
           {section.eyebrow && <SectionEyebrow>{section.eyebrow}</SectionEyebrow>}
@@ -36,7 +36,7 @@ export function DesignDecisionsBlock({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.06 }}
-              className="rounded-lg border border-white/[0.06] bg-[#100c19] p-6"
+              className="rounded-lg border border-cs-hairline bg-cs-surface p-6"
             >
               <h3 className="text-sm font-semibold text-foreground">
                 {decision.title}

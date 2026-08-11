@@ -87,7 +87,7 @@ export function HeroBlock({ section, project, language }: HeroBlockProps) {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#171323] to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cs-surface-alt to-transparent" />
     </motion.header>
   )
 }
