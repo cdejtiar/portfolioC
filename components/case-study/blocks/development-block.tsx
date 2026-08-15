@@ -3,6 +3,7 @@
 import type { Project } from "@/lib/projects"
 import type { CaseStudyLocale, ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
+  FormattedText,
   SectionContainer,
   SectionDescription,
   SectionEyebrow,
@@ -40,9 +41,10 @@ export function DevelopmentBlock({
               <p className="text-[9px] uppercase tracking-[0.28em] text-primary">
                 {language === "es" ? "Arquitectura" : "Architecture"}
               </p>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                {section.body}
-              </p>
+              <FormattedText
+                text={section.body}
+                className="mt-4 text-sm leading-7 text-muted-foreground"
+              />
             </div>
           )}
 
@@ -55,7 +57,10 @@ export function DevelopmentBlock({
               </p>
               <ul className="mt-4 space-y-2 text-sm leading-6 text-muted-foreground">
                 {repoHighlights.map((item) => (
-                  <li key={item}>• {item}</li>
+                  <li key={item} className="flex gap-2">
+                    <span>•</span>
+                    <FormattedText text={item} className="inline" />
+                  </li>
                 ))}
               </ul>
             </div>

@@ -1,5 +1,4 @@
 "use client"
-
 import type { Project } from "@/lib/projects"
 import {
   resolveCaseStudySections,
@@ -87,14 +86,6 @@ function renderSection(
           resolveImage={resolveImage}
         />
       )
-    case "results":
-      return (
-        <ResultsBlock
-          key={section.id}
-          section={section}
-          language={language}
-        />
-      )
     case "before-after":
       return (
         <BeforeAfterBlock
@@ -123,11 +114,28 @@ export function CaseStudyRenderer({
     language,
   )
 
-  return (
-    <>
-      {sections.map((section) =>
-        renderSection(section, { project, language, resolveImage }),
-      )}
-    </>
-  )
+  // "result" y "learnings" se fusionan en un único ResultsBlock con dos
+  // columnas. Se renderiza en la posición del primero que aparezca;
+  // el segundo se descarta para no duplicar contenido.
+  const resultSection = sections.find((s) => s.type === "result")
+  const learningsSection = sections.find((s) => s.type === "learnings")
+  const mergedAtId = resultSection?.id ?? learningsSection?.id
+
+  const rendered = sections
+    .filter((section) => !(section.type === "learnings" && resultSection))
+    .map((section) => {
+      if (section.id === mergedAtId && (resultSection || learningsSection)) {
+        return (
+          <ResultsBlock
+            key={section.id}
+            resultSection={resultSection}
+            learningsSection={learningsSection}
+            language={language}
+          />
+        )
+      }
+      return renderSection(section, { project, language, resolveImage })
+    })
+
+  return <>{rendered}</>
 }

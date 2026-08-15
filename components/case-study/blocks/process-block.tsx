@@ -13,6 +13,7 @@ import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import type { ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
+  FormattedText,
   SectionContainer,
   SectionEyebrow,
   SectionTitle,
@@ -123,9 +124,10 @@ export function ProcessBlock({ section }: ProcessBlockProps) {
                       {step.title}
                     </p>
 
-                    <p className="mx-auto mt-3 max-w-[130px] text-[10px] leading-5 text-muted-foreground">
-                      {step.description}
-                    </p>
+                    <FormattedText
+                      text={step.description}
+                      className="mx-auto mt-3 max-w-[130px] text-[10px] leading-5 text-muted-foreground"
+                    />
                   </motion.div>
                 )
               })}

@@ -1,5 +1,4 @@
 "use client"
-
 import { motion } from "framer-motion"
 import type { ReactNode } from "react"
 
@@ -61,6 +60,47 @@ export function SectionTitle({
   return <h2 className={className}>{children}</h2>
 }
 
+/**
+ * Renderiza texto plano soportando **negrita** y saltos de línea (\n).
+ * Punto único de verdad para el parseo de formato en todo el case study.
+ */
+export function FormattedText({
+  text,
+  className,
+}: {
+  text: string
+  className?: string
+}) {
+  return (
+    <div className={className}>
+      {text.split("\n").map((line, lineIndex) => (
+        <p key={lineIndex} className="mb-3 last:mb-0">
+          {line.split(/(\*\*.*?\*\*|→)/g).map((part, i) => {
+            if (part === "→") {
+              return (
+                <span
+                  key={i}
+                  className="mt-3 font-superlobster text-2xl text-foreground md:text-3xl"
+                >
+                  →
+                </span>
+              )
+            }
+            if (part.startsWith("**") && part.endsWith("**")) {
+              return (
+                <strong key={i} className="font-semibold text-foreground">
+                  {part.slice(2, -2)}
+                </strong>
+              )
+            }
+            return <span key={i}>{part}</span>
+          })}
+        </p>
+      ))}
+    </div>
+  )
+}
+
 export function SectionDescription({
   children,
   className = "mt-5 text-sm leading-7 text-muted-foreground",
@@ -68,6 +108,11 @@ export function SectionDescription({
   children: ReactNode
   className?: string
 }) {
+  // Si viene un string (el caso normal, texto de contenido), se parsea con FormattedText.
+  // Si viene JSX ya armado desde algún bloque puntual, se respeta tal cual.
+  if (typeof children === "string") {
+    return <FormattedText text={children} className={className} />
+  }
   return <p className={className}>{children}</p>
 }
 
@@ -91,7 +136,10 @@ export function InfoCard({
       <p className="text-[9px] uppercase tracking-[0.28em] text-muted-foreground">
         {label}
       </p>
-      <p className="mt-4 text-xs leading-6 text-foreground/90">{value}</p>
+      <FormattedText
+        text={value}
+        className="mt-4 text-xs leading-6 text-foreground/90"
+      />
     </motion.div>
   )
 }

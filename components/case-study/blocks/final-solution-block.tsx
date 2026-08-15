@@ -1,22 +1,26 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import type { Project } from "@/lib/projects"
-import type { CaseStudyLocale, ResolvedCaseStudySection } from "@/lib/case-study/types"
-import { caseStudyTranslations } from "@/lib/case-study/translations"
+import { motion } from "framer-motion";
+import type { Project } from "@/lib/projects";
+import type {
+  CaseStudyLocale,
+  ResolvedCaseStudySection,
+} from "@/lib/case-study/types";
+import { caseStudyTranslations } from "@/lib/case-study/translations";
 import {
+  FormattedText,
   SectionContainer,
   SectionDescription,
   SectionEyebrow,
   SectionTitle,
   SectionWrapper,
-} from "../shared/section-primitives"
+} from "../shared/section-primitives";
 
 interface FinalSolutionBlockProps {
-  section: ResolvedCaseStudySection
-  project: Project
-  language: CaseStudyLocale
-  resolveImage: (img?: string) => string
+  section: ResolvedCaseStudySection;
+  project: Project;
+  language: CaseStudyLocale;
+  resolveImage: (img?: string) => string;
 }
 
 export function FinalSolutionBlock({
@@ -25,8 +29,8 @@ export function FinalSolutionBlock({
   language,
   resolveImage,
 }: FinalSolutionBlockProps) {
-  const t = caseStudyTranslations[language]
-  const features = section.items ?? project.features
+  const t = caseStudyTranslations[language];
+  const bodyIsFlow = section.body?.includes("→") ?? false;
 
   return (
     <SectionWrapper>
@@ -45,46 +49,40 @@ export function FinalSolutionBlock({
           )}
         </div>
 
-        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="flex flex-col items-center">
           <motion.div
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden rounded-xl"
+            className="flex justify-center overflow-hidden rounded-xl"
           >
             <img
               src={resolveImage(section.image ?? project.image)}
               alt={`${project.title} final interface`}
-              className="h-[360px] w-full object-cover md:h-[480px]"
+              className="h-auto max-h-[560px] w-auto max-w-[85%] object-contain"
             />
           </motion.div>
 
-          <div>
-            {section.subtitle && (
-              <h3 className="text-xl font-semibold text-foreground">
-                {section.subtitle}
-              </h3>
-            )}
+          {section.subtitle && (
+            <h3 className="mt-10 text-center text-xl font-semibold text-foreground">
+              {section.subtitle}
+            </h3>
+          )}
 
-            {section.body && (
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                {section.body}
-              </p>
-            )}
-
-            <div className="mt-7 space-y-4">
-              {features.map((feature) => (
-                <div
-                  key={feature}
-                  className="flex items-start gap-3 text-sm leading-6 text-muted-foreground"
-                >
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  <span>{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          {section.body && !bodyIsFlow && (
+            <FormattedText
+              text={section.body}
+              className="mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-muted-foreground"
+            />
+          )}
         </div>
+
+        {section.body && bodyIsFlow && (
+          <FormattedText
+            text={section.body}
+            className="mx-auto mt-14 max-w-3xl text-center text-base leading-9 text-foreground/90 md:text-lg"
+          />
+        )}
       </SectionContainer>
     </SectionWrapper>
-  )
+  );
 }

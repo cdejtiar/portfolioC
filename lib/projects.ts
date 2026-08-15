@@ -55,7 +55,7 @@ export const projectsByLocale: Record<"es" | "en", Project[]> = {
       id: "1",
       title: "Y Ahora Qué?",
       description:
-        "Solución digital para descubrir qué ver después de terminar una serie o película",
+        "Diseño de una experiencia personalizada para terminar con la indecisión al elegir contenido en streaming, utilizando filtros empáticos basados en el estado de ánimo",
       fullDescription: `Y Ahora Qué? nació en 2021 durante una Hackathon de la Universidad Maimónides, mi primera experiencia en el concurso. Durante dos semanas intensas de workshops y trabajo en equipo, desarrollamos un prototipo funcional que presentamos frente a un jurado.
 El proyecto surge de una situación común: terminar una serie o película y no saber qué ver a continuación.
 Durante la fase de Research, realizamos una lluvia de ideas sobre el mundo de las series y el entretenimiento, identificando una problemática clara: la saturación de opciones y el poco tiempo para decidir.

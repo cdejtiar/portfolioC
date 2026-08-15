@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import type { ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
+  FormattedText,
   SectionContainer,
   SectionDescription,
   SectionEyebrow,
@@ -57,10 +58,11 @@ export function ResearchBlock({ section }: ResearchBlockProps) {
                 transition={{ delay: index * 0.08 }}
                 className="rounded-xl border border-cs-hairline bg-cs-card p-6"
               >
-                <span className="font-serif text-xl text-primary/70">“</span>
-                <p className="mt-2 text-sm leading-7 text-foreground/90">
-                  {item.detail}
-                </p>
+                <span className="font-serif text-xl text-primary/70">"</span>
+                <FormattedText
+                  text={item.detail}
+                  className="mt-2 text-sm leading-7 text-foreground/90"
+                />
                 <p className="mt-5 text-[9px] uppercase tracking-[0.22em] text-muted-foreground">
                   — {item.title}
                 </p>

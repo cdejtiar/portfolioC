@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import type { CaseStudyLocale, ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
+  FormattedText,
   SectionContainer,
   SectionEyebrow,
   SectionTitle,
@@ -47,27 +48,30 @@ export function DesignDecisionsBlock({
                   <p className="text-[8px] uppercase tracking-[0.25em] text-primary">
                     {language === "es" ? "Problema" : "Problem"}
                   </p>
-                  <p className="mt-2 text-[11px] leading-5 text-muted-foreground">
-                    {decision.problem}
-                  </p>
+                  <FormattedText
+                    text={decision.problem}
+                    className="mt-2 text-[11px] leading-5 text-muted-foreground"
+                  />
                 </div>
 
                 <div>
                   <p className="text-[8px] uppercase tracking-[0.25em] text-primary">
                     {language === "es" ? "Decisión" : "Decision"}
                   </p>
-                  <p className="mt-2 text-[11px] leading-5 text-muted-foreground">
-                    {decision.decision}
-                  </p>
+                  <FormattedText
+                    text={decision.decision}
+                    className="mt-2 text-[11px] leading-5 text-muted-foreground"
+                  />
                 </div>
 
                 <div>
                   <p className="text-[8px] uppercase tracking-[0.25em] text-primary">
                     {language === "es" ? "Impacto" : "Impact"}
                   </p>
-                  <p className="mt-2 text-[11px] leading-5 text-muted-foreground">
-                    {decision.impact}
-                  </p>
+                  <FormattedText
+                    text={decision.impact}
+                    className="mt-2 text-[11px] leading-5 text-muted-foreground"
+                  />
                 </div>
               </div>
             </motion.div>

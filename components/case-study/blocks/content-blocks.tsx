@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import type { ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
   CardGrid,
+  FormattedText,
   InfoCard,
   SectionContainer,
   SectionDescription,
@@ -34,9 +35,7 @@ export function TextBlock({ section }: TextBlockProps) {
             <SectionDescription>{section.description}</SectionDescription>
           )}
           {section.body && (
-            <p className="mt-6 text-sm leading-7 text-muted-foreground md:text-base">
-              {section.body}
-            </p>
+            <FormattedText text={section.body} className="mt-6 text-sm leading-7 text-muted-foreground md:text-base" />
           )}
         </div>
 
@@ -48,7 +47,7 @@ export function TextBlock({ section }: TextBlockProps) {
                 className="flex items-start gap-3 text-sm leading-6 text-muted-foreground"
               >
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span>{item}</span>
+                <FormattedText text={item} className="text-sm leading-6 text-muted-foreground md:text-base" />
               </div>
             ))}
           </div>
@@ -107,9 +106,10 @@ export function CardsBlock({ section }: CardsBlockProps) {
               <h3 className="text-sm font-semibold text-foreground">
                 {card.title}
               </h3>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                {card.description}
-              </p>
+              <FormattedText
+                text={card.description}
+                className="mt-4 text-sm leading-7 text-muted-foreground"
+              />
             </motion.div>
           ))}
         </div>
@@ -156,9 +156,10 @@ export function BeforeAfterBlock({
                   className="mt-4 h-48 w-full rounded-lg object-cover"
                 />
               )}
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                {side.description}
-              </p>
+              <FormattedText
+                text={side.description}
+                className="mt-4 text-sm leading-7 text-muted-foreground"
+              />
             </div>
           ))}
         </div>
