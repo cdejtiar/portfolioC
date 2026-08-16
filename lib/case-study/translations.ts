@@ -28,6 +28,9 @@ type CaseStudyUiKey =
   | "finalSolution"
   | "results"
   | "learnings"
+  | "projectType"
+  | "nextProject"
+  | "viewProject"
 
 export type CaseStudyTranslations = Record<CaseStudyUiKey, string> &
   Record<CaseStudyBlockType, string>
@@ -44,6 +47,9 @@ const es: CaseStudyTranslations = {
   tools: "Herramientas",
   outcome: "Resultado",
   year: "Año",
+  projectType: "Tipo de proyecto",
+  nextProject: "Siguiente proyecto",
+  viewProject: "Ver proyecto",
   problemOpportunity: "Problema y oportunidad",
   process: "Proceso de diseño",
   research: "Investigación y descubrimientos",
@@ -107,6 +113,9 @@ const en: CaseStudyTranslations = {
   tools: "Tools",
   outcome: "Outcome",
   year: "Year",
+  projectType: "Project type",
+  nextProject: "Next project",
+  viewProject: "View project",
   problemOpportunity: "Problem and opportunity",
   process: "Design process",
   research: "Research and insights",

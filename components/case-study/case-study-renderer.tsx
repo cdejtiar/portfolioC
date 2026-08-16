@@ -3,6 +3,7 @@ import type { Project } from "@/lib/projects"
 import {
   resolveCaseStudySections,
   resolveProjectSections,
+  type CaseStudyCard,
   type CaseStudyLocale,
   type ResolvedCaseStudySection,
 } from "@/lib/case-study"
@@ -28,32 +29,38 @@ interface CaseStudyRendererProps {
   resolveImage: (img?: string) => string
 }
 
+// Los archivos de contenido deben titular estas cards de "metadata" así
+// (ES/EN) para que el Hero pueda extraerlas automáticamente.
+const TYPE_LABELS = ["Tipo de proyecto", "Project type"]
+const YEAR_LABELS = ["Año", "Year"]
+const TOOLS_LABELS = ["Herramientas", "Tools"]
+
+function findCard(
+  cards: CaseStudyCard[] | undefined,
+  labels: string[],
+): CaseStudyCard | undefined {
+  return cards?.find((card) => labels.includes(card.title))
+}
+
 function renderSection(
   section: ResolvedCaseStudySection,
   props: CaseStudyRendererProps,
+  overrideCards?: CaseStudyCard[],
 ) {
   const { project, language, resolveImage } = props
   const layout = getBlockLayout(section.type)
 
   switch (layout) {
-    case "hero":
+    case "overview":
       return (
-        <HeroBlock
+        <OverviewBlock
           key={section.id}
-          section={section}
-          project={project}
-          language={language}
+          section={overrideCards ? { ...section, cards: overrideCards } : section}
         />
       )
-    case "overview":
-      return <OverviewBlock key={section.id} section={section} />
     case "problem":
       return (
-        <ProblemBlock
-          key={section.id}
-          section={section}
-          language={language}
-        />
+        <ProblemBlock key={section.id} section={section} language={language} />
       )
     case "timeline":
       return <ProcessBlock key={section.id} section={section} />
@@ -108,23 +115,45 @@ export function CaseStudyRenderer({
   resolveImage,
 }: CaseStudyRendererProps) {
   const sectionConfigs = resolveProjectSections(project, language)
-  const sections = resolveCaseStudySections(
-    sectionConfigs,
-    project,
-    language,
-  )
+  const sections = resolveCaseStudySections(sectionConfigs, project, language)
 
-  // "result" y "learnings" se fusionan en un único ResultsBlock con dos
-  // columnas. Se renderiza en la posición del primero que aparezca;
-  // el segundo se descarta para no duplicar contenido.
+  // "metadata" se reparte: tipo + año van al Hero, herramientas se suma a
+  // las cards de overview. La sección metadata en sí nunca se renderiza.
+  const metadataSection = sections.find((s) => s.type === "metadata")
+  const overviewSection = sections.find((s) => s.type === "overview")
+
+  const projectType = findCard(metadataSection?.cards, TYPE_LABELS)?.description
+  const projectYear = findCard(metadataSection?.cards, YEAR_LABELS)?.description
+  const toolsCard = findCard(metadataSection?.cards, TOOLS_LABELS)
+
+  const overviewCards = overviewSection?.cards
+    ? [...overviewSection.cards.slice(0, 2), ...(toolsCard ? [toolsCard] : [])]
+    : undefined
+
+  // "result" + "learnings" fusionados en un único ResultsBlock de dos
+  // columnas (ver ResultsBlock).
   const resultSection = sections.find((s) => s.type === "result")
   const learningsSection = sections.find((s) => s.type === "learnings")
-  const mergedAtId = resultSection?.id ?? learningsSection?.id
+  const mergedResultsAtId = resultSection?.id ?? learningsSection?.id
 
   const rendered = sections
+    .filter((section) => section.type !== "metadata")
     .filter((section) => !(section.type === "learnings" && resultSection))
     .map((section) => {
-      if (section.id === mergedAtId && (resultSection || learningsSection)) {
+      if (section.type === "hero") {
+        return (
+          <HeroBlock
+            key={section.id}
+            section={section}
+            project={project}
+            language={language}
+            projectType={projectType}
+            year={projectYear}
+          />
+        )
+      }
+
+      if (section.id === mergedResultsAtId && (resultSection || learningsSection)) {
         return (
           <ResultsBlock
             key={section.id}
@@ -134,6 +163,11 @@ export function CaseStudyRenderer({
           />
         )
       }
+
+      if (section.id === overviewSection?.id) {
+        return renderSection(section, { project, language, resolveImage }, overviewCards)
+      }
+
       return renderSection(section, { project, language, resolveImage })
     })
 

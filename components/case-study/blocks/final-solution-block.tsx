@@ -53,7 +53,12 @@ export function FinalSolutionBlock({
           <motion.div
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.3 }}
-            className="flex justify-center overflow-hidden rounded-xl"
+            className="flex justify-center rounded-xl"
+            style={{
+              willChange: "transform",
+              backfaceVisibility: "hidden",
+              transform: "translateZ(0)",
+            }}
           >
             <img
               src={resolveImage(section.image ?? project.image)}

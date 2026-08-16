@@ -7,6 +7,7 @@ import { useMemo } from "react";
 import { projectsByLocale } from "@/lib/projects";
 import { caseStudyTranslations } from "@/lib/case-study/translations";
 import { CaseStudyRenderer } from "@/components/case-study";
+import { NextProjectCard } from "../../../components/case-study/next-project-card";
 import { SidebarNavigation } from "@/components/sidebar-navigation";
 import { useLanguage } from "@/components/language-provider";
 
@@ -42,6 +43,14 @@ export default function ProjectPage() {
     return projectsByLocale[language].find((p) => p.id === projectId) ?? null;
   }, [params.id, language]);
 
+  const nextProject = useMemo(() => {
+    if (!project) return null;
+    const list = projectsByLocale[language];
+    const currentIndex = list.findIndex((p) => p.id === project.id);
+    if (currentIndex === -1 || list.length < 2) return null;
+    return list[(currentIndex + 1) % list.length];
+  }, [project, language]);
+
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -68,6 +77,14 @@ export default function ProjectPage() {
         language={language}
         resolveImage={resolveImage}
       />
+
+      {nextProject && (
+        <NextProjectCard
+          project={nextProject}
+          language={language}
+          resolveImage={resolveImage}
+        />
+      )}
     </div>
   );
 }

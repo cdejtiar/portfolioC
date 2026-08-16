@@ -137,6 +137,7 @@ export default defineCaseStudy({
       description:
         "Y Ahora Qué? conecta los distintos **servicios de streaming** que usa una persona y ofrece **recomendaciones más personalizadas**.",
       body: "La experiencia reemplaza el recorrido de \n**buscar → comparar → dudar → abandonar**\n por \n**contar qué querés ver → recibir opciones → elegir → mirar**.",
+      image: "../../../public/images/yahoraque-screens.png"
     },
     {
       type: "result",
@@ -294,6 +295,7 @@ export default defineCaseStudy({
       description:
         "Y Ahora Qué? connects the different **streaming services** a person uses and offers **more personalized recommendations**.",
       body: "The experience replaces the loop of \n**search → compare → hesitate → give up**\n with \n**say what you feel like watching → get options → choose → watch**.",
+      image: "../../../public/images/yahoraque-screens.png",
       items: [
         "Empathetic filters.",
         "Personalized recommendations.",
