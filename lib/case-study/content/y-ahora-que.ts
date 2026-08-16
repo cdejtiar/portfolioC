@@ -306,7 +306,7 @@ export default defineCaseStudy({
     },
     {
       type: "result",
-      title: "Result",
+      title: "Results",
       description:
         "Y Ahora Qué? turned an **everyday situation into an opportunity** to simplify decision-making inside an ecosystem saturated with content.",
       items: [
