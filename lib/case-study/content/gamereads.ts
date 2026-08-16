@@ -37,19 +37,19 @@ export default defineCaseStudy({
     {
       type: "context",
       title: "El proyecto",
-      body: "GameReads fue desarrollado durante la materia Sistemas Gamificados.\nLa propuesta consiste en una aplicación móvil que utiliza estrategias de gamificación para motivar a las personas a leer más, mientras facilita el descubrimiento de nuevos libros y la conexión con otros lectores.",
+      body: "GameReads fue desarrollado durante la materia Sistemas Gamificados.\nLa propuesta consiste en una aplicación móvil que utiliza **estrategias de gamificación** para motivar a las personas a leer más, mientras facilita el **descubrimiento de nuevos libros** y la conexión con otros lectores.",
     },
     {
       type: "challenge",
       title: "Gamificar sin quedarse en el registro",
-      body: "El proyecto parte de una pregunta: ¿cómo podemos utilizar dinámicas de juego para transformar el seguimiento de lecturas en una experiencia que motive a continuar leyendo?",
+      body: "El proyecto parte de una pregunta: ¿cómo podemos utilizar **dinámicas de juego** para transformar el seguimiento de lecturas en una experiencia que motive a continuar leyendo?",
       description:
-        "La propuesta no busca solamente registrar libros terminados, sino crear un sistema que genere un cambio positivo en el comportamiento.",
+        "La propuesta no busca solamente registrar libros terminados, sino crear un sistema que genere un **cambio positivo en el comportamiento**.",
     },
     {
       type: "concept",
       title: "Registrar → Descubrir → Conectar",
-      body: "La experiencia combina tres dimensiones: los usuarios pueden registrar sus lecturas, recibir recomendaciones basadas en sus intereses y relacionarse con personas con gustos similares.\nTambién pueden compartir puntuaciones, opiniones y críticas.",
+      body: "La experiencia combina tres dimensiones: los usuarios pueden **registrar sus lecturas**, recibir **recomendaciones basadas en sus intereses** y relacionarse con personas con gustos similares.\nTambién pueden compartir puntuaciones, opiniones y críticas.",
     },
     {
       type: "design-decisions",
@@ -60,34 +60,34 @@ export default defineCaseStudy({
           problem:
             "Las dinámicas de juego podían quedar como una capa decorativa sin relación con el objetivo.",
           decision:
-            "Estructurar la propuesta con un Gamification Canvas para definir cómo cada dinámica acompaña el objetivo principal.",
+            "Estructurar la propuesta con un **Gamification Canvas** para definir cómo cada dinámica acompaña el objetivo principal.",
           impact:
-            "La gamificación quedó ligada al hábito de lectura en lugar de funcionar como un elemento aislado.",
+            "La gamificación quedó **ligada al hábito de lectura** en lugar de funcionar como un elemento aislado.",
         },
       ],
     },
     {
       type: "design-process",
       title: "Del análisis al prototipo",
-      body: "Después del análisis de diferentes plataformas existentes, desarrollé el User Flow y el prototipo funcional de la aplicación.",
+      body: "Después del análisis de diferentes plataformas existentes, desarrollé el **User Flow** y el **prototipo funcional** de la aplicación.",
     },
     {
       type: "final-solution",
       title: "Funcionalidades principales",
       items: [
-        "Registro de lecturas.",
-        "Recomendaciones personalizadas.",
-        "Calificación de libros.",
-        "Compartir opiniones.",
-        "Conexión entre lectores.",
-        "Sistema de puntuaciones.",
+        "**Registro de lecturas**.",
+        "**Recomendaciones personalizadas**.",
+        "**Calificación de libros**.",
+        "**Compartir opiniones**.",
+        "**Conexión entre lectores**.",
+        "**Sistema de puntuaciones**.",
       ],
     },
     {
       type: "result",
       title: "Resultado",
       description:
-        "GameReads propone transformar una actividad individual en una experiencia que combina seguimiento personal, descubrimiento y comunidad.",
+        "GameReads propone transformar una **actividad individual** en una experiencia que combina seguimiento personal, descubrimiento y comunidad.",
     },
   ],
   en: [
@@ -126,19 +126,19 @@ export default defineCaseStudy({
     {
       type: "context",
       title: "The project",
-      body: "GameReads was built during the Gamified Systems course.\nIt is a mobile app that uses gamification strategies to motivate people to read more, while making it easier to discover new books and connect with other readers.",
+      body: "GameReads was built during the Gamified Systems course.\nIt is a mobile app that uses **gamification strategies** to motivate people to read more, while making it easier to **discover new books** and connect with other readers.",
     },
     {
       type: "challenge",
       title: "Gamifying beyond tracking",
-      body: "The project starts from a question: how can we use game dynamics to turn reading tracking into an experience that motivates people to keep reading?",
+      body: "The project starts from a question: how can we use **game dynamics** to turn reading tracking into an experience that motivates people to keep reading?",
       description:
-        "The goal isn't only logging finished books, but building a system that drives a positive behaviour change.",
+        "The goal isn't only logging finished books, but building a system that drives a **positive behaviour change**.",
     },
     {
       type: "concept",
       title: "Track → Discover → Connect",
-      body: "The experience combines three dimensions: users can log their reading, get recommendations based on their interests, and connect with people who share similar taste.\nThey can also share ratings, opinions, and reviews.",
+      body: "The experience combines three dimensions: users can **log their reading**, get **recommendations based on their interests**, and connect with people who share similar taste.\nThey can also share ratings, opinions, and reviews.",
     },
     {
       type: "design-decisions",
@@ -149,34 +149,34 @@ export default defineCaseStudy({
           problem:
             "Game dynamics risked becoming a decorative layer disconnected from the goal.",
           decision:
-            "Structure the proposal with a Gamification Canvas to define how each dynamic supports the main objective.",
+            "Structure the proposal with a **Gamification Canvas** to define how each dynamic supports the main objective.",
           impact:
-            "Gamification stayed tied to the reading habit instead of working as an isolated element.",
+            "Gamification stayed **tied to the reading habit** instead of working as an isolated element.",
         },
       ],
     },
     {
       type: "design-process",
       title: "From analysis to prototype",
-      body: "After analysing several existing platforms, I built the user flow and the working prototype of the app.",
+      body: "After analysing several existing platforms, I built the **user flow** and the **working prototype** of the app.",
     },
     {
       type: "final-solution",
       title: "Key features",
       items: [
-        "Reading log.",
-        "Personalized recommendations.",
-        "Book ratings.",
-        "Sharing opinions.",
-        "Connection between readers.",
-        "Points system.",
+        "**Reading log**.",
+        "**Personalized recommendations**.",
+        "**Book ratings**.",
+        "**Sharing opinions**.",
+        "**Connection between readers**.",
+        "**Points system**.",
       ],
     },
     {
       type: "result",
       title: "Result",
       description:
-        "GameReads turns an individual activity into an experience that combines personal tracking, discovery, and community.",
+        "GameReads turns an **individual activity** into an experience that combines personal tracking, discovery, and community.",
     },
   ],
 })
