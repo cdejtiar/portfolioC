@@ -82,6 +82,7 @@ export default defineCaseStudy({
         "**Conexión entre lectores**.",
         "**Sistema de puntuaciones**.",
       ],
+      image: "../../../public/images/gamereads-screens.png"
     },
     {
       type: "result",
@@ -171,6 +172,7 @@ export default defineCaseStudy({
         "**Connection between readers**.",
         "**Points system**.",
       ],
+      image: "../../../public/images/gamereads-screens.png"
     },
     {
       type: "result",

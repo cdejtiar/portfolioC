@@ -180,7 +180,7 @@ export function resolveCaseStudySection(
           title: section.title ?? label,
           description: section.description ?? project.finalSolution,
           body: section.body ?? project.finalSolution ?? project.solution,
-          items: section.items ?? project.features,
+          items: section.items,
           image: section.image ?? project.image,
         }
         return resolved.body || resolved.description || resolved.items?.length

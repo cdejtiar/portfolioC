@@ -296,13 +296,6 @@ export default defineCaseStudy({
         "Y Ahora Qué? connects the different **streaming services** a person uses and offers **more personalized recommendations**.",
       body: "The experience replaces the loop of \n**search → compare → hesitate → give up**\n with \n**say what you feel like watching → get options → choose → watch**.",
       image: "../../../public/images/yahoraque-screens.png",
-      items: [
-        "Empathetic filters.",
-        "Personalized recommendations.",
-        "Streaming platform linking.",
-        "Direct redirection to the content.",
-        "Groundwork for future social experiences.",
-      ],
     },
     {
       type: "result",

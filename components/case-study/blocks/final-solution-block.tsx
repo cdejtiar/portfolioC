@@ -31,6 +31,9 @@ export function FinalSolutionBlock({
 }: FinalSolutionBlockProps) {
   const t = caseStudyTranslations[language];
   const bodyIsFlow = section.body?.includes("→") ?? false;
+  const items = section.items ?? [];
+  const hasItems = items.length > 0;
+  const image = section.image;
 
   return (
     <SectionWrapper>
@@ -50,25 +53,8 @@ export function FinalSolutionBlock({
         </div>
 
         <div className="flex flex-col items-center">
-          <motion.div
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.3 }}
-            className="flex justify-center rounded-xl"
-            style={{
-              willChange: "transform",
-              backfaceVisibility: "hidden",
-              transform: "translateZ(0)",
-            }}
-          >
-            <img
-              src={resolveImage(section.image ?? project.image)}
-              alt={`${project.title} final interface`}
-              className="h-auto max-h-[560px] w-auto max-w-[85%] object-contain"
-            />
-          </motion.div>
-
           {section.subtitle && (
-            <h3 className="mt-10 text-center text-xl font-semibold text-foreground">
+            <h3 className="text-center text-xl font-semibold text-foreground">
               {section.subtitle}
             </h3>
           )}
@@ -84,8 +70,59 @@ export function FinalSolutionBlock({
         {section.body && bodyIsFlow && (
           <FormattedText
             text={section.body}
-            className="mx-auto mt-14 max-w-3xl text-center text-base leading-9 text-foreground/90 md:text-lg"
+            className="mx-auto mt-4 max-w-3xl text-center text-base leading-9 text-foreground/90 md:text-lg"
           />
+        )}
+
+        {hasItems && (
+          <div
+            className={`mx-auto max-w-4xl ${
+              section.body || section.subtitle ? "mt-14" : "mt-2"
+            }`}
+          >
+            <div className="grid gap-x-10 sm:grid-cols-2">
+              {items.map((item, index) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.06, duration: 0.45 }}
+                  className="flex items-start gap-4 border-b border-cs-hairline py-5"
+                >
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <FormattedText
+                    text={item}
+                    className="text-sm leading-6 text-muted-foreground md:text-base"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {image && (
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ scale: 1.01 }}
+            className={`flex justify-center rounded-xl ${
+              hasItems || section.body || section.subtitle ? "mt-16" : "mt-4"
+            }`}
+            style={{
+              willChange: "transform",
+              backfaceVisibility: "hidden",
+              transform: "translateZ(0)",
+            }}
+          >
+            <img
+              src={resolveImage(image)}
+              alt={`${project.title} final interface`}
+              className="h-auto max-h-[560px] w-auto max-w-[85%] object-contain"
+            />
+          </motion.div>
         )}
       </SectionContainer>
     </SectionWrapper>
