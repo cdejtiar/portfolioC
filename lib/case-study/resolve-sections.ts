@@ -48,6 +48,7 @@ function hasContent(section: ResolvedCaseStudySection): boolean {
       section.subtitle ||
       section.description ||
       section.body ||
+      section.images?.length ||
       section.items?.length ||
       section.cards?.length ||
       section.highlights?.length ||
@@ -83,6 +84,7 @@ export function resolveCaseStudySection(
     beforeAfter: section.beforeAfter,
     sideHighlight: section.sideHighlight,
     image: section.image,
+    images: section.images,
     variant: section.variant,
   }
 

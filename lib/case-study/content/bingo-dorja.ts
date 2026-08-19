@@ -1,4 +1,4 @@
-import { defineCaseStudy } from "./define"
+import { defineCaseStudy } from "./define";
 
 export default defineCaseStudy({
   es: [
@@ -25,7 +25,10 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Tipo de proyecto", description: "Proyecto personal · Frontend Development" },
+        {
+          title: "Tipo de proyecto",
+          description: "Proyecto personal · Frontend Development",
+        },
         { title: "Año", description: "2025" },
         { title: "Tecnologías", description: "HTML · CSS · JavaScript" },
       ],
@@ -53,8 +56,17 @@ export default defineCaseStudy({
       body: "Además de la funcionalidad, el proyecto buscó construir una estética propia para Dorja.\nLa interfaz combina una **identidad cálida y lúdica** con una estructura simple, pensada para funcionar en contextos familiares y comunitarios.",
     },
     {
-      type: "features",
+      type: "process-gallery",
+      title: "El proceso", // en: "The process"
+      images: [
+        { src: "/images/bingo-dorja-process-1.png" },
+        { src: "/images/bingo-dorja-process-2.png" },
+      ],
+    },
+    {
+      type: "final-solution", // antes era "features"
       title: "Funcionalidades",
+      image: "/images/bingo-dorja-final.png",
       items: [
         "**Generador de números** del 1 al 90.",
         "**Resaltado de números sorteados**.",
@@ -94,7 +106,10 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Project type", description: "Personal project · Frontend Development" },
+        {
+          title: "Project type",
+          description: "Personal project · Frontend Development",
+        },
         { title: "Year", description: "2025" },
         { title: "Technologies", description: "HTML · CSS · JavaScript" },
       ],
@@ -122,8 +137,17 @@ export default defineCaseStudy({
       body: "Beyond functionality, the project built its own aesthetic for Dorja.\nThe interface pairs a **warm, playful identity** with a simple structure meant for family and community settings.",
     },
     {
-      type: "features",
+      type: "process-gallery",
+      title: "The process",
+      images: [
+        { src: "/images/bingo-dorja-process-1.png" },
+        { src: "/images/bingo-dorja-process-2.png" },
+      ],
+    },
+    {
+      type: "final-solution", // antes era "features"
       title: "Features",
+      image: "/images/bingo-dorja-final.png",
       items: [
         "**Number generator** from 1 to 90.",
         "**Highlighting of drawn numbers**.",
@@ -139,4 +163,4 @@ export default defineCaseStudy({
         "A small, direct tool that turns the traditional draw into a **more visual digital experience** while keeping the focus on the game.",
     },
   ],
-})
+});

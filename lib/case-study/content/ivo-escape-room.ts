@@ -1,4 +1,4 @@
-import { defineCaseStudy } from "./define"
+import { defineCaseStudy } from "./define";
 
 export default defineCaseStudy({
   es: [
@@ -26,11 +26,15 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Tipo de proyecto", description: "Proyecto colaborativo · UX/UI + Desarrollo" },
+        {
+          title: "Tipo de proyecto",
+          description: "Proyecto colaborativo · UX/UI + Desarrollo",
+        },
         { title: "Año", description: "2025" },
         {
           title: "Tecnologías",
-          description: "Stitch · v0 · TypeScript · Next.js · Tailwind CSS · GitHub Projects",
+          description:
+            "Stitch · v0 · TypeScript · Next.js · Tailwind CSS · GitHub Projects",
         },
       ],
     },
@@ -73,6 +77,19 @@ export default defineCaseStudy({
       body: "Las pruebas permitieron detectar **errores y problemas de comprensión** que fueron iterados durante las semanas previas a las jornadas.\nLas últimas pruebas lograron que los estudiantes pudieran **completar las salas sin inconvenientes**.",
     },
     {
+      type: "process-gallery",
+      title: "El proceso", // en: "The process"
+      images: [
+        { src: "/images/ivo-process-1.png" },
+        { src: "/images/ivo-process-2.png" },
+      ],
+    },
+    {
+      type: "final-solution",
+      title: "La sala en funcionamiento", // en: "The room in action"
+      image: "/images/ivo-final.png",
+    },
+    {
       type: "result",
       title: "Resultado",
       description:
@@ -112,11 +129,15 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Project type", description: "Collaborative project · UX/UI + Development" },
+        {
+          title: "Project type",
+          description: "Collaborative project · UX/UI + Development",
+        },
         { title: "Year", description: "2025" },
         {
           title: "Technologies",
-          description: "Stitch · v0 · TypeScript · Next.js · Tailwind CSS · GitHub Projects",
+          description:
+            "Stitch · v0 · TypeScript · Next.js · Tailwind CSS · GitHub Projects",
         },
       ],
     },
@@ -159,6 +180,19 @@ export default defineCaseStudy({
       body: "The tests surfaced **bugs and comprehension issues** that we iterated on during the weeks before the event.\nIn the final tests students **completed the rooms without trouble**.",
     },
     {
+      type: "process-gallery",
+      title: "The process",
+      images: [
+        { src: "/images/ivo-process-1.png" },
+        { src: "/images/ivo-process-2.png" },
+      ],
+    },
+    {
+      type: "final-solution",
+      title: "The room in action",
+      image: "/images/ivo-final.png",
+    },
+    {
       type: "result",
       title: "Result",
       description:
@@ -173,4 +207,4 @@ export default defineCaseStudy({
       ],
     },
   ],
-})
+});

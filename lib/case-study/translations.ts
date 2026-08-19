@@ -100,6 +100,7 @@ const es: CaseStudyTranslations = {
   concept: "Concepto",
   solution: "Solución",
   prototype: "Prototipo",
+  "process-gallery": "Imágenes del proceso",
 }
 
 const en: CaseStudyTranslations = {
@@ -167,6 +168,7 @@ const en: CaseStudyTranslations = {
   concept: "Concept",
   solution: "Solution",
   prototype: "Prototype",
+  "process-gallery": "Process images",
 }
 
 export const caseStudyTranslations: Record<CaseStudyLocale, CaseStudyTranslations> = {

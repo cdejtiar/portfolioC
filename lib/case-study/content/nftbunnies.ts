@@ -1,4 +1,4 @@
-import { defineCaseStudy } from "./define"
+import { defineCaseStudy } from "./define";
 
 export default defineCaseStudy({
   es: [
@@ -26,7 +26,10 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Tipo de proyecto", description: "Proyecto académico · Diseño + Desarrollo" },
+        {
+          title: "Tipo de proyecto",
+          description: "Proyecto académico · Diseño + Desarrollo",
+        },
         { title: "Año", description: "2022" },
         {
           title: "Tecnologías",
@@ -73,14 +76,17 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "technologies",
-      title: "Tecnologías",
-      items: [
-        "Procreate",
-        "JavaScript · Web3.js",
-        "HTML · CSS",
-        "Smart Contracts · Ethereum Testnet",
+      type: "process-gallery",
+      title: "El proceso", // en: "The process"
+      images: [
+        { src: "/images/nftbunnies-process-1.png" },
+        { src: "/images/nftbunnies-process-2.png" },
       ],
+    },
+    {
+      type: "final-solution",
+      title: "La colección terminada", // en: "The finished collection"
+      image: "/images/nftbunnies-final.png",
     },
     {
       type: "result",
@@ -115,7 +121,10 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Project type", description: "Academic project · Design + Development" },
+        {
+          title: "Project type",
+          description: "Academic project · Design + Development",
+        },
         { title: "Year", description: "2022" },
         {
           title: "Technologies",
@@ -162,14 +171,17 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "technologies",
-      title: "Technologies",
-      items: [
-        "Procreate",
-        "JavaScript · Web3.js",
-        "HTML · CSS",
-        "Smart Contracts · Ethereum Testnet",
+      type: "process-gallery",
+      title: "The process",
+      images: [
+        { src: "/images/nftbunnies-process-1.png" },
+        { src: "/images/nftbunnies-process-2.png" },
       ],
+    },
+    {
+      type: "final-solution",
+      title: "The finished collection",
+      image: "/images/nftbunnies-final.png",
     },
     {
       type: "result",
@@ -179,4 +191,4 @@ export default defineCaseStudy({
       body: "Beyond the visual outcome, it was a way to explore the relationship between **systems design, procedural generation, and web development**.",
     },
   ],
-})
+});

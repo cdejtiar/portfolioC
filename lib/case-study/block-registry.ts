@@ -21,6 +21,7 @@ export type CaseStudyBlockLayout =
   | "text"
   | "cards"
   | "before-after"
+  | "gallery"
 
 export interface CaseStudyBlockDefinition {
   type: CaseStudyBlockType
@@ -86,12 +87,17 @@ export const CASE_STUDY_BLOCK_REGISTRY: Record<
     category: "design",
     layout: "text",
   },
+  "process-gallery": {
+    type: "process-gallery",
+    category: "design",
+    layout: "gallery",
+  },
   concept: { type: "concept", category: "design", layout: "text" },
   testing: { type: "testing", category: "validation", layout: "text" },
   "testing-results": {
     type: "testing-results",
     category: "validation",
-    layout: "cards",
+    layout: "text",
   },
   iterations: { type: "iterations", category: "validation", layout: "text" },
   "before-after": {

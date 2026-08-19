@@ -1,15 +1,12 @@
 import type { Project } from "@/lib/projects"
 
-/** All supported case study block types, grouped by category. */
 export type CaseStudyBlockType =
-  // General
   | "hero"
   | "overview"
   | "metadata"
   | "role"
   | "year"
   | "tools"
-  // UX / Research
   | "context"
   | "problem"
   | "opportunity"
@@ -20,7 +17,6 @@ export type CaseStudyBlockType =
   | "journey"
   | "user-flow"
   | "information-architecture"
-  // Design
   | "ideation"
   | "design-process"
   | "wireframes"
@@ -28,23 +24,20 @@ export type CaseStudyBlockType =
   | "ui-design"
   | "design-system"
   | "interaction-design"
-  // Validation
+  | "process-gallery"
   | "testing"
   | "testing-results"
   | "iterations"
   | "before-after"
   | "design-decisions"
-  // Development / Technology
   | "development"
   | "technical-decisions"
   | "technologies"
   | "implementation"
   | "features"
-  // Closing
   | "final-solution"
   | "result"
   | "learnings"
-  // Flexible aliases (same visual patterns, different defaults)
   | "challenge"
   | "concept"
   | "process"
@@ -86,7 +79,11 @@ export interface CaseStudySideHighlight {
   description: string
 }
 
-/** Per-section configuration. Content fields are optional overrides. */
+export interface CaseStudyGalleryImage {
+  src: string
+  caption?: string
+}
+
 export interface CaseStudySectionConfig {
   type: CaseStudyBlockType
   id?: string
@@ -104,10 +101,10 @@ export interface CaseStudySectionConfig {
   beforeAfter?: CaseStudyBeforeAfter
   sideHighlight?: CaseStudySideHighlight
   image?: string
+  images?: CaseStudyGalleryImage[]
   variant?: "default" | "muted" | "accent"
 }
 
-/** Resolved section data ready for rendering. */
 export interface ResolvedCaseStudySection {
   type: CaseStudyBlockType
   id: string
@@ -124,6 +121,7 @@ export interface ResolvedCaseStudySection {
   beforeAfter?: CaseStudyBeforeAfter
   sideHighlight?: CaseStudySideHighlight
   image?: string
+  images?: CaseStudyGalleryImage[]
   variant?: "default" | "muted" | "accent"
 }
 

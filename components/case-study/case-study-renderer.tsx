@@ -11,6 +11,7 @@ import { getBlockLayout } from "@/lib/case-study/block-registry"
 import { DesignDecisionsBlock } from "./blocks/design-decisions-block"
 import { DevelopmentBlock } from "./blocks/development-block"
 import { FinalSolutionBlock } from "./blocks/final-solution-block"
+import { GalleryBlock } from "./blocks/gallery-block"
 import { HeroBlock } from "./blocks/hero-block"
 import { OverviewBlock } from "./blocks/overview-block"
 import { ProblemBlock } from "./blocks/problem-block"
@@ -33,7 +34,7 @@ interface CaseStudyRendererProps {
 // (ES/EN) para que el Hero pueda extraerlas automáticamente.
 const TYPE_LABELS = ["Tipo de proyecto", "Project type"]
 const YEAR_LABELS = ["Año", "Year"]
-const TOOLS_LABELS = ["Herramientas", "Tools"]
+const TOOLS_LABELS = ["Herramientas", "Tools", "Tecnologías", "Technologies"]
 
 function findCard(
   cards: CaseStudyCard[] | undefined,
@@ -93,6 +94,14 @@ function renderSection(
           resolveImage={resolveImage}
         />
       )
+    case "gallery":
+      return (
+        <GalleryBlock
+          key={section.id}
+          section={section}
+          resolveImage={resolveImage}
+        />
+      )
     case "before-after":
       return (
         <BeforeAfterBlock
@@ -117,8 +126,6 @@ export function CaseStudyRenderer({
   const sectionConfigs = resolveProjectSections(project, language)
   const sections = resolveCaseStudySections(sectionConfigs, project, language)
 
-  // "metadata" se reparte: tipo + año van al Hero, herramientas se suma a
-  // las cards de overview. La sección metadata en sí nunca se renderiza.
   const metadataSection = sections.find((s) => s.type === "metadata")
   const overviewSection = sections.find((s) => s.type === "overview")
 
@@ -130,8 +137,6 @@ export function CaseStudyRenderer({
     ? [...overviewSection.cards.slice(0, 2), ...(toolsCard ? [toolsCard] : [])]
     : undefined
 
-  // "result" + "learnings" fusionados en un único ResultsBlock de dos
-  // columnas (ver ResultsBlock).
   const resultSection = sections.find((s) => s.type === "result")
   const learningsSection = sections.find((s) => s.type === "learnings")
   const mergedResultsAtId = resultSection?.id ?? learningsSection?.id

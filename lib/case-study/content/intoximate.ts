@@ -1,4 +1,4 @@
-import { defineCaseStudy } from "./define"
+import { defineCaseStudy } from "./define";
 
 export default defineCaseStudy({
   es: [
@@ -26,7 +26,10 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Tipo de proyecto", description: "Proyecto académico · UX/UI + Desarrollo Mobile" },
+        {
+          title: "Tipo de proyecto",
+          description: "Proyecto académico · UX/UI + Desarrollo Mobile",
+        },
         { title: "Año", description: "2023" },
         {
           title: "Herramientas",
@@ -68,15 +71,9 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "technologies",
-      title: "Tecnologías",
-      items: [
-        "React Native",
-        "Expo",
-        "Jira",
-        "GitHub",
-        "Google Docs · Google Sheets",
-      ],
+      type: "final-solution",
+      title: "La app en funcionamiento", // en: "The app in action"
+      image: "/images/intoximate-final.png",
     },
     {
       type: "result",
@@ -118,7 +115,10 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Project type", description: "Academic project · UX/UI + Mobile Development" },
+        {
+          title: "Project type",
+          description: "Academic project · UX/UI + Mobile Development",
+        },
         { title: "Year", description: "2023" },
         {
           title: "Tools",
@@ -160,15 +160,9 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "technologies",
-      title: "Technologies",
-      items: [
-        "React Native",
-        "Expo",
-        "Jira",
-        "GitHub",
-        "Google Docs · Google Sheets",
-      ],
+      type: "final-solution",
+      title: "The app in action",
+      image: "/images/intoximate-final.png",
     },
     {
       type: "result",
@@ -185,4 +179,4 @@ export default defineCaseStudy({
       ],
     },
   ],
-})
+});

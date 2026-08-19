@@ -1,4 +1,4 @@
-import { defineCaseStudy } from "./define"
+import { defineCaseStudy } from "./define";
 
 export default defineCaseStudy({
   es: [
@@ -26,9 +26,15 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Tipo de proyecto", description: "Proyecto académico · Game Development" },
+        {
+          title: "Tipo de proyecto",
+          description: "Proyecto académico · Game Development",
+        },
         { title: "Año", description: "2023" },
-        { title: "Tecnologías", description: "Unity · C# · SQLite · Visual Studio Code" },
+        {
+          title: "Tecnologías",
+          description: "Unity · C# · SQLite · Visual Studio Code",
+        },
       ],
     },
     {
@@ -55,9 +61,17 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "technologies",
-      title: "Tecnologías",
-      items: ["Unity", "C#", "SQLite", "Visual Studio Code"],
+      type: "process-gallery",
+      title: "El proceso", // en: "The process"
+      images: [
+        { src: "/images/runner-dino-process-1.png" },
+        { src: "/images/runner-dino-process-2.png" },
+      ],
+    },
+    {
+      type: "final-solution",
+      title: "El juego en funcionamiento", // en: "The game in action"
+      image: "/images/runner-dino-final.png",
     },
     {
       type: "result",
@@ -100,9 +114,15 @@ export default defineCaseStudy({
     {
       type: "metadata",
       cards: [
-        { title: "Project type", description: "Academic project · Game Development" },
+        {
+          title: "Project type",
+          description: "Academic project · Game Development",
+        },
         { title: "Year", description: "2023" },
-        { title: "Technologies", description: "Unity · C# · SQLite · Visual Studio Code" },
+        {
+          title: "Technologies",
+          description: "Unity · C# · SQLite · Visual Studio Code",
+        },
       ],
     },
     {
@@ -129,14 +149,23 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "technologies",
-      title: "Technologies",
-      items: ["Unity", "C#", "SQLite", "Visual Studio Code"],
+      type: "process-gallery",
+      title: "The process",
+      images: [
+        { src: "/images/runner-dino-process-1.png" },
+        { src: "/images/runner-dino-process-2.png" },
+      ],
+    },
+    {
+      type: "final-solution",
+      title: "The game in action",
+      image: "/images/runner-dino-final.png",
     },
     {
       type: "result",
       title: "Result",
-      description: "A game that's **functional, simple to play**, and visually appealing.",
+      description:
+        "A game that's **functional, simple to play**, and visually appealing.",
       body: "It keeps the accessible logic of the original game while adding my **own implementation** and a score tracking system.",
     },
     {
@@ -148,4 +177,4 @@ export default defineCaseStudy({
       ],
     },
   ],
-})
+});
