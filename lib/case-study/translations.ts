@@ -26,6 +26,7 @@ type CaseStudyUiKey =
   | "research"
   | "decisions"
   | "finalSolution"
+  | "finalSolutionImagePlaceholder"
   | "results"
   | "learnings"
   | "projectType"
@@ -55,6 +56,7 @@ const es: CaseStudyTranslations = {
   research: "Investigación y descubrimientos",
   decisions: "Decisiones de diseño",
   finalSolution: "Solución final",
+  finalSolutionImagePlaceholder: "Imagen de la solución final",
   "final-solution": "Solución final",
   results: "Resultados y aprendizajes",
   learnings: "Aprendizajes",
@@ -100,7 +102,6 @@ const es: CaseStudyTranslations = {
   concept: "Concepto",
   solution: "Solución",
   prototype: "Prototipo",
-  "process-gallery": "Imágenes del proceso",
 }
 
 const en: CaseStudyTranslations = {
@@ -123,6 +124,7 @@ const en: CaseStudyTranslations = {
   research: "Research and insights",
   decisions: "Design decisions",
   finalSolution: "Final solution",
+  finalSolutionImagePlaceholder: "Final solution image",
   "final-solution": "Final solution",
   results: "Results and learnings",
   learnings: "Learnings",
@@ -168,7 +170,6 @@ const en: CaseStudyTranslations = {
   concept: "Concept",
   solution: "Solution",
   prototype: "Prototype",
-  "process-gallery": "Process images",
 }
 
 export const caseStudyTranslations: Record<CaseStudyLocale, CaseStudyTranslations> = {

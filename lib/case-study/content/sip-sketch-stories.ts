@@ -17,6 +17,11 @@ export default defineCaseStudy({
             "Proyecto individual: estructura de la interfaz, componentes, interacciones, animaciones y lógica del mazo.",
         },
         {
+          title: "Tecnologías",
+          description:
+            "Next.js · React · TypeScript · Tailwind CSS · Framer Motion",
+        },
+        {
           title: "Resultado",
           description:
             "Experiencia web reutilizable centrada en una única acción: sacar una carta.",
@@ -93,13 +98,6 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "final-solution",
-      title: "La solución final",
-      description:
-        "Una experiencia web centrada en una **única acción principal**: sacar una carta.",
-      body: "La interfaz presenta el mazo y permite descubrir progresivamente nuevas consignas mientras la reunión avanza. Las animaciones, los estados de las cartas, el sistema de categorías y el modo pantalla completa trabajan alrededor de esa interacción principal.\nLa experiencia no intenta convertirse en un juego competitivo: su función es **facilitar momentos que probablemente sucederían de todos modos** —hablar, reírse, dibujar, brindar y compartir.",
-    },
-    {
       type: "iterations",
       title: "Un sistema que puede crecer",
       body: "La separación entre contenido e interfaz permite pensar en **futuras versiones** sin modificar la estructura principal del producto.",
@@ -111,6 +109,13 @@ export default defineCaseStudy({
         "Nuevas categorías.",
         "Dinámicas específicas para cumpleaños, reuniones o celebraciones.",
       ],
+    },
+    {
+      type: "final-solution",
+      title: "La solución final",
+      description:
+        "Una experiencia web centrada en una **única acción principal**: sacar una carta.",
+      body: "La interfaz presenta el mazo y permite descubrir progresivamente nuevas consignas mientras la reunión avanza. Las animaciones, los estados de las cartas, el sistema de categorías y el modo pantalla completa trabajan alrededor de esa interacción principal.\nLa experiencia no intenta convertirse en un juego competitivo: su función es **facilitar momentos que probablemente sucederían de todos modos** —hablar, reírse, dibujar, brindar y compartir.",
     },
     {
       type: "result",
@@ -142,6 +147,11 @@ export default defineCaseStudy({
           title: "My role",
           description:
             "Solo project: interface structure, components, interactions, animations, and deck logic.",
+        },
+        {
+          title: "Technologies",
+          description:
+            "Next.js · React · TypeScript · Tailwind CSS · Framer Motion",
         },
         {
           title: "Outcome",
@@ -220,13 +230,6 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "final-solution",
-      title: "The final solution",
-      description:
-        "A web experience centred on a **single main action**: draw a card.",
-      body: "The interface presents the deck and reveals new prompts progressively as the gathering unfolds. Animations, card states, the category system, and fullscreen mode all work around that main interaction.\nIt isn't trying to be a competitive game: its purpose is to **make room for things that would probably happen anyway** — talking, laughing, drawing, toasting, sharing.",
-    },
-    {
       type: "iterations",
       title: "A system that can grow",
       body: "Separating content from interface makes **future versions** possible without changing the product's main structure.",
@@ -238,6 +241,13 @@ export default defineCaseStudy({
         "New categories.",
         "Specific dynamics for birthdays, gatherings, or celebrations.",
       ],
+    },
+    {
+      type: "final-solution",
+      title: "The final solution",
+      description:
+        "A web experience centred on a **single main action**: draw a card.",
+      body: "The interface presents the deck and reveals new prompts progressively as the gathering unfolds. Animations, card states, the category system, and fullscreen mode all work around that main interaction.\nIt isn't trying to be a competitive game: its purpose is to **make room for things that would probably happen anyway** — talking, laughing, drawing, toasting, sharing.",
     },
     {
       type: "result",

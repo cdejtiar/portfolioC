@@ -57,8 +57,16 @@ export default defineCaseStudy({
     },
     {
       type: "design-process",
-      title: "Diseño y validación",
-      body: "Durante la etapa de diseño trabajamos con **Design Thinking** para definir la propuesta de valor y validar la solución con usuarios.\nA partir de ahí desarrollamos prototipos de media y alta fidelidad que sirvieron como base para la versión funcional.",
+      title: "Diseño y validación antes de escribir código",
+      body: "Durante la etapa de diseño trabajamos con **Design Thinking** para definir la propuesta de valor y validar la solución con usuarios antes de encarar el desarrollo.",
+      description:
+        "El proyecto se organizó con un **checkpoint de Diseño** previo al de Desarrollo: la versión funcional partió de prototipos ya validados.",
+      items: [
+        "**Definición de la propuesta de valor** a partir de Design Thinking.",
+        "**Validación con usuarios** de la propuesta y de los flujos principales.",
+        "**Prototipos de media fidelidad** para probar estructura y navegación.",
+        "**Prototipos de alta fidelidad** como base directa de la versión funcional.",
+      ],
     },
     {
       type: "development",
@@ -72,8 +80,9 @@ export default defineCaseStudy({
     },
     {
       type: "final-solution",
-      title: "La app en funcionamiento", // en: "The app in action"
-      image: "/images/intoximate-final.png",
+      title: "La app en funcionamiento",
+      description:
+        "La versión beta funcional: registro de consumo, cálculo estimado y recomendaciones dentro de un mismo flujo.",
     },
     {
       type: "result",
@@ -146,8 +155,16 @@ export default defineCaseStudy({
     },
     {
       type: "design-process",
-      title: "Design and validation",
-      body: "During design we used **Design Thinking** to define the value proposition and validate the solution with users.\nFrom there we built medium- and high-fidelity prototypes that became the base for the working version.",
+      title: "Design and validation before writing code",
+      body: "During design we used **Design Thinking** to define the value proposition and validate the solution with users before starting development.",
+      description:
+        "The project ran with a **Design checkpoint** ahead of the Development one: the working version started from prototypes that were already validated.",
+      items: [
+        "**Value proposition defined** through Design Thinking.",
+        "**User validation** of the proposition and the main flows.",
+        "**Medium-fidelity prototypes** to test structure and navigation.",
+        "**High-fidelity prototypes** as the direct base for the working version.",
+      ],
     },
     {
       type: "development",
@@ -162,7 +179,8 @@ export default defineCaseStudy({
     {
       type: "final-solution",
       title: "The app in action",
-      image: "/images/intoximate-final.png",
+      description:
+        "The working beta: consumption logging, estimated calculation, and recommendations within a single flow.",
     },
     {
       type: "result",

@@ -183,9 +183,12 @@ export function resolveCaseStudySection(
           description: section.description ?? project.finalSolution,
           body: section.body ?? project.finalSolution ?? project.solution,
           items: section.items,
-          image: section.image ?? project.image,
+          image: section.image,
         }
-        return resolved.body || resolved.description || resolved.items?.length
+        return resolved.title ||
+          resolved.body ||
+          resolved.description ||
+          resolved.items?.length
           ? resolved
           : null
       }

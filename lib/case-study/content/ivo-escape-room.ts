@@ -77,17 +77,10 @@ export default defineCaseStudy({
       body: "Las pruebas permitieron detectar **errores y problemas de comprensión** que fueron iterados durante las semanas previas a las jornadas.\nLas últimas pruebas lograron que los estudiantes pudieran **completar las salas sin inconvenientes**.",
     },
     {
-      type: "process-gallery",
-      title: "El proceso", // en: "The process"
-      images: [
-        { src: "/images/ivo-process-1.png" },
-        { src: "/images/ivo-process-2.png" },
-      ],
-    },
-    {
       type: "final-solution",
-      title: "La sala en funcionamiento", // en: "The room in action"
-      image: "/images/ivo-final.png",
+      title: "La sala en funcionamiento",
+      description:
+        "La experiencia completa tal como la recorrieron los estudiantes durante las jornadas de orientación.",
     },
     {
       type: "result",
@@ -180,17 +173,10 @@ export default defineCaseStudy({
       body: "The tests surfaced **bugs and comprehension issues** that we iterated on during the weeks before the event.\nIn the final tests students **completed the rooms without trouble**.",
     },
     {
-      type: "process-gallery",
-      title: "The process",
-      images: [
-        { src: "/images/ivo-process-1.png" },
-        { src: "/images/ivo-process-2.png" },
-      ],
-    },
-    {
       type: "final-solution",
       title: "The room in action",
-      image: "/images/ivo-final.png",
+      description:
+        "The full experience as students went through it during the academic orientation days.",
     },
     {
       type: "result",

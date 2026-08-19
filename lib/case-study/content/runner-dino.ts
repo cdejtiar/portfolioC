@@ -61,17 +61,10 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "process-gallery",
-      title: "El proceso", // en: "The process"
-      images: [
-        { src: "/images/runner-dino-process-1.png" },
-        { src: "/images/runner-dino-process-2.png" },
-      ],
-    },
-    {
       type: "final-solution",
-      title: "El juego en funcionamiento", // en: "The game in action"
-      image: "/images/runner-dino-final.png",
+      title: "El juego en funcionamiento",
+      description:
+        "Un runner jugable en el navegador: salto, obstáculos, dificultad progresiva y registro de puntajes.",
     },
     {
       type: "result",
@@ -149,17 +142,10 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "process-gallery",
-      title: "The process",
-      images: [
-        { src: "/images/runner-dino-process-1.png" },
-        { src: "/images/runner-dino-process-2.png" },
-      ],
-    },
-    {
       type: "final-solution",
       title: "The game in action",
-      image: "/images/runner-dino-final.png",
+      description:
+        "A runner playable in the browser: jumping, obstacles, progressive difficulty, and score tracking.",
     },
     {
       type: "result",

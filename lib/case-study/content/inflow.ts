@@ -30,6 +30,11 @@ export default defineCaseStudy({
           description:
             "UX/UI Design · UX Research · Product Design · Diseño de interacción · Desarrollo",
         },
+        {
+          title: "Tipo de proyecto",
+          description:
+            "Proyecto de tesis · UX Research · UX/UI · Product Design · Desarrollo",
+        },
         { title: "Año", description: "2026" },
         {
           title: "Tecnologías",
@@ -184,15 +189,10 @@ export default defineCaseStudy({
       body: "El modelo inicial utilizaba categorías emocionales tradicionales, pero los usuarios describían con frecuencia **cansancio, agotamiento mental, saturación o falta de energía**, que no encajaban en esas categorías.\nEl sistema evolucionó hacia **seis estados más representativos** de la experiencia académica: Alegría · Tranquilidad · Neutralidad · Ansiedad · Tristeza · Saturación.\nEl cambio también implicó adaptar la interpretación que realiza la inteligencia artificial y las recomendaciones ofrecidas al usuario.",
     },
     {
-      type: "technologies",
-      title: "Tecnologías",
-      items: [
-        "**Frontend**: React · Vite · TypeScript · Tailwind CSS",
-        "**Backend & Database**: Supabase · PostgreSQL · Edge Functions",
-        "**IA**: Groq · LLaMA 3 · Gemini",
-        "**Diseño**: Figma",
-        "**Metodologías**: Design Thinking · User Centered Design · UX Research · Benchmarking · Testing",
-      ],
+      type: "final-solution",
+      title: "La app en funcionamiento",
+      description:
+        "inFLOW integra **organización académica, acompañamiento emocional e inteligencia artificial** en una misma experiencia móvil.",
     },
     {
       type: "result",
@@ -246,6 +246,11 @@ export default defineCaseStudy({
           title: "Role",
           description:
             "UX/UI Design · UX Research · Product Design · Interaction Design · Development",
+        },
+        {
+          title: "Project type",
+          description:
+            "Thesis project · UX Research · UX/UI · Product Design · Development",
         },
         { title: "Year", description: "2026" },
         {
@@ -401,15 +406,10 @@ export default defineCaseStudy({
       body: "The initial model used traditional emotional categories, but users frequently described **tiredness, mental exhaustion, saturation, or lack of energy**, which didn't fit those categories.\nThe system evolved into **six states closer to the academic experience**: Joy · Calm · Neutral · Anxiety · Sadness · Saturation.\nThe change also meant adapting how the AI interprets state and the recommendations it offers.",
     },
     {
-      type: "technologies",
-      title: "Technologies",
-      items: [
-        "**Frontend**: React · Vite · TypeScript · Tailwind CSS",
-        "**Backend & Database**: Supabase · PostgreSQL · Edge Functions",
-        "**AI**: Groq · LLaMA 3 · Gemini",
-        "**Design**: Figma",
-        "**Methodologies**: Design Thinking · User Centered Design · UX Research · Benchmarking · Testing",
-      ],
+      type: "final-solution",
+      title: "The app in action",
+      description:
+        "inFLOW brings **academic organization, emotional support, and artificial intelligence** together into a single mobile experience.",
     },
     {
       type: "result",

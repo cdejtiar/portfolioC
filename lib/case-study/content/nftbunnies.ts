@@ -76,17 +76,10 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "process-gallery",
-      title: "El proceso", // en: "The process"
-      images: [
-        { src: "/images/nftbunnies-process-1.png" },
-        { src: "/images/nftbunnies-process-2.png" },
-      ],
-    },
-    {
       type: "final-solution",
-      title: "La colección terminada", // en: "The finished collection"
-      image: "/images/nftbunnies-final.png",
+      title: "La colección terminada",
+      description:
+        "50 NFTs generados a partir del mismo sistema visual, junto a una web funcional de minting sobre Ethereum de prueba.",
     },
     {
       type: "result",
@@ -171,17 +164,10 @@ export default defineCaseStudy({
       ],
     },
     {
-      type: "process-gallery",
-      title: "The process",
-      images: [
-        { src: "/images/nftbunnies-process-1.png" },
-        { src: "/images/nftbunnies-process-2.png" },
-      ],
-    },
-    {
       type: "final-solution",
       title: "The finished collection",
-      image: "/images/nftbunnies-final.png",
+      description:
+        "50 NFTs generated from the same visual system, alongside a working minting site on the Ethereum testnet.",
     },
     {
       type: "result",

@@ -56,17 +56,8 @@ export default defineCaseStudy({
       body: "Además de la funcionalidad, el proyecto buscó construir una estética propia para Dorja.\nLa interfaz combina una **identidad cálida y lúdica** con una estructura simple, pensada para funcionar en contextos familiares y comunitarios.",
     },
     {
-      type: "process-gallery",
-      title: "El proceso", // en: "The process"
-      images: [
-        { src: "/images/bingo-dorja-process-1.png" },
-        { src: "/images/bingo-dorja-process-2.png" },
-      ],
-    },
-    {
       type: "final-solution", // antes era "features"
       title: "Funcionalidades",
-      image: "/images/bingo-dorja-final.png",
       items: [
         "**Generador de números** del 1 al 90.",
         "**Resaltado de números sorteados**.",
@@ -137,17 +128,8 @@ export default defineCaseStudy({
       body: "Beyond functionality, the project built its own aesthetic for Dorja.\nThe interface pairs a **warm, playful identity** with a simple structure meant for family and community settings.",
     },
     {
-      type: "process-gallery",
-      title: "The process",
-      images: [
-        { src: "/images/bingo-dorja-process-1.png" },
-        { src: "/images/bingo-dorja-process-2.png" },
-      ],
-    },
-    {
       type: "final-solution", // antes era "features"
       title: "Features",
-      image: "/images/bingo-dorja-final.png",
       items: [
         "**Number generator** from 1 to 90.",
         "**Highlighting of drawn numbers**.",

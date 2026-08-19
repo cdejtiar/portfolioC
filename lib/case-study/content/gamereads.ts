@@ -74,6 +74,7 @@ export default defineCaseStudy({
     {
       type: "final-solution",
       title: "Funcionalidades principales",
+      image: "/images/gamereads-screens.png",
       items: [
         "**Registro de lecturas**.",
         "**Recomendaciones personalizadas**.",
@@ -164,6 +165,7 @@ export default defineCaseStudy({
     {
       type: "final-solution",
       title: "Key features",
+      image: "/images/gamereads-screens.png",
       items: [
         "**Reading log**.",
         "**Personalized recommendations**.",

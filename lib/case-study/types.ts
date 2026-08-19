@@ -24,7 +24,6 @@ export type CaseStudyBlockType =
   | "ui-design"
   | "design-system"
   | "interaction-design"
-  | "process-gallery"
   | "testing"
   | "testing-results"
   | "iterations"

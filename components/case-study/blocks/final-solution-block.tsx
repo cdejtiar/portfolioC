@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ImageIcon } from "lucide-react";
 import type { Project } from "@/lib/projects";
 import type {
   CaseStudyLocale,
@@ -101,29 +102,37 @@ export function FinalSolutionBlock({
           </div>
         )}
 
-        {image && (
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            whileHover={{ scale: 1.01 }}
-            className={`flex justify-center rounded-xl ${
-              hasItems || section.body || section.subtitle ? "mt-16" : "mt-4"
-            }`}
-            style={{
-              willChange: "transform",
-              backfaceVisibility: "hidden",
-              transform: "translateZ(0)",
-            }}
-          >
-            <img
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className={`flex justify-center ${
+            hasItems || section.body || section.subtitle ? "mt-16" : "mt-4"
+          }`}
+          style={{
+            willChange: "transform",
+            backfaceVisibility: "hidden",
+            transform: "translateZ(0)",
+          }}
+        >
+          {image ? (
+            <motion.img
+              whileHover={{ scale: 1.01 }}
               src={resolveImage(image)}
               alt={`${project.title} final interface`}
-              className="h-auto max-h-[560px] w-auto max-w-[85%] object-contain"
+              className="h-auto max-h-[560px] w-auto max-w-[85%] rounded-xl object-contain"
             />
-          </motion.div>
-        )}
+          ) : (
+            <div className="flex h-[320px] w-full max-w-[85%] flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-cs-hairline bg-cs-card md:h-[420px]">
+              <ImageIcon className="h-6 w-6 text-muted-foreground/60" strokeWidth={1.5} />
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground/70">
+                {t.finalSolutionImagePlaceholder}
+              </p>
+            </div>
+          )}
+        </motion.div>
+
       </SectionContainer>
     </SectionWrapper>
   );

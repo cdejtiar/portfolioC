@@ -133,8 +133,16 @@ export function CaseStudyRenderer({
   const projectYear = findCard(metadataSection?.cards, YEAR_LABELS)?.description
   const toolsCard = findCard(metadataSection?.cards, TOOLS_LABELS)
 
+  const overviewToolsCard =
+    findCard(overviewSection?.cards, TOOLS_LABELS) ?? toolsCard
+
   const overviewCards = overviewSection?.cards
-    ? [...overviewSection.cards.slice(0, 2), ...(toolsCard ? [toolsCard] : [])]
+    ? [
+        ...overviewSection.cards
+          .filter((card) => !TOOLS_LABELS.includes(card.title))
+          .slice(0, 2),
+        ...(overviewToolsCard ? [overviewToolsCard] : []),
+      ]
     : undefined
 
   const resultSection = sections.find((s) => s.type === "result")

@@ -87,11 +87,6 @@ export const CASE_STUDY_BLOCK_REGISTRY: Record<
     category: "design",
     layout: "text",
   },
-  "process-gallery": {
-    type: "process-gallery",
-    category: "design",
-    layout: "gallery",
-  },
   concept: { type: "concept", category: "design", layout: "text" },
   testing: { type: "testing", category: "validation", layout: "text" },
   "testing-results": {
