@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { projectsByLocale, featuredProjectIds } from "@/lib/projects";
+import { RichText } from "@/components/rich-text";
 
 interface ProjectsSectionProps {
   language: "es" | "en";
@@ -14,14 +15,14 @@ const translations = {
     subsubtitle: "Proyectos Seleccionados",
     title: "Mis Proyectos",
     subtitle:
-      "Una selección de trabajos que muestran mi pasión por el diseño y desarrollo",
+      "Una selección de trabajos que muestran mi pasión por el **diseño** y el **desarrollo**",
     viewProject: "Ver Proyecto",
   },
   en: {
     subsubtitle: "Selected Projects",
     title: "My Projects",
     subtitle:
-      "A selection of work that showcases my passion for design and development",
+      "A selection of work that showcases my passion for **design** and **development**",
     viewProject: "View Project",
   },
 };
@@ -50,7 +51,7 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
               {t.title}
             </h2>
             <p className="mt-4 text-base leading-8 text-muted-foreground">
-              {t.subtitle}
+              <RichText text={t.subtitle} />
             </p>
           </div>
 

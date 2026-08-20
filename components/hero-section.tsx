@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { getCvDownload } from "@/lib/cv"
 import { ArrowDown } from "lucide-react"
 import { motion } from "framer-motion"
+import { RichText } from "@/components/rich-text"
 
 const HeroCanvas = dynamic(
   () => import("@/components/animation/hero-canvas").then((m) => m.HeroCanvas),
@@ -20,14 +21,14 @@ const translations = {
   es: {
     titleLine: "Diseñadora Multimedial • UX/UI Designer • Product Designer • Frontend Developer",
     description:
-      "Diseño productos digitales centrados en las personas, combinando UX Research, Product Design y desarrollo frontend para transformar problemas complejos en experiencias intuitivas.",
+      "Diseño **productos digitales centrados en las personas**, combinando **UX Research**, **Product Design** y **desarrollo frontend** para transformar problemas complejos en **experiencias intuitivas**.",
     viewProjects: "Ver Proyectos",
     downloadCV: "Descargar CV",
   },
   en: {
     titleLine: "Multimedia Designer • UX/UI Designer • Product Designer • Frontend Developer",
     description:
-      "I design people-centered digital products by combining UX research, product design, and frontend development to turn complex problems into intuitive experiences.",
+      "I design **people-centered digital products** by combining **UX research**, **product design**, and **frontend development** to turn complex problems into **intuitive experiences**.",
     viewProjects: "View Projects",
     downloadCV: "Download CV",
   },
@@ -82,7 +83,7 @@ export function HeroSection({ language }: HeroSectionProps) {
             </h1>
             <p className="mt-4 text-lg font-semibold text-primary/80">{t.titleLine}</p>
             <p className="mt-8 max-w-2xl mx-auto text-base leading-8 text-muted-foreground lg:mx-0">
-              {t.description}
+              <RichText text={t.description} />
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center justify-center lg:justify-start">

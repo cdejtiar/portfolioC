@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { RichText } from "@/components/rich-text"
 
 interface FeaturedProjectSectionProps {
   language: "es" | "en"
@@ -11,7 +12,7 @@ const translations = {
     label: "Proyecto Destacado",
     heading: "inFLOW • Tesis",
     description:
-      "inFLOW nació para abordar un problema que afecta a millones de estudiantes: la procrastinación académica. A través de UX Research, diseño estratégico y desarrollo frontend, diseñé una plataforma que acompaña a los estudiantes con herramientas personalizadas para planificar, mantener el foco y construir hábitos de estudio más saludables.",
+      "inFLOW nació para abordar un problema que afecta a millones de estudiantes: la **procrastinación académica**. A través de **UX Research**, **diseño estratégico** y **desarrollo frontend**, diseñé una plataforma que acompaña a los estudiantes con **herramientas personalizadas** para planificar, mantener el foco y construir **hábitos de estudio más saludables**.",
     productTagline: "Proyecto de tesis y experiencia híbrida UX / UI / Frontend.",
     viewCaseStudy: "Ver Caso de Estudio",
     metrics: [
@@ -23,14 +24,14 @@ const translations = {
       "AI Integration",
       "User Testing",
     ],
-    impact: "Investigación con +150 estudiantes que permitió validar el problema y definir la propuesta de valor del producto.",
-    scope: "Proyecto end-to-end que abarcó investigación, definición del MVP, UX/UI, desarrollo frontend e integración de IA.",
+    impact: "Investigación con **+150 estudiantes** que permitió validar el problema y definir la **propuesta de valor** del producto.",
+    scope: "Proyecto **end-to-end** que abarcó investigación, definición del MVP, UX/UI, desarrollo frontend e integración de IA.",
   },
   en: {
     label: "Featured Project",
     heading: "inFLOW • Thesis",
     description:
-      "inFLOW was created to address a challenge faced by millions of students: academic procrastination. Through UX research, strategic design, and front-end development, I designed and built a platform that supports students with personalized tools to plan their work, stay focused, and build healthier study habits.",
+      "inFLOW was created to address a challenge faced by millions of students: **academic procrastination**. Through **UX research**, **strategic design**, and **front-end development**, I designed and built a platform that supports students with **personalized tools** to plan their work, stay focused, and build **healthier study habits**.",
     productTagline: "Thesis project and hybrid UX / UI / Frontend work.",
     viewCaseStudy: "View Case Study",
     metrics: [
@@ -42,8 +43,8 @@ const translations = {
       "AI Integration",
       "User Testing",
     ],
-    impact: "Research with +150 students that allowed validating the problem and defining the product's value proposition.",
-    scope: "End-to-end project covering research, MVP definition, UX/UI, frontend development, and AI integration.",
+    impact: "Research with **+150 students** that allowed validating the problem and defining the product's **value proposition**.",
+    scope: "**End-to-end** project covering research, MVP definition, UX/UI, frontend development, and AI integration.",
   },
 }
 
@@ -67,7 +68,7 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
             {t.heading}
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">
-            {t.description}
+            <RichText text={t.description} />
           </p>
         </div>
 
@@ -88,13 +89,13 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
                 <p className="text-sm uppercase tracking-[0.32em] text-primary mb-3">{language === "es" ? "Impacto" : "Impact"}</p>
                 <p className="text-sm leading-6 text-muted-foreground">
-                  {t.impact}
+                  <RichText text={t.impact} />
                 </p>
               </div>
               <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
                 <p className="text-sm uppercase tracking-[0.32em] text-primary mb-3">{language === "es" ? "Alcance" : "Scope"}</p>
                 <p className="text-sm leading-6 text-muted-foreground">
-                  {t.scope}
+                  <RichText text={t.scope} />
                 </p>
               </div>
             </div>

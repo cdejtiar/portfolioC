@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { getCvDownload } from "@/lib/cv"
 import { motion } from "framer-motion"
 import { Mail, Linkedin, Github } from "lucide-react"
+import { RichText } from "@/components/rich-text"
 
 interface ContactSectionProps {
   language: "es" | "en"
@@ -19,7 +20,7 @@ const contactText = {
     githubLabel: "GitHub",
     downloadCV: "Descargar CV",
     description:
-      "Si querés dialogar sobre un producto digital, una oportunidad freelance o un desafío UX/Product, escribime."
+      "Si querés dialogar sobre un **producto digital**, una **oportunidad freelance** o un **desafío UX/Product**, escribime."
   },
   en: {
     subtitle: "Contact",
@@ -30,7 +31,7 @@ const contactText = {
     githubLabel: "GitHub",
     downloadCV: "Download CV",
     description:
-      "If you'd like to talk about digital product work, freelance opportunities, or a UX/Product challenge, feel free to reach out."
+      "If you'd like to talk about **digital product work**, **freelance opportunities**, or a **UX/Product challenge**, feel free to reach out."
   },
 }
 
@@ -48,7 +49,7 @@ export function ContactSection({ language }: ContactSectionProps) {
               {t.title}
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">
-              {t.description}
+              <RichText text={t.description} />
             </p>
 
             <div className="mt-10">

@@ -48,13 +48,13 @@ export function FinalSolutionBlock({
     gsap.fromTo(
       media,
       {
-        clipPath: "inset(14% 12% 14% 12% round 18px)",
+        clipPath: "inset(12% 8% 12% 8% round 0px)",
         scale: 0.9,
         yPercent: 6,
         filter: "blur(8px)",
       },
       {
-        clipPath: "inset(0% 0% 0% 0% round 14px)",
+        clipPath: "inset(0% 0% 0% 0% round 0px)",
         scale: 1,
         yPercent: 0,
         filter: "blur(0px)",
@@ -67,17 +67,6 @@ export function FinalSolutionBlock({
         },
       },
     );
-
-    gsap.to(media, {
-      yPercent: -6,
-      ease: "none",
-      scrollTrigger: {
-        trigger: scope,
-        start: "center 45%",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
 
     const bullets = scope.parentElement?.querySelectorAll("[data-solution-item]");
     if (bullets && bullets.length > 0) {
@@ -98,7 +87,7 @@ export function FinalSolutionBlock({
 
   return (
     <SectionWrapper>
-      <SectionContainer>
+      <SectionContainer className="container mx-auto max-w-6xl px-6 pt-24 md:pt-28">
         <div className="mb-14 text-center">
           <SectionEyebrow>{section.eyebrow ?? t.finalSolution}</SectionEyebrow>
           {section.title && (
@@ -166,35 +155,34 @@ export function FinalSolutionBlock({
           </div>
         )}
 
-        <div
-          ref={showcaseRef}
-          className={`flex justify-center ${
-            hasItems || section.body || section.subtitle ? "mt-16" : "mt-4"
-          }`}
-        >
-          {image ? (
-            <img
-              data-showcase-media
-              src={resolveImage(image)}
-              alt={`${project.title} final interface`}
-              className="h-auto max-h-[560px] w-auto max-w-[85%] rounded-xl object-contain will-change-transform"
-            />
-          ) : (
-            <div
-              data-showcase-media
-              className="flex h-[320px] w-full max-w-[85%] flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-cs-hairline bg-cs-card md:h-[420px]"
-            >
-              <ImageIcon
-                className="h-6 w-6 text-muted-foreground/60"
-                strokeWidth={1.5}
-              />
-              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground/70">
-                {t.finalSolutionImagePlaceholder}
-              </p>
-            </div>
-          )}
-        </div>
       </SectionContainer>
+
+      <div
+        ref={showcaseRef}
+        className="w-full pb-24 md:pb-28"
+      >
+        {image ? (
+          <img
+            data-showcase-media
+            src={resolveImage(image)}
+            alt={`${project.title} final interface`}
+            className="block h-auto w-full object-contain will-change-transform"
+          />
+        ) : (
+          <div
+            data-showcase-media
+            className="flex h-[320px] w-full flex-col items-center justify-center gap-3 border-y border-dashed border-cs-hairline bg-cs-card md:h-[460px]"
+          >
+            <ImageIcon
+              className="h-6 w-6 text-muted-foreground/60"
+              strokeWidth={1.5}
+            />
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground/70">
+              {t.finalSolutionImagePlaceholder}
+            </p>
+          </div>
+        )}
+      </div>
     </SectionWrapper>
   );
 }
