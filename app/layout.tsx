@@ -1,9 +1,11 @@
 import type React from "react"
+import { cookies } from "next/headers"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
+import { LanguageProvider, type Language } from "@/components/language-provider"
 import { BackgroundEffects } from "@/components/background-effects"
 import "./globals.css"
 
@@ -30,8 +32,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const cookieStore = cookies()
+  const savedLanguage = cookieStore.get("language")?.value
+  const language: Language = savedLanguage === "en" ? "en" : "es"
+
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang={language} className="scroll-smooth">
       <head>
         {/* Favicon and app icons - Multiple formats for better compatibility */}
         <link rel="icon" href="/favicon.png" />
@@ -59,20 +65,20 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Force dark mode on first paint so the site always starts in dark theme */}
+        {/* Anti-flash: read (never write) the saved theme so the first paint matches the choice */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                // Force the theme key and class so pages always start in dark mode
-                if (typeof window !== 'undefined' && window.localStorage) {
-                  window.localStorage.setItem('modern-portfolio-theme', 'dark');
-                }
-                if (typeof document !== 'undefined' && document.documentElement) {
-                  document.documentElement.classList.add('dark');
+                var saved = window.localStorage.getItem('modern-portfolio-theme');
+                var root = document.documentElement;
+                if (saved === 'light') {
+                  root.classList.remove('dark');
+                } else {
+                  root.classList.add('dark');
                 }
               } catch (e) {
-                /* ignore */
+                document.documentElement.classList.add('dark');
               }
             `,
           }}
@@ -94,8 +100,10 @@ export default function RootLayout({
           disableTransitionOnChange={false}
           storageKey="modern-portfolio-theme"
         >
-          <BackgroundEffects />
-          <Suspense fallback={null}>{children}</Suspense>
+          <LanguageProvider initialLanguage={language}>
+            <BackgroundEffects />
+            <Suspense fallback={null}>{children}</Suspense>
+          </LanguageProvider>
         </ThemeProvider>
         <Analytics />
       </body>
