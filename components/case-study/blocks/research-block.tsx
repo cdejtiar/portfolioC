@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import type { ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
   FormattedText,
@@ -49,14 +48,11 @@ export function ResearchBlock({ section }: ResearchBlockProps) {
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
-            {highlights.map((item, index) => (
-              <motion.div
+            {highlights.map((item) => (
+              <div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="rounded-xl border border-cs-hairline bg-cs-card p-6"
+                data-anim
+                className="rounded-xl border border-cs-hairline bg-cs-card p-6 transition-transform duration-300 hover:-translate-y-1"
               >
                 <span className="font-serif text-xl text-primary/70">"</span>
                 <FormattedText
@@ -66,7 +62,7 @@ export function ResearchBlock({ section }: ResearchBlockProps) {
                 <p className="mt-5 text-[9px] uppercase tracking-[0.22em] text-muted-foreground">
                   — {item.title}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

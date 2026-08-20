@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import type { ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
   SectionContainer,
@@ -31,20 +30,18 @@ export function GalleryBlock({ section, resolveImage }: GalleryBlockProps) {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {images.map((img, index) => (
-            <motion.figure
+          {images.map((img) => (
+            <figure
               key={img.src}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08 }}
-              className="overflow-hidden rounded-xl border border-cs-hairline bg-cs-card"
+              data-anim
+              data-gallery-item
+              className="group overflow-hidden rounded-xl border border-cs-hairline bg-cs-card"
             >
               <div className="flex aspect-[4/3] w-full items-center justify-center bg-cs-surface-alt p-3">
                 <img
                   src={resolveImage(img.src)}
                   alt={img.caption ?? section.title ?? ""}
-                  className="max-h-full max-w-full object-contain"
+                  className="max-h-full max-w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                   loading="lazy"
                 />
               </div>
@@ -53,7 +50,7 @@ export function GalleryBlock({ section, resolveImage }: GalleryBlockProps) {
                   {img.caption}
                 </figcaption>
               )}
-            </motion.figure>
+            </figure>
           ))}
         </div>
       </SectionContainer>

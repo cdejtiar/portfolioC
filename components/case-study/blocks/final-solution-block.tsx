@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ImageIcon } from "lucide-react";
 import type { Project } from "@/lib/projects";
 import type {
@@ -9,6 +8,7 @@ import type {
   ResolvedCaseStudySection,
 } from "@/lib/case-study/types";
 import { caseStudyTranslations } from "@/lib/case-study/translations";
+import { CS_EASE, useGsapEffect } from "@/lib/animation/gsap";
 import {
   FormattedText,
   SectionContainer,
@@ -37,15 +37,64 @@ export function FinalSolutionBlock({
   const hasItems = items.length > 0;
   const image = section.image;
 
-  const reduce = useReducedMotion();
   const showcaseRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: showcaseRef,
-    offset: ["start end", "end start"],
+
+  useGsapEffect(showcaseRef, ({ gsap, scope }) => {
+    const media = scope.querySelector("[data-showcase-media]");
+    if (!media) return;
+
+    // Reveal atado al progreso de scroll: la interfaz se descubre con máscara,
+    // escala y sube mientras la sección atraviesa el viewport.
+    gsap.fromTo(
+      media,
+      {
+        clipPath: "inset(14% 12% 14% 12% round 18px)",
+        scale: 0.9,
+        yPercent: 6,
+        filter: "blur(8px)",
+      },
+      {
+        clipPath: "inset(0% 0% 0% 0% round 14px)",
+        scale: 1,
+        yPercent: 0,
+        filter: "blur(0px)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: scope,
+          start: "top 88%",
+          end: "center 45%",
+          scrub: 0.6,
+        },
+      },
+    );
+
+    gsap.to(media, {
+      yPercent: -6,
+      ease: "none",
+      scrollTrigger: {
+        trigger: scope,
+        start: "center 45%",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    const bullets = scope.parentElement?.querySelectorAll("[data-solution-item]");
+    if (bullets && bullets.length > 0) {
+      gsap.fromTo(
+        bullets,
+        { autoAlpha: 0, x: -18 },
+        {
+          autoAlpha: 1,
+          x: 0,
+          duration: 0.7,
+          ease: CS_EASE,
+          stagger: 0.08,
+          scrollTrigger: { trigger: bullets[0], start: "top 88%", once: true },
+        },
+      );
+    }
   });
-  const scale = useTransform(scrollYProgress, [0, 0.45, 1], reduce ? [1, 1, 1] : [0.92, 1, 1.02]);
-  const parallax = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [48, -36]);
-  const opacity = useTransform(scrollYProgress, [0, 0.25, 1], reduce ? [1, 1, 1] : [0, 1, 1]);
 
   return (
     <SectionWrapper>
@@ -66,24 +115,31 @@ export function FinalSolutionBlock({
 
         <div className="flex flex-col items-center">
           {section.subtitle && (
-            <h3 className="text-center text-xl font-semibold text-foreground">
+            <h3
+              data-anim
+              className="text-center text-xl font-semibold text-foreground"
+            >
               {section.subtitle}
             </h3>
           )}
 
           {section.body && !bodyIsFlow && (
-            <FormattedText
-              text={section.body}
-              className="mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-muted-foreground"
-            />
+            <div data-anim>
+              <FormattedText
+                text={section.body}
+                className="mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-muted-foreground"
+              />
+            </div>
           )}
         </div>
 
         {section.body && bodyIsFlow && (
-          <FormattedText
-            text={section.body}
-            className="mx-auto mt-4 max-w-3xl text-center text-base leading-9 text-foreground/90 md:text-lg"
-          />
+          <div data-anim>
+            <FormattedText
+              text={section.body}
+              className="mx-auto mt-4 max-w-3xl text-center text-base leading-9 text-foreground/90 md:text-lg"
+            />
+          </div>
         )}
 
         {hasItems && (
@@ -93,13 +149,10 @@ export function FinalSolutionBlock({
             }`}
           >
             <div className="grid gap-x-10 sm:grid-cols-2">
-              {items.map((item, index) => (
-                <motion.div
+              {items.map((item) => (
+                <div
                   key={item}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.06, duration: 0.45 }}
+                  data-solution-item
                   className="flex items-start gap-4 border-b border-cs-hairline py-5"
                 >
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -107,36 +160,40 @@ export function FinalSolutionBlock({
                     text={item}
                     className="text-sm leading-6 text-muted-foreground md:text-base"
                   />
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
         )}
 
-        <motion.div
+        <div
           ref={showcaseRef}
-          style={{ scale, y: parallax, opacity }}
           className={`flex justify-center ${
             hasItems || section.body || section.subtitle ? "mt-16" : "mt-4"
           }`}
         >
           {image ? (
-            <motion.img
-              whileHover={{ scale: 1.01 }}
+            <img
+              data-showcase-media
               src={resolveImage(image)}
               alt={`${project.title} final interface`}
-              className="h-auto max-h-[560px] w-auto max-w-[85%] rounded-xl object-contain"
+              className="h-auto max-h-[560px] w-auto max-w-[85%] rounded-xl object-contain will-change-transform"
             />
           ) : (
-            <div className="flex h-[320px] w-full max-w-[85%] flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-cs-hairline bg-cs-card md:h-[420px]">
-              <ImageIcon className="h-6 w-6 text-muted-foreground/60" strokeWidth={1.5} />
+            <div
+              data-showcase-media
+              className="flex h-[320px] w-full max-w-[85%] flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-cs-hairline bg-cs-card md:h-[420px]"
+            >
+              <ImageIcon
+                className="h-6 w-6 text-muted-foreground/60"
+                strokeWidth={1.5}
+              />
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground/70">
                 {t.finalSolutionImagePlaceholder}
               </p>
             </div>
           )}
-        </motion.div>
-
+        </div>
       </SectionContainer>
     </SectionWrapper>
   );

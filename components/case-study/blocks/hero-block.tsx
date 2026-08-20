@@ -1,24 +1,27 @@
-"use client"
+"use client";
 
-import { motion, useReducedMotion } from "framer-motion"
-import { csEase } from "../shared/section-primitives"
-import { ExternalLink, FileText, Github, Presentation } from "lucide-react"
-import type { Project } from "@/lib/projects"
-import type { CaseStudyLocale, ResolvedCaseStudySection } from "@/lib/case-study/types"
-import { caseStudyTranslations } from "@/lib/case-study/translations"
+import { useRef } from "react";
+import { ExternalLink, FileText, Github, Presentation } from "lucide-react";
+import type { Project } from "@/lib/projects";
+import type {
+  CaseStudyLocale,
+  ResolvedCaseStudySection,
+} from "@/lib/case-study/types";
+import { caseStudyTranslations } from "@/lib/case-study/translations";
+import { CS_EASE, useGsapEffect } from "@/lib/animation/gsap";
 
 interface HeroBlockProps {
-  section: ResolvedCaseStudySection
-  project: Project
-  language: CaseStudyLocale
-  projectType?: string
-  year?: string
+  section: ResolvedCaseStudySection;
+  project: Project;
+  language: CaseStudyLocale;
+  projectType?: string;
+  year?: string;
 }
 
 interface ProjectLink {
-  href: string
-  label: string
-  icon: typeof ExternalLink
+  href: string;
+  label: string;
+  icon: typeof ExternalLink;
 }
 
 export function HeroBlock({
@@ -28,83 +31,122 @@ export function HeroBlock({
   projectType,
   year,
 }: HeroBlockProps) {
-  const t = caseStudyTranslations[language]
-  const reduce = useReducedMotion()
-  const words = project.title.split(" ")
+  const t = caseStudyTranslations[language];
+  const words = project.title.split(" ");
+  const rootRef = useRef<HTMLElement>(null);
 
-  const rise = (delay: number) =>
-    reduce
-      ? { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.3 } }
-      : {
-          initial: { opacity: 0, y: 18 },
-          animate: { opacity: 1, y: 0 },
-          transition: { delay, duration: 0.7, ease: csEase },
-        }
+  useGsapEffect(rootRef, ({ gsap, scope }) => {
+    const tl = gsap.timeline({ defaults: { ease: CS_EASE } });
+
+    tl.fromTo(
+      scope.querySelector("[data-curtain]"),
+      { scaleY: 1 },
+      { scaleY: 0, duration: 1, transformOrigin: "top center" },
+    )
+      .fromTo(
+        scope.querySelectorAll("[data-word]"),
+        { yPercent: 118, rotate: 3 },
+        { yPercent: 0, rotate: 0, duration: 1.1, stagger: 0.07 },
+        0.3,
+      )
+      .fromTo(
+        scope.querySelectorAll("[data-anim]"),
+        { autoAlpha: 0, y: 22 },
+        { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.08 },
+        0.45,
+      );
+
+    // Parallax suave del halo de fondo al scrollear.
+    gsap.to(scope.querySelector("[data-halo]"), {
+      yPercent: 22,
+      ease: "none",
+      scrollTrigger: {
+        trigger: scope,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  });
 
   const links: ProjectLink[] = [
-    project.liveUrl && { href: project.liveUrl, label: t.viewLive, icon: ExternalLink },
-    project.slidesUrl && { href: project.slidesUrl, label: t.viewPresentation, icon: Presentation },
-    project.docsUrl && { href: project.docsUrl, label: t.viewProjectCharter, icon: FileText },
-    project.docsUrl2 && { href: project.docsUrl2, label: t.viewResearch, icon: FileText },
-    project.githubUrl && { href: project.githubUrl, label: t.viewCode, icon: Github },
-  ].filter(Boolean) as ProjectLink[]
+    project.liveUrl && {
+      href: project.liveUrl,
+      label: t.viewLive,
+      icon: ExternalLink,
+    },
+    project.slidesUrl && {
+      href: project.slidesUrl,
+      label: t.viewPresentation,
+      icon: Presentation,
+    },
+    project.docsUrl && {
+      href: project.docsUrl,
+      label: t.viewProjectCharter,
+      icon: FileText,
+    },
+    project.docsUrl2 && {
+      href: project.docsUrl2,
+      label: t.viewResearch,
+      icon: FileText,
+    },
+    project.githubUrl && {
+      href: project.githubUrl,
+      label: t.viewCode,
+      icon: Github,
+    },
+  ].filter(Boolean) as ProjectLink[];
 
   return (
-    <header className="relative flex min-h-[620px] items-start overflow-hidden bg-cs-surface">
+    <header
+      ref={rootRef}
+      className="relative flex min-h-[620px] items-start overflow-hidden bg-cs-surface"
+    >
       <div
-        className="pointer-events-none absolute inset-0 opacity-70"
+        data-halo
+        className="pointer-events-none absolute -inset-y-24 inset-x-0 opacity-70"
         style={{
           background:
             "radial-gradient(120% 80% at 12% 0%, color-mix(in oklab, var(--primary) 14%, transparent) 0%, transparent 60%)",
         }}
       />
 
-      {!reduce && (
-        <motion.div
-          initial={{ scaleY: 1 }}
-          animate={{ scaleY: 0 }}
-          transition={{ duration: 0.9, ease: csEase }}
-          style={{ originY: 0 }}
-          className="pointer-events-none absolute inset-0 z-20 bg-cs-surface-alt"
-        />
-      )}
+      <div
+        data-curtain
+        className="pointer-events-none absolute inset-0 z-20 origin-top bg-cs-surface-alt"
+      />
 
       <div className="relative z-10 container mx-auto max-w-6xl px-6 pt-28 pb-24 md:pt-36 md:pb-32">
         <div className="max-w-4xl">
-          <motion.p
-            {...rise(0.25)}
+          <p
+            data-anim
             className="mb-6 text-[10px] font-medium uppercase tracking-[0.35em] text-primary"
           >
             {section.eyebrow ?? t.caseStudy}
-          </motion.p>
+          </p>
 
           <h1 className="font-superlobster text-6xl leading-[0.92] tracking-tight text-foreground sm:text-7xl md:text-8xl lg:text-[88px] xl:text-[96px]">
             {words.map((word, index) => (
-              <span key={`${word}-${index}`} className="inline-block overflow-hidden pb-[0.08em] align-bottom">
-                <motion.span
-                  className="inline-block"
-                  initial={reduce ? { opacity: 0 } : { y: "110%" }}
-                  animate={reduce ? { opacity: 1 } : { y: "0%" }}
-                  transition={{ delay: 0.35 + index * 0.07, duration: 0.85, ease: csEase }}
-                >
+              <span
+                key={`${word}-${index}`}
+                className="inline-block overflow-hidden pb-[0.08em] align-bottom"
+              >
+                <span data-word className="inline-block">
                   {word}
-                </motion.span>
+                </span>
                 {index < words.length - 1 && <span>&nbsp;</span>}
               </span>
             ))}
           </h1>
 
-          <motion.p
-            {...rise(0.6)}
+          <p
+            data-anim
             className="mt-7 max-w-2xl text-sm leading-7 text-muted-foreground md:text-base"
           >
             {project.description}
-          </motion.p>
+          </p>
 
-          <motion.div
-            {...rise(0.72)}
-            className="mt-10 flex flex-wrap gap-x-10 gap-y-5"
-          >
+          <div data-anim className="mt-10 flex flex-wrap gap-x-10 gap-y-5">
             <div>
               <p className="text-[9px] uppercase tracking-[0.28em] text-muted-foreground">
                 {t.role}
@@ -131,13 +173,10 @@ export function HeroBlock({
                 <p className="mt-2 text-xs text-foreground">{year}</p>
               </div>
             )}
-          </motion.div>
+          </div>
 
           {links.length > 0 && (
-            <motion.div
-              {...rise(0.84)}
-              className="mt-8 flex flex-wrap gap-3"
-            >
+            <div data-anim className="mt-8 flex flex-wrap gap-3">
               {links.map((link) => (
                 <a
                   key={link.href}
@@ -150,12 +189,12 @@ export function HeroBlock({
                   {link.label}
                 </a>
               ))}
-            </motion.div>
+            </div>
           )}
         </div>
       </div>
 
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cs-surface-alt to-transparent" />
     </header>
-  )
+  );
 }

@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import type { CaseStudyLocale, ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
   FormattedText,
@@ -30,14 +29,11 @@ export function DesignDecisionsBlock({
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {decisions.map((decision, index) => (
-            <motion.div
+          {decisions.map((decision) => (
+            <div
               key={decision.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.06 }}
-              className="rounded-lg border border-cs-hairline bg-cs-surface p-6"
+              data-anim
+              className="rounded-lg border border-cs-hairline bg-cs-surface p-6 transition-transform duration-300 hover:-translate-y-1"
             >
               <h3 className="text-sm font-semibold text-foreground">
                 {decision.title}
@@ -74,7 +70,7 @@ export function DesignDecisionsBlock({
                   />
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </SectionContainer>

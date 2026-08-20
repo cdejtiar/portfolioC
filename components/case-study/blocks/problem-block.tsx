@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import type { CaseStudyLocale, ResolvedCaseStudySection } from "@/lib/case-study/types"
 import { caseStudyTranslations } from "@/lib/case-study/translations"
 import {
@@ -45,10 +44,9 @@ export function ProblemBlock({ section, language }: ProblemBlockProps) {
             )}
           </div>
           {sideHighlight && (
-            <motion.div
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 250, damping: 20 }}
-              className="rounded-xl border border-cs-hairline bg-cs-card p-7 text-center"
+            <div
+              data-anim
+              className="rounded-xl border border-cs-hairline bg-cs-card p-7 text-center transition-transform duration-300 ease-out hover:-translate-y-1.5"
             >
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                 <svg
@@ -77,7 +75,7 @@ export function ProblemBlock({ section, language }: ProblemBlockProps) {
               <p className="mt-2 text-[11px] leading-5 text-muted-foreground">
                 {sideHighlight.description}
               </p>
-            </motion.div>
+            </div>
           )}
         </div>
       </SectionContainer>

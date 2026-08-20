@@ -1,9 +1,16 @@
 "use client"
 
+import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { getCvDownload } from "@/lib/cv"
 import { ArrowDown } from "lucide-react"
 import { motion } from "framer-motion"
+
+const HeroCanvas = dynamic(
+  () => import("@/components/animation/hero-canvas").then((m) => m.HeroCanvas),
+  { ssr: false },
+)
 
 interface HeroSectionProps {
   language: "es" | "en"
@@ -26,9 +33,24 @@ const translations = {
   },
 }
 
+/** Sólo carga la escena 3D si el dispositivo y las preferencias lo permiten. */
+function useCanvasEligible() {
+  const [eligible, setEligible] = useState(false)
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const wideEnough = window.matchMedia("(min-width: 768px)").matches
+    const cores = navigator.hardwareConcurrency ?? 8
+    setEligible(!reduce && wideEnough && cores > 4)
+  }, [])
+
+  return eligible
+}
+
 export function HeroSection({ language }: HeroSectionProps) {
   const t = translations[language]
   const cv = getCvDownload(language)
+  const canvasEligible = useCanvasEligible()
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
@@ -44,6 +66,11 @@ export function HeroSection({ language }: HeroSectionProps) {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-16 left-10 w-44 h-44 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-16 right-10 w-72 h-72 rounded-full bg-secondary/10 blur-3xl" />
+        {canvasEligible && (
+          <div className="absolute inset-0 opacity-60">
+            <HeroCanvas />
+          </div>
+        )}
       </div>
 
       <div className="container mx-auto px-6 relative z-10">

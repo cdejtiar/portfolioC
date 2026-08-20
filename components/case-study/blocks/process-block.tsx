@@ -9,8 +9,8 @@ import {
   Target,
   type LucideIcon,
 } from "lucide-react"
-import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
+import { CS_EASE, useGsapEffect } from "@/lib/animation/gsap"
 import type { ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
   FormattedText,
@@ -39,6 +39,43 @@ export function ProcessBlock({ section }: ProcessBlockProps) {
   const steps = section.steps ?? []
   const [activeStepIndex, setActiveStepIndex] = useState(0)
   const stepRefs = useRef<(HTMLDivElement | null)[]>([])
+  const timelineRef = useRef<HTMLDivElement>(null)
+
+  // La línea del proceso se "dibuja" con el scroll y los pasos entran en cascada.
+  useGsapEffect(
+    timelineRef,
+    ({ gsap, scope }) => {
+      gsap.fromTo(
+        scope.querySelector("[data-process-line]"),
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          transformOrigin: "left center",
+          ease: "none",
+          scrollTrigger: {
+            trigger: scope,
+            start: "top 80%",
+            end: "bottom 55%",
+            scrub: 0.5,
+          },
+        },
+      )
+
+      gsap.fromTo(
+        scope.querySelectorAll("[data-process-step]"),
+        { autoAlpha: 0, y: 18 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.7,
+          ease: CS_EASE,
+          stagger: 0.08,
+          scrollTrigger: { trigger: scope, start: "top 82%", once: true },
+        },
+      )
+    },
+    [steps.length],
+  )
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -69,9 +106,13 @@ export function ProcessBlock({ section }: ProcessBlockProps) {
           )}
         </div>
 
-        <div className="relative overflow-x-auto pb-6">
+        <div ref={timelineRef} className="relative overflow-x-auto pb-6">
           <div className="relative min-w-[760px]">
             <div className="absolute left-8 right-8 top-6 h-px bg-cs-hairline" />
+            <div
+              data-process-line
+              className="absolute left-8 right-8 top-6 h-px origin-left bg-primary"
+            />
 
             <div className="relative grid grid-cols-6 gap-4">
               {steps.map((step, idx) => {
@@ -80,21 +121,19 @@ export function ProcessBlock({ section }: ProcessBlockProps) {
                 const Icon = getStepIcon(step.title)
 
                 return (
-                  <motion.div
+                  <div
                     key={`${step.title}-${idx}`}
                     ref={(el) => {
                       stepRefs.current[idx] = el
                     }}
                     data-step-index={idx}
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.05 }}
+                    data-process-step
                     className="text-center"
                   >
-                    <motion.div
-                      animate={{
-                        scale: isActive ? 1.12 : 1,
+                    <div
+                      className="relative z-10 mx-auto flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300 ease-out"
+                      style={{
+                        transform: `scale(${isActive ? 1.12 : 1})`,
                         backgroundColor: isDone
                           ? "var(--primary)"
                           : "var(--cs-card)",
@@ -102,8 +141,6 @@ export function ProcessBlock({ section }: ProcessBlockProps) {
                           ? "var(--primary)"
                           : "var(--cs-hairline)",
                       }}
-                      transition={{ duration: 0.3 }}
-                      className="relative z-10 mx-auto flex h-12 w-12 items-center justify-center rounded-full border"
                     >
                       <Icon
                         className="h-4 w-4"
@@ -114,7 +151,7 @@ export function ProcessBlock({ section }: ProcessBlockProps) {
                         }}
                         strokeWidth={1.8}
                       />
-                    </motion.div>
+                    </div>
 
                     <p
                       className={`mt-5 text-[9px] font-semibold uppercase tracking-[0.2em] ${
@@ -128,7 +165,7 @@ export function ProcessBlock({ section }: ProcessBlockProps) {
                       text={step.description}
                       className="mx-auto mt-3 max-w-[130px] text-[10px] leading-5 text-muted-foreground"
                     />
-                  </motion.div>
+                  </div>
                 )
               })}
             </div>

@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import type { ResolvedCaseStudySection } from "@/lib/case-study/types"
 import {
   CardGrid,
@@ -94,14 +93,11 @@ export function CardsBlock({ section }: CardsBlockProps) {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {cards.map((card, index) => (
-            <motion.div
+          {cards.map((card) => (
+            <div
               key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.06 }}
-              className="rounded-xl border border-cs-hairline bg-cs-card p-6"
+              data-anim
+              className="rounded-xl border border-cs-hairline bg-cs-card p-6 transition-transform duration-300 hover:-translate-y-1"
             >
               <h3 className="text-sm font-semibold text-foreground">
                 {card.title}
@@ -110,7 +106,7 @@ export function CardsBlock({ section }: CardsBlockProps) {
                 text={card.description}
                 className="mt-4 text-sm leading-7 text-muted-foreground"
               />
-            </motion.div>
+            </div>
           ))}
         </div>
       </SectionContainer>

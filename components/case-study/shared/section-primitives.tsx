@@ -1,95 +1,102 @@
-"use client"
-import { motion, useReducedMotion } from "framer-motion"
-import type { ReactNode } from "react"
+"use client";
+
+import { useRef, type ReactNode } from "react";
+import { CS_EASE, useGsapEffect } from "@/lib/animation/gsap";
 
 /** Curva de easing única para toda la capa de movimiento del case study. */
-export const csEase = [0.16, 1, 0.3, 1] as const
-
-export const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: csEase } },
-}
-
-export const stagger = (delayChildren = 0, staggerChildren = 0.08) => ({
-  hidden: {},
-  show: { transition: { delayChildren, staggerChildren } },
-})
-
-/** Variantes neutralizadas cuando el usuario pide menos movimiento. */
-export const staticVariants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.3 } },
-}
+export const csEase = [0.16, 1, 0.3, 1] as const;
 
 interface SectionWrapperProps {
-  children: ReactNode
-  className?: string
-  delay?: number
+  children: ReactNode;
+  className?: string;
+  delay?: number;
 }
 
+/**
+ * Reveal de sección con GSAP + ScrollTrigger.
+ * Los hijos marcados con data-anim entran en cascada.
+ */
 export function SectionWrapper({
   children,
   className = "bg-cs-surface",
   delay = 0,
 }: SectionWrapperProps) {
-  const reduce = useReducedMotion()
+  const ref = useRef<HTMLElement>(null);
+
+  useGsapEffect(ref, ({ gsap, scope }) => {
+    const items = scope.querySelectorAll<HTMLElement>("[data-anim]");
+    const targets = items.length > 0 ? items : [scope];
+
+    gsap.fromTo(
+      targets,
+      { autoAlpha: 0, y: 34 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 1,
+        ease: CS_EASE,
+        delay,
+        stagger: 0.09,
+        scrollTrigger: { trigger: scope, start: "top 82%", once: true },
+      },
+    );
+  });
 
   return (
-    <motion.section
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={reduce ? staticVariants : fadeUp}
-      transition={{ delay }}
-      className={className}
-    >
+    <section ref={ref} className={className}>
       {children}
-    </motion.section>
-  )
+    </section>
+  );
 }
 
-/** Item hijo para grillas y listas: hereda el stagger del contenedor. */
+/** Item hijo para grillas y listas: entra con el stagger de la sección. */
 export function RevealItem({
   children,
   className,
 }: {
-  children: ReactNode
-  className?: string
+  children: ReactNode;
+  className?: string;
 }) {
-  const reduce = useReducedMotion()
   return (
-    <motion.div variants={reduce ? staticVariants : fadeUp} className={className}>
+    <div data-anim className={className}>
       {children}
-    </motion.div>
-  )
+    </div>
+  );
 }
 
 export function SectionContainer({
   children,
   className = "container mx-auto max-w-6xl px-6 py-24 md:py-28",
 }: {
-  children: ReactNode
-  className?: string
+  children: ReactNode;
+  className?: string;
 }) {
-  return <div className={className}>{children}</div>
+  return <div className={className}>{children}</div>;
 }
 
 export function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground">
+    <p
+      data-anim
+      className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground"
+    >
       {children}
     </p>
-  )
+  );
 }
 
 export function SectionTitle({
   children,
   className = "mt-4 font-superlobster text-4xl text-foreground sm:text-5xl",
 }: {
-  children: ReactNode
-  className?: string
+  children: ReactNode;
+  className?: string;
 }) {
-  return <h2 className={className}>{children}</h2>
+  return (
+    <h2 data-anim className={className}>
+      {children}
+    </h2>
+  );
 }
 
 /**
@@ -100,8 +107,8 @@ export function FormattedText({
   text,
   className,
 }: {
-  text: string
-  className?: string
+  text: string;
+  className?: string;
 }) {
   return (
     <div className={className}>
@@ -116,54 +123,58 @@ export function FormattedText({
                 >
                   →
                 </span>
-              )
+              );
             }
             if (part.startsWith("**") && part.endsWith("**")) {
               return (
                 <strong key={i} className="font-semibold text-foreground">
                   {part.slice(2, -2)}
                 </strong>
-              )
+              );
             }
-            return <span key={i}>{part}</span>
+            return <span key={i}>{part}</span>;
           })}
         </p>
       ))}
     </div>
-  )
+  );
 }
 
 export function SectionDescription({
   children,
   className = "mt-5 text-sm leading-7 text-muted-foreground",
 }: {
-  children: ReactNode
-  className?: string
+  children: ReactNode;
+  className?: string;
 }) {
   // Si viene un string (el caso normal, texto de contenido), se parsea con FormattedText.
   // Si viene JSX ya armado desde algún bloque puntual, se respeta tal cual.
   if (typeof children === "string") {
-    return <FormattedText text={children} className={className} />
+    return (
+      <div data-anim>
+        <FormattedText text={children} className={className} />
+      </div>
+    );
   }
-  return <p className={className}>{children}</p>
+  return (
+    <p data-anim className={className}>
+      {children}
+    </p>
+  );
 }
 
 export function InfoCard({
   label,
   value,
-  delay = 0,
 }: {
-  label: string
-  value: string
-  delay?: number
+  label: string;
+  value: string;
+  delay?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.5 }}
-      className="min-h-[150px] rounded-xl border border-cs-hairline bg-cs-card p-6"
+    <div
+      data-anim
+      className="min-h-[150px] rounded-xl border border-cs-hairline bg-cs-card p-6 transition-transform duration-300 hover:-translate-y-1"
     >
       <p className="text-[9px] uppercase tracking-[0.28em] text-muted-foreground">
         {label}
@@ -172,16 +183,16 @@ export function InfoCard({
         text={value}
         className="mt-4 text-xs leading-6 text-foreground/90"
       />
-    </motion.div>
-  )
+    </div>
+  );
 }
 
 export function CardGrid({
   children,
   columns = "md:grid-cols-3",
 }: {
-  children: ReactNode
-  columns?: string
+  children: ReactNode;
+  columns?: string;
 }) {
-  return <div className={`grid gap-4 ${columns}`}>{children}</div>
+  return <div className={`grid gap-4 ${columns}`}>{children}</div>;
 }

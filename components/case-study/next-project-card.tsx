@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import type { Project } from "@/lib/projects"
 import type { CaseStudyLocale } from "@/lib/case-study/types"
@@ -25,10 +24,9 @@ export function NextProjectCard({
     <SectionWrapper>
       <SectionContainer className="container mx-auto max-w-6xl px-6 pb-28 pt-8 md:pb-36">
         <Link href={`/project/${project.id}`}>
-          <motion.div
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.3 }}
-            className="group relative overflow-hidden rounded-xl border border-cs-hairline bg-cs-card"
+          <div
+            data-anim
+            className="group relative overflow-hidden rounded-xl border border-cs-hairline bg-cs-card transition-transform duration-500 ease-out hover:-translate-y-1.5"
           >
             <div className="grid items-center gap-8 p-8 md:grid-cols-[0.45fr_0.55fr] md:p-12">
               <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-lg bg-cs-surface-alt p-4">
@@ -55,7 +53,7 @@ export function NextProjectCard({
                 </span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </Link>
       </SectionContainer>
     </SectionWrapper>
