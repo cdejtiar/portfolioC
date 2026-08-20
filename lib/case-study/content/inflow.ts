@@ -193,6 +193,7 @@ export default defineCaseStudy({
       title: "La app en funcionamiento",
       description:
         "inFLOW integra **organización académica, acompañamiento emocional e inteligencia artificial** en una misma experiencia móvil.",
+        image: "../../../public/images/inflow-screens.png"
     },
     {
       type: "result",
@@ -410,6 +411,7 @@ export default defineCaseStudy({
       title: "The app in action",
       description:
         "inFLOW brings **academic organization, emotional support, and artificial intelligence** together into a single mobile experience.",
+        image: "../../../public/images/inflow-screens.png"
     },
     {
       type: "result",

@@ -80,6 +80,7 @@ export default defineCaseStudy({
       title: "La colección terminada",
       description:
         "50 NFTs generados a partir del mismo sistema visual, junto a una web funcional de minting sobre Ethereum de prueba.",
+        image: "../../../public/images/nftbunnies-screens.png"
     },
     {
       type: "result",
@@ -168,6 +169,7 @@ export default defineCaseStudy({
       title: "The finished collection",
       description:
         "50 NFTs generated from the same visual system, alongside a working minting site on the Ethereum testnet.",
+        image: "../../../public/images/nftbunnies-screens.png"
     },
     {
       type: "result",

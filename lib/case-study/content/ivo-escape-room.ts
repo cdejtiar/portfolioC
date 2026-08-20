@@ -81,6 +81,7 @@ export default defineCaseStudy({
       title: "La sala en funcionamiento",
       description:
         "La experiencia completa tal como la recorrieron los estudiantes durante las jornadas de orientación.",
+        image: "../../../public/images/ivo-screens.png"
     },
     {
       type: "result",
@@ -177,6 +178,7 @@ export default defineCaseStudy({
       title: "The room in action",
       description:
         "The full experience as students went through it during the academic orientation days.",
+        image: "../../../public/images/ivo-screens.png"
     },
     {
       type: "result",

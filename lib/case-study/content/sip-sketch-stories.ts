@@ -115,6 +115,7 @@ export default defineCaseStudy({
       title: "La solución final",
       description:
         "Una experiencia web centrada en una **única acción principal**: sacar una carta.",
+        image: "../../../public/images/sipsketchstories-screens.png",
       body: "La interfaz presenta el mazo y permite descubrir progresivamente nuevas consignas mientras la reunión avanza. Las animaciones, los estados de las cartas, el sistema de categorías y el modo pantalla completa trabajan alrededor de esa interacción principal.\nLa experiencia no intenta convertirse en un juego competitivo: su función es **facilitar momentos que probablemente sucederían de todos modos** —hablar, reírse, dibujar, brindar y compartir.",
     },
     {
@@ -247,6 +248,7 @@ export default defineCaseStudy({
       title: "The final solution",
       description:
         "A web experience centred on a **single main action**: draw a card.",
+        image: "../../../public/images/sipsketchstories-screens.png",
       body: "The interface presents the deck and reveals new prompts progressively as the gathering unfolds. Animations, card states, the category system, and fullscreen mode all work around that main interaction.\nIt isn't trying to be a competitive game: its purpose is to **make room for things that would probably happen anyway** — talking, laughing, drawing, toasting, sharing.",
     },
     {

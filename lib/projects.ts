@@ -293,8 +293,12 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
       El MVP (Mínimo Producto Viable) definido incluye un cuestionario inicial de personalización, un plan de acción diario/semanal, un sistema de XP y Badges, un diario emocional y feedback visual del progreso.
       El estudio de Investigación incluyó benchmarking de herramientas (como Focusmate, Forest y Structured) y encuestas a 157 personas, con un 82,8% que admitió procrastinar.
       `,
-      image: "/images/comingsoon.png",
+      image: "/images/inflow.png",
       technologies: ["Design Thinking", "UX/UI Design", "Benchmarking", "MoSCoW (Matriz de Priorización)"],
+      liveUrl: "https://inflow-cd.vercel.app/",
+      githubUrl: "https://github.com/cdejtiar/inFlow",
+      slidesUrl: "https://www.figma.com/deck/B0tkwBnR1LXW7b2wP0Sqaz/inflow---Presentaci%C3%B3n?node-id=1-33&viewport=-26%2C-137%2C0.64&t=liDDzsG6WlhqxnM5-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      docsUrl: "https://drive.google.com/file/d/18kXTHpyhs5jKeNCPOJ-kqHbiZoJHqW3m/view?usp=sharing",
       roles: ["Product Design", "UX/UI Design", "Frontend Development"],
       featured: true,
       features: [
@@ -311,7 +315,7 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
         "Experiencia web interactiva para animar reuniones y cumpleaños a través del dibujo, la conversación y el juego",
       fullDescription:
         "Sip, Sketch & Stories es una experiencia web interactiva creada para acompañar reuniones y cumpleaños de una manera simple, espontánea y social. La propuesta reemplaza el clásico mazo físico de cartas por una versión digital que combina consignas para conversar, dibujar, interactuar y brindar. \n Mientras cada persona dibuja libremente sobre una hoja, la aplicación funciona como un disparador de conversaciones y pequeñas dinámicas grupales.",
-      image: "/images/comingsoon.png",
+      image: "/images/sipsketchstories.png",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide Icons"],
       roles: ["Frontend Development"],
       context:
@@ -586,7 +590,7 @@ The solution is based on implementing User-Centered Design strategies and gamifi
 The development process followed the Design Thinking stages: Empathize, Define, Ideate, Prototype, and Test.  
 The defined MVP includes an initial personalization questionnaire, a daily/weekly action plan, an XP and Badges system, an emotional journal, and visual progress feedback.  
 The research phase included benchmarking tools such as Focusmate, Forest, and Structured, as well as surveys of 157 people — 82.8% of whom admitted to procrastinating.`,
-  image: "/images/comingsoon.png",
+  image: "/images/inflow.png",
       technologies: [
         "Design Thinking",
         "UX/UI Design",
@@ -595,9 +599,10 @@ The research phase included benchmarking tools such as Focusmate, Forest, and St
       ],
       roles: ["Product Design", "UX/UI Design", "Frontend Development"],
       featured: true,
-      //work in progress
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://inflow-cd.vercel.app/",
+      githubUrl: "https://github.com/cdejtiar/inFlow",
+      slidesUrl: "https://www.figma.com/deck/B0tkwBnR1LXW7b2wP0Sqaz/inflow---Presentaci%C3%B3n?node-id=1-33&viewport=-26%2C-137%2C0.64&t=liDDzsG6WlhqxnM5-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      docsUrl: "https://drive.google.com/file/d/18kXTHpyhs5jKeNCPOJ-kqHbiZoJHqW3m/view?usp=sharing",
       features: [
         "Personalization based on procrastination type (initial questionnaire)",
         "Gamification with XP and Badges to foster motivation",
@@ -612,7 +617,7 @@ The research phase included benchmarking tools such as Focusmate, Forest, and St
         "An interactive web experience to liven up gatherings and birthdays through drawing, conversation, and play",
       fullDescription:
         "Sip, Sketch & Stories is an interactive web experience created to accompany gatherings and birthdays in a simple, spontaneous, social way. It replaces the classic physical card deck with a digital version that mixes prompts to talk, draw, interact, and toast. \n While everyone draws freely on a sheet of paper, the app works as a trigger for conversations and small group dynamics.",
-      image: "/images/comingsoon.png",
+      image: "/images/sipsketchstories.png",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide Icons"],
       roles: ["Frontend Development"],
       context:

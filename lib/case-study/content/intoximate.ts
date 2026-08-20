@@ -83,6 +83,7 @@ export default defineCaseStudy({
       title: "La app en funcionamiento",
       description:
         "La versión beta funcional: registro de consumo, cálculo estimado y recomendaciones dentro de un mismo flujo.",
+        image: "../../../public/images/intoximate-screens.png"
     },
     {
       type: "result",
@@ -181,6 +182,7 @@ export default defineCaseStudy({
       title: "The app in action",
       description:
         "The working beta: consumption logging, estimated calculation, and recommendations within a single flow.",
+        image: "../../../public/images/intoximate-screens.png"
     },
     {
       type: "result",

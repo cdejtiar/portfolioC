@@ -65,6 +65,7 @@ export default defineCaseStudy({
         "**Reinicio de partida**.",
         "**Funcionamiento offline**.",
       ],
+      image: "../../../public/images/bingo-screens.png"
     },
     {
       type: "result",
@@ -137,6 +138,7 @@ export default defineCaseStudy({
         "**Game reset**.",
         "**Offline support**.",
       ],
+      image: "../../../public/images/bingo-screens.png"
     },
     {
       type: "result",

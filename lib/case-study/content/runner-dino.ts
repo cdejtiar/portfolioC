@@ -65,6 +65,7 @@ export default defineCaseStudy({
       title: "El juego en funcionamiento",
       description:
         "Un runner jugable en el navegador: salto, obstáculos, dificultad progresiva y registro de puntajes.",
+        image: "../../../public/images/runnerdino-screens.png"
     },
     {
       type: "result",
@@ -146,6 +147,7 @@ export default defineCaseStudy({
       title: "The game in action",
       description:
         "A runner playable in the browser: jumping, obstacles, progressive difficulty, and score tracking.",
+        image: "../../../public/images/runnerdino-screens.png"
     },
     {
       type: "result",
