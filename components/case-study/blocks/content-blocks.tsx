@@ -153,7 +153,7 @@ export function BeforeAfterBlock({
                 <img
                   src={resolveImage(side.image)}
                   alt={side.label ?? ""}
-                  className="mt-4 h-48 w-full rounded-lg object-cover"
+                  className="mt-4 max-h-64 w-auto max-w-full rounded-lg object-contain"
                 />
               )}
               <FormattedText

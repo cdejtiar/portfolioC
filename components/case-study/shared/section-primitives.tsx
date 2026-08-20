@@ -1,10 +1,24 @@
 "use client"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import type { ReactNode } from "react"
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+/** Curva de easing única para toda la capa de movimiento del case study. */
+export const csEase = [0.16, 1, 0.3, 1] as const
+
+export const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: csEase } },
+}
+
+export const stagger = (delayChildren = 0, staggerChildren = 0.08) => ({
+  hidden: {},
+  show: { transition: { delayChildren, staggerChildren } },
+})
+
+/** Variantes neutralizadas cuando el usuario pide menos movimiento. */
+export const staticVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.3 } },
 }
 
 interface SectionWrapperProps {
@@ -18,17 +32,35 @@ export function SectionWrapper({
   className = "bg-cs-surface",
   delay = 0,
 }: SectionWrapperProps) {
+  const reduce = useReducedMotion()
+
   return (
     <motion.section
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      variants={fadeUp}
+      variants={reduce ? staticVariants : fadeUp}
       transition={{ delay }}
       className={className}
     >
       {children}
     </motion.section>
+  )
+}
+
+/** Item hijo para grillas y listas: hereda el stagger del contenedor. */
+export function RevealItem({
+  children,
+  className,
+}: {
+  children: ReactNode
+  className?: string
+}) {
+  const reduce = useReducedMotion()
+  return (
+    <motion.div variants={reduce ? staticVariants : fadeUp} className={className}>
+      {children}
+    </motion.div>
   )
 }
 

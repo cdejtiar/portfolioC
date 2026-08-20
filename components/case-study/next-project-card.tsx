@@ -31,11 +31,11 @@ export function NextProjectCard({
             className="group relative overflow-hidden rounded-xl border border-cs-hairline bg-cs-card"
           >
             <div className="grid items-center gap-8 p-8 md:grid-cols-[0.45fr_0.55fr] md:p-12">
-              <div className="overflow-hidden rounded-lg">
+              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-lg bg-cs-surface-alt p-4">
                 <img
                   src={resolveImage(project.image)}
                   alt={project.title}
-                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-64"
+                  className="max-h-full max-w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                 />
               </div>
 

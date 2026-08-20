@@ -109,7 +109,7 @@ export function FeaturedProjectSection({ language }: FeaturedProjectSectionProps
               <img
                 src="/images/inflow.png"
                 alt="inFLOW product"
-                className="w-full h-[280px] sm:h-[360px] object-cover"
+                className="mx-auto max-h-[360px] w-auto max-w-full object-contain"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent px-6 py-5">
                 <p className="text-sm uppercase tracking-[0.32em] text-white/70">inFLOW</p>

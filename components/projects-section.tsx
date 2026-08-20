@@ -61,11 +61,13 @@ export function ProjectsSection({ language }: ProjectsSectionProps) {
                 className="glass-card rounded-[2rem] border border-border p-6 shadow-2xl shadow-black/10 transition hover:-translate-y-1"
               >
                 <div className="overflow-hidden rounded-[1.5rem] bg-card/80">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-72 w-full object-cover"
-                  />
+                  <div className="flex aspect-[4/3] w-full items-center justify-center p-3">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
                 </div>
 
                 <div className="mt-6">

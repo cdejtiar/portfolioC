@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ImageIcon } from "lucide-react";
 import type { Project } from "@/lib/projects";
 import type {
@@ -35,6 +36,16 @@ export function FinalSolutionBlock({
   const items = section.items ?? [];
   const hasItems = items.length > 0;
   const image = section.image;
+
+  const reduce = useReducedMotion();
+  const showcaseRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: showcaseRef,
+    offset: ["start end", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 0.45, 1], reduce ? [1, 1, 1] : [0.92, 1, 1.02]);
+  const parallax = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [48, -36]);
+  const opacity = useTransform(scrollYProgress, [0, 0.25, 1], reduce ? [1, 1, 1] : [0, 1, 1]);
 
   return (
     <SectionWrapper>
@@ -103,18 +114,11 @@ export function FinalSolutionBlock({
         )}
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          ref={showcaseRef}
+          style={{ scale, y: parallax, opacity }}
           className={`flex justify-center ${
             hasItems || section.body || section.subtitle ? "mt-16" : "mt-4"
           }`}
-          style={{
-            willChange: "transform",
-            backfaceVisibility: "hidden",
-            transform: "translateZ(0)",
-          }}
         >
           {image ? (
             <motion.img

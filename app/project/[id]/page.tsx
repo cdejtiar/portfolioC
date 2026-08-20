@@ -69,7 +69,7 @@ export default function ProjectPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#100c19] text-foreground overflow-hidden lg:pb-16">
+    <div className="min-h-screen bg-cs-surface text-foreground overflow-hidden lg:pb-16">
       <SidebarNavigation />
 
       <CaseStudyRenderer

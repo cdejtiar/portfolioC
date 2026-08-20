@@ -40,12 +40,14 @@ export function GalleryBlock({ section, resolveImage }: GalleryBlockProps) {
               transition={{ delay: index * 0.08 }}
               className="overflow-hidden rounded-xl border border-cs-hairline bg-cs-card"
             >
-              <img
-                src={resolveImage(img.src)}
-                alt={img.caption ?? section.title ?? ""}
-                className="h-56 w-full object-cover"
-                loading="lazy"
-              />
+              <div className="flex aspect-[4/3] w-full items-center justify-center bg-cs-surface-alt p-3">
+                <img
+                  src={resolveImage(img.src)}
+                  alt={img.caption ?? section.title ?? ""}
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
               {img.caption && (
                 <figcaption className="p-4 text-xs leading-6 text-muted-foreground">
                   {img.caption}
