@@ -113,6 +113,7 @@ export default defineCaseStudy({
         "Comunicación con refugios y organizaciones.",
         "Publicación de animales en adopción o tránsito.",
       ],
+      video: "../../../public/images/enHUELLA2.0.mp4",
     },
     {
       type: "testing",
@@ -262,6 +263,7 @@ export default defineCaseStudy({
         "Communication with shelters and organizations.",
         "Publishing animals for adoption or foster.",
       ],
+      video: "../../../public/images/enHUELLA2.0.mp4",
     },
     {
       type: "testing",

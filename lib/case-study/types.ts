@@ -100,6 +100,7 @@ export interface CaseStudySectionConfig {
   beforeAfter?: CaseStudyBeforeAfter
   sideHighlight?: CaseStudySideHighlight
   image?: string
+  video?: string
   images?: CaseStudyGalleryImage[]
   variant?: "default" | "muted" | "accent"
 }
@@ -120,6 +121,7 @@ export interface ResolvedCaseStudySection {
   beforeAfter?: CaseStudyBeforeAfter
   sideHighlight?: CaseStudySideHighlight
   image?: string
+  video?: string
   images?: CaseStudyGalleryImage[]
   variant?: "default" | "muted" | "accent"
 }

@@ -184,6 +184,7 @@ export function resolveCaseStudySection(
           body: section.body ?? project.finalSolution ?? project.solution,
           items: section.items,
           image: section.image,
+          video: section.video,
         }
         return resolved.title ||
           resolved.body ||

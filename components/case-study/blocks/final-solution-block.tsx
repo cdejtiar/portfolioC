@@ -36,6 +36,7 @@ export function FinalSolutionBlock({
   const items = section.items ?? [];
   const hasItems = items.length > 0;
   const image = section.image;
+  const video = section.video;
 
   const showcaseRef = useRef<HTMLDivElement>(null);
 
@@ -68,7 +69,9 @@ export function FinalSolutionBlock({
       },
     );
 
-    const bullets = scope.parentElement?.querySelectorAll("[data-solution-item]");
+    const bullets = scope.parentElement?.querySelectorAll(
+      "[data-solution-item]",
+    );
     if (bullets && bullets.length > 0) {
       gsap.fromTo(
         bullets,
@@ -154,14 +157,20 @@ export function FinalSolutionBlock({
             </div>
           </div>
         )}
-
       </SectionContainer>
 
-      <div
-        ref={showcaseRef}
-        className="w-full pb-24 md:pb-28"
-      >
-        {image ? (
+      <div ref={showcaseRef} className="w-full pb-24 md:pb-28">
+        {video ? (
+          <video
+            data-showcase-media
+            src={resolveImage(video)}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="block h-auto w-full object-contain will-change-transform"
+          />
+        ) : image ? (
           <img
             data-showcase-media
             src={resolveImage(image)}
