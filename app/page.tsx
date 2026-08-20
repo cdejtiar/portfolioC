@@ -20,10 +20,12 @@ const content = {
       "Trabajo con equipos multidisciplinarios para crear experiencias digitales que acompañen a las personas desde la investigación hasta la implementación. Diseño productos que se sienten premium, pero que siempre tienen sentido práctico.",
     skillsSubtitle: "Habilidades",
     skillsTitle: "Lo que sé hacer",
-    skillsDescription: "Un conjunto de capacidades organizadas en categorías limpias para mostrar un perfil híbrido sin métricas visuales innecesarias.",
+    skillsDescription:
+      "Un conjunto de capacidades organizadas en categorías limpias para mostrar un perfil híbrido sin métricas visuales innecesarias.",
     processSubtitle: "Mi proceso de diseño",
     processTitle: "Un flujo claro para cada etapa",
-    processDescription: "Cada etapa se sostiene en investigación y decisiones conscientes para llegar a experiencias más efectivas y con impacto.",
+    processDescription:
+      "Cada etapa se sostiene en investigación y decisiones conscientes para llegar a experiencias más efectivas y con impacto.",
     experienceTitle: "Experiencia",
     experienceDescription:
       "Más que una lista de trabajos: un recorrido por mis capacidades clave como diseñadora de producto y desarrolladora frontend.",
@@ -58,15 +60,17 @@ const content = {
     aboutSubtitle: "About Me",
     aboutTitle: "Who I Am",
     aboutDescription:
-     "I believe great digital products start with understanding people before designing solutions. That's why I enjoy being involved throughout the entire product journey—from research and problem definition to prototyping, validation, and implementation. With a background in UX/UI Design and front-end development, I focus on creating intuitive, accessible, and meaningful experiences that solve real problems. I'm driven by curiosity, continuous learning, and the opportunity to turn complex challenges into simple, thoughtful products.",
+      "I believe great digital products start with understanding people before designing solutions. That's why I enjoy being involved throughout the entire product journey—from research and problem definition to prototyping, validation, and implementation. With a background in UX/UI Design and front-end development, I focus on creating intuitive, accessible, and meaningful experiences that solve real problems. I'm driven by curiosity, continuous learning, and the opportunity to turn complex challenges into simple, thoughtful products.",
     aboutDetails:
       "I work with cross-functional teams to create digital experiences that move people from research to implementation. I design products that feel premium while keeping a practical focus.",
     skillsSubtitle: "Skills",
     skillsTitle: "What I Can Do",
-    skillsDescription: "A clean set of skill categories that highlights a hybrid profile without unnecessary visual metrics.",
+    skillsDescription:
+      "A clean set of skill categories that highlights a hybrid profile without unnecessary visual metrics.",
     processSubtitle: "My design process",
     processTitle: "A clear flow for every stage",
-    processDescription: "Each stage is grounded in research and intentional decisions to deliver more effective, impactful experiences.",
+    processDescription:
+      "Each stage is grounded in research and intentional decisions to deliver more effective, impactful experiences.",
     experienceTitle: "Experience",
     experienceDescription:
       "More than a job list: a snapshot of the key capabilities I bring as a product designer and frontend collaborator.",
@@ -180,6 +184,7 @@ const skillGroups = [
       "JavaScript",
       "TypeScript",
       "React",
+      "Vite",
       "Next.js",
       "Tailwind CSS",
       "Supabase",
@@ -187,10 +192,6 @@ const skillGroups = [
       "GitHub",
       "Vercel",
     ],
-  },
-  {
-    title: "AI",
-    skills: ["Prompt Engineering", "AI Integration", "Conversational UX"],
   },
   {
     title: "Software & Tools",
@@ -201,8 +202,26 @@ const skillGroups = [
       "Jira",
       "Adobe Creative Cloud",
       "Google Workspace",
+      "Prompt Engineering",
+      "AI Integration",
+      "Conversational UX",
     ],
   },
+  {
+    title: "Soft Skills",
+    skills: [
+      "Communication",
+      "Organization",
+      "Teamwork",
+      "Critical Thinking",
+      "Problem Solving",
+      "Adaptability",
+      "Continuous Learning",
+      "Storytelling",
+      "Spanish (native)",
+      "English (Upper Intermediate/B2)",
+    ],
+  }
 ];
 
 const fadeUp: Variants = {
@@ -303,7 +322,13 @@ function AboutSection({
   );
 }
 
-function ProcessSection({ language, t }: { language: "es" | "en"; t: (typeof content)["es"] }) {
+function ProcessSection({
+  language,
+  t,
+}: {
+  language: "es" | "en";
+  t: (typeof content)["es"];
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -311,7 +336,10 @@ function ProcessSection({ language, t }: { language: "es" | "en"; t: (typeof con
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7 }}
     >
-      <section id="process" className="py-24 bg-slate-950/5 dark:bg-white/5 overflow-hidden">
+      <section
+        id="process"
+        className="py-24 bg-slate-950/5 dark:bg-white/5 overflow-hidden"
+      >
         <div className="container mx-auto px-6">
           <motion.div
             className="max-w-4xl"
@@ -341,51 +369,59 @@ function ProcessSection({ language, t }: { language: "es" | "en"; t: (typeof con
           </motion.div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            {[processStages.slice(0, 3), processStages.slice(3)].map((column, colIndex) => (
-              <div key={colIndex} className="relative">
-                <div className="hidden lg:block absolute left-5 top-8 bottom-0 w-px bg-border/50" />
-                <motion.div
-                  className="hidden lg:block absolute left-5 top-8 w-px bg-gradient-to-b from-primary to-primary/20 origin-top"
-                  initial={{ scaleY: 0 }}
-                  whileInView={{ scaleY: 1 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  style={{ height: "calc(100% - 2rem)" }}
-                />
+            {[processStages.slice(0, 3), processStages.slice(3)].map(
+              (column, colIndex) => (
+                <div key={colIndex} className="relative">
+                  <div className="hidden lg:block absolute left-5 top-8 bottom-0 w-px bg-border/50" />
+                  <motion.div
+                    className="hidden lg:block absolute left-5 top-8 w-px bg-gradient-to-b from-primary to-primary/20 origin-top"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 1.2, ease: "easeInOut" }}
+                    style={{ height: "calc(100% - 2rem)" }}
+                  />
 
-                <motion.div
-                  className="space-y-8"
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, amount: 0.3 }}
-                  variants={stagger}
-                >
-                  {column.map((stage, index) => (
-                    <motion.div
-                      key={stage.key}
-                      variants={fadeUp}
-                      whileHover={{ x: 6 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      className="relative pl-14 group"
-                    >
+                  <motion.div
+                    className="space-y-8"
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={stagger}
+                  >
+                    {column.map((stage, index) => (
                       <motion.div
-                        whileHover={{ scale: 1.15, rotate: 8 }}
-                        transition={{ type: "spring", stiffness: 400 }}
-                        className="absolute left-0 top-1 w-10 h-10 flex items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold shadow-lg shadow-primary/30"
+                        key={stage.key}
+                        variants={fadeUp}
+                        whileHover={{ x: 6 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
+                        className="relative pl-14 group"
                       >
-                        {colIndex === 0 ? index + 1 : index + 4}
+                        <motion.div
+                          whileHover={{ scale: 1.15, rotate: 8 }}
+                          transition={{ type: "spring", stiffness: 400 }}
+                          className="absolute left-0 top-1 w-10 h-10 flex items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold shadow-lg shadow-primary/30"
+                        >
+                          {colIndex === 0 ? index + 1 : index + 4}
+                        </motion.div>
+                        <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+                          {language === "es" ? stage.title : stage.titleEn}
+                        </h3>
+                        <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                          {language === "es"
+                            ? stage.description
+                            : stage.descriptionEn}
+                        </p>
                       </motion.div>
-                      <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
-                        {language === "es" ? stage.title : stage.titleEn}
-                      </h3>
-                      <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                        {language === "es" ? stage.description : stage.descriptionEn}
-                      </p>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-            ))}
+                    ))}
+                  </motion.div>
+                </div>
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -393,7 +429,13 @@ function ProcessSection({ language, t }: { language: "es" | "en"; t: (typeof con
   );
 }
 
-function SkillsSection({ language, t }: { language: "es" | "en"; t: (typeof content)["es"] }) {
+function SkillsSection({
+  language,
+  t,
+}: {
+  language: "es" | "en";
+  t: (typeof content)["es"];
+}) {
   const title = t.skillsSubtitle;
   const description = t.skillsDescription;
 
@@ -413,13 +455,22 @@ function SkillsSection({ language, t }: { language: "es" | "en"; t: (typeof cont
             viewport={{ once: true, amount: 0.4 }}
             variants={stagger}
           >
-            <motion.p variants={fadeUp} className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4">
+            <motion.p
+              variants={fadeUp}
+              className="text-sm uppercase tracking-[0.32em] text-muted-foreground mb-4"
+            >
               {title}
             </motion.p>
-            <motion.h2 variants={fadeUp} className="font-superlobster text-5xl md:text-6xl font-bold mb-4 gradient-text animate-fade-in-up">
+            <motion.h2
+              variants={fadeUp}
+              className="font-superlobster text-5xl md:text-6xl font-bold mb-4 gradient-text animate-fade-in-up"
+            >
               {t.skillsTitle}
             </motion.h2>
-            <motion.p variants={fadeUp} className="max-w-2xl text-base leading-8 text-muted-foreground">
+            <motion.p
+              variants={fadeUp}
+              className="max-w-2xl text-base leading-8 text-muted-foreground"
+            >
               {t.skillsDescription}
             </motion.p>
           </motion.div>
@@ -449,8 +500,15 @@ function SkillsSection({ language, t }: { language: "es" | "en"; t: (typeof cont
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: i * 0.05, type: "spring", stiffness: 400 }}
-                      whileHover={{ scale: 1.08, backgroundColor: "rgba(255,255,255,0.12)" }}
+                      transition={{
+                        delay: i * 0.05,
+                        type: "spring",
+                        stiffness: 400,
+                      }}
+                      whileHover={{
+                        scale: 1.08,
+                        backgroundColor: "rgba(255,255,255,0.12)",
+                      }}
                       className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-muted-foreground cursor-default"
                     >
                       {skill}
