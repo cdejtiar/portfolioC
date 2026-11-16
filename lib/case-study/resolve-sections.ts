@@ -200,9 +200,13 @@ export function resolveCaseStudySection(
           title: section.title ?? label,
           items:
             section.items ??
+<<<<<<< HEAD
             (section.type === "learnings"
               ? project.learnings
               : project.outcomes),
+=======
+            (section.type === "learnings" ? project.learnings : undefined),
+>>>>>>> 2e6a1cc66319caaed2fc7e64f6e4aaa527c15b48
           description: section.description ?? project.outcome,
         }
         return hasContent(resolved) ? resolved : null

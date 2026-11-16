@@ -12,7 +12,11 @@ const translations = {
     title: "Todos mis proyectos",
     subtitle:
       "Conoce el catálogo completo de trabajos donde combino investigación, estrategia, diseño y desarrollo.",
+<<<<<<< HEAD
     filterLabel: "Filtrar por categoría",
+=======
+    filterLabel: "Filtrar por rol",
+>>>>>>> 2e6a1cc66319caaed2fc7e64f6e4aaa527c15b48
     allRole: "Todos",
     viewCaseStudy: "Ver Case Study",
     backHome: "Volver al inicio",
@@ -21,7 +25,11 @@ const translations = {
     title: "All projects",
     subtitle:
       "Explore the full set of work where I combine research, strategy, design, and frontend delivery.",
+<<<<<<< HEAD
     filterLabel: "Filter by category",
+=======
+    filterLabel: "Filter by role",
+>>>>>>> 2e6a1cc66319caaed2fc7e64f6e4aaa527c15b48
     allRole: "All",
     viewCaseStudy: "View Case Study",
     backHome: "Back to home",
@@ -49,9 +57,13 @@ export default function ProjectsPage() {
     () =>
       selectedRole === t.allRole
         ? projects
+<<<<<<< HEAD
         : projects.filter((project) =>
             project.roles.some((role) => role === selectedRole),
           ),
+=======
+        : projects.filter((project) => project.roles.includes(selectedRole)),
+>>>>>>> 2e6a1cc66319caaed2fc7e64f6e4aaa527c15b48
     [projects, selectedRole, t.allRole],
   )
 
