@@ -1,0 +1,72 @@
+"use client"
+
+import type { ResolvedCaseStudySection } from "@/lib/case-study/types"
+import {
+  FormattedText,
+  SectionContainer,
+  SectionDescription,
+  SectionEyebrow,
+  SectionWrapper,
+} from "../shared/section-primitives"
+
+interface ResearchBlockProps {
+  section: ResolvedCaseStudySection
+}
+
+export function ResearchBlock({ section }: ResearchBlockProps) {
+  const highlights = section.highlights ?? []
+  const title = section.title ?? ""
+  const [prefix, suffix] = title.includes("Usuario")
+    ? ["Voz del ", "Usuario."]
+    : title.includes("User")
+      ? ["Voice of the ", "User."]
+      : [title, ""]
+
+  return (
+    <SectionWrapper>
+      <SectionContainer>
+        <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            {section.eyebrow && <SectionEyebrow>{section.eyebrow}</SectionEyebrow>}
+
+            <h2 className="mt-4 font-superlobster text-4xl leading-tight text-foreground sm:text-5xl">
+              {suffix ? (
+                <>
+                  {prefix}
+                  <span className="text-primary">{suffix}</span>
+                </>
+              ) : (
+                title
+              )}
+            </h2>
+
+            {section.description && (
+              <SectionDescription className="mt-5 max-w-sm text-sm leading-7 text-muted-foreground">
+                {section.description}
+              </SectionDescription>
+            )}
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {highlights.map((item) => (
+              <div
+                key={item.title}
+                data-anim
+                className="rounded-xl border border-cs-hairline bg-cs-card p-6 transition-transform duration-300 hover:-translate-y-1"
+              >
+                <span className="font-serif text-xl text-primary/70">"</span>
+                <FormattedText
+                  text={item.detail}
+                  className="mt-2 text-sm leading-7 text-foreground/90"
+                />
+                <p className="mt-5 text-[9px] uppercase tracking-[0.22em] text-muted-foreground">
+                  — {item.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </SectionContainer>
+    </SectionWrapper>
+  )
+}
