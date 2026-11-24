@@ -177,11 +177,12 @@ export function resolveCaseStudySection(
       }
 
       if (isSolutionBlock(section.type)) {
+        const description = section.description ?? project.finalSolution
         const resolved = {
           ...base,
           title: section.title ?? label,
-          description: section.description ?? project.finalSolution,
-          body: section.body ?? project.finalSolution ?? project.solution,
+          description,
+          body: section.body ?? (description ? undefined : project.solution),
           items: section.items,
           image: section.image,
           video: section.video,

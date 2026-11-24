@@ -12,6 +12,8 @@ import bingoDorja from "./bingo-dorja"
 import ivoEscapeRoom from "./ivo-escape-room"
 import inflow from "./inflow"
 import sipSketchStories from "./sip-sketch-stories"
+import btsArgmy from "./bts-argmy"
+import portfolioCd from "./portfolio-cd"
 
 /**
  * Registro de contenido de casos de estudio, indexado por id de proyecto.
@@ -28,6 +30,8 @@ export const caseStudyContentByProjectId: Record<string, CaseStudyContent> = {
   "8": ivoEscapeRoom,
   "9": inflow,
   "10": sipSketchStories,
+  "12": btsArgmy,
+  "13": portfolioCd,
 }
 
 /** Devuelve los bloques del caso de estudio para un proyecto y un idioma. */

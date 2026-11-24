@@ -11,6 +11,7 @@ import type {
 
 const DESIGN_ROLES = [
   "Product Design",
+  "UX/UI Design",
   "UX Research",
   "Design Systems",
   "Research",

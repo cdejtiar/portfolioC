@@ -239,7 +239,7 @@ Durante el desarrollo aplicamos metodologías ágiles y realizamos dos checkpoin
         "Proceso guiado por Design Thinking",
         "Validación con usuarios y versión beta funcional",
       ],
-      featured: true,
+      featured: false,
     },
     {
       id: "7",
@@ -442,7 +442,204 @@ El proyecto buscó combinar diversión, aprendizaje y estética, creando un hilo
         { type: "result" },
         { type: "learnings" },
       ],
-    }
+    },
+    {
+      id: "12",
+      title: "BTS ARGmy",
+      description:
+        "Sitio web multipágina para la comunidad ARMY en Argentina con arquitectura de información clara, diseño responsivo y SCSS modular.",
+      fullDescription: `BTS ARGmy es un proyecto web desarrollado en 2026 como trabajo final del curso de Desarrollo Web en Coderhouse. El objetivo fue diseñar y programar un espacio digital centralizado para la comunidad ARMY en Argentina, reuniendo historia del grupo, discografía, novedades y recursos para fans en una experiencia clara y accesible.
+Desde UX/UI, el desafío principal fue organizar un gran volumen de contenido informativo y visual evitando la sobrecarga típica de los sitios de fans, priorizando una navegación intuitiva y recorridos escaneables tanto en mobile como en desktop.
+A nivel desarrollo frontend, el sitio fue construido con HTML5 semántico orientado a accesibilidad y SEO, una arquitectura de estilos escalable en SCSS (variables, mixins, nesting y parciales por página/componente) y componentes responsivos con Bootstrap.`,
+      image: "/images/army-white.png",
+      technologies: [
+        "Stitch de Google",
+        "Figma",
+        "HTML5",
+        "SCSS",
+        "CSS3",
+        "Bootstrap",
+        "JavaScript",
+        "SEO",
+        "Git",
+        "GitHub",
+      ],
+      roles: ["UX/UI Design", "Frontend Development"],
+      featured: true,
+      githubUrl: "https://github.com/cdejtiar/btsargmy",
+      liveUrl: "https://btsargmy.vercel.app/",
+      context:
+        "Proyecto final del curso de Desarrollo Web en Coderhouse, pensado como hub digital para la comunidad ARMY en Argentina.",
+      roleSummary: "UX/UI Designer & Frontend Developer",
+      team: "Proyecto individual.",
+      year: "2026",
+      type: "Responsive Community Web",
+      problemStatement:
+        "La información relevante para fans de BTS en Argentina suele estar dispersa en distintas redes sociales, dificultando el acceso rápido a discografía, historia y novedades en un mismo lugar.",
+      need:
+        "Una plataforma web **estructurada, responsiva y visualmente identitaria** que organice el contenido en secciones claras y ofrezca una navegación fluida desde cualquier dispositivo.",
+      finalSolution:
+        "Un sitio estático multipágina de 5 secciones con jerarquía visual definida, identidad cromática temática y arquitectura CSS modular en SCSS.",
+      outcome:
+        "Sitio web de 5 páginas 100% responsivo, optimizado para SEO y desplegado con arquitectura de estilos escalable.",
+      architecture:
+        "Arquitectura multipágina (5 vistas HTML semánticas) respaldada por un sistema de estilos en SCSS dividido en parciales (variables, mixins, reset, layout y vistas), integrado con la grilla responsiva de Bootstrap y animaciones CSS.",
+      repoHighlights: [
+        "Estructura semántica HTML5 con etiquetas meta y jerarquía de encabezados optimizada para SEO.",
+        "Arquitectura SCSS modular con variables, mixins y anidamiento para mantener consistencia visual.",
+        "Diseño mobile-first con grillas y componentes adaptables mediante Bootstrap.",
+      ],
+      outcomes: [
+        "**Navegación clara en 5 secciones** que centraliza información clave para la comunidad.",
+        "**Código CSS escalable y mantenible** gracias a la modularización en SCSS.",
+        "**Experiencia 100% responsiva** adaptada a dispositivos móviles, tablets y escritorio.",
+      ],
+      processSteps: [
+        {
+          label: "01. Arquitectura",
+          title: "Organización de contenidos",
+          description:
+            "Agrupé la información de la comunidad en cinco secciones para facilitar el acceso a la historia, discografía, novedades y recursos.",
+        },
+        {
+          label: "02. Wireframe y diseño UI",
+          title: "De Stitch a Figma",
+          description:
+            "Usé Stitch para crear un wireframe tentativo y después lo fui ajustando en Figma.",
+        },
+        {
+          label: "03. Recursos visuales",
+          title: "Creación de imágenes con Gemini",
+          description:
+            "Generé varias imágenes con Gemini como parte del desarrollo visual del proyecto.",
+        },
+        {
+          label: "04. Desarrollo",
+          title: "Implementación en código",
+          description:
+            "Implementé el sitio con HTML5 semántico, SCSS modular y Bootstrap.",
+        },
+      ],
+      designDecisions: [
+        {
+          title: "Arquitectura de información en cinco secciones",
+          problem:
+            "La historia, discografía y novedades de BTS estaban dispersas entre distintas fuentes.",
+          decision:
+            "Organicé el contenido en cinco secciones dentro de un sitio multipágina.",
+          impact:
+            "La comunidad puede encontrar información y recursos desde un único espacio.",
+        },
+        {
+          title: "Jerarquía visual para contenido escaneable",
+          problem:
+            "El volumen de contenido podía hacer que la experiencia se sintiera sobrecargada.",
+          decision:
+            "Definí una jerarquía visual y recorridos claros para separar y presentar la información.",
+          impact:
+            "La navegación resulta más intuitiva en mobile y desktop.",
+        },
+        {
+          title: "Diseño responsivo mobile-first",
+          problem:
+            "El sitio debía ser accesible desde distintos tamaños de pantalla.",
+          decision:
+            "Implementé layouts adaptables con la grilla de Bootstrap y estilos modulares en SCSS.",
+          impact:
+            "La experiencia se adapta a móviles, tablets y escritorio.",
+        },
+      ],
+      learnings: [
+        "**Planificar la arquitectura de información antes de maquetar** evita rehacer estructuras HTML y facilita el diseño responsivo.",
+        "El uso de **SCSS modular y HTML semántico** mejora tanto la mantenibilidad del código como el rendimiento y SEO del sitio.",
+      ],
+      features: [
+        "Arquitectura multipágina de 5 secciones con navegación intuitiva",
+        "Diseño responsivo mobile-first con Bootstrap y grillas personalizadas",
+        "Sistema de estilos escalable desarrollado en SCSS",
+        "Optimización SEO on-page y estructura semántica accesible",
+      ],
+    },
+    {
+      id: "13",
+      title: "Portfolio Personal",
+      description:
+        "Diseño y arquitectura de portfolio multidisciplinario con sistema de diseño tokenizado y motor tipado de case studies por bloques.",
+      fullDescription: `Diseño y desarrollo integral de mi portfolio profesional en 2026, concebido como un producto digital propio que refleja mi perfil híbrido entre UX/UI Design, Design Systems y Frontend Development.
+El desafío principal fue crear una plataforma capaz de presentar proyectos muy diversos —desde investigación UX y sistemas visuales hasta aplicaciones web interactivas— sin caer en plantillas genéricas ni duplicar código de interfaz cada vez que se suma un nuevo proyecto.
+Para resolverlo, diseñé una identidad visual propia (monograma "CD" con guiño de cursor digital y tokens semánticos sobre Tailwind CSS) y construí en Next.js y TypeScript una arquitectura data-driven donde cada case study se renderiza dinámicamente a partir de roles, bloques componibles y soporte bilingüe nativo (ES/EN).`,
+      image: "/images/portfolio.png",
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "Design Systems",
+        "Figma",
+        "Vercel",
+      ],
+      roles: ["UX/UI Design", "Frontend Development", "Design Systems"],
+      featured: false,
+      githubUrl: "https://github.com/cdejtiar/portfolioC",
+      context:
+        "Producto personal desarrollado en 2026 para presentar proyectos multidisciplinarios con case studies interactivos, escalables y bilingües.",
+      roleSummary:
+        "UX/UI Designer, Design Systems Architect & Frontend Developer",
+      team: "Proyecto individual.",
+      year: "2026",
+      type: "Design System & Web Platform",
+      problemStatement:
+        "Los portfolios tradicionales suelen usar estructuras rígidas que no se adaptan bien a proyectos de distinta naturaleza (investigación UX, sistemas de diseño o desarrollo frontend), obligando a repetir layouts o sacrificar profundidad narrativa.",
+      need:
+        "Un **sistema de diseño coherente** respaldado por una **arquitectura modular y tipada** que adapte automáticamente la estructura de cada case study según el rol desempeñado, manteniendo consistencia visual y soporte bilingüe.",
+      finalSolution:
+        "Una plataforma en Next.js con identidad visual propia y un motor declarativo de case studies (`lib/case-study`) basado en bloques reutilizables y resolución dinámica de secciones por rol.",
+      outcome:
+        "Arquitectura escalable que permite incorporar nuevos proyectos bilingües mediante configuración tipada, sin duplicar componentes de UI.",
+      architecture:
+        "Aplicación construida con Next.js (App Router), React y TypeScript. La capa de datos separa el catálogo de proyectos (`projects.ts`) del motor de case studies (`lib/case-study`), compuesto por un registro de bloques (`block-registry.ts`), resolución de secciones por rol (`resolve-sections.ts`), valores por defecto (`defaults.ts`) y traducciones (`translations.ts`), con animaciones en GSAP.",
+      repoHighlights: [
+        "Motor de case studies tipado en TypeScript que resuelve secciones automáticamente según `ProjectRole` o configuraciones custom.",
+        "Sistema de diseño tokenizado en Tailwind CSS con identidad propia (monograma CD) y componentes UI reutilizables.",
+        "Soporte bilingüe nativo (ES/EN) desacoplado de la capa de presentación y microinteracciones coreografiadas con GSAP.",
+      ],
+      designDecisions: [
+        {
+          title: "Motor de case studies basado en bloques y roles",
+          problem:
+            "Cada proyecto requería enfatizar distintas etapas (research, sistema de diseño o arquitectura técnica) sin crear páginas individuales desde cero.",
+          decision:
+            "Diseñar un registro de bloques componibles (`block-registry.ts`) con fallback automático según los `roles` del proyecto.",
+          impact:
+            "Reducción drástica del tiempo necesario para sumar nuevos proyectos y coherencia narrativa en todo el portfolio.",
+        },
+        {
+          title: "Identidad visual y tokens semánticos",
+          problem:
+            "Necesidad de transmitir un perfil híbrido entre diseño visual e ingeniería frontend desde el primer contacto.",
+          decision:
+            "Crear un monograma 'CD' integrado con un cursor digital y sistematizar colores, tipografía y espaciados en tokens de Tailwind CSS.",
+          impact:
+            "Identidad reconocible, accesible y consistente en vistas principales, filtros y páginas de detalle.",
+        },
+      ],
+      outcomes: [
+        "**Sistema escalable de case studies** que adapta su estructura según el rol del proyecto.",
+        "**Identidad visual y librería de componentes unificada** bajo tokens de diseño consistentes.",
+        "**Experiencia bilingüe (ES/EN) fluida** con animaciones performantes en GSAP y despliegue continuo en Vercel.",
+      ],
+      learnings: [
+        "**Pensar el portfolio como un Design System vivo** facilita iterar tanto el diseño visual como la arquitectura de datos en paralelo.",
+        "Separar el contenido estructurado de los componentes de renderizado permite **escalar productos digitales sin deuda técnica de UI**.",
+      ],
+      features: [
+        "Motor data-driven de case studies con bloques componibles y fallback por rol",
+        "Identidad visual propia (monograma CD) y tokens de diseño en Tailwind CSS",
+        "Soporte bilingüe nativo (Español / Inglés) en catálogo y detalle de proyectos",
+        "Microinteracciones y transiciones fluidas implementadas con GSAP",
+      ],
+    },
   ],
   en: [
     {
@@ -625,7 +822,7 @@ During development, we applied agile methodologies and conducted two main checkp
         "Scrum",
       ],
   roles: ["Product Design", "UX/UI Design", "Frontend Development"],
-  featured: true,
+  featured: false,
   slidesUrl: "https://docs.google.com/presentation/d/e/2PACX-1vS_bdTv9mO6uZ9tX0ZJhW33XYOaeK6trvX5CE8sq4yre7k1SbiPxmEnZHk7FMyAovB0fjMYWc7tAFCn/pub?start=false&loop=false&delayms=3000",
   docsUrl: "https://docs.google.com/document/d/e/2PACX-1vRsIONlDFzMJozvMiIGNMInYicakcIkmKghVAHzR6saeYvDeSE3vcj5qcwwmwvI-I96u7Is9dWK80So/pub",
   docsUrl2: "https://docs.google.com/document/d/e/2PACX-1vTGEo-XTqtnxQq7uvh_E4sHULWDFy1xJF657GzmYIPE69x1AenOs0K-H474a7Uu-ZVPfIhR_LYgueWj/pub",
@@ -853,8 +1050,203 @@ The research phase included benchmarking tools such as Focusmate, Forest, and St
         { type: "result" },
         { type: "learnings" },
       ],
+    },
+    {
+      id: "12",
+      title: "BTS ARGmy",
+      description:
+        "A multi-page website for the ARMY community in Argentina, featuring clear information architecture, responsive design, and modular SCSS.",
+      fullDescription: `BTS ARGmy is a website developed in 2026 as the final project for the Web Development course at Coderhouse. The goal was to design and build a centralized digital space for the ARMY community in Argentina, bringing together the group's history, discography, news, and fan resources in a clear, accessible experience.
+From a UX/UI perspective, the main challenge was organizing a large amount of informational and visual content without overwhelming users, prioritizing intuitive navigation and scannable journeys on both mobile and desktop.
+The frontend was built with semantic HTML5 focused on accessibility and SEO, a scalable SCSS architecture (variables, mixins, nesting, and page/component partials), and responsive components with Bootstrap.`,
+      image: "/images/army-white.png",
+      technologies: [
+        "HTML5",
+        "SCSS",
+        "CSS3",
+        "Bootstrap",
+        "JavaScript",
+        "SEO",
+        "Git",
+        "GitHub",
+      ],
+      roles: ["UX/UI Design", "Frontend Development"],
+      featured: true,
+      githubUrl: "https://github.com/cdejtiar/btsargmy",
+      liveUrl: "https://btsargmy.vercel.app/",
+      context:
+        "Final project for the Web Development course at Coderhouse, designed as a digital hub for the ARMY community in Argentina.",
+      roleSummary: "UX/UI Designer & Frontend Developer",
+      team: "Solo project.",
+      year: "2026",
+      type: "Responsive Community Website",
+      problemStatement:
+        "Information relevant to BTS fans in Argentina is often scattered across different social networks, making it difficult to quickly find the group's discography, history, and news in one place.",
+      need:
+        "A **structured, responsive website with a distinctive visual identity** that organizes content into clear sections and offers smooth navigation on any device.",
+      finalSolution:
+        "A five-section, multi-page static website with a clear visual hierarchy, a themed color identity, and a modular SCSS architecture.",
+      outcome:
+        "A five-page, fully responsive website optimized for SEO and deployed with a scalable stylesheet architecture.",
+      architecture:
+        "A multi-page architecture (five semantic HTML views) supported by SCSS partials for variables, mixins, reset, layout, and individual views, integrated with Bootstrap's responsive grid and CSS animations.",
+      repoHighlights: [
+        "Semantic HTML5 structure with meta tags and heading hierarchy optimized for SEO.",
+        "Modular SCSS architecture using variables, mixins, and nesting to maintain visual consistency.",
+        "Mobile-first design with responsive grids and components built with Bootstrap.",
+      ],
+      outcomes: [
+        "**Clear navigation across five sections** that centralizes key information for the community.",
+        "**Scalable, maintainable CSS** through SCSS modularization.",
+        "**Fully responsive experience** for mobile, tablet, and desktop devices.",
+      ],
+      processSteps: [
+        {
+          label: "01. Information architecture",
+          title: "Organizing the content",
+          description:
+            "I grouped community information into five sections to make the group's history, discography, news, and resources easier to find.",
+        },
+        {
+          label: "02. Wireframing and UI design",
+          title: "From Stitch to Figma",
+          description:
+            "I used Stitch to create an initial wireframe, then refined it in Figma.",
+        },
+        {
+          label: "03. Visual assets",
+          title: "Creating images with Gemini",
+          description:
+            "I generated several images with Gemini as part of the project's visual development.",
+        },
+        {
+          label: "04. Development",
+          title: "Code implementation",
+          description:
+            "I implemented the website with semantic HTML5, modular SCSS, and Bootstrap.",
+        },
+      ],
+      designDecisions: [
+        {
+          title: "Information architecture across five sections",
+          problem:
+            "BTS history, discography, and news were scattered across different sources.",
+          decision:
+            "I organized the content into five sections within a multi-page website.",
+          impact:
+            "The community can find information and resources in one place.",
+        },
+        {
+          title: "Visual hierarchy for scannable content",
+          problem:
+            "The volume of content could make the experience feel overwhelming.",
+          decision:
+            "I established a clear visual hierarchy and navigation paths to separate and present information.",
+          impact:
+            "Navigation feels more intuitive on mobile and desktop.",
+        },
+        {
+          title: "Mobile-first responsive design",
+          problem:
+            "The website needed to work across different screen sizes.",
+          decision:
+            "I implemented adaptable layouts with Bootstrap's grid and modular SCSS.",
+          impact:
+            "The experience adapts to mobile, tablet, and desktop devices.",
+        },
+      ],
+      learnings: [
+        "**Planning the information architecture before building the pages** avoids reworking HTML structures and supports responsive design.",
+        "**Modular SCSS and semantic HTML** improve code maintainability as well as the site's performance and SEO.",
+      ],
+      features: [
+        "Five-section multi-page architecture with intuitive navigation",
+        "Mobile-first responsive design with Bootstrap and custom grids",
+        "Scalable styling system built with SCSS",
+        "On-page SEO optimization and accessible semantic structure",
+      ],
+    },
+    {
+      id: "13",
+      title: "Personal Portfolio",
+      description:
+        "Multidisciplinary portfolio design and architecture with a tokenized design system and a typed, block-based case study engine.",
+      fullDescription: `End-to-end design and development of my professional portfolio in 2026, conceived as a digital product of my own that reflects my hybrid profile across UX/UI Design, Design Systems, and Frontend Development.
+The main challenge was to create a platform capable of presenting very different projects—from UX research and visual systems to interactive web applications—without relying on generic templates or duplicating interface code every time a new project is added.
+To address this, I designed a visual identity of my own (a "CD" monogram with a digital cursor detail and semantic tokens built on Tailwind CSS) and built a data-driven architecture in Next.js and TypeScript where each case study is rendered dynamically from roles, composable blocks, and native bilingual (ES/EN) support.`,
+      image: "/images/portfolio.png",
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "Design Systems",
+        "Figma",
+        "Vercel",
+      ],
+      roles: ["UX/UI Design", "Frontend Development", "Design Systems"],
+      featured: false,
+      githubUrl: "https://github.com/cdejtiar/portfolioC",
+      context:
+        "Personal product built in 2026 to present multidisciplinary projects through interactive, scalable, bilingual case studies.",
+      roleSummary:
+        "UX/UI Designer, Design Systems Architect & Frontend Developer",
+      team: "Solo project.",
+      year: "2026",
+      type: "Design System & Web Platform",
+      problemStatement:
+        "Traditional portfolios often rely on rigid structures that do not adapt well to projects of different kinds (UX research, design systems, or frontend development), requiring repeated layouts or sacrificing narrative depth.",
+      need:
+        "A **cohesive design system** backed by a **typed, modular architecture** that automatically adapts each case study's structure to the role performed while maintaining visual consistency and bilingual support.",
+      finalSolution:
+        "A Next.js platform with a custom visual identity and a declarative case study engine (`lib/case-study`) built from reusable blocks and role-based section resolution.",
+      outcome:
+        "A scalable architecture that makes it possible to add bilingual projects through typed configuration without duplicating UI components.",
+      architecture:
+        "An application built with Next.js (App Router), React, and TypeScript. The data layer separates the project catalog (`projects.ts`) from the case study engine (`lib/case-study`), which includes a block registry (`block-registry.ts`), role-based section resolution (`resolve-sections.ts`), defaults (`defaults.ts`), and translations (`translations.ts`), with GSAP animations.",
+      repoHighlights: [
+        "A typed TypeScript case study engine that resolves sections automatically based on `ProjectRole` or custom configurations.",
+        "A tokenized Tailwind CSS design system with a custom identity (CD monogram) and reusable UI components.",
+        "Native ES/EN support decoupled from the presentation layer, with GSAP-choreographed micro-interactions.",
+      ],
+      designDecisions: [
+        {
+          title: "A case study engine based on blocks and roles",
+          problem:
+            "Each project needed to emphasize different stages (research, design systems, or technical architecture) without building individual pages from scratch.",
+          decision:
+            "I designed a composable block registry (`block-registry.ts`) with automatic fallbacks based on each project's `roles`.",
+          impact:
+            "It significantly reduces the effort to add projects and creates a consistent narrative across the portfolio.",
+        },
+        {
+          title: "Visual identity and semantic tokens",
+          problem:
+            "The portfolio needed to communicate a hybrid profile across visual design and frontend engineering from the first interaction.",
+          decision:
+            "I created a CD monogram with a digital cursor detail and systematized colors, typography, and spacing with Tailwind CSS tokens.",
+          impact:
+            "A recognizable, accessible, and consistent identity across the main views, filters, and detail pages.",
+        },
+      ],
+      outcomes: [
+        "A **scalable case study system** that adapts its structure to each project's role.",
+        "A **unified visual identity and component library** built on consistent design tokens.",
+        "A **seamless bilingual experience (ES/EN)** with performant GSAP animations and continuous deployment on Vercel.",
+      ],
+      learnings: [
+        "**Treating the portfolio as a living design system** makes it easier to evolve the visual design and data architecture in parallel.",
+        "Separating structured content from rendering components makes it possible to **scale digital products without UI technical debt**.",
+      ],
+      features: [
+        "Data-driven case study engine with composable blocks and role-based fallbacks",
+        "Custom visual identity (CD monogram) and Tailwind CSS design tokens",
+        "Native Spanish/English support across the project catalog and case studies",
+        "GSAP-powered micro-interactions and fluid transitions",
+      ],
     }
   ],
 }
 
-export const featuredProjectIds = ["2", "6", "8"]
+export const featuredProjectIds = ["2", "8", "12"]
